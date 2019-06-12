@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template_modifications>
+  <modification type="public" template="account_privacy" modification_key="snogFlags14" description="Adds option to hide flag" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[arg-label="{{ phrase('view_your_details_on_your_profile_page:') }}" />]]></find>
+    <replace><![CDATA[$0
+<xf:if is="$xf.options.snog_countryflags_permit">
+	<xf:include template="snog_flags_privacy" />
+</xf:if>]]></replace>
+  </modification>
+  <modification type="public" template="forum_filters" modification_key="snogFlags18" description="Adds country filter options" execution_order="3" enabled="1" action="str_replace">
+    <find><![CDATA[<!--[XF:above_sort_by]-->]]></find>
+    <replace><![CDATA[<xf:if is="$xf.options.snog_countryflags_showthread && !in_array($forum.node_id, $xf.options.snog_countryflags_noshow)">
+	<xf:if is="$xf.visitor.haspermission('general', 'snog_flags_view') || ($xf.visitor.is_admin || ($xf.options.snog_countryflags_moderator && $xf.visitor.is_moderator))">
+		<xf:callback class="Snog\Flags\Callback\Country" method="getCountries" params="[$filters]"></xf:callback>
+	</xf:if>
+</xf:if>
+
+$0]]></replace>
+  </modification>
+  <modification type="public" template="forum_view" modification_key="snogFlags12" description="Adds less to forum list" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:description>{$forum.Node.description|raw}</xf:description>]]></find>
+    <replace><![CDATA[$0
+<xf:css src="snog_flags.less" />]]></replace>
+  </modification>
+  <modification type="public" template="forum_view" modification_key="snogFlags19" description="Adds filter removal links" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:if is="$filters.last_days AND {$dateLimits.{$filters.last_days}}">]]></find>
+    <replace><![CDATA[<xf:include template="snog_flags_filter_removal" />
+$0]]></replace>
+  </modification>
+  <modification type="public" template="helper_js_global" modification_key="snogFlags20" description="Adds js to display country on touch screens when flag is touched" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<!--XF:JS-->]]></find>
+    <replace><![CDATA[<script>
+	$(".flags").on('touch click', function (){
+		if(event.handled === false) return
+		event.stopPropagation();
+        event.preventDefault();
+        event.handled = true;
+		
+		var $title = $(this).find(".data-original-title");
+		if (!$title.length) {
+			$(this).append('<span class="data-original-title">' + $(this).attr("data-original-title") + '</span>');
+		} else {
+			$title.remove();
+		}
+	});
+</script>
+
+	$0]]></replace>
+  </modification>
+  <modification type="public" template="member_list" modification_key="snogFlags8" description="Adds less to member list" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:title page="{$page}">{{ phrase('registered_members') }}</xf:title>]]></find>
+    <replace><![CDATA[$0
+<xf:css src="snog_flags.less" />]]></replace>
+  </modification>
+  <modification type="public" template="member_list_macros" modification_key="snogFlags9" description="Add flags to member lists" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:username user="$user" rich="true" notooltip="true" />]]></find>
+    <replace><![CDATA[$0<xf:if is="$xf.options.snog_countryflags_list && ($xf.visitor.haspermission('general', 'snog_flags_view') && (!$xf.options.snog_countryflags_permit || ($user.Privacy.snog_flag_view == 'everyone' || ($user.Privacy.snog_flag_view == 'members' && $xf.visitor.user_id > 0))) || ($xf.visitor.is_admin || ($xf.options.snog_countryflags_moderator && $xf.visitor.is_moderator)))">
+	<xf:callback class="Snog\Flags\Callback\Country" method="getCountry" params="[$user.snog_flag]"></xf:callback>
+</xf:if>]]></replace>
+  </modification>
+  <modification type="public" template="member_notable" modification_key="snogFlags10" description="Adds less to other member lists" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:wrap template="member_wrapper">]]></find>
+    <replace><![CDATA[<xf:css src="snog_flags.less" />
+
+$0]]></replace>
+  </modification>
+  <modification type="public" template="member_notable" modification_key="snogFlags11" description="Adds flags to main member list display" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:username user="$data.user" rich="true" />]]></find>
+    <replace><![CDATA[$0<xf:if is="$xf.options.snog_countryflags_list && ($xf.visitor.haspermission('general', 'snog_flags_view') && (!$xf.options.snog_countryflags_permit || ($data.user.Privacy.snog_flag_view == 'everyone' || ($data.user.Privacy.snog_flag_view == 'members' && $xf.visitor.user_id > 0))) || ($xf.visitor.is_admin || ($xf.options.snog_countryflags_moderator && $xf.visitor.is_moderator)))">
+	<xf:callback class="Snog\Flags\Callback\Country" method="getCountry" params="[$data.user.snog_flag]"></xf:callback>
+</xf:if>]]></replace>
+  </modification>
+  <modification type="public" template="member_tooltip" modification_key="snogFlags17" description="Adds flag less to tooltip" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:css src="member_tooltip.less" />]]></find>
+    <replace><![CDATA[$0
+<xf:css src="snog_flags.less" />]]></replace>
+  </modification>
+  <modification type="public" template="member_tooltip" modification_key="snogFlags5" description="Add flag to member tooltip XF 2.0" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:avatar user="{$user}" size="s" notooltip="true" />]]></find>
+    <replace><![CDATA[$0
+<xf:if is="$xf.options.snog_countryflags_card">
+	<xf:if is="$xf.visitor.haspermission('general', 'snog_flags_view') || $xf.visitor.is_admin">
+		<xf:if is="(!$xf.options.snog_countryflags_permit || ($user.Privacy.snog_flag_view == 'everyone' || ($user.Privacy.snog_flag_view == 'members' && $xf.visitor.user_id > 0)) || ($xf.visitor.is_admin || ($xf.options.snog_countryflags_moderator && $xf.visitor.is_moderator)))">
+			<xf:include template="snog_flags_flag"/>
+		</xf:if>
+	</xf:if>
+</xf:if>]]></replace>
+  </modification>
+  <modification type="public" template="member_tooltip" modification_key="snog_flags_tooltip21" description="Add flag to member tooltip XF 2.1" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:avatar user="{$user}" size="m" notooltip="true" />]]></find>
+    <replace><![CDATA[$0
+<xf:if is="$xf.options.snog_countryflags_card">
+	<xf:if is="$xf.visitor.haspermission('general', 'snog_flags_view') || $xf.visitor.is_admin">
+		<xf:if is="(!$xf.options.snog_countryflags_permit || ($user.Privacy.snog_flag_view == 'everyone' || ($user.Privacy.snog_flag_view == 'members' && $xf.visitor.user_id > 0)) || ($xf.visitor.is_admin || ($xf.options.snog_countryflags_moderator && $xf.visitor.is_moderator)))">
+			<xf:include template="snog_flags_flag"/>
+		</xf:if>
+	</xf:if>
+</xf:if>]]></replace>
+  </modification>
+  <modification type="public" template="member_view" modification_key="snogFlags6" description="Adds less to member view" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:h1 hidden="true" />]]></find>
+    <replace><![CDATA[$0
+<xf:css src="snog_flags.less" />]]></replace>
+  </modification>
+  <modification type="public" template="member_view" modification_key="snogFlags7" description="Adds flag next to name in member view" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:username user="{$user}" rich="true" href="" />]]></find>
+    <replace><![CDATA[$0<xf:if is="$xf.options.snog_countryflags_profile && ($xf.visitor.haspermission('general', 'snog_flags_view') && (!$xf.options.snog_countryflags_permit || ($user.Privacy.snog_flag_view == 'everyone' || ($user.Privacy.snog_flag_view == 'members' && $xf.visitor.user_id > 0))) || ($xf.visitor.is_admin || ($xf.options.snog_countryflags_moderator && $xf.visitor.is_moderator)))">
+	<xf:callback class="Snog\Flags\Callback\Country" method="getCountry" params="[$user.snog_flag]"></xf:callback>
+</xf:if>]]></replace>
+  </modification>
+  <modification type="public" template="message_macros" modification_key="snogFlags1" description="Adds less file" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<section itemscope itemtype="https://schema.org/Person" class="message-user">]]></find>
+    <replace><![CDATA[<xf:css src="snog_flags.less" />
+
+$0]]></replace>
+  </modification>
+  <modification type="public" template="message_macros" modification_key="snogFlags2" description="Adds flag to lower right of avatar" execution_order="8" enabled="1" action="str_replace">
+    <find><![CDATA[<section itemscope itemtype="https://schema.org/Person" class="message-user">
+		<div class="message-avatar {{ ($xf.options.showMessageOnlineStatus && $user && $user.isOnline()) ? 'message-avatar--online' : '' }}">
+			<div class="message-avatar-wrapper">]]></find>
+    <replace><![CDATA[$0
+<xf:if is="$xf.options.snog_countryflags_avatar">
+	<xf:if is="$xf.visitor.haspermission('general', 'snog_flags_view') || $xf.visitor.is_admin">
+		<xf:if is="!$xf.options.snog_countryflags_permit || ($user.Privacy.snog_flag_view == 'everyone' || ($user.Privacy.snog_flag_view == 'members' && $xf.visitor.user_id > 0) || ($xf.visitor.is_admin || ($xf.options.snog_countryflags_moderator && $xf.visitor.is_moderator)))">
+			<xf:if is="property('uix_postBitAvatarSize') == 'small' || $SnogPostVisible == 'deleted'">
+				<xf:callback class="Snog\Flags\Callback\Country" method="getCountry" params="[$user.snog_flag, 's']"></xf:callback>
+			<xf:else />
+				<xf:callback class="Snog\Flags\Callback\Country" method="getCountry" params="[$user.snog_flag, 'm']"></xf:callback>
+			</xf:if>
+		</xf:if>
+	</xf:if>
+</xf:if>]]></replace>
+  </modification>
+  <modification type="public" template="message_macros" modification_key="snogFlags3" description="Adds flag below user name in posts" execution_order="7" enabled="1" action="str_replace">
+    <find><![CDATA[<h4 class="message-name"><xf:username user="$user" rich="true" defaultname="{$fallbackName}" itemprop="name" /></h4>]]></find>
+    <replace><![CDATA[$0
+<xf:if is="$xf.options.snog_countryflags_below">
+	<xf:if is="$xf.visitor.haspermission('general', 'snog_flags_view') || $xf.visitor.is_admin">
+		<xf:if is="!$xf.options.snog_countryflags_permit || ($user.Privacy.snog_flag_view == 'everyone' || ($user.Privacy.snog_flag_view == 'members' && $xf.visitor.user_id > 0) || ($xf.visitor.is_admin || ($xf.options.snog_countryflags_moderator && $xf.visitor.is_moderator)))">
+				<xf:callback class="Snog\Flags\Callback\Country" method="getCountry" params="[$user.snog_flag, '', 'name']"></xf:callback>
+		</xf:if>
+	</xf:if>
+</xf:if>]]></replace>
+  </modification>
+  <modification type="public" template="message_macros" modification_key="snogFlags4" description="Adds flag to exta user info in posts" execution_order="5" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:if is="$extras.custom_fields">]]></find>
+    <replace><![CDATA[<xf:if is="$xf.options.snog_countryflags_extra">
+	<xf:if is="$xf.visitor.haspermission('general', 'snog_flags_view') || $xf.visitor.is_admin">
+		<xf:if is="!$xf.options.snog_countryflags_permit || ($user.Privacy.snog_flag_view == 'everyone' || ($user.Privacy.snog_flag_view == 'members' && $xf.visitor.user_id > 0) || ($xf.visitor.is_admin || ($xf.options.snog_countryflags_moderator && $xf.visitor.is_moderator)))">
+				<xf:callback class="Snog\Flags\Callback\Country" method="getCountry" params="[$user.snog_flag, '', 'info']"></xf:callback>
+		</xf:if>
+	</xf:if>
+</xf:if>
+$0]]></replace>
+  </modification>
+  <modification type="public" template="message_macros" modification_key="snog_flags_macro1" description="Adds post deleted info to macro" execution_order="9" enabled="1" action="str_replace">
+    <find><![CDATA[arg-fallbackName=""]]></find>
+    <replace><![CDATA[$0
+	arg-SnogPostVisible= ""]]></replace>
+  </modification>
+  <modification type="public" template="online_list" modification_key="snogFlags15" description="Adds less file" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:title page="{$page}">{{ phrase('current_visitors') }}</xf:title>]]></find>
+    <replace><![CDATA[$0
+<xf:css src="snog_flags.less" />]]></replace>
+  </modification>
+  <modification type="public" template="online_list" modification_key="snogFlags16" description="Adds flags to online list" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:username user="$activity.User" rich="true" />]]></find>
+    <replace><![CDATA[$0<xf:if is="$xf.options.snog_countryflags_list && ($xf.visitor.haspermission('general', 'snog_flags_view') && (!$xf.options.snog_countryflags_permit || ($activity.User.Privacy.snog_flag_view == 'everyone' || ($activity.User.Privacy.snog_flag_view == 'members' && $xf.visitor.user_id > 0))) || ($xf.visitor.is_admin || ($xf.options.snog_countryflags_moderator && $xf.visitor.is_moderator)))">
+	<xf:callback class="Snog\Flags\Callback\Country" method="getCountry" params="[$activity.User.snog_flag]"></xf:callback>
+</xf:if>]]></replace>
+  </modification>
+  <modification type="public" template="post_macros" modification_key="snog_flags_macro2" description="Adds post deleted to macro" execution_order="8" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:macro template="message_macros" name="user_info" arg-user="{$post.User}"]]></find>
+    <replace><![CDATA[<xf:macro template="message_macros" name="user_info" arg-user="{$post.User}" arg-SnogPostVisible="{$post.message_state}" ]]></replace>
+  </modification>
+  <modification type="public" template="spam_cleaner" modification_key="snog_flags_spam" description="Adds flag to spam cleaner overlay" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[</xf:title>]]></find>
+    <replace><![CDATA[ <xf:if is="$xf.options.snog_countryflags_list && ($xf.visitor.haspermission('general', 'snog_flags_view') && (!$xf.options.snog_countryflags_permit || ($user.Privacy.snog_flag_view == 'everyone' || ($user.Privacy.snog_flag_view == 'members' && $xf.visitor.user_id > 0))) || ($xf.visitor.is_admin || ($xf.options.snog_countryflags_moderator && $xf.visitor.is_moderator)))">
+	<xf:callback class="Snog\Flags\Callback\Country" method="getCountry" params="[$user.snog_flag]"></xf:callback>
+</xf:if>
+$0]]></replace>
+  </modification>
+  <modification type="public" template="thread_list_macros" modification_key="snogFlags13" description="Adds flag to thread list" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:set var="$canPreview" value="{{ $thread.canPreview() }}" />]]></find>
+    <replace><![CDATA[$0
+<xf:if is="$xf.options.snog_countryflags_showthread && !in_array($thread.Forum.node_id, $xf.options.snog_countryflags_noshow)">
+	<xf:if is="$xf.visitor.haspermission('general', 'snog_flags_view') || $xf.visitor.is_admin">
+		<xf:if is="!$xf.options.snog_countryflags_permit || ($thread.User.Privacy.snog_flag_view == 'everyone' || ($thread.User.Privacy.snog_flag_view == 'members' && $xf.visitor.user_id > 0) || ($xf.visitor.is_admin || ($xf.options.snog_countryflags_moderator && $xf.visitor.is_moderator)))">
+			<xf:callback class="Snog\Flags\Callback\Country" method="getCountry" params="[$thread.User.snog_flag]"></xf:callback>
+		</xf:if>
+	</xf:if>
+</xf:if>]]></replace>
+  </modification>
+  <modification type="admin" template="user_edit" modification_key="snog_flags_user_edit" description="Adds flag options to user privacy section" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<!--[XF:privacy_select:allow_view_identities]-->]]></find>
+    <replace><![CDATA[<xf:selectrow name="privacy[snog_flag_view]" value="{$user.Privacy.snog_flag_view}"
+		label="{{ phrase('snog_countryflags_view_user') }}">
+
+		<xf:option value="none">{{ phrase('nobody') }}</xf:option>
+		<xf:option value="everyone">{{ phrase('all_visitors') }}</xf:option>
+		<xf:option value="members">{{ phrase('members_only') }}</xf:option>
+</xf:selectrow>
+
+$0]]></replace>
+  </modification>
+  <modification type="public" template="whats_new" modification_key="snog_flags_whatsnew" description="Adds css to what's new template" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:title>{{ phrase('whats_new') }}</xf:title>]]></find>
+    <replace><![CDATA[$0
+<xf:if is="$xf.options.snog_countryflags_whatsnew">
+	<xf:css src="snog_flags.less" />
+</xf:if>]]></replace>
+  </modification>
+  <modification type="public" template="whats_new_posts" modification_key="snog_flags_newposts" description="Adds css to new post list template" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:title page="{$page}">{{ phrase('new_posts') }}</xf:title>]]></find>
+    <replace><![CDATA[$0
+<xf:if is="$xf.options.snog_countryflags_newposts">
+	<xf:css src="snog_flags.less" />
+</xf:if>
+]]></replace>
+  </modification>
+  <modification type="public" template="xfrm_filters" modification_key="snog_flags_xfrm3" description="Adds country filter options to resouce list view" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<!--[XF:above_sort_by]-->]]></find>
+    <replace><![CDATA[<xf:if is="$xf.options.snog_countryflags_resource_list">
+	<xf:if is="$xf.visitor.haspermission('general', 'snog_flags_view') || ($xf.visitor.is_admin || ($xf.options.snog_countryflags_moderator && $xf.visitor.is_moderator))">
+		<xf:callback class="Snog\Flags\Callback\Country" method="getCountries" params="[$filters]"></xf:callback>
+	</xf:if>
+</xf:if>
+
+$0]]></replace>
+  </modification>
+  <modification type="public" template="xfrm_overview_macros" modification_key="snog_flags_xfrm4" description="Adds country filter removal link" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:if is="$filters.prefix_id">]]></find>
+    <replace><![CDATA[<xf:if is="$filters.snog_country">
+	<li><a href="{{ link($baseLinkPath, $category, $filters|replace('snog_country', null)) }}"
+		class="filterBar-filterToggle" data-xf-init="tooltip" title="{{ phrase('remove_this_filter')|for_attr }}">
+		<span class="filterBar-filterToggle-label">{{ phrase('snog_countryflags_country:') }}</span>
+		<xf:callback class="Snog\Flags\Callback\Country" method="getCountryName" params="[$filters.snog_country]"></xf:callback>
+		</a></li>
+</xf:if>
+
+$0]]></replace>
+  </modification>
+  <modification type="public" template="xfrm_resource_list_macros" modification_key="snog_flags_xfrm1" description="Add member's flag to resource list" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<a href="{{ link('resources', $resource) }}" class="" data-tp-primary="on">{$resource.title}</a>]]></find>
+    <replace><![CDATA[<xf:if is="$xf.options.snog_countryflags_resource_list && ($xf.visitor.haspermission('general', 'snog_flags_view') && (!$xf.options.snog_countryflags_permit || ($resource.User.Privacy.snog_flag_view == 'everyone' || ($resource.User.Privacy.snog_flag_view == 'members' && $xf.visitor.user_id > 0))) || ($xf.visitor.is_admin || ($xf.options.snog_countryflags_moderator && $xf.visitor.is_moderator)))">
+	<xf:css src="snog_flags.less" />
+	<xf:callback class="Snog\Flags\Callback\Country" method="getCountry" params="[$resource.User->snog_flag]"></xf:callback>
+</xf:if>
+$0]]></replace>
+  </modification>
+  <modification type="public" template="xfrm_resource_wrapper_macros" modification_key="snog_flags_xfrm2" description="Adds flag for member that created resource to resource title" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<h1 class="p-title-value">]]></find>
+    <replace><![CDATA[<xf:if is="$xf.options.snog_countryflags_resource_view && ($xf.visitor.haspermission('general', 'snog_flags_view') && (!$xf.options.snog_countryflags_permit || ($resource.User.Privacy.snog_flag_view == 'everyone' || ($resource.User.Privacy.snog_flag_view == 'members' && $xf.visitor.user_id > 0))) || ($xf.visitor.is_admin || ($xf.options.snog_countryflags_moderator && $xf.visitor.is_moderator)))">
+	<xf:css src="snog_flags.less" />
+	<xf:callback class="Snog\Flags\Callback\Country" method="getCountry" params="[$resource.User->snog_flag]"></xf:callback>&nbsp;
+</xf:if>
+$0]]></replace>
+  </modification>
+</template_modifications>

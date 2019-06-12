@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phrases>
+  <phrase title="cron_entry.snogFlags" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Update MaxMind GeoIP database file]]></phrase>
+  <phrase title="option.snog_countryflags_avatar" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Show over avatar]]></phrase>
+  <phrase title="option.snog_countryflags_below" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Show below user name]]></phrase>
+  <phrase title="option.snog_countryflags_card" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Show in member info card]]></phrase>
+  <phrase title="option.snog_countryflags_extra" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Show in extra user info]]></phrase>
+  <phrase title="option.snog_countryflags_list" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Show in member list]]></phrase>
+  <phrase title="option.snog_countryflags_log" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Log IP addresses]]></phrase>
+  <phrase title="option.snog_countryflags_moderator" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Allow moderator view]]></phrase>
+  <phrase title="option.snog_countryflags_newposts" version_id="2000570" version_string="2.0.5"><![CDATA[Show flag on New posts page]]></phrase>
+  <phrase title="option.snog_countryflags_noshow" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Do not show flag]]></phrase>
+  <phrase title="option.snog_countryflags_permit" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Permit members to hide flag]]></phrase>
+  <phrase title="option.snog_countryflags_profile" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Show in user profile]]></phrase>
+  <phrase title="option.snog_countryflags_resource_list" version_id="2000771" version_string="2.0.7.1"><![CDATA[Show in resource list]]></phrase>
+  <phrase title="option.snog_countryflags_resource_view" version_id="2000771" version_string="2.0.7.1"><![CDATA[Show in resource view]]></phrase>
+  <phrase title="option.snog_countryflags_showthread" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Show flag in thread list]]></phrase>
+  <phrase title="option.snog_countryflags_sitelock" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[This site is using SiteLock]]></phrase>
+  <phrase title="option.snog_countryflags_whatsnew" version_id="2000570" version_string="2.0.5"><![CDATA[Show flag on What's new page]]></phrase>
+  <phrase title="option_explain.snog_countryflags_avatar" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Check this box to show the country flag in the lower right corner of the user's avatar in posts.]]></phrase>
+  <phrase title="option_explain.snog_countryflags_below" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Check this box to show the user's country flag below their user name in posts/PCs.]]></phrase>
+  <phrase title="option_explain.snog_countryflags_card" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Check this box to show the country flag in the member info card.]]></phrase>
+  <phrase title="option_explain.snog_countryflags_extra" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Check this box to show the user's country flag in extra user info in posts/PCs.<br /><b>NOTE: </b>This option will not show on small mobile displays]]></phrase>
+  <phrase title="option_explain.snog_countryflags_list" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Check this box to show the country flags in the member lists.]]></phrase>
+  <phrase title="option_explain.snog_countryflags_log" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Checking this box will create a log of IP addresses in your data/countryflags directory. This should not be turned on unless there is a need to debug an IP address for a user.]]></phrase>
+  <phrase title="option_explain.snog_countryflags_moderator" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Check this box to allow moderators to view a member's country even if the member has chosen to hide their country flag.]]></phrase>
+  <phrase title="option_explain.snog_countryflags_newposts" version_id="2000570" version_string="2.0.5"><![CDATA[Check this box to show the original thread starter's country flag on the New posts page.<br /><span style="color:blue;">NOTE: </span>If the forum a post is from is marked to be excluded from displaying the country flag (Do not show flag option above), the country flag will not appear on the New posts page.]]></phrase>
+  <phrase title="option_explain.snog_countryflags_noshow" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Select the forums where you DO NOT want the country flag to show in the thread list.]]></phrase>
+  <phrase title="option_explain.snog_countryflags_permit" version_id="2000370" version_string="2.0.3"><![CDATA[Check this box to allow a member to hide their country flag in their privacy options.<br /><b>NOTE:</b> This will have no effect on administrators. Administrators will be able to view flags no matter what the user selects in their privacy options.]]></phrase>
+  <phrase title="option_explain.snog_countryflags_profile" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Check this box to show the user's country flag on their profile page.]]></phrase>
+  <phrase title="option_explain.snog_countryflags_resource_list" version_id="2000771" version_string="2.0.7.1"><![CDATA[Check this box to show the flag for the member that created a resource in the resource list.<br />This also enables filtering resources by country.]]></phrase>
+  <phrase title="option_explain.snog_countryflags_resource_view" version_id="2000771" version_string="2.0.7.1"><![CDATA[Check this box to show the flag for the member that created the resource next to the resource name when viewing a resource.]]></phrase>
+  <phrase title="option_explain.snog_countryflags_showthread" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Check this box to show the original thread starter's country flag in the forum thread list.<br /><b>NOTE:</b> This also enables searching the forum for threads started from particular country.<br /><br /><b>NOTE: If a member has chosen to hide their country flag, their threads will not show up in a country search.</b>]]></phrase>
+  <phrase title="option_explain.snog_countryflags_sitelock" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Check this box if your site is using SiteLock security and you had to change your DNS settings to point to a SiteLock IP address.<br /><b>NOTE: </b>This disables proxy detection in this add-on because SiteLock itself acts as a proxy.]]></phrase>
+  <phrase title="option_explain.snog_countryflags_whatsnew" version_id="2000570" version_string="2.0.5"><![CDATA[Check this box to show the original thread starter's country flag on the What's new page.<br /><span style="color:blue;">NOTE: </span>If the forum a post is from is marked to be excluded from displaying the country flag (Do not show flag option above), the country flag will not appear on the What's new page.]]></phrase>
+  <phrase title="option_group.snog_countryflags_options" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Country Flags by IP Address]]></phrase>
+  <phrase title="option_group_description.snog_countryflags_options" version_id="2000070" version_string="2.0.0"><![CDATA[Options that control how country flags are shown on your site]]></phrase>
+  <phrase title="permission.general_snog_flags_view" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[View country flags]]></phrase>
+  <phrase title="snog_countryflags_A1" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Unknown]]></phrase>
+  <phrase title="snog_countryflags_A2" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Satellite]]></phrase>
+  <phrase title="snog_countryflags_AD" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Andorra]]></phrase>
+  <phrase title="snog_countryflags_AE" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[United Arab Emirates]]></phrase>
+  <phrase title="snog_countryflags_AF" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Afghanistan]]></phrase>
+  <phrase title="snog_countryflags_AG" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Antigua and Barbuda]]></phrase>
+  <phrase title="snog_countryflags_AI" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Anguilla]]></phrase>
+  <phrase title="snog_countryflags_AL" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Albania]]></phrase>
+  <phrase title="snog_countryflags_AM" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Armenia]]></phrase>
+  <phrase title="snog_countryflags_AO" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Angola]]></phrase>
+  <phrase title="snog_countryflags_AP" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Unspecified Country - Asia/Pacific Region]]></phrase>
+  <phrase title="snog_countryflags_AQ" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Antarctica]]></phrase>
+  <phrase title="snog_countryflags_AR" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Argentina]]></phrase>
+  <phrase title="snog_countryflags_AS" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[American Samoa]]></phrase>
+  <phrase title="snog_countryflags_AT" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Austria]]></phrase>
+  <phrase title="snog_countryflags_AU" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Australia]]></phrase>
+  <phrase title="snog_countryflags_AW" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Aruba]]></phrase>
+  <phrase title="snog_countryflags_AX" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Aland Islands]]></phrase>
+  <phrase title="snog_countryflags_AZ" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Azerbaijan]]></phrase>
+  <phrase title="snog_countryflags_BA" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Bosnia and Herzegovina]]></phrase>
+  <phrase title="snog_countryflags_BB" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Barbados]]></phrase>
+  <phrase title="snog_countryflags_BD" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Bangladesh]]></phrase>
+  <phrase title="snog_countryflags_BE" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Belgium]]></phrase>
+  <phrase title="snog_countryflags_BF" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Burkina Faso]]></phrase>
+  <phrase title="snog_countryflags_BG" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Bulgaria]]></phrase>
+  <phrase title="snog_countryflags_BH" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Bahrain]]></phrase>
+  <phrase title="snog_countryflags_BI" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Burundi]]></phrase>
+  <phrase title="snog_countryflags_BJ" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Benin]]></phrase>
+  <phrase title="snog_countryflags_BL" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Saint Bartelemey]]></phrase>
+  <phrase title="snog_countryflags_BM" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Bermuda]]></phrase>
+  <phrase title="snog_countryflags_BN" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Brunei Darussalam]]></phrase>
+  <phrase title="snog_countryflags_BO" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Bolivia]]></phrase>
+  <phrase title="snog_countryflags_BQ" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Bonaire, Saint Eustatius and Saba]]></phrase>
+  <phrase title="snog_countryflags_BR" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Brazil]]></phrase>
+  <phrase title="snog_countryflags_BS" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Bahamas]]></phrase>
+  <phrase title="snog_countryflags_BT" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Bhutan]]></phrase>
+  <phrase title="snog_countryflags_BV" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Bouvet Island]]></phrase>
+  <phrase title="snog_countryflags_BW" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Botswana]]></phrase>
+  <phrase title="snog_countryflags_BY" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Belarus]]></phrase>
+  <phrase title="snog_countryflags_BZ" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Belize]]></phrase>
+  <phrase title="snog_countryflags_CA" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Canada]]></phrase>
+  <phrase title="snog_countryflags_CC" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Cocos (Keeling) Islands]]></phrase>
+  <phrase title="snog_countryflags_CD" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Congo, The Democratic Republic of the]]></phrase>
+  <phrase title="snog_countryflags_CF" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Central African Republic]]></phrase>
+  <phrase title="snog_countryflags_CG" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Congo]]></phrase>
+  <phrase title="snog_countryflags_CH" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Switzerland]]></phrase>
+  <phrase title="snog_countryflags_CI" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Cote d'Ivoire]]></phrase>
+  <phrase title="snog_countryflags_CK" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Cook Islands]]></phrase>
+  <phrase title="snog_countryflags_CL" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Chile]]></phrase>
+  <phrase title="snog_countryflags_CM" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Cameroon]]></phrase>
+  <phrase title="snog_countryflags_CN" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[China]]></phrase>
+  <phrase title="snog_countryflags_CO" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Colombia]]></phrase>
+  <phrase title="snog_countryflags_CR" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Costa Rica]]></phrase>
+  <phrase title="snog_countryflags_CU" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Cuba]]></phrase>
+  <phrase title="snog_countryflags_CV" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Cape Verde]]></phrase>
+  <phrase title="snog_countryflags_CW" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Curacao]]></phrase>
+  <phrase title="snog_countryflags_CX" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Christmas Island]]></phrase>
+  <phrase title="snog_countryflags_CY" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Cyprus]]></phrase>
+  <phrase title="snog_countryflags_CZ" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Czech Republic]]></phrase>
+  <phrase title="snog_countryflags_DE" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Germany]]></phrase>
+  <phrase title="snog_countryflags_DJ" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Djibouti]]></phrase>
+  <phrase title="snog_countryflags_DK" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Denmark]]></phrase>
+  <phrase title="snog_countryflags_DM" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Dominica]]></phrase>
+  <phrase title="snog_countryflags_DO" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Dominican Republic]]></phrase>
+  <phrase title="snog_countryflags_DZ" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Algeria]]></phrase>
+  <phrase title="snog_countryflags_EC" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Ecuador]]></phrase>
+  <phrase title="snog_countryflags_EE" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Estonia]]></phrase>
+  <phrase title="snog_countryflags_EG" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Egypt]]></phrase>
+  <phrase title="snog_countryflags_EH" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Western Sahara]]></phrase>
+  <phrase title="snog_countryflags_ER" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Eritrea]]></phrase>
+  <phrase title="snog_countryflags_ES" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Spain]]></phrase>
+  <phrase title="snog_countryflags_ET" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Ethiopia]]></phrase>
+  <phrase title="snog_countryflags_EU" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Unspecified Country - Europe]]></phrase>
+  <phrase title="snog_countryflags_FI" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Finland]]></phrase>
+  <phrase title="snog_countryflags_FJ" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Fiji]]></phrase>
+  <phrase title="snog_countryflags_FK" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Falkland Islands (Malvinas)]]></phrase>
+  <phrase title="snog_countryflags_FM" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Micronesia, Federated States of]]></phrase>
+  <phrase title="snog_countryflags_FO" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Faroe Islands]]></phrase>
+  <phrase title="snog_countryflags_FR" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[France]]></phrase>
+  <phrase title="snog_countryflags_GA" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Gabon]]></phrase>
+  <phrase title="snog_countryflags_GB" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[United Kingdom]]></phrase>
+  <phrase title="snog_countryflags_GD" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Grenada]]></phrase>
+  <phrase title="snog_countryflags_GE" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Georgia]]></phrase>
+  <phrase title="snog_countryflags_GF" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[French Guiana]]></phrase>
+  <phrase title="snog_countryflags_GG" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Guernsey]]></phrase>
+  <phrase title="snog_countryflags_GH" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Ghana]]></phrase>
+  <phrase title="snog_countryflags_GI" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Gibraltar]]></phrase>
+  <phrase title="snog_countryflags_GL" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Greenland]]></phrase>
+  <phrase title="snog_countryflags_GM" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Gambia]]></phrase>
+  <phrase title="snog_countryflags_GN" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Guinea]]></phrase>
+  <phrase title="snog_countryflags_GP" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Guadeloupe]]></phrase>
+  <phrase title="snog_countryflags_GQ" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Equatorial Guinea]]></phrase>
+  <phrase title="snog_countryflags_GR" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Greece]]></phrase>
+  <phrase title="snog_countryflags_GS" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[South Georgia and the South Sandwich Islands]]></phrase>
+  <phrase title="snog_countryflags_GT" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Guatemala]]></phrase>
+  <phrase title="snog_countryflags_GU" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Guam]]></phrase>
+  <phrase title="snog_countryflags_GW" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Guinea-Bissau]]></phrase>
+  <phrase title="snog_countryflags_GY" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Guyana]]></phrase>
+  <phrase title="snog_countryflags_HK" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Hong Kong]]></phrase>
+  <phrase title="snog_countryflags_HM" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Heard Island and McDonald Islands]]></phrase>
+  <phrase title="snog_countryflags_HN" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Honduras]]></phrase>
+  <phrase title="snog_countryflags_HR" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Croatia]]></phrase>
+  <phrase title="snog_countryflags_HT" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Haiti]]></phrase>
+  <phrase title="snog_countryflags_HU" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Hungary]]></phrase>
+  <phrase title="snog_countryflags_ID" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Indonesia]]></phrase>
+  <phrase title="snog_countryflags_IE" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Ireland]]></phrase>
+  <phrase title="snog_countryflags_IL" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Israel]]></phrase>
+  <phrase title="snog_countryflags_IM" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Isle of Man]]></phrase>
+  <phrase title="snog_countryflags_IN" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[India]]></phrase>
+  <phrase title="snog_countryflags_IO" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[British Indian Ocean Territory]]></phrase>
+  <phrase title="snog_countryflags_IQ" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Iraq]]></phrase>
+  <phrase title="snog_countryflags_IR" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Iran, Islamic Republic of]]></phrase>
+  <phrase title="snog_countryflags_IS" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Iceland]]></phrase>
+  <phrase title="snog_countryflags_IT" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Italy]]></phrase>
+  <phrase title="snog_countryflags_JE" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Jersey]]></phrase>
+  <phrase title="snog_countryflags_JM" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Jamaica]]></phrase>
+  <phrase title="snog_countryflags_JO" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Jordan]]></phrase>
+  <phrase title="snog_countryflags_JP" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Japan]]></phrase>
+  <phrase title="snog_countryflags_KE" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Kenya]]></phrase>
+  <phrase title="snog_countryflags_KG" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Kyrgyzstan]]></phrase>
+  <phrase title="snog_countryflags_KH" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Cambodia]]></phrase>
+  <phrase title="snog_countryflags_KI" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Kiribati]]></phrase>
+  <phrase title="snog_countryflags_KM" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Comoros]]></phrase>
+  <phrase title="snog_countryflags_KN" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Saint Kitts and Nevis]]></phrase>
+  <phrase title="snog_countryflags_KP" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Korea, Democratic People's Republic of]]></phrase>
+  <phrase title="snog_countryflags_KR" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Korea, Republic of]]></phrase>
+  <phrase title="snog_countryflags_KW" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Kuwait]]></phrase>
+  <phrase title="snog_countryflags_KY" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Cayman Islands]]></phrase>
+  <phrase title="snog_countryflags_KZ" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Kazakhstan]]></phrase>
+  <phrase title="snog_countryflags_LA" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Lao People's Democratic Republic]]></phrase>
+  <phrase title="snog_countryflags_LB" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Lebanon]]></phrase>
+  <phrase title="snog_countryflags_LC" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Saint Lucia]]></phrase>
+  <phrase title="snog_countryflags_LI" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Liechtenstein]]></phrase>
+  <phrase title="snog_countryflags_LK" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Sri Lanka]]></phrase>
+  <phrase title="snog_countryflags_LO" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Local Intranet]]></phrase>
+  <phrase title="snog_countryflags_LR" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Liberia]]></phrase>
+  <phrase title="snog_countryflags_LS" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Lesotho]]></phrase>
+  <phrase title="snog_countryflags_LT" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Lithuania]]></phrase>
+  <phrase title="snog_countryflags_LU" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Luxembourg]]></phrase>
+  <phrase title="snog_countryflags_LV" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Latvia]]></phrase>
+  <phrase title="snog_countryflags_LY" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Libyan Arab Jamahiriya]]></phrase>
+  <phrase title="snog_countryflags_MA" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Morocco]]></phrase>
+  <phrase title="snog_countryflags_MC" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Monaco]]></phrase>
+  <phrase title="snog_countryflags_MD" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Moldova, Republic of]]></phrase>
+  <phrase title="snog_countryflags_ME" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Montenegro]]></phrase>
+  <phrase title="snog_countryflags_MF" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Saint Martin]]></phrase>
+  <phrase title="snog_countryflags_MG" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Madagascar]]></phrase>
+  <phrase title="snog_countryflags_MH" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Marshall Islands]]></phrase>
+  <phrase title="snog_countryflags_MK" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Macedonia]]></phrase>
+  <phrase title="snog_countryflags_ML" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Mali]]></phrase>
+  <phrase title="snog_countryflags_MM" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Myanmar]]></phrase>
+  <phrase title="snog_countryflags_MN" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Mongolia]]></phrase>
+  <phrase title="snog_countryflags_MO" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Macao]]></phrase>
+  <phrase title="snog_countryflags_MP" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Northern Mariana Islands]]></phrase>
+  <phrase title="snog_countryflags_MQ" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Martinique]]></phrase>
+  <phrase title="snog_countryflags_MR" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Mauritania]]></phrase>
+  <phrase title="snog_countryflags_MS" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Montserrat]]></phrase>
+  <phrase title="snog_countryflags_MT" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Malta]]></phrase>
+  <phrase title="snog_countryflags_MU" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Mauritius]]></phrase>
+  <phrase title="snog_countryflags_MV" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Maldives]]></phrase>
+  <phrase title="snog_countryflags_MW" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Malawi]]></phrase>
+  <phrase title="snog_countryflags_MX" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Mexico]]></phrase>
+  <phrase title="snog_countryflags_MY" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Malaysia]]></phrase>
+  <phrase title="snog_countryflags_MZ" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Mozambique]]></phrase>
+  <phrase title="snog_countryflags_NA" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Namibia]]></phrase>
+  <phrase title="snog_countryflags_NC" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[New Caledonia]]></phrase>
+  <phrase title="snog_countryflags_NE" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Niger]]></phrase>
+  <phrase title="snog_countryflags_NF" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Norfolk Island]]></phrase>
+  <phrase title="snog_countryflags_NG" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Nigeria]]></phrase>
+  <phrase title="snog_countryflags_NI" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Nicaragua]]></phrase>
+  <phrase title="snog_countryflags_NL" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Netherlands]]></phrase>
+  <phrase title="snog_countryflags_NO" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Norway]]></phrase>
+  <phrase title="snog_countryflags_NP" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Nepal]]></phrase>
+  <phrase title="snog_countryflags_NR" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Nauru]]></phrase>
+  <phrase title="snog_countryflags_NU" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Niue]]></phrase>
+  <phrase title="snog_countryflags_NZ" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[New Zealand]]></phrase>
+  <phrase title="snog_countryflags_OM" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Oman]]></phrase>
+  <phrase title="snog_countryflags_PA" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Panama]]></phrase>
+  <phrase title="snog_countryflags_PE" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Peru]]></phrase>
+  <phrase title="snog_countryflags_PF" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[French Polynesia]]></phrase>
+  <phrase title="snog_countryflags_PG" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Papua New Guinea]]></phrase>
+  <phrase title="snog_countryflags_PH" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Philippines]]></phrase>
+  <phrase title="snog_countryflags_PK" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Pakistan]]></phrase>
+  <phrase title="snog_countryflags_PL" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Poland]]></phrase>
+  <phrase title="snog_countryflags_PM" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Saint Pierre and Miquelon]]></phrase>
+  <phrase title="snog_countryflags_PN" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Pitcairn]]></phrase>
+  <phrase title="snog_countryflags_PR" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Puerto Rico]]></phrase>
+  <phrase title="snog_countryflags_PS" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Palestinian Territory]]></phrase>
+  <phrase title="snog_countryflags_PT" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Portugal]]></phrase>
+  <phrase title="snog_countryflags_PW" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Palau]]></phrase>
+  <phrase title="snog_countryflags_PY" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Paraguay]]></phrase>
+  <phrase title="snog_countryflags_QA" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Qatar]]></phrase>
+  <phrase title="snog_countryflags_RE" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Reunion]]></phrase>
+  <phrase title="snog_countryflags_RO" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Romania]]></phrase>
+  <phrase title="snog_countryflags_RS" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Serbia]]></phrase>
+  <phrase title="snog_countryflags_RU" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Russian Federation]]></phrase>
+  <phrase title="snog_countryflags_RW" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Rwanda]]></phrase>
+  <phrase title="snog_countryflags_SA" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Saudi Arabia]]></phrase>
+  <phrase title="snog_countryflags_SB" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Solomon Islands]]></phrase>
+  <phrase title="snog_countryflags_SC" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Seychelles]]></phrase>
+  <phrase title="snog_countryflags_SD" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Sudan]]></phrase>
+  <phrase title="snog_countryflags_SE" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Sweden]]></phrase>
+  <phrase title="snog_countryflags_SG" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Singapore]]></phrase>
+  <phrase title="snog_countryflags_SH" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Saint Helena]]></phrase>
+  <phrase title="snog_countryflags_SI" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Slovenia]]></phrase>
+  <phrase title="snog_countryflags_SJ" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Svalbard and Jan Mayen]]></phrase>
+  <phrase title="snog_countryflags_SK" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Slovakia]]></phrase>
+  <phrase title="snog_countryflags_SL" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Sierra Leone]]></phrase>
+  <phrase title="snog_countryflags_SM" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[San Marino]]></phrase>
+  <phrase title="snog_countryflags_SN" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Senegal]]></phrase>
+  <phrase title="snog_countryflags_SO" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Somalia]]></phrase>
+  <phrase title="snog_countryflags_SR" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Suriname]]></phrase>
+  <phrase title="snog_countryflags_SS" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[South Sudan]]></phrase>
+  <phrase title="snog_countryflags_ST" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Sao Tome and Principe]]></phrase>
+  <phrase title="snog_countryflags_SV" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[El Salvador]]></phrase>
+  <phrase title="snog_countryflags_SX" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Sint Maarten]]></phrase>
+  <phrase title="snog_countryflags_SY" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Syrian Arab Republic]]></phrase>
+  <phrase title="snog_countryflags_SZ" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Swaziland]]></phrase>
+  <phrase title="snog_countryflags_TC" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Turks and Caicos Islands]]></phrase>
+  <phrase title="snog_countryflags_TD" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Chad]]></phrase>
+  <phrase title="snog_countryflags_TF" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[French Southern Territories]]></phrase>
+  <phrase title="snog_countryflags_TG" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Togo]]></phrase>
+  <phrase title="snog_countryflags_TH" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Thailand]]></phrase>
+  <phrase title="snog_countryflags_TJ" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Tajikistan]]></phrase>
+  <phrase title="snog_countryflags_TK" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Tokelau]]></phrase>
+  <phrase title="snog_countryflags_TL" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Timor-Leste]]></phrase>
+  <phrase title="snog_countryflags_TM" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Turkmenistan]]></phrase>
+  <phrase title="snog_countryflags_TN" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Tunisia]]></phrase>
+  <phrase title="snog_countryflags_TO" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Tonga]]></phrase>
+  <phrase title="snog_countryflags_TR" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Turkey]]></phrase>
+  <phrase title="snog_countryflags_TT" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Trinidad and Tobago]]></phrase>
+  <phrase title="snog_countryflags_TV" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Tuvalu]]></phrase>
+  <phrase title="snog_countryflags_TW" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Taiwan]]></phrase>
+  <phrase title="snog_countryflags_TZ" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Tanzania, United Republic of]]></phrase>
+  <phrase title="snog_countryflags_UA" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Ukraine]]></phrase>
+  <phrase title="snog_countryflags_UG" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Uganda]]></phrase>
+  <phrase title="snog_countryflags_UM" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[United States Minor Outlying Islands]]></phrase>
+  <phrase title="snog_countryflags_US" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[United States]]></phrase>
+  <phrase title="snog_countryflags_UY" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Uruguay]]></phrase>
+  <phrase title="snog_countryflags_UZ" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Uzbekistan]]></phrase>
+  <phrase title="snog_countryflags_VA" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Holy See (Vatican City State)]]></phrase>
+  <phrase title="snog_countryflags_VC" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Saint Vincent and the Grenadines]]></phrase>
+  <phrase title="snog_countryflags_VE" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Venezuela]]></phrase>
+  <phrase title="snog_countryflags_VG" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Virgin Islands, British]]></phrase>
+  <phrase title="snog_countryflags_VI" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Virgin Islands, U.S.]]></phrase>
+  <phrase title="snog_countryflags_VN" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Vietnam]]></phrase>
+  <phrase title="snog_countryflags_VU" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Vanuatu]]></phrase>
+  <phrase title="snog_countryflags_WF" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Wallis and Futuna]]></phrase>
+  <phrase title="snog_countryflags_WS" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Samoa]]></phrase>
+  <phrase title="snog_countryflags_YE" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Yemen]]></phrase>
+  <phrase title="snog_countryflags_YT" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Mayotte]]></phrase>
+  <phrase title="snog_countryflags_ZA" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[South Africa]]></phrase>
+  <phrase title="snog_countryflags_ZM" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Zambia]]></phrase>
+  <phrase title="snog_countryflags_ZW" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Zimbabwe]]></phrase>
+  <phrase title="snog_countryflags_ZZ" version_id="1000010" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Reserved]]></phrase>
+  <phrase title="snog_countryflags_country" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Country]]></phrase>
+  <phrase title="snog_countryflags_view" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[View your country flag]]></phrase>
+  <phrase title="snog_countryflags_view_user" version_id="2000470" version_string="2.0.4"><![CDATA[View this user's country flag]]></phrase>
+</phrases>

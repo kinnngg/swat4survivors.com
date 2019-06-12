@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<code_event_listeners>
+  <listener event_id="visitor_setup" execute_order="10" callback_class="Snog\Flags\Listener" callback_method="Visitor" active="1"/>
+</code_event_listeners>

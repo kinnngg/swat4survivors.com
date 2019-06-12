@@ -1,0 +1,25 @@
+{
+    "name": "kinnngg/swat4query",
+    "description": "This package can be used to query any SWAT4 Server with ease.",
+    "keywords": [
+        "gameserver",
+        "swat4",
+        "server",
+        "query"
+    ],
+    "authors": [
+        {
+            "name": "Zishan Ansari",
+            "email": "kinnngg786@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kinnngg\\Swat4query\\": "src/Kinnngg/Swat4query/"
+        }
+    },
+    "minimum-stability": "stable"
+}

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<options>
+  <option option_id="snog_countryflags_avatar" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="snog_countryflags_options" display_order="100"/>
+  </option>
+  <option option_id="snog_countryflags_below" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="snog_countryflags_options" display_order="102"/>
+  </option>
+  <option option_id="snog_countryflags_card" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="snog_countryflags_options" display_order="106"/>
+  </option>
+  <option option_id="snog_countryflags_extra" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="snog_countryflags_options" display_order="103"/>
+  </option>
+  <option option_id="snog_countryflags_list" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="snog_countryflags_options" display_order="105"/>
+  </option>
+  <option option_id="snog_countryflags_log" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="snog_countryflags_options" display_order="500"/>
+  </option>
+  <option option_id="snog_countryflags_moderator" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="snog_countryflags_options" display_order="205"/>
+  </option>
+  <option option_id="snog_countryflags_newposts" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="snog_countryflags_options" display_order="315"/>
+  </option>
+  <option option_id="snog_countryflags_noshow" edit_format="callback" data_type="array">
+    <default_value>[]</default_value>
+    <edit_format_params>XF\Option\Forum::renderSelectMultiple</edit_format_params>
+    <sub_options>*</sub_options>
+    <relation group_id="snog_countryflags_options" display_order="310"/>
+  </option>
+  <option option_id="snog_countryflags_permit" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="snog_countryflags_options" display_order="200"/>
+  </option>
+  <option option_id="snog_countryflags_profile" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="snog_countryflags_options" display_order="104"/>
+  </option>
+  <option option_id="snog_countryflags_resource_list" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="snog_countryflags_options" display_order="107"/>
+  </option>
+  <option option_id="snog_countryflags_resource_view" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="snog_countryflags_options" display_order="108"/>
+  </option>
+  <option option_id="snog_countryflags_showthread" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="snog_countryflags_options" display_order="300"/>
+  </option>
+  <option option_id="snog_countryflags_sitelock" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="snog_countryflags_options" display_order="1"/>
+  </option>
+  <option option_id="snog_countryflags_whatsnew" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="snog_countryflags_options" display_order="312"/>
+  </option>
+</options>

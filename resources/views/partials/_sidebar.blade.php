@@ -1,20 +1,21 @@
 <aside class="col-xs-3 main-sidebar">
     <div class="panel pad5" style="padding: 10px !important;">
-        <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Join Server
+        <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed #FF69B4">Join Server
         </h4>
 
         <ul class="list-group">
             <li class="list-group-item" style="padding: 5px 15px;">
                 <span class="small tooltipster" title="SWAT4 Normal Server">
-                    <img class="img img20" src="/images/swat.png" alt=""> -
-                    <span class="text-danger text-bold"><a href="http://knightofsorrow.in/news/different-ways-to-join-server--author-Kinnngg">31.186.250.32:10480</a></span>
+                    <!-- <img class="img img20" src="/images/swat.png" alt=""> - -->
+                    <img class="img img20" src="/favicon.ico" alt=""> <font color="#FF69B4">-</font>
+                    <span class="text-danger text-bold"><a href="http://swat4survivors.com/news/different-ways-to-join-server--author-audio">144.76.224.57:10480</a></span>
                 </span>
             </li>
-            <li class="list-group-item" style="padding: 5px 15px;"> <span class="small tooltipster" title="KoS Discord Group"> <img class="img img20" src="/images/logo_ds.png" alt=""> - <span class="text-danger text-bold"><a
-                                href="https://discord.gg/Y8DzuUU" target="_blank">https://discord.gg/Y8DzuUU</a></span> </span> </li>
+            <li class="list-group-item" style="padding: 5px 15px;"> <span class="small tooltipster" title="S4S Discord Group"> <img class="img img20" src="/images/logo_ds.png" alt=""> <font color="#FF69B4">-</font> <span class="text-danger text-bold"><a
+                                href="https://discord.gg/Y8DzuUU" target="_blank">https://discord.gg/FuJub8Z</a></span> </span> </li>
 
-            <li class="list-group-item" style="padding: 5px 15px;"> <span class="small tooltipster" title="KoS TeamSpeak3 Server"> <img class="img img20" src="/images/Logo_ts3.png" alt=""> - <span class="text-danger text-bold"><a
-                                href="ts3server://88.198.67.94?port=9987">88.198.67.94:9987</a></span> </span> </li>
+            <!--<li class="list-group-item" style="padding: 5px 15px;"> <span class="small tooltipster" title="KoS TeamSpeak3 Server"> <img class="img img20" src="/images/Logo_ts3.png" alt=""> - <span class="text-danger text-bold"><a
+                                href="ts3server://88.198.67.94?port=9987">88.198.67.94:9987</a></span> </span> </li>-->
         </ul>
     </div>
 

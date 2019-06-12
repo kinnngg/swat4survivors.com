@@ -33,19 +33,19 @@
         <div class="row">
 
             <div class="col-xs-2">
-            <iframe src="https://www.facebook.com/plugins/like.php?href=https://www.facebook.com/knightofsorrow.in&width=87&layout=button_count&action=like&show_faces=false&share=false&height=21&appId=102061086801044" width="87" height="21" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+            <!--<iframe src="https://www.facebook.com/plugins/like.php?href=https://www.facebook.com/knightofsorrow.in&width=87&layout=button_count&action=like&show_faces=false&share=false&height=21&appId=102061086801044" width="87" height="21" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>-->
             </div>
 
             <div class="col-xs-4 col-xs-offset-2 text-center">
                 <p class="copyright">
-                    <i class="fa fa-copyright"></i> {{ date('Y') }} KNIGHTofSORROW
+                    <i class="fa fa-copyright"></i> {{ date('Y') }} SWAT 4 SURVIVORS
                 </p>
                 <i><small class="muted">Page rendered in {{  round((microtime(true) - LARAVEL_START),3) }} seconds with {{Session::get('query_no')}} queries</small></i>
 				</div>
                 <div class="col-xs-3 col-xs-offset-1 text-center">
                     <i><small class="text-muted">{{ \Carbon\Carbon::now()->toDayDateTimeString() }} GMT</small></i>
 					<br>
-					<span class="small" style="color:#cbcbcb;font-weight: 900;">Managed with <i class="fa fa-heart text-danger"></i> by <a href="https://www.knightofsorrow.in" class="text-warning" target="_blank">uS| Team</a></span>
+					<span class="small" style="color:#cbcbcb;font-weight: 900;">Managed with <i class="fa fa-heart text-danger"></i> by <a href="https://www.swat4survivors.com" target="_blank"><font color=FF69B4>|nGGz|<font color=FFFFFF>TEAM</a></span>
                 </div>
             </div>
         </div>

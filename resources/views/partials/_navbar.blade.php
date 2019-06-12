@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-static-top">
+<nav class="navbar navbar-static-top">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-           <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ url('images/mainlogo.png') }}" alt=""
+           <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ url('images/swat_new_kos_logo.png') }}" alt=""
                                                                     height="34" style="height: 34px;"></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse" style="font-weight: bold">

@@ -30,6 +30,40 @@
             class="admincommandbtn btn btn-primary btn-sm">No Weapons
     </button>
 
+    <div class="btn-group">
+        <button class="btn btn-info dropdown-toggle" type="button" id="player" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Player Actions
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="player">
+            <li><a href="#">Mute</a></li>
+            <li><a href="#">Kick</a></li>
+            <li><a href="#">Ban</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">View</a></li>
+            <li><a href="#">Spectate</a></li>
+            <li><a href="#">Join</a></li>
+        </ul>
+    <!--</div>-->
+
+    <div class="dropdown">
+        <button class="btn btn-danger dropdown-toggle" type="button" id="weapon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Weapon Actions
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="player">
+            <li><a href="#">Mute</a></li>
+            <li><a href="#">Kick</a></li>
+            <li><a href="#">Ban</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">View</a></li>
+            <li><a href="#">Spectate</a></li>
+            <li><a href="#">Join</a></li>
+        </ul>
+    </div>
+
+    </div>
+
     <br>
     <br>
     <div class="col-xs-12" style="border: 2px dashed grey">

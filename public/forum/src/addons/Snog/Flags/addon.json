@@ -1,0 +1,14 @@
+{
+    "legacy_addon_id": "Snog_CountryFlags",
+    "title": "Country Flags by IP Address",
+    "description": "Displays the flag of the country members are in using their IP Address location",
+    "version_id": 2001270,
+    "version_string": "2.0.12",
+    "dev": "Snog",
+    "dev_url": "https://snogssite.com",
+    "faq_url": "",
+    "support_url": "",
+    "extra_urls": [],
+    "require": [],
+    "icon": "fa-flag"
+}

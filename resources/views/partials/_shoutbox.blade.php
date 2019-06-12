@@ -1,5 +1,5 @@
 <div class="shoutbox-cont">
-    <div class="panel panel-default">
+    <div class="panel">
         <div class="panel-heading" id="accordion">
             <span class="fa fa-comment"></span> Shoutbox
             <div class="btn-group pull-right">
