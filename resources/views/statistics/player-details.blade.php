@@ -61,12 +61,12 @@
             @foreach(App\Rank::where('id','>',1)->get() as $rank)
                 @if($rank->id == $player->rank->id)
                     <div class="colm-2 no-padding tooltipster" title="&lt;div class='text-center text-bold' &gt; {{ $rank->name }} &lt;/div&gt; &lt;br&gt;Points: {{ $rank->description }}">
-                        <img class="img-thumbnail" src="/images/game/insignia/{{ $rank->id }}.png" width="65px" style="height: 65px;border:1px solid #d62c1a;">
+                        <img class="img-thumbnail" src="/images/game/insignia/more/{{ $rank->id }}.png" width="65px" style="height: 65px;border:1px solid #d62c1a;">
                         <p class="text-center" style="color: #d62c1a;margin-top: 5px;"><strong>{{ $rank->name }}</strong></p>
                     </div>
                 @else
                     <div class="colm-1 no-padding tooltipster" title="&lt;div class='text-center text-bold' &gt; {{ $rank->name }} &lt;/div&gt; &lt;br&gt;Points: {{ $rank->description }}">
-                        <img class="img-thumbnail" src="/images/game/insignia/{{ $rank->id }}.png" width="40px" style="height: 40px;">
+                        <img class="img-thumbnail" src="/images/game/insignia/more/{{ $rank->id }}.png" width="40px" style="height: 40px;">
                     </div>
                 @endif
             @endforeach

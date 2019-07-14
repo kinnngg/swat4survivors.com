@@ -227,7 +227,7 @@ class ServerController extends Controller
         {
             $explode = explode(" ",$Msg);
             // If server command then run it
-            if($explode[0] == "kosc")
+            if($explode[0] == "s4s")
             {
                 array_forget($explode,["0"]);
                 $msg = implode(" ",$explode);
@@ -305,7 +305,9 @@ class ServerController extends Controller
             $MsgFormated = "[c=ffff00][u][b]" . $Username . "[\\b][\\u][\\c] $userLvl: [c=FFFFFF]" . $Msg;
         }
 
-        $txtip = "144.76.224.57";
+        /*$txtip = "144.76.224.57";
+        $txtportnum = "10485";*/
+        $txtip = "127.0.0.1";
         $txtportnum = "10485";
         $sock = fsockopen("udp://" . $txtip, $txtportnum, $errno, $errstr, 2);
         if (!$sock) {
@@ -340,7 +342,7 @@ class ServerController extends Controller
             $data = ['error' => '<div class="text-center small text-danger">Error! No action specified!.</div>'];
             return response($data,422);
         }
-        if(!$request->has('selected_player') && ($request->action=='forcemute' || $request->action=='kick' || $request->action=='kickban' || $request->action=='kick' || $request->action=='forceview' || $request->action=='forcespec' || $request->action=='forcejoin' || $request->action=='switchteam' || $request->action=='forcelesslethal' || $request->action=='forcenoweapons' || $request->action=='forcename'))
+        if(!$request->has('selected_player') && ($request->action=='forcemute' || $request->action=='kick' || $request->action=='kickban' || $request->action=='kick' || $request->action=='forceview' || $request->action=='forcespec' || $request->action=='forcejoin' || $request->action=='switchteam' || $request->action=='forcelesslethal' || $request->action=='forcenoweapons' || $request->action=='forcename' || $request->action=='forcenotaser' || $request->action=='forcenobeanbag' || $request->action=='forcenopepperball' || $request->action=='forcenosting' || $request->action=='forcenoflash' || $request->action=='forcenogas' || $request->action=='forcenopepperspray'))
         {
             $data = ['error' => '<div class="text-center small text-danger">Error! No Player Selected.</div>'];
             return response($data,422);
@@ -378,7 +380,9 @@ class ServerController extends Controller
 
         //\Log::info($command);
 
-        $txtip = "144.76.224.57";
+        /*$txtip = "144.76.224.57";
+        $txtportnum = "10485";*/
+        $txtip = "127.0.0.1";
         $txtportnum = "10485";
         $sock = fsockopen("udp://" . $txtip, $txtportnum, $errno, $errstr, 2);
         if (!$sock) {

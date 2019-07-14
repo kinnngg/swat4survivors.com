@@ -93,7 +93,7 @@ class UserPresenter extends BasePresenter
         if($playerTotal == null || empty($playerTotal) || $playerTotal == "")
             return "";
 
-        return "<img class='tooltipster' title='".$playerTotal->rank->name."' src='".url('/images/game/insignia/')."/{$playerTotal->rank->id}".".png' alt='' height='22px'/>";
+        return "<img class='tooltipster' title='".$playerTotal->rank->name."' src='".url('/images/game/insignia/more/')."/{$playerTotal->rank->id}".".png' alt='' height='22px'/>";
     }
 
     public function age()

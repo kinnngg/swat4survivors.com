@@ -47,7 +47,7 @@ class ApiController extends Controller
      */
     public function getServerQueryv3()
     {
-        $data = new Swat4Server('144.76.224.57', 10485);
+        $data = new Swat4Server('127.0.0.1', 10485);
         $data->query();
 
         $chats = Chat::orderBy('created_at', 'DESC')->limit(25)->get();
