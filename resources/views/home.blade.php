@@ -2,7 +2,7 @@
 @section('styles')
     <style>
         .no-player-online {
-            padding: 10px;
+            /*padding: 10px;*/
             text-align: center;
         }
 
@@ -37,12 +37,13 @@
         {
             color: #444;
             font-weight: bold;
-            font-size: 1.3em;
+            font-size: 1.1em;
             font-family: 'Trebuchet MS';
+            padding-top: 5px !important;
+            padding-bottom: 5px !important;
         }
         .panel h3.header
         {
-            padding-left: 10px;
             color: #f8f8f8 !important;
         }
         .panel h3
@@ -107,10 +108,18 @@
             height: 35px;
             color: #808080;
             border: 1px solid #ccc;
-            border-radius: 3px;
-            border-top-left-radius: 3px !important;
-            border-bottom-left-radius: 3px !important;
+            border-radius: 3px !important;
             box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .light-grey-gradient
+        {
+            background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);
+        }
+        .table
+        {
+            padding: 14px !important;
+            background-color: #FFF;
+            border: 1px solid #CCC;
         }
     </style>
 @endsection
@@ -136,8 +145,8 @@
         </div>
         @endif
 
-        <div style="display: none" id="server-viewer">
-            <div class="row panel text-center live-server-summary" style="border-radius: 5px;">
+        <div id="server-viewer">
+            <div class="row panel text-center live-server-summary light-grey-gradient" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
                 <div class="col-xs-2 ls-swat4-summary">
                     <span class="info-title">SWAT</span>
                     <span class="info-value" id="ls-swat-score">0</span>
@@ -160,50 +169,44 @@
                 </div>
             </div> {{--Live Server Summary Ends --}}
             <div class="row">
-                <div class="ls-players-and-top-player no-left-padding col-xs-5">
-                    <div class="col-xs-12 panel panel-default no-padding" style="border-radius: 5px;">
-                        <div class="panel-heading panel-heading-separator">
+                <div class="ls-players-and-top-player col-xs-5">
+                    <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+                        <div class="panel-heading panel-heading-separator no-padding">
                             <span class="pull-right">
                                 @if(Auth::check() && Auth::user()->isAdmin())
                             <a style='color:#444;' class='fancybox livepfancy fancybox.ajax tooltipster' href='./liveserveraction' title='Server Action'><i class='fa fa-cog'></i></a>
                                 @endif
                             </span>
-                            Online Players
+                            Online Players (/)
                         </div>
-                        <div class="panel-body no-padding" id="ls-player-total-div">
-                            <table class="table table-striped table-hover no-margin" id="ls-player-table">
-                                <th class="loading-pt-info text-center" style="padding: 15px;font-size: 15px">Loading
+                        <div class="panel-body no-padding" id="ls-player-total-div" style="padding-bottom: 10px !important;">
+                            <table class="table table-striped table-hover" id="ls-player-table">
+                                <th class="loading-pt-info text-center">Loading
                                     Players table...
                                 </th>
                             </table>
                         </div>
 
                     </div>
-                    <div class="col-xs-12 panel panel-default no-padding" style="border-radius: 5px;">
-                        <div class="panel-heading panel-heading-separator">Top Players</div>
-                        <div class="panel-body no-padding">
+                    <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+                        <div class="panel-heading panel-heading-separator no-padding">Top Players</div>
+                        <div class="panel-body" style="padding: 0px;">
 
-                            <table class="table table-striped table-hover no-margin">
-                                <thead style="font-size: 80%">
-                                <tr style="border-bottom: 1px solid #000;">
-                                    <th class="col-xs-1" style="color:#000000; font-weight: 900; font-size: 14px;">#</th>
-                                    <!--<th class="col-xs-1">Flag</th>-->
-                                    <th class="col-xs-1 text-center" style="color:#000000; font-weight: 900; font-size: 14px;">Rank</th>
-                                    <th class="col-xs-1" style="color:#000000; font-weight: 900; font-size: 14px;">Name</th>
-                                    <!--<th class="text-right">Rating</th>-->
-                                    <th class="text-right" style="color:#000000; font-weight: 900; font-size: 14px;">Last Seen</th>
+                            <table class="table table-striped table-hover">
+                                <thead style="border-bottom: 1px solid #ddd;">
+                                <tr>
+                                    <th class="col-xs-1" style="color:#000; font-weight: 900; font-size: 12px;">#</th>
+                                    <th class="col-xs-1 text-center" style="color:#000; font-weight: 900; font-size: 12px;">Rank</th>
+                                    <th class="col-xs-1" style="color:#000; font-weight: 900; font-size: 12px;">Name</th>
+                                    <th class="col-xs-1 text-right" style="color:#000; font-weight: 900; font-size: 12px;">Last Seen</th>
                                 </tr>
                                 </thead>
                                 @forelse($topPlayers as $player)
                                     <tr>
                                         <th>{{ $player->position }}</th>
-                                        <!--<td>{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>-->
                                         <td>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
                                         <td class="color-main text-bold">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
-                                        <!--<td class="text-right">{!! $player->player_rating or "<span class='text-muted'>none</span>" !!}</td>-->
-                                        <td class="text-right">{{ $player->lastGame->created_at->diffForHumans() }}</td>
-                                        <!--<td class="text-right" style="color:#000000">{!! link_to_route('round-detail',$player->lastGame->created_at->diffForHumans(),[$player->last_game_id]) !!}
-                                        </td>-->
+                                        <td class="text-right"><small>{{ $player->lastGame->created_at->diffForHumans() }}</small></td>
                                     </tr>
                                 @empty
                                     Empty
@@ -212,11 +215,7 @@
                         </div>
                     </div>
                 </div> {{--Server Players and Top Players Wrapper Ends--}}
-                <div class="col-xs-7 panel panel-default no-padding" style="border-radius: 5px;background: linear-gradient(#3b3b3b, #0c0c0c);">
-                    <!--<div class="panel-heading panel-heading-separator" style="background: linear-gradient(#3b3b3b, #0c0c0c);">
-                        <small class="pull-right"><b><a href="{{ route('chat.index') }}" style="color:#888;font-size: small !important;">show all&nbsp;&nbsp;</a></b></small>
-                        Server Viewer
-                    </div>-->
+                <div class="col-xs-7 panel panel-default no-padding" style="border-radius: 5px;background: linear-gradient(#3b3b3b, #0c0c0c);box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
                     <h3 class="header header-separator">Server Viewer<small class="pull-right"><b><a href="{{ route('chat.index') }}" style="color:#888;font-size: small !important;">show all&nbsp;&nbsp;</a></b></small></h3>
                     <div class="panel-body ls-chats">
                         <div class="loading-pt-info">Loading Server Chat...</div>
@@ -239,7 +238,6 @@
                             @if(Auth::user()->isAdmin())
                                 <div class="admin-separator"></div>
                                 <b>Note: You can execute any admin command using this chat also.</b> <br>
-                                <!--Type <font color="red">s4s</font> preceding with command you want to run. <br>-->
                                 Example: <font color="red"><b>s4s</b> kick Name</font>, <font color="red"><b>s4s</b> restart</font>, <font color="red"><b>s4s</b> setmap 0</font>
                                 @endif
                             </div>
@@ -249,49 +247,16 @@
                                 or {!! link_to('/auth/register', 'Register') !!} to chat with in-game players.</b>
                         </div>
                     @endif
-                    <!--<div class="panel-footer">
-                        @if(Auth::check())
-                            {!!  Form::open(['route' => 'server.chat','id' => 'serverchat-form']) !!}
-                            <div id="shout-input-group" class="input-group">
-                                <input name="serverchatmsg" id="btn-input" type="text" class="textarea form-control"
-                                       placeholder="Type your message here..." autocomplete="off"/>
-                                <span class="input-group-btn">
-                                    <button class="btn btn-primary" id="btn-chat">
-                                        Send
-                                    </button>
-                                </span>
-                            </div>
-
-                                <div id="serverchat-input-group-error" class="help-block"></div>
-                                <div class="admin-info small">
-                                    <b>Translate:</b><code>!t or !tr or !translate</code> followed by text to translate from any language to english. eg: <code>!tr salut les gars</code><br>
-                                @if(Auth::user()->isAdmin())
-                                    <b>Note: You can run any commands using this chat too.</b> <br>
-                                    Type <code>s4s</code> preceding with command you want to run. <br>
-                                    Example: <code>s4s kick Name</code>, <code>s4s restart</code>, <code>s4s setmap
-                                        0</code>
-                                    @endif
-                                </div>
-
-
-                            {!! Form::close() !!}
-                        @else
-                            <div class='panel nomargin padding10 text-muted'><b>{!!  link_to('/auth/login','Login') !!}
-                                    or {!! link_to('/auth/register', 'Register') !!} to chat with in-game players.</b>
-                            </div>
-                        @endif
-                    </div>-->
-
                 </div> {{--Live Server Viewer Ends--}}
             </div> {{--Live Server Players,Top Players and Server Viewer Row Ends--}}
         </div>
-        <div class="server-viewer-loader row">
+        <div class="server-viewer-loader row light-grey-gradient" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
             <div id="sv-loading">Loading Server Viewer…</div>
         </div>
 
         <div class="row hidden-xs round-reports">
-            <div class="col-xs-12 panel panel-default no-padding no-margin no-left-padding" style="border-radius: 5px;">
-                <div class="panel-heading panel-heading-separator" id="accordion">
+            <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+                <div class="panel-heading panel-heading-separator no-padding" id="accordion">
                     Round Reports
                     <div class="pull-right">
                         <small><b><a href="{{ route('round-reports') }}" style="color:#888;font-size: small !important;">show all&nbsp;&nbsp;</a></b></small>
@@ -302,16 +267,16 @@
                     </div>
                 </div>
                 <div class="" id="collapseTwo">
-                    <div class="panel-body">
-                        <table class="table table-striped table-hover no-margin">
+                    <div class="panel-body" style="padding-left: 0px !important;padding-right: 0px !important;padding-top: 0px !important;">
+                        <table class="table table-striped table-hover">
                             <thead>
                             <tr>
-                                <th class="col-xs-1">Round</th>
-                                <th class="col-xs-2">Time</th>
-                                <th class="col-xs-1">Swat</th>
-                                <th class="col-xs-2">Suspects</th>
-                                <th>Map</th>
-                                <th class="col-xs-2 text-right">Date</th>
+                                <th class="col-xs-1" style="color:#000; font-weight: 900; font-size: 12px;">Round</th>
+                                <th class="col-xs-2" style="color:#000; font-weight: 900; font-size: 12px;">Time</th>
+                                <th class="col-xs-1" style="color:#000; font-weight: 900; font-size: 12px;">Swat</th>
+                                <th class="col-xs-2" style="color:#000; font-weight: 900; font-size: 12px;">Suspects</th>
+                                <th style="color:#000; font-weight: 900; font-size: 12px;">Map</th>
+                                <th class="col-xs-2 text-right" style="color:#000; font-weight: 900; font-size: 12px;">Date</th>
                             </tr>
                             </thead>
                             <tbody id="data-items" class="roundstabledata">
@@ -319,8 +284,8 @@
                                 <tr class="item pointer-cursor" data-id="{{ $round->id }}">
                                     <td class="color-main text-bold">{!! link_to_route('round-detail',$round->index,[$round->id]) !!}</td>
                                     <td class="text-muted">{{ $round->time }}</td>
-                                    <td>{!! $round->swatScoreWithColor !!}</td>
-                                    <td>{!! $round->suspectsScoreWithColor !!}</td>
+                                    <td class="text-center">{!! $round->swatScoreWithColor !!}</td>
+                                    <td class="text-center">{!! $round->suspectsScoreWithColor !!}</td>
                                     <td>{{ $round->mapName }}</td>
                                     <td class="text-right tooltipster" title="{{ $round->timeDDTS }}">{{ $round->timeAgo }}</td>
                                 </tr>
@@ -333,8 +298,8 @@
         </div>
 
         <div class="row player-records hidden-xs">
-            <div class="col-xs-12 panel panel-default no-padding no-margin no-left-padding" style="border-radius: 5px;">
-                <div class="panel-heading panel-heading-separator" id="accordion">
+            <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+                <div class="panel-heading panel-heading-separator no-padding" id="accordion">
                     Player Records
                     <div class="pull-right">
                         <a type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-parent="#accordion"
@@ -344,7 +309,7 @@
                     </div>
                 </div>
                 <div class="" id="collapseThree">
-                    <div class="panel-body">
+                    <div class="panel-body" style="padding-left: 0px !important;padding-right: 0px !important;padding-top: 0px !important;">
                         <div class="col-articles articles">
                             <div>
                                 <!--Tab Starts-->
@@ -516,7 +481,7 @@
                                                     </td>
                                                     <td class="col-3">
                                                         {!! link_to_route('player-detail',$PastMonth->totalScore->name,[$PastMonth->totalScore->name]) !!}
-                                                        <span class="small">({{ $PastMonth->totalScore->totalscore }})</span>
+                                                        <span class="small badge">{{ $PastMonth->totalScore->totalscore }}</span>
                                                     </td>
                                                     <td class="col-4">
                                                         <div class="player-records-icon arrests"></div>
@@ -526,7 +491,7 @@
                                                     </td>
                                                     <td class="col-6">
                                                         {!! link_to_route('player-detail',$PastMonth->totalArrests->name,[$PastMonth->totalArrests->name]) !!}
-                                                        <span class="small">({{ $PastMonth->totalArrests->totalarrests }})</span>
+                                                        <span class="small badge">{{ $PastMonth->totalArrests->totalarrests }}</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -538,7 +503,7 @@
                                                     </td>
                                                     <td class="col-3">
                                                         {!! link_to_route('player-detail',$PastMonth->highestScore->name,[$PastMonth->highestScore->name]) !!}
-                                                        <span class="small">({{ $PastMonth->highestScore->highestscore }})</span>
+                                                        <span class="small badge">{{ $PastMonth->highestScore->highestscore }}</span>
                                                     </td>
                                                     <td class="col-4">
                                                         <div class="player-records-icon arrested"></div>
@@ -548,7 +513,7 @@
                                                     </td>
                                                     <td class="col-6">
                                                         {!! link_to_route('player-detail',$PastMonth->totalArrested->name,[$PastMonth->totalArrested->name]) !!}
-                                                        <span class="small">({{ $PastMonth->totalArrested->totalarrested }})</span>
+                                                        <span class="small badge">{{ $PastMonth->totalArrested->totalarrested }}</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -560,7 +525,7 @@
                                                     </td>
                                                     <td class="col-3">
                                                         {!! link_to_route('player-detail',$PastMonth->bestScorePerMin->name,[$PastMonth->bestScorePerMin->name]) !!}
-                                                        <span class="small">({{ round($PastMonth->bestScorePerMin->toArray()['scorepermin'],2) }})</span>
+                                                        <span class="small badge">{{ round($PastMonth->bestScorePerMin->toArray()['scorepermin'],2) }}</span>
                                                     </td>
                                                     <td class="col-4">
                                                         <div class="player-records-icon arreststreak"></div>
@@ -570,7 +535,7 @@
                                                     </td>
                                                     <td class="col-6">
                                                         {!! link_to_route('player-detail',$PastMonth->bestArrestStreak->name,[$PastMonth->bestArrestStreak->name]) !!}
-                                                        <span class="small">({{ $PastMonth->bestArrestStreak->best_arrest_streak }})</span>
+                                                        <span class="small badge">{{ $PastMonth->bestArrestStreak->best_arrest_streak }}</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -582,7 +547,7 @@
                                                     </td>
                                                     <td class="col-3">
                                                         {!! link_to_route('player-detail',$PastMonth->totalTimePlayed->name,[$PastMonth->totalTimePlayed->name]) !!}
-                                                        <span class="small">({{ App\Server\Utils::getHMbyS($PastMonth->totalTimePlayed->totaltimeplayed,"%dh %dm") }})</span>
+                                                        <span class="small badge">{{ App\Server\Utils::getHMbyS($PastMonth->totalTimePlayed->totaltimeplayed,"%dh %dm") }}</span>
                                                     </td>
                                                     <td class="col-4">
                                                         <div class="player-records-icon kills"></div>
@@ -590,7 +555,7 @@
                                                     <td class="col-5">Kills</td>
                                                     <td class="col-6">
                                                         {!! link_to_route('player-detail',$PastMonth->totalKills->name,[$PastMonth->totalKills->name]) !!}
-                                                        <span class="small">({{ $PastMonth->totalKills->totalkills }})</span>
+                                                        <span class="small badge">{{ $PastMonth->totalKills->totalkills }}</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -602,7 +567,7 @@
                                                     </td>
                                                     <td class="col-3">
                                                         {!! link_to_route('player-detail',$PastMonth->bestDeathStreak->name,[$PastMonth->bestDeathStreak->name]) !!}
-                                                        <span class="small">({{ $PastMonth->bestDeathStreak->best_death_streak }})</span>
+                                                        <span class="small badge">{{ $PastMonth->bestDeathStreak->best_death_streak }}</span>
                                                     </td>
                                                     <td class="col-4">
                                                         <div class="player-records-icon deaths"></div>
@@ -612,7 +577,7 @@
                                                     </td>
                                                     <td class="col-6">
                                                         {!! link_to_route('player-detail',$PastMonth->totalDeaths->name,[$PastMonth->totalDeaths->name]) !!}
-                                                        <span class="small">({{ $PastMonth->totalDeaths->totaldeaths }})</span>
+                                                        <span class="small badge">{{ $PastMonth->totalDeaths->totaldeaths }}</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -624,7 +589,7 @@
                                                     </td>
                                                     <td class="col-3">
                                                         {!! link_to_route('player-detail',$PastMonth->totalTeamKills->name,[$PastMonth->totalTeamKills->name]) !!}
-                                                        <span class="small">({{ $PastMonth->totalTeamKills->totalteamkills }})</span>
+                                                        <span class="small badge">{{ $PastMonth->totalTeamKills->totalteamkills }}</span>
                                                     </td>
                                                     <td class="col-4">
                                                         <div class="player-records-icon killstreak"></div>
@@ -634,7 +599,7 @@
                                                     </td>
                                                     <td class="col-6">
                                                         {!! link_to_route('player-detail',$PastMonth->bestKillStreak->name,[$PastMonth->bestKillStreak->name]) !!}
-                                                        <span class="small">({{ $PastMonth->bestKillStreak->best_kill_streak }})</span>
+                                                        <span class="small badge">{{ $PastMonth->bestKillStreak->best_kill_streak }}</span>
                                                     </td>
                                                 </tr>
                                                 </tbody>
@@ -652,7 +617,7 @@
                                                     </td>
                                                     <td class="col-3">
                                                         {!! link_to_route('player-detail',$PastYear->totalScore->name,[$PastYear->totalScore->name]) !!}
-                                                        <span class="small">({{ $PastYear->totalScore->totalscore }})</span>
+                                                        <span class="small badge">{{ $PastYear->totalScore->totalscore }}</span>
                                                     </td>
                                                     <td class="col-4">
                                                         <div class="player-records-icon arrests"></div>
@@ -662,7 +627,7 @@
                                                     </td>
                                                     <td class="col-6">
                                                         {!! link_to_route('player-detail',$PastYear->totalArrests->name,[$PastYear->totalArrests->name]) !!}
-                                                        <span class="small">({{ $PastYear->totalArrests->totalarrests }})</span>
+                                                        <span class="small badge">{{ $PastYear->totalArrests->totalarrests }}</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -674,7 +639,7 @@
                                                     </td>
                                                     <td class="col-3">
                                                         {!! link_to_route('player-detail',$PastYear->highestScore->name,[$PastYear->highestScore->name]) !!}
-                                                        <span class="small">({{ $PastYear->highestScore->highestscore }})</span>
+                                                        <span class="small badge">{{ $PastYear->highestScore->highestscore }}</span>
                                                     </td>
                                                     <td class="col-4">
                                                         <div class="player-records-icon arrested"></div>
@@ -684,7 +649,7 @@
                                                     </td>
                                                     <td class="col-6">
                                                         {!! link_to_route('player-detail',$PastYear->totalArrested->name,[$PastYear->totalArrested->name]) !!}
-                                                        <span class="small">({{ $PastYear->totalArrested->totalarrested }})</span>
+                                                        <span class="small badge">{{ $PastYear->totalArrested->totalarrested }}</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -696,7 +661,7 @@
                                                     </td>
                                                     <td class="col-3">
                                                         {!! link_to_route('player-detail',$PastYear->bestScorePerMin->name,[$PastYear->bestScorePerMin->name]) !!}
-                                                        <span class="small">({{ round($PastYear->bestScorePerMin->toArray()['scorepermin'],2) }})</span>
+                                                        <span class="small badge">{{ round($PastYear->bestScorePerMin->toArray()['scorepermin'],2) }}</span>
                                                     </td>
                                                     <td class="col-4">
                                                         <div class="player-records-icon arreststreak"></div>
@@ -706,7 +671,7 @@
                                                     </td>
                                                     <td class="col-6">
                                                         {!! link_to_route('player-detail',$PastYear->bestArrestStreak->name,[$PastYear->bestArrestStreak->name]) !!}
-                                                        <span class="small">({{ $PastYear->bestArrestStreak->best_arrest_streak }})</span>
+                                                        <span class="small badge">{{ $PastYear->bestArrestStreak->best_arrest_streak }}</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -718,7 +683,7 @@
                                                     </td>
                                                     <td class="col-3">
                                                         {!! link_to_route('player-detail',$PastYear->totalTimePlayed->name,[$PastYear->totalTimePlayed->name]) !!}
-                                                        <span class="small">({{ App\Server\Utils::getHMbyS($PastYear->totalTimePlayed->totaltimeplayed,"%dh %dm") }})</span>
+                                                        <span class="small badge">{{ App\Server\Utils::getHMbyS($PastYear->totalTimePlayed->totaltimeplayed,"%dh %dm") }}</span>
                                                     </td>
                                                     <td class="col-4">
                                                         <div class="player-records-icon kills"></div>
@@ -726,7 +691,7 @@
                                                     <td class="col-5">Kills</td>
                                                     <td class="col-6">
                                                         {!! link_to_route('player-detail',$PastYear->totalKills->name,[$PastYear->totalKills->name]) !!}
-                                                        <span class="small">({{ $PastYear->totalKills->totalkills }})</span>
+                                                        <span class="small badge">{{ $PastYear->totalKills->totalkills }}</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -738,7 +703,7 @@
                                                     </td>
                                                     <td class="col-3">
                                                         {!! link_to_route('player-detail',$PastYear->bestDeathStreak->name,[$PastYear->bestDeathStreak->name]) !!}
-                                                        <span class="small">({{ $PastYear->bestDeathStreak->best_death_streak }})</span>
+                                                        <span class="small badge">{{ $PastYear->bestDeathStreak->best_death_streak }}</span>
                                                     </td>
                                                     <td class="col-4">
                                                         <div class="player-records-icon deaths"></div>
@@ -748,7 +713,7 @@
                                                     </td>
                                                     <td class="col-6">
                                                         {!! link_to_route('player-detail',$PastYear->totalDeaths->name,[$PastYear->totalDeaths->name]) !!}
-                                                        <span class="small">({{ $PastYear->totalDeaths->totaldeaths }})</span>
+                                                        <span class="small badge">{{ $PastYear->totalDeaths->totaldeaths }}</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -760,7 +725,7 @@
                                                     </td>
                                                     <td class="col-3">
                                                         {!! link_to_route('player-detail',$PastYear->totalTeamKills->name,[$PastYear->totalTeamKills->name]) !!}
-                                                        <span class="small">({{ $PastYear->totalTeamKills->totalteamkills }})</span>
+                                                        <span class="small badge">{{ $PastYear->totalTeamKills->totalteamkills }}</span>
                                                     </td>
                                                     <td class="col-4">
                                                         <div class="player-records-icon killstreak"></div>
@@ -770,7 +735,7 @@
                                                     </td>
                                                     <td class="col-6">
                                                         {!! link_to_route('player-detail',$PastYear->bestKillStreak->name,[$PastYear->bestKillStreak->name]) !!}
-                                                        <span class="small">({{ $PastYear->bestKillStreak->best_kill_streak }})</span>
+                                                        <span class="small badge">{{ $PastYear->bestKillStreak->best_kill_streak }}</span>
                                                     </td>
                                                 </tr>
                                                 </tbody>
@@ -788,7 +753,7 @@
                                                     </td>
                                                     <td class="col-3">
                                                         {!! link_to_route('player-detail',$AllTime->totalScore->name,[$AllTime->totalScore->name]) !!}
-                                                        <span class="small">({{ $AllTime->totalScore->totalscore }})</span>
+                                                        <span class="small badge">{{ $AllTime->totalScore->totalscore }}</span>
                                                     </td>
                                                     <td class="col-4">
                                                         <div class="player-records-icon arrests"></div>
@@ -798,7 +763,7 @@
                                                     </td>
                                                     <td class="col-6">
                                                         {!! link_to_route('player-detail',$AllTime->totalArrests->name,[$AllTime->totalArrests->name]) !!}
-                                                        <span class="small">({{ $AllTime->totalArrests->totalarrests }})</span>
+                                                        <span class="small badge">{{ $AllTime->totalArrests->totalarrests }}</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -810,7 +775,7 @@
                                                     </td>
                                                     <td class="col-3">
                                                         {!! link_to_route('player-detail',$AllTime->highestScore->name,[$AllTime->highestScore->name]) !!}
-                                                        <span class="small">({{ $AllTime->highestScore->highestscore }})</span>
+                                                        <span class="small badge">{{ $AllTime->highestScore->highestscore }}</span>
                                                     </td>
                                                     <td class="col-4">
                                                         <div class="player-records-icon arrested"></div>
@@ -820,7 +785,7 @@
                                                     </td>
                                                     <td class="col-6">
                                                         {!! link_to_route('player-detail',$AllTime->totalArrested->name,[$AllTime->totalArrested->name]) !!}
-                                                        <span class="small">({{ $AllTime->totalArrested->totalarrested }})</span>
+                                                        <span class="small badge">{{ $AllTime->totalArrested->totalarrested }}</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -832,7 +797,7 @@
                                                     </td>
                                                     <td class="col-3">
                                                         {!! link_to_route('player-detail',$AllTime->bestScorePerMin->name,[$AllTime->bestScorePerMin->name]) !!}
-                                                        <span class="small">({{ round($AllTime->bestScorePerMin->toArray()['scorepermin'],2) }})</span>
+                                                        <span class="small badge">{{ round($AllTime->bestScorePerMin->toArray()['scorepermin'],2) }}</span>
                                                     </td>
                                                     <td class="col-4">
                                                         <div class="player-records-icon arreststreak"></div>
@@ -842,7 +807,7 @@
                                                     </td>
                                                     <td class="col-6">
                                                         {!! link_to_route('player-detail',$AllTime->bestArrestStreak->name,[$AllTime->bestArrestStreak->name]) !!}
-                                                        <span class="small">({{ $AllTime->bestArrestStreak->best_arrest_streak }})</span>
+                                                        <span class="small badge">{{ $AllTime->bestArrestStreak->best_arrest_streak }}</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -854,7 +819,7 @@
                                                     </td>
                                                     <td class="col-3">
                                                         {!! link_to_route('player-detail',$AllTime->totalTimePlayed->name,[$AllTime->totalTimePlayed->name]) !!}
-                                                        <span class="small">({{ App\Server\Utils::getHMbyS($AllTime->totalTimePlayed->totaltimeplayed,"%dh %dm") }})</span>
+                                                        <span class="small badge">{{ App\Server\Utils::getHMbyS($AllTime->totalTimePlayed->totaltimeplayed,"%dh %dm") }}</span>
                                                     </td>
                                                     <td class="col-4">
                                                         <div class="player-records-icon kills"></div>
@@ -862,7 +827,7 @@
                                                     <td class="col-5">Kills</td>
                                                     <td class="col-6">
                                                         {!! link_to_route('player-detail',$AllTime->totalKills->name,[$AllTime->totalKills->name]) !!}
-                                                        <span class="small">({{ $AllTime->totalKills->totalkills }})</span>
+                                                        <span class="small badge">{{ $AllTime->totalKills->totalkills }}</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -874,7 +839,7 @@
                                                     </td>
                                                     <td class="col-3">
                                                         {!! link_to_route('player-detail',$AllTime->bestDeathStreak->name,[$AllTime->bestDeathStreak->name]) !!}
-                                                        <span class="small">({{ $AllTime->bestDeathStreak->best_death_streak }})</span>
+                                                        <span class="small badge">{{ $AllTime->bestDeathStreak->best_death_streak }}</span>
                                                     </td>
                                                     <td class="col-4">
                                                         <div class="player-records-icon deaths"></div>
@@ -884,7 +849,7 @@
                                                     </td>
                                                     <td class="col-6">
                                                         {!! link_to_route('player-detail',$AllTime->totalDeaths->name,[$AllTime->totalDeaths->name]) !!}
-                                                        <span class="small">({{ $AllTime->totalDeaths->totaldeaths }})</span>
+                                                        <span class="small badge">{{ $AllTime->totalDeaths->totaldeaths }}</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -896,7 +861,7 @@
                                                     </td>
                                                     <td class="col-3">
                                                         {!! link_to_route('player-detail',$AllTime->totalTeamKills->name,[$AllTime->totalTeamKills->name]) !!}
-                                                        <span class="small">({{ $AllTime->totalTeamKills->totalteamkills }})</span>
+                                                        <span class="small badge">{{ $AllTime->totalTeamKills->totalteamkills }}</span>
                                                     </td>
                                                     <td class="col-4">
                                                         <div class="player-records-icon killstreak"></div>
@@ -906,7 +871,7 @@
                                                     </td>
                                                     <td class="col-6">
                                                         {!! link_to_route('player-detail',$AllTime->bestKillStreak->name,[$AllTime->bestKillStreak->name]) !!}
-                                                        <span class="small">({{ $AllTime->bestKillStreak->best_kill_streak }})</span>
+                                                        <span class="small badge">{{ $AllTime->bestKillStreak->best_kill_streak }}</span>
                                                     </td>
                                                 </tr>
                                                 </tbody>
@@ -923,8 +888,8 @@
         </div>
 
         <div class="row player-records">
-            <div class="col-xs-12 panel panel-default no-padding no-margin no-left-padding" style="border-radius: 5px;">
-                <div class="panel-heading panel-heading-separator" id="accordion">
+            <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+                <div class="panel-heading panel-heading-separator no-padding" id="accordion">
                     Latest Bans
                     <div class="pull-right">
                         <small><b><a href="{{ route('bans.index') }}" style="color:#888;font-size: small !important;">show all&nbsp;&nbsp;</a></b></small>
@@ -935,16 +900,15 @@
                     </div>
                 </div>
                 <div class="" id="collapseFour">
-                    <div class="panel-body">
+                    <div class="panel-body" style="padding-left: 0px !important;padding-right: 0px !important;padding-top: 0px !important;">
                         <table id="" class="table table-striped table-hover no-margin">
                             <thead>
                             <tr>
-                                <th class="col-xs-1"><!--Flag--></th>
-                                <th class="col-xs-3">Name</th>
-                                <th class="col-xs-2">IP Address</th>
-                                <th class="col-xs-3">Banned By</th>
-                                <!--<th class="col-xs-1">Status</th>-->
-                                <th class="col-xs-2 text-right">Date</th>
+                                <th class="col-xs-1"></th>
+                                <th class="col-xs-3" style="color:#000; font-weight: 900; font-size: 14px;">Name</th>
+                                <th class="col-xs-2" style="color:#000; font-weight: 900; font-size: 14px;">IP Address</th>
+                                <th class="col-xs-3" style="color:#000; font-weight: 900; font-size: 14px;">Banned By</th>
+                                <th class="col-xs-2 text-right" style="color:#000; font-weight: 900; font-size: 14px;">Date</th>
                             </tr>
                             </thead>
                             <tbody id="">
@@ -955,7 +919,6 @@
                                     <td class="color-main text-bold">{!! link_to_route('bans.show',$ban->name,[$ban->id]) !!}</td>
                                     <td>{!! $ban->ipAddrWithMask !!}</td>
                                     <td>{!! $ban->bannedByAdminURL !!}</td>
-                                    <!--<td><b>{!! $ban->statusWithColor !!}</b></td>-->
                                     <td class="text-right tooltipster" title="{{ $ban->updated_at->toDayDateTimeString() }}">{!! $ban->updated_at->diffForHumans() !!}</td>
                                 </tr>
                             @endforeach
@@ -967,8 +930,8 @@
         </div>
 
         <div class="row player-records">
-            <div class="col-xs-12 panel panel-default no-padding no-margin no-left-padding" style="border-radius: 5px;">
-                <div class="panel-heading panel-heading-separator" id="accordion">
+            <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+                <div class="panel-heading panel-heading-separator no-padding" id="accordion">
                     Global Notifications
                     <div class="pull-right">
                         <small><b><a href="{{ route('notifications.index') }}" style="color:#888;font-size: small !important;">show all&nbsp;&nbsp;</a></b></small>
@@ -979,7 +942,7 @@
                     </div>
                 </div>
                 <div class="" id="collapseFive">
-                    <div class="panel-body font-13">
+                    <div class="panel-body font-13" style="padding-left: 0px !important;padding-right: 0px !important;padding-top: 0px !important;">
                         <ul class="notifications">
                             @forelse($notifications as $notification)
                             <li class="notification pad5">
@@ -1003,8 +966,8 @@
             </div>
 
             <div style="margin-bottom: 15px;" class="row player-records">
-                <div class="col-xs-12 panel panel-default no-padding no-margin no-left-padding" style="border-radius: 5px;">
-                    <div class="panel-heading panel-heading-separator" id="accordion">
+                <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+                    <div class="panel-heading panel-heading-separator no-padding" id="accordion">
                         Last Active Users
                         <div class="btn-group pull-right">
                             <a type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-parent="#accordion"
@@ -1014,7 +977,7 @@
                         </div>
                     </div>
                     <div class="" id="collapseSix">
-                        <div class="panel-body font-13">
+                        <div class="panel-body font-13" style="padding-left: 0px !important;padding-right: 0px !important;padding-top: 0px !important;">
                             @forelse($activeUsers as $user)
                                 <a class="{{ "color-".$user->roles()->first()->name }}" style="margin-right:1em"
                                    href="{{ route('user.show',$user->username) }}"><strong class="">{{ $user->displayName() }}{!! $user->isOnline ? "<sup class='text-green'>&#x25cf;</sup>" : "" !!}</strong></a>

@@ -1,5 +1,5 @@
 <div class="shoutbox-cont">
-    <div class="panel" style="padding: 10px !important;">
+    <div class="panel light-grey-gradient" style="padding: 10px !important;">
         <div class="panel-heading panel-heading-separator">
             Shoutbox
         </div>

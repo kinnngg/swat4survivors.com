@@ -48,13 +48,14 @@
     <![endif]-->
 </head>
 <body>
-@include('partials._navbar')
-@yield('before-container')
+<!--@include('partials._navbar')-->
+<!--@yield('before-container')-->
 
 @include('partials._quickerrors')
 
 <div class="main container">
-
+<div class="container" style="background: #fff;padding-top: 20px;border-radius: 5px;margin-bottom: 20px;margin-top: 20px;">
+    @include('partials._navbar')
     @if(!Request::is('tournament*'))
         @include('partials._sidebar')
     @else
@@ -64,7 +65,7 @@
 @yield('main-container')
 
 </div> {{--Main Container Ends --}}
-
+</div>
 @include('partials._footer')
 
 <script src="//js.pusher.com/2.2/pusher.min.js"></script>

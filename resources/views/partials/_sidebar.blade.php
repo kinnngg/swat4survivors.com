@@ -1,5 +1,5 @@
-<aside class="col-xs-3 main-sidebar">
-    <div class="panel pad5" style="padding: 10px !important;">
+<aside class="col-xs-3 main-sidebar" style="margin-left: -30px !important;">
+    <div class="panel pad5 light-grey-gradient">
         <!--<h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed #FF69B4">Join Server
         </h4>-->
         <div class="panel-heading panel-heading-separator">
@@ -32,7 +32,7 @@
     @if($poll = App\Pollq::where('disabled','!=','1')->latest()->limit(1)->first())
         <div class="poll-cont">
             @if(!$poll->isExpired() && !$poll->isVoted())
-                <div class="panel pad10">
+                <div class="panel pad10 light-grey-gradient">
                     <small class="pull-right"><i><b><a href="{{ route('poll.index') }}">» view all</a></b></i></small>
                     <!--<h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Poll</h4>-->
                     <div class="panel-heading panel-heading-separator">
@@ -50,7 +50,7 @@
                     <span class="small">Total Votes: <b>{{ $poll->users()->count() }}</b></span>
                 </div>
             @else
-                <div class="panel pad10">
+                <div class="panel pad10 light-grey-gradient">
                     <!--<h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Poll</h4>-->
                     <div class="panel-heading panel-heading-separator">
                         Poll
@@ -79,7 +79,7 @@
     {{--Only display this section on homepage--}}
     @if(Request::getRequestUri() == "/" || Request::getRequestUri() == "/home")
 
-        <div class="panel pad5" style="padding: 10px !important;">
+        <div class="panel pad5 light-grey-gradient" style="padding: 10px !important;">
             <small class="pull-right"><i><b><a href="{{ route('news.index') }}">» view all</a></b></i></small>
             <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Latest News</h4>
 
@@ -94,7 +94,7 @@
             </ul>
         </div>
 
-        <div class="panel pad5 text-center" style="padding: 10px !important;">
+        <div class="panel pad5 light-grey-gradient" style="padding: 10px !important;">
             <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Donate</h4>
             <p>If you are capable then please contribute in development of server.</p>
             <a target="_blank" class="btn btn-sm btn-primary" href="https://www.nfoservers.com/donate.pl?force_recipient=1&recipient=kinnngg786%40gmail.com">

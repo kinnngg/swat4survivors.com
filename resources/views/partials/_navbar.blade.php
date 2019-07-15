@@ -1,4 +1,20 @@
-<nav class="navbar navbar-static-top">
+<style>
+    .navbar
+    {
+        background: linear-gradient(0deg, rgba(0,0,0,1) 5%, rgba(255,105,180,1) 34%, rgba(0,0,0,1) 92%);
+        margin-top: -20px !important;
+        margin-left: -15px !important;
+        margin-right: -15px !important;
+        border-bottom-right-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+    }
+    .navbar a
+    {
+        color: #fff;
+    }
+</style>
+
+<nav class="navbar">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
@@ -8,10 +24,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-           <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ url('images/swat_new_kos_logo.png') }}" alt=""
-                                                                    height="34" style="height: 34px;"></a>
+           <a class="navbar-brand" href="{{ route('home') }}" style="margin-top: -10px !important;"><img src="{{ url('images/swat_new_kos_logo.png') }}" alt="" style="height: 40px;"></a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse" style="font-weight: bold">
+        <div id="navbar" class="collapse navbar-collapse" style="font-weight: bold;">
             <ul class="nav navbar-nav">
                 <li class="{{ set_active(['statistics*']) }}">{!! link_to_route('statistics-home','Statistics') !!}</li>
                 <li><a target="_blank" href="http://knightofsorrow.forumclan.com">Forum</a></li>
@@ -67,10 +82,8 @@
                             <div class="dropdown-footer text-center">
                                 <a class="small text-bold" href="{{ route('notifications.userindex') }}">» View All</a>
                             </div><!-- /dropdown-footer -->
-
                         </div><!-- /dropdown-container -->
                     </li><!-- /dropdown -->
-
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             <img class="img" src="{{ Auth::user()->getGravatarLink(20) }}" width="15" height="15"/>
@@ -111,10 +124,7 @@
                     <input type="text" id="navsearch" name='q' class="form-control" placeholder="Search Users"
                            autocomplete="off">
                 </div>
-
             </form>
         </div><!--/.nav-collapse -->
-
-
     </div>
 </nav>
