@@ -1,7 +1,10 @@
 <aside class="col-xs-3 main-sidebar">
     <div class="panel pad5" style="padding: 10px !important;">
-        <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed #FF69B4">Join Server
-        </h4>
+        <!--<h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed #FF69B4">Join Server
+        </h4>-->
+        <div class="panel-heading panel-heading-separator">
+            Join Server
+        </div>
 
         <ul class="list-group">
             <li class="list-group-item" style="padding: 5px 15px;">
@@ -31,7 +34,10 @@
             @if(!$poll->isExpired() && !$poll->isVoted())
                 <div class="panel pad10">
                     <small class="pull-right"><i><b><a href="{{ route('poll.index') }}">» view all</a></b></i></small>
-                    <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Poll</h4>
+                    <!--<h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Poll</h4>-->
+                    <div class="panel-heading panel-heading-separator">
+                        Poll
+                    </div>
                     {!! Form::open(['route' => ['poll.vote',$poll->id]]) !!}
                     <h5 class=""><b>{{ $poll->question }}</b></h5>
                     <div class="panel pad10 no-margin" style="font-size: small !important;">
@@ -45,8 +51,11 @@
                 </div>
             @else
                 <div class="panel pad10">
-                    <small class="pull-right"><i><b><a href="{{ route('poll.index') }}">» view all</a></b></i></small>
-                    <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Poll</h4>
+                    <!--<h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Poll</h4>-->
+                    <div class="panel-heading panel-heading-separator">
+                        Poll
+                        <small class="pull-right"><b><a href="{{ route('poll.index') }}" style="font-size: small !important;color:#888;">show all</a></b></small>
+                    </div>
                     <h5 class=""><b>{{ $poll->question }}</b></h5>
                     <div class="panel pad10 no-margin" style="font-size: small !important;">
                         @foreach($poll->pollos as $pollo)

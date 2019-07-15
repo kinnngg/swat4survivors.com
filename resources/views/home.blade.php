@@ -17,6 +17,8 @@
         }
         .ls-chats
         {
+            background: linear-gradient(#3b3b3b, #0c0c0c);
+            border-radius: 5px;
             word-break: break-all;
         }
         .adminsrvcommandbtn
@@ -37,6 +39,78 @@
             font-weight: bold;
             font-size: 1.3em;
             font-family: 'Trebuchet MS';
+        }
+        .panel h3.header
+        {
+            padding-left: 10px;
+            color: #f8f8f8 !important;
+        }
+        .panel h3
+        {
+            font-weight: bold;
+            font-size: 1.3em;
+            font-family: 'Trebuchet MS';
+        }
+        .header-separator
+        {
+            margin-left: 10px;
+            margin-right: 10px !important;
+            padding-bottom: 6px;
+            margin-bottom: 8px;
+            border-bottom: 2px dashed #ccc;
+        }
+        #shout-input-group2
+        {
+            border-top: 2px dashed #ccc;
+            padding-top: 10px;
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        #serverchat-input-group-error
+        {
+            margin-top: 10px;
+            margin-left: 10px !important;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .admin-info
+        {
+            margin-left: 10px !important;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            color: #f8f8f8 !important;
+        }
+        .admin-separator
+        {
+            padding-bottom: 6px;
+            margin-bottom: 8px;
+            border-bottom: 2px dashed #ccc;
+        }
+        #btn-chat
+        {
+            height: 35px;
+            margin-left: 5px;
+            cursor: pointer;
+            line-height: 16px;
+            color: #666;
+            border: 1px solid #ababab;
+            border-radius: 4px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+            background: linear-gradient(#f9f9f9, #e8e8e8);
+        }
+        input[type="text"]
+        {
+            padding: 4px 8px;
+            font-size: 13px;
+            height: 35px;
+            color: #808080;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            border-top-left-radius: 3px !important;
+            border-bottom-left-radius: 3px !important;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
         }
     </style>
 @endsection
@@ -138,25 +212,54 @@
                         </div>
                     </div>
                 </div> {{--Server Players and Top Players Wrapper Ends--}}
-                <div class="col-xs-7 panel panel-default no-padding" style="border-radius: 5px;">
-                    <div class="panel-heading panel-heading-separator">
-                        <small class="pull-right"><b><a href="{{ route('chat.index') }}" style="color:#888;">show all&nbsp;&nbsp;</a></b></small>
+                <div class="col-xs-7 panel panel-default no-padding" style="border-radius: 5px;background: linear-gradient(#3b3b3b, #0c0c0c);">
+                    <!--<div class="panel-heading panel-heading-separator" style="background: linear-gradient(#3b3b3b, #0c0c0c);">
+                        <small class="pull-right"><b><a href="{{ route('chat.index') }}" style="color:#888;font-size: small !important;">show all&nbsp;&nbsp;</a></b></small>
                         Server Viewer
-                    </div>
+                    </div>-->
+                    <h3 class="header header-separator">Server Viewer<small class="pull-right"><b><a href="{{ route('chat.index') }}" style="color:#888;font-size: small !important;">show all&nbsp;&nbsp;</a></b></small></h3>
                     <div class="panel-body ls-chats">
                         <div class="loading-pt-info">Loading Server Chat...</div>
                     </div>
-                    <div class="panel-footer">
+                    @if (Auth::check())
+                        {!!  Form::open(['route' => 'server.chat', 'id' => 'serverchat-form']) !!}
+                        <div id="shout-input-group2" class="input-group">
+                            <input name="serverchatmsg" id="btn-input" type="text" class="textarea form-control"
+                                   placeholder="Type your message here..." autocomplete="off">
+                            <span class="input-group-btn">
+                                <button class="btn" id="btn-chat">
+                                    Send
+                                </button>
+                            </span>
+                        </div>
+
+                        <div id="serverchat-input-group-error" class="help-block"></div>
+                            <div class="admin-info small">
+                                <b>Translate:</b> <font color="red">!t</font>, <font color="red">!tr</font> or <font color="red">!translate</font> followed by text to translate from any language to english. Example: <font color="red">!tr salut les gars</font><br>
+                            @if(Auth::user()->isAdmin())
+                                <div class="admin-separator"></div>
+                                <b>Note: You can execute any admin command using this chat also.</b> <br>
+                                <!--Type <font color="red">s4s</font> preceding with command you want to run. <br>-->
+                                Example: <font color="red"><b>s4s</b> kick Name</font>, <font color="red"><b>s4s</b> restart</font>, <font color="red"><b>s4s</b> setmap 0</font>
+                                @endif
+                            </div>
+                        {!! Form::close() !!}
+                    @else
+                        <div class='panel nomargin padding10 text-muted'><b>{!!  link_to('/auth/login','Login') !!}
+                                or {!! link_to('/auth/register', 'Register') !!} to chat with in-game players.</b>
+                        </div>
+                    @endif
+                    <!--<div class="panel-footer">
                         @if(Auth::check())
                             {!!  Form::open(['route' => 'server.chat','id' => 'serverchat-form']) !!}
                             <div id="shout-input-group" class="input-group">
                                 <input name="serverchatmsg" id="btn-input" type="text" class="textarea form-control"
                                        placeholder="Type your message here..." autocomplete="off"/>
-                        <span class="input-group-btn">
-                            <button class="btn btn-primary" id="btn-chat">
-                                Send
-                            </button>
-                        </span>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary" id="btn-chat">
+                                        Send
+                                    </button>
+                                </span>
                             </div>
 
                                 <div id="serverchat-input-group-error" class="help-block"></div>
@@ -177,7 +280,7 @@
                                     or {!! link_to('/auth/register', 'Register') !!} to chat with in-game players.</b>
                             </div>
                         @endif
-                    </div>
+                    </div>-->
 
                 </div> {{--Live Server Viewer Ends--}}
             </div> {{--Live Server Players,Top Players and Server Viewer Row Ends--}}
@@ -191,7 +294,7 @@
                 <div class="panel-heading panel-heading-separator" id="accordion">
                     Round Reports
                     <div class="pull-right">
-                        <small><b><a href="{{ route('round-reports') }}" style="color:#888;">show all&nbsp;&nbsp;</a></b></small>
+                        <small><b><a href="{{ route('round-reports') }}" style="color:#888;font-size: small !important;">show all&nbsp;&nbsp;</a></b></small>
                         <a type="button" class="btn btn-default btn-xs pull-right" data-toggle="collapse" data-parent="#accordion"
                            href="#collapseTwo">
                             <span class="fa fa-chevron-down"></span>
@@ -276,7 +379,8 @@
                                                     </td>
                                                     <td class="col-3">
                                                         {!! link_to_route('player-detail',$PastWeek->totalScore->name,[$PastWeek->totalScore->name]) !!}
-                                                        <span class="small">({{ $PastWeek->totalScore->totalscore }})</span>
+                                                        <!--<span class="small">({{ $PastWeek->totalScore->totalscore }})</span>-->
+                                                        <span class="small badge">{{ $PastWeek->totalScore->totalscore }}</span>
                                                     </td>
                                                     <td class="col-4">
                                                         <div class="player-records-icon arrests"></div>
@@ -286,7 +390,7 @@
                                                     </td>
                                                     <td class="col-6">
                                                         {!! link_to_route('player-detail',$PastWeek->totalArrests->name,[$PastWeek->totalArrests->name]) !!}
-                                                        <span class="small">({{ $PastWeek->totalArrests->totalarrests }})</span>
+                                                        <span class="small badge">{{ $PastWeek->totalArrests->totalarrests }}</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -298,7 +402,7 @@
                                                     </td>
                                                     <td class="col-3">
                                                         {!! link_to_route('player-detail',$PastWeek->highestScore->name,[$PastWeek->highestScore->name]) !!}
-                                                        <span class="small">({{ $PastWeek->highestScore->highestscore }})</span>
+                                                        <span class="small badge">{{ $PastWeek->highestScore->highestscore }}</span>
                                                     </td>
                                                     <td class="col-4">
                                                         <div class="player-records-icon arrested"></div>
@@ -308,7 +412,7 @@
                                                     </td>
                                                     <td class="col-6">
                                                         {!! link_to_route('player-detail',$PastWeek->totalArrested->name,[$PastWeek->totalArrested->name]) !!}
-                                                        <span class="small">({{ $PastWeek->totalArrested->totalarrested }})</span>
+                                                        <span class="small badge">{{ $PastWeek->totalArrested->totalarrested }}</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -320,7 +424,7 @@
                                                     </td>
                                                     <td class="col-3">
                                                         {!! link_to_route('player-detail',$PastWeek->bestScorePerMin->name,[$PastWeek->bestScorePerMin->name]) !!}
-                                                        <span class="small">({{ round($PastWeek->bestScorePerMin->toArray()['scorepermin'],2) }})</span>
+                                                        <span class="small badge">{{ round($PastWeek->bestScorePerMin->toArray()['scorepermin'],2) }}</span>
                                                     </td>
                                                     <td class="col-4">
                                                         <div class="player-records-icon arreststreak"></div>
@@ -330,7 +434,7 @@
                                                     </td>
                                                     <td class="col-6">
                                                         {!! link_to_route('player-detail',$PastWeek->bestArrestStreak->name,[$PastWeek->bestArrestStreak->name]) !!}
-                                                        <span class="small">({{ $PastWeek->bestArrestStreak->best_arrest_streak }})</span>
+                                                        <span class="small badge">{{ $PastWeek->bestArrestStreak->best_arrest_streak }}</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -342,7 +446,7 @@
                                                     </td>
                                                     <td class="col-3">
                                                         {!! link_to_route('player-detail',$PastWeek->totalTimePlayed->name,[$PastWeek->totalTimePlayed->name]) !!}
-                                                        <span class="small">({{ App\Server\Utils::getHMbyS($PastWeek->totalTimePlayed->totaltimeplayed,"%dh %dm") }})</span>
+                                                        <span class="small badge">{{ App\Server\Utils::getHMbyS($PastWeek->totalTimePlayed->totaltimeplayed,"%dh %dm") }}</span>
                                                     </td>
                                                     <td class="col-4">
                                                         <div class="player-records-icon kills"></div>
@@ -350,7 +454,7 @@
                                                     <td class="col-5">Kills</td>
                                                     <td class="col-6">
                                                         {!! link_to_route('player-detail',$PastWeek->totalKills->name,[$PastWeek->totalKills->name]) !!}
-                                                        <span class="small">({{ $PastWeek->totalKills->totalkills }})</span>
+                                                        <span class="small badge">{{ $PastWeek->totalKills->totalkills }}</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -362,7 +466,7 @@
                                                     </td>
                                                     <td class="col-3">
                                                         {!! link_to_route('player-detail',$PastWeek->bestDeathStreak->name,[$PastWeek->bestDeathStreak->name]) !!}
-                                                        <span class="small">({{ $PastWeek->bestDeathStreak->best_death_streak }})</span>
+                                                        <span class="small badge">{{ $PastWeek->bestDeathStreak->best_death_streak }}</span>
                                                     </td>
                                                     <td class="col-4">
                                                         <div class="player-records-icon deaths"></div>
@@ -372,7 +476,7 @@
                                                     </td>
                                                     <td class="col-6">
                                                         {!! link_to_route('player-detail',$PastWeek->totalDeaths->name,[$PastWeek->totalDeaths->name]) !!}
-                                                        <span class="small">({{ $PastWeek->totalDeaths->totaldeaths }})</span>
+                                                        <span class="small badge">{{ $PastWeek->totalDeaths->totaldeaths }}</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -384,7 +488,7 @@
                                                     </td>
                                                     <td class="col-3">
                                                         {!! link_to_route('player-detail',$PastWeek->totalTeamKills->name,[$PastWeek->totalTeamKills->name]) !!}
-                                                        <span class="small">({{ $PastWeek->totalTeamKills->totalteamkills }})</span>
+                                                        <span class="small badge">{{ $PastWeek->totalTeamKills->totalteamkills }}</span>
                                                     </td>
                                                     <td class="col-4">
                                                         <div class="player-records-icon killstreak"></div>
@@ -394,7 +498,7 @@
                                                     </td>
                                                     <td class="col-6">
                                                         {!! link_to_route('player-detail',$PastWeek->bestKillStreak->name,[$PastWeek->bestKillStreak->name]) !!}
-                                                        <span class="small">({{ $PastWeek->bestKillStreak->best_kill_streak }})</span>
+                                                        <span class="small badge">{{ $PastWeek->bestKillStreak->best_kill_streak }}</span>
                                                     </td>
                                                 </tr>
                                                 </tbody>
@@ -823,7 +927,7 @@
                 <div class="panel-heading panel-heading-separator" id="accordion">
                     Latest Bans
                     <div class="pull-right">
-                        <small><b><a href="{{ route('bans.index') }}" style="color:#888;">show all&nbsp;&nbsp;</a></b></small>
+                        <small><b><a href="{{ route('bans.index') }}" style="color:#888;font-size: small !important;">show all&nbsp;&nbsp;</a></b></small>
                         <a type="button" class="btn btn-default btn-xs pull-right" data-toggle="collapse" data-parent="#accordion"
                            href="#collapseFour">
                             <span class="fa fa-chevron-down"></span>
@@ -867,7 +971,7 @@
                 <div class="panel-heading panel-heading-separator" id="accordion">
                     Global Notifications
                     <div class="pull-right">
-                        <small><b><a href="{{ route('notifications.index') }}" style="color:#888;">show all&nbsp;&nbsp;</a></b></small>
+                        <small><b><a href="{{ route('notifications.index') }}" style="color:#888;font-size: small !important;">show all&nbsp;&nbsp;</a></b></small>
                         <a type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-parent="#accordion"
                            href="#collapseFive">
                             <span class="fa fa-chevron-down"></span>
@@ -921,6 +1025,7 @@
                 </div>
             </div>
         </div> {{--Main Content Ends--}}
+    </div>
         @endsection
 
         {{--Scripts section for Home Page--}}
