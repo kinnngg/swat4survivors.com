@@ -1,20 +1,47 @@
-<aside class="col-xs-3 main-sidebar" style="margin-left: -30px !important;">
-    <div class="panel pad5 light-grey-gradient">
+<style>
+    .list-group-item
+    {
+        padding: 5px 15px;
+        background: transparent;
+    }
+    .light-grey-gradient2
+    {
+        background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);
+    }
+    .panel-heading-separator2
+    {
+        padding-bottom: 6px;
+        margin-bottom: 8px;
+        border-bottom: 2px dashed #FF69B4;
+    }
+    .panel-heading
+    {
+        color: #444;
+        font-weight: bold;
+        font-size: 1.1em;
+        font-family: 'Trebuchet MS';
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+    }
+</style>
+
+<aside class="col-xs-3 main-sidebar" style="margin-left: -30px !important;margin-right: 30px;">
+    <div class="panel pad5 light-grey-gradient2">
         <!--<h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed #FF69B4">Join Server
         </h4>-->
-        <div class="panel-heading panel-heading-separator">
+        <div class="panel-heading panel-heading-separator2 no-padding">
             Join Server
         </div>
 
         <ul class="list-group">
-            <li class="list-group-item" style="padding: 5px 15px;">
+            <li class="list-group-item">
                 <span class="small tooltipster" title="SWAT4 Normal Server">
                     <!-- <img class="img img20" src="/images/swat.png" alt=""> - -->
                     <img class="img img20" src="/favicon.ico" alt=""> <font color="#FF69B4">-</font>
                     <span class="text-danger text-bold"><a href="http://swat4survivors.com/news/different-ways-to-join-server--author-audio">144.76.224.57:10480</a></span>
                 </span>
             </li>
-            <li class="list-group-item" style="padding: 5px 15px;"> <span class="small tooltipster" title="S4S Discord Group"> <img class="img img20" src="/images/logo_ds.png" alt=""> <font color="#FF69B4">-</font> <span class="text-danger text-bold"><a
+            <li class="list-group-item"> <span class="small tooltipster" title="S4S Discord Group"> <img class="img img20" src="/images/logo_ds.png" alt=""> <font color="#FF69B4">-</font> <span class="text-danger text-bold"><a
                                 href="https://discord.gg/Y8DzuUU" target="_blank">https://discord.gg/FuJub8Z</a></span> </span> </li>
 
             <!--<li class="list-group-item" style="padding: 5px 15px;"> <span class="small tooltipster" title="KoS TeamSpeak3 Server"> <img class="img img20" src="/images/Logo_ts3.png" alt=""> - <span class="text-danger text-bold"><a
@@ -23,11 +50,10 @@
     </div>
 
     @include('partials._shoutbox',['shouts' => App\Shout::limit(20)->with('user')->latest()->get()->sortBy('created_at')])
-            <!-- <div class="panel pad5" style="padding: 10px !important;">
+    <!--<div class="panel pad5" style="padding: 10px !important;">
         <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Donate</h5>
-        <a href="donate">Donate for KoS</a>
-    </div>
-    -->
+        <a href="donate">Donate for S4S</a>
+    </div>-->
 
     @if($poll = App\Pollq::where('disabled','!=','1')->latest()->limit(1)->first())
         <div class="poll-cont">
@@ -35,12 +61,12 @@
                 <div class="panel pad10 light-grey-gradient">
                     <small class="pull-right"><i><b><a href="{{ route('poll.index') }}">» view all</a></b></i></small>
                     <!--<h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Poll</h4>-->
-                    <div class="panel-heading panel-heading-separator">
+                    <div class="panel-heading panel-heading-separator2">
                         Poll
                     </div>
                     {!! Form::open(['route' => ['poll.vote',$poll->id]]) !!}
                     <h5 class=""><b>{{ $poll->question }}</b></h5>
-                    <div class="panel pad10 no-margin" style="font-size: small !important;">
+                    <div class="panel pad10 no-margin" style="font-size: small !important;background: transparent;">
                         @foreach($poll->pollos as $pollo)
                             <input type="radio" name="option" value="{{ $pollo->id }}"> {{ $pollo->option }}<br>
                         @endforeach
@@ -52,12 +78,12 @@
             @else
                 <div class="panel pad10 light-grey-gradient">
                     <!--<h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Poll</h4>-->
-                    <div class="panel-heading panel-heading-separator">
+                    <div class="panel-heading panel-heading-separator2">
                         Poll
                         <small class="pull-right"><b><a href="{{ route('poll.index') }}" style="font-size: small !important;color:#888;">show all</a></b></small>
                     </div>
                     <h5 class=""><b>{{ $poll->question }}</b></h5>
-                    <div class="panel pad10 no-margin" style="font-size: small !important;">
+                    <div class="panel pad10 no-margin" style="font-size: small !important;background: transparent;">
                         @foreach($poll->pollos as $pollo)
                             {{ $pollo->option }}<br>
                             <div class="progress">

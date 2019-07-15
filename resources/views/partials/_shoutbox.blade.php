@@ -1,6 +1,33 @@
+<style>
+    .list-group-item
+    {
+        padding: 5px 15px;
+        background: transparent;
+    }
+    .light-grey-gradient3
+    {
+        background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);
+    }
+    .panel-heading-separator3
+    {
+        padding-bottom: 6px;
+        margin-bottom: 8px;
+        border-bottom: 2px dashed #FF69B4;
+    }
+    .panel-heading
+    {
+        color: #444;
+        font-weight: bold;
+        font-size: 1.1em;
+        font-family: 'Trebuchet MS';
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+    }
+</style>
+
 <div class="shoutbox-cont">
-    <div class="panel light-grey-gradient" style="padding: 10px !important;">
-        <div class="panel-heading panel-heading-separator">
+    <div class="panel light-grey-gradient3" style="padding: 10px !important;">
+        <div class="panel-heading panel-heading-separator3 no-padding">
             Shoutbox
         </div>
         <div class="panel-body messageLog">

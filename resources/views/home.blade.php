@@ -31,7 +31,7 @@
         {
             padding-bottom: 6px;
             margin-bottom: 8px;
-            border-bottom: 2px dashed #ccc;
+            border-bottom: 2px dashed #FF69B4;
         }
         .panel-heading
         {
@@ -58,11 +58,11 @@
             margin-right: 10px !important;
             padding-bottom: 6px;
             margin-bottom: 8px;
-            border-bottom: 2px dashed #ccc;
+            border-bottom: 2px dashed #FF69B4;
         }
         #shout-input-group2
         {
-            border-top: 2px dashed #ccc;
+            border-top: 2px dashed #FF69B4;
             padding-top: 10px;
             margin-top: 10px;
             margin-left: 10px;
@@ -87,7 +87,7 @@
         {
             padding-bottom: 6px;
             margin-bottom: 8px;
-            border-bottom: 2px dashed #ccc;
+            border-bottom: 2px dashed #FF69B4;
         }
         #btn-chat
         {
@@ -124,7 +124,7 @@
     </style>
 @endsection
 @section('main-container')
-    <div class="content col-xs-9">
+    <div class="content col-xs-9" style="margin-left: -30px !important">
         @if(Auth::check() && !Auth::user()->confirmed)
             <div class="alert alert-warning text-center row">
                 <strong>You account is Muted! Verify your Email Address to unmute it!</strong><br> Dear Gamer, Please check your email ({{ Auth::user()->email }}) where we have sent a mail to verify your account. Just visit the link provided and follow the instructions to get your account verified. Once verified your account will get unmuted.
@@ -169,7 +169,7 @@
                 </div>
             </div> {{--Live Server Summary Ends --}}
             <div class="row">
-                <div class="ls-players-and-top-player col-xs-5">
+                <div class="ls-players-and-top-player col-xs-6">
                     <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
                         <div class="panel-heading panel-heading-separator no-padding">
                             <span class="pull-right">
@@ -177,7 +177,7 @@
                             <a style='color:#444;' class='fancybox livepfancy fancybox.ajax tooltipster' href='./liveserveraction' title='Server Action'><i class='fa fa-cog'></i></a>
                                 @endif
                             </span>
-                            Online Players (/)
+                            Online Players <span id="ls-player-online"></span>
                         </div>
                         <div class="panel-body no-padding" id="ls-player-total-div" style="padding-bottom: 10px !important;">
                             <table class="table table-striped table-hover" id="ls-player-table">
@@ -198,7 +198,7 @@
                                     <th class="col-xs-1" style="color:#000; font-weight: 900; font-size: 12px;">#</th>
                                     <th class="col-xs-1 text-center" style="color:#000; font-weight: 900; font-size: 12px;">Rank</th>
                                     <th class="col-xs-1" style="color:#000; font-weight: 900; font-size: 12px;">Name</th>
-                                    <th class="col-xs-1 text-right" style="color:#000; font-weight: 900; font-size: 12px;">Last Seen</th>
+                                    <th class="col-xs-2 text-right" style="color:#000; font-weight: 900; font-size: 12px;">Last Seen</th>
                                 </tr>
                                 </thead>
                                 @forelse($topPlayers as $player)
@@ -215,7 +215,7 @@
                         </div>
                     </div>
                 </div> {{--Server Players and Top Players Wrapper Ends--}}
-                <div class="col-xs-7 panel panel-default no-padding" style="border-radius: 5px;background: linear-gradient(#3b3b3b, #0c0c0c);box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+                <div class="col-xs-6 panel panel-default no-padding" style="border-radius: 5px;background: linear-gradient(#3b3b3b, #0c0c0c);box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
                     <h3 class="header header-separator">Server Viewer<small class="pull-right"><b><a href="{{ route('chat.index') }}" style="color:#888;font-size: small !important;">show all&nbsp;&nbsp;</a></b></small></h3>
                     <div class="panel-body ls-chats">
                         <div class="loading-pt-info">Loading Server Chat...</div>
