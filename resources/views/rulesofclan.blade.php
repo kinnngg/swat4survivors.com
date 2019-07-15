@@ -1,12 +1,46 @@
 @extends('layouts.main')
 @section('title','Rules & Regulations of |nGGz|TEAM')
 @section('main-container')
+<style>
+    .light-grey-gradient8
+    {
+        background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);
+    }
+    .panel-heading-separator8
+    {
+        margin-left: 10px;
+        margin-right: 10px !important;
+        padding-bottom: 6px;
+        margin-bottom: 8px;
+        border-bottom: 2px dashed #FF69B4;
+    }
+    .panel-heading
+    {
+        color: #444;
+        font-weight: bold;
+        font-size: 1.1em;
+        font-family: 'Trebuchet MS';
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+    }
+    .panel h3.header
+    {
+        color: #f8f8f8 !important;
+    }
+    .panel h3
+    {
+        font-weight: bold;
+        font-size: 1.3em;
+        font-family: 'Trebuchet MS';
+    }
+</style>
     <div class="content col-xs-9">
 
-        <div class="panel" style="padding: 20px;">
-            <div style="padding-left:10px">
-                <h1 class="text-center"><b>Rules of |nGGz|TEAM</b></h1>
-                <hr style="margin-top: 10px;margin-bottom: 10px">
+        <div class="panel light-grey-gradient8" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+            <div class="panel-heading panel-heading-separator8 no-padding">
+                Rules of |nGGz|TEAM
+            </div>
+            <div class="panel-body">
                 <p><i>THESE RULES ARE TO BE MET BY ALL |nGGz| MEMBERS INCLUDING LEADER ANY CO-LEADERS.</i></p>
                 <h5><b><u>GENERAL RULES FOR nGGz MEMBERS:</u></b></h5>
                 <ul class="ruleslist" style="list-style-type: square;font-family: 'Ubuntu', Helvetica, Arial, sans-serif;">

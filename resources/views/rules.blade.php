@@ -1,14 +1,49 @@
 @extends('layouts.main')
 @section('title','Rules all should respect')
 @section('main-container')
+
+<style>
+    .light-grey-gradient3
+    {
+        background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);
+    }
+    .panel-heading-separator3
+    {
+        margin-left: 10px;
+        margin-right: 10px !important;
+        padding-bottom: 6px;
+        margin-bottom: 8px;
+        border-bottom: 2px dashed #FF69B4;
+    }
+    .panel-heading
+    {
+        color: #444;
+        font-weight: bold;
+        font-size: 1.1em;
+        font-family: 'Trebuchet MS';
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+    }
+    .panel h3.header
+    {
+        color: #f8f8f8 !important;
+    }
+    .panel h3
+    {
+        font-weight: bold;
+        font-size: 1.3em;
+        font-family: 'Trebuchet MS';
+    }
+</style>
     <div class="content col-xs-9">
 
-        <div class="panel" style="padding: 20px;">
-            <div style="padding-left:10px">
+        <div class="panel light-grey-gradient3" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);padding: 20px;">
+            <div class="panel-heading panel-heading-separator3 no-padding">
                 <!--<h3 class="text"><b>Rules of </b>&nbsp;<i title="thumb" class="tooltipster fa fa-thumbs-up fa-2x"></i> </h3>-->
-                <h3 class="text"><b>Rules of Swat4Survivors</b></h3>
-                <hr style="margin-top: 10px;margin-bottom: 10px">
-                <ul class="ruleslist" style="list-style-type: square;font-family: 'Ubuntu', Helvetica, Arial, sans-serif;">
+                Rules of Swat4Survivors
+            </div>
+            <div class="panel-body">
+                <ul class="ruleslist" style="list-style-type: square; font-family: 'Ubuntu', Helvetica, Arial, sans-serif;">
                     <li>Use of any type of hacks is not allowed.</li>
                     <li>Be <b>polite</b>. Insulting others will not be tolerated.</li>
                     <li><b>Racism</b>, <b>Hatred</b>, etc are <b>strictly</b> prohibited. This may lead to permanent ban.</li>
@@ -33,11 +68,12 @@
         </div>
 
         @if(Auth::check() && Auth::user()->isAdmin())
-        <div class="panel" style="padding: 20px;">
-            <div style="padding-left:10px">
+        <div class="panel light-grey-gradient3" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);padding: 20px;">
+            <div class="panel-heading panel-heading-separator3 no-padding">
                 <!--<h3 class="text"><b>Rules/Guide for </b>&nbsp;<i title="Administrator" class="tooltipster fa fa-user-secret fa-2x"></i> Administrators</h3>-->
-                <h3 class="text"><b>Rules and Guide for Administrators</b></h3>
-                <hr style="margin-top: 10px;margin-bottom: 10px">
+                Rules and Guide for Administrators
+            </div>
+            <div class="panel-body">
                 <p>
                   In general, if there's <span class="text-danger">bad player behavior</span>, always try to defuse the situation. Try to talk sense, switch team, etc.  The
                   mod on our server has a lot of built in functions.  Please try to allow the mod to work before taking action unless needed.

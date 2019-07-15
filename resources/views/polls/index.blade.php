@@ -19,6 +19,37 @@
             display: block !important;
             visibility: visible !important;
         }
+        .light-grey-gradient7
+        {
+            background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);
+        }
+        .panel-heading-separator7
+        {
+            margin-left: 10px;
+            margin-right: 10px !important;
+            padding-bottom: 6px;
+            margin-bottom: 8px;
+            border-bottom: 2px dashed #FF69B4;
+        }
+        .panel-heading
+        {
+            color: #444;
+            font-weight: bold;
+            font-size: 1.1em;
+            font-family: 'Trebuchet MS';
+            padding-top: 5px !important;
+            padding-bottom: 5px !important;
+        }
+        .panel h3.header
+        {
+            color: #f8f8f8 !important;
+        }
+        .panel h3
+        {
+            font-weight: bold;
+            font-size: 1.3em;
+            font-family: 'Trebuchet MS';
+        }
     </style>
 @endsection
 @section('main-container')
@@ -29,10 +60,10 @@
         @forelse($polls as $poll)
             <div class="page-item">
             @if(!$poll->isExpired() && !$poll->isVoted())
-                <div class="panel pad10">
+                <div class="panel pad10 light-grey-gradient7">
                     {!! Form::open(['route' => ['poll.vote',$poll->id]]) !!}
                     <h4 class=""><b>{{ $poll->question }}</b></h4>
-                    <div class="panel pad10">
+                    <div class="panel pad10 light-grey-gradient7">
                     @foreach($poll->pollos as $pollo)
                         <input type="radio" name="option" value="{{ $pollo->id }}"> {{ $pollo->option }}<br>
                     @endforeach

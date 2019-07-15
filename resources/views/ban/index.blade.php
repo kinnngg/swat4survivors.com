@@ -3,13 +3,56 @@
 @section('title',"Ban List")
 
 @section('main-container')
+
+<style>
+    .light-grey-gradient4
+    {
+        background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);
+    }
+    .panel-heading-separator4
+    {
+        margin-left: 10px;
+        margin-right: 10px !important;
+        padding-bottom: 6px;
+        margin-bottom: 8px;
+        border-bottom: 2px dashed #FF69B4;
+    }
+    .panel-heading
+    {
+        color: #444;
+        font-weight: bold;
+        font-size: 1.1em;
+        font-family: 'Trebuchet MS';
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+    }
+    .panel h3.header
+    {
+        color: #f8f8f8 !important;
+    }
+    .panel h3
+    {
+        font-weight: bold;
+        font-size: 1.3em;
+        font-family: 'Trebuchet MS';
+    }
+    .table
+    {
+        padding: 14px !important;
+        background-color: #FFF;
+        border: 1px solid #CCC;
+    }
+</style>
     <div class="col-xs-9">
 
-        <div class="rounds panel panel-default">
-            <div class="panel-heading"><strong>Found {{ $bans->total() }} Bans</strong></div>
+        <div class="rounds panel light-grey-gradient4" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+            <div class="panel-heading panel-heading-separator4 no-padding">
+                <small class="pull-right" style="color:#888;">Total Bans: {{ $bans->total() }}</small>
+                Swat 4 Survivors Master Banlist
+            </div>
             <div class="panel-body">
-                <table id="" class="table table-striped table-hover no-margin">
-                    <thead>
+                <table id="" class="table table-striped table-hover">
+                    <thead style="border-bottom: 1px solid #ddd;">
                     <tr>
                         {{--<th class="col-xs-1">{!! sort_bans_by('position','#') !!}</th>--}}
                         <th class="col-xs-1">{!! sort_bans_by('country_id','Flag') !!}</th>

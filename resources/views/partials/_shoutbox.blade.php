@@ -1,15 +1,12 @@
 <style>
-    .list-group-item
-    {
-        padding: 5px 15px;
-        background: transparent;
-    }
     .light-grey-gradient3
     {
         background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);
     }
     .panel-heading-separator3
     {
+        margin-left: 10px;
+        margin-right: 10px !important;
         padding-bottom: 6px;
         margin-bottom: 8px;
         border-bottom: 2px dashed #FF69B4;
@@ -26,7 +23,7 @@
 </style>
 
 <div class="shoutbox-cont">
-    <div class="panel light-grey-gradient3" style="padding: 10px !important;">
+    <div class="panel pad5 light-grey-gradient3" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
         <div class="panel-heading panel-heading-separator3 no-padding">
             Shoutbox
         </div>

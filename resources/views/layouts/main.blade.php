@@ -54,17 +54,17 @@
 @include('partials._quickerrors')
 
 <div class="main container">
-<div class="container" style="background: #fff;padding-top: 20px;border-radius: 5px;margin-bottom: 20px;margin-top: 20px;">
-    @include('partials._navbar')
-    @if(!Request::is('tournament*'))
-        @include('partials._sidebar')
-    @else
-        <span class="messageLog"></span>
-    @endif
+    <div class="container" style="background: #fff;padding-top: 20px;border-radius: 5px;margin-bottom: 20px;margin-top: 20px;">
+        @include('partials._navbar')
+        @if(!Request::is('tournament*'))
+            @include('partials._sidebar')
+        @else
+            <span class="messageLog"></span>
+        @endif
 
-@yield('main-container')
+    @yield('main-container')
 
-</div> {{--Main Container Ends --}}
+    </div> {{--Main Container Ends --}}
 </div>
 @include('partials._footer')
 

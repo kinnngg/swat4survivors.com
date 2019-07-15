@@ -124,7 +124,7 @@
     </style>
 @endsection
 @section('main-container')
-    <div class="content col-xs-9" style="margin-left: -30px !important">
+    <div class="content col-xs-9">
         @if(Auth::check() && !Auth::user()->confirmed)
             <div class="alert alert-warning text-center row">
                 <strong>You account is Muted! Verify your Email Address to unmute it!</strong><br> Dear Gamer, Please check your email ({{ Auth::user()->email }}) where we have sent a mail to verify your account. Just visit the link provided and follow the instructions to get your account verified. Once verified your account will get unmuted.
