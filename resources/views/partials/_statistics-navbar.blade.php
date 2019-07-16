@@ -1,4 +1,23 @@
-<nav class="navbar navbar-default">
+<style>
+    .navbar-stats
+    {
+        background: url("/images/head_back.png") no-repeat top right;
+        margin-top: 0px !important;
+        margin-left: -15px !important;
+        margin-right: -15px !important;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px !important;
+        border-bottom-left-radius: 12px !important;
+        box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    }
+    .navbar a
+    {
+        color: #fff;
+    }
+</style>
+
+<nav class="navbar navbar-stats navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">

@@ -190,9 +190,9 @@
                     </div>
                     <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
                         <div class="panel-heading panel-heading-separator no-padding">Top Players</div>
-                        <div class="panel-body" style="padding: 0px;">
+                        <div class="panel-body">
 
-                            <table class="table table-striped table-hover">
+                            <table class="table table-striped table-hover no-margin">
                                 <thead style="border-bottom: 1px solid #ddd;">
                                 <tr>
                                     <th class="col-xs-1" style="color:#000; font-weight: 900; font-size: 12px;">#</th>
@@ -268,7 +268,7 @@
                 </div>
                 <div class="" id="collapseTwo">
                     <div class="panel-body" style="padding-left: 0px !important;padding-right: 0px !important;padding-top: 0px !important;">
-                        <table class="table table-striped table-hover">
+                        <table class="table table-striped table-hover no-margin">
                             <thead>
                             <tr>
                                 <th class="col-xs-1" style="color:#000; font-weight: 900; font-size: 12px;">Round</th>

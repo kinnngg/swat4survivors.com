@@ -1,6 +1,15 @@
 <style>
     .navbar
     {
+        background: url("/images/head_back.png") no-repeat top right;
+        border-bottom-right-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+        margin-top: -20px;
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    .navbar-main
+    {
         background: linear-gradient(0deg, rgba(0,0,0,1) 5%, rgba(255,105,180,1) 34%, rgba(0,0,0,1) 92%);
         margin-top: -20px !important;
         margin-left: -15px !important;
@@ -12,9 +21,26 @@
     {
         color: #fff;
     }
+    #swatofficer
+    {
+        position: absolute;
+        background: url("/images/swat_officer.png");
+        width: 86px;
+        height: 62px;
+        left: 5px;
+        top: -2px;
+        z-index: 9999999999;
+    }
+    .navbar-brand
+    {
+        margin-top: -18px;
+        margin-left: 20px !important;
+        z-index: 100;
+    }
 </style>
 
-<nav class="navbar">
+<nav class="navbar navbar-default">
+    
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
@@ -24,8 +50,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-           <a class="navbar-brand" href="{{ route('home') }}" style="margin-top: -10px !important;"><img src="{{ url('images/swat_new_kos_logo.png') }}" alt="" style="height: 40px;"></a>
+            <div id="swatofficer"></div>
+           <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ url('images/logo_back2.png') }}" alt="" style="height: 52px;"></a>
         </div>
+
         <div id="navbar" class="collapse navbar-collapse" style="font-weight: bold;">
             <ul class="nav navbar-nav">
                 <li class="{{ set_active(['statistics*']) }}">{!! link_to_route('statistics-home','Statistics') !!}</li>
