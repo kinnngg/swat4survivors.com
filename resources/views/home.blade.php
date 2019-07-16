@@ -18,8 +18,9 @@
         .ls-chats
         {
             background: linear-gradient(#3b3b3b, #0c0c0c);
-            border-radius: 5px;
             word-break: break-all;
+            margin-left: 10px;
+            margin-right: 10px;
         }
         .adminsrvcommandbtn
         {
@@ -216,8 +217,8 @@
                     </div>
                 </div> {{--Server Players and Top Players Wrapper Ends--}}
                 <div class="col-xs-6 panel panel-default no-padding" style="border-radius: 12px;background: linear-gradient(#3b3b3b, #0c0c0c);box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
-                    <h3 class="header header-separator">Server Viewer<small class="pull-right"><b><a href="{{ route('chat.index') }}" style="color:#888;font-size: small !important;">show all&nbsp;&nbsp;</a></b></small></h3>
-                    <div class="panel-body ls-chats">
+                    <h3 class="header header-separator">Server Viewer<small class="pull-right"><b><a href="{{ route('chat.index') }}" style="color:#888;font-size: small !important;">show all</a></b></small></h3>
+                    <div class="ls-chats">
                         <div class="loading-pt-info">Loading Server Chat...</div>
                     </div>
                     @if (Auth::check())
