@@ -146,7 +146,7 @@
         @endif
 
         <div id="server-viewer">
-            <div class="row panel text-center live-server-summary light-grey-gradient" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+            <div class="row panel text-center live-server-summary light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
                 <div class="col-xs-2 ls-swat4-summary">
                     <span class="info-title">SWAT</span>
                     <span class="info-value" id="ls-swat-score">0</span>
@@ -170,7 +170,7 @@
             </div> {{--Live Server Summary Ends --}}
             <div class="row">
                 <div class="ls-players-and-top-player col-xs-6">
-                    <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+                    <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
                         <div class="panel-heading panel-heading-separator no-padding">
                             <span class="pull-right">
                                 @if(Auth::check() && Auth::user()->isAdmin())
@@ -188,11 +188,11 @@
                         </div>
 
                     </div>
-                    <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+                    <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
                         <div class="panel-heading panel-heading-separator no-padding">Top Players</div>
-                        <div class="panel-body">
+                        <div class="panel-body no-padding">
 
-                            <table class="table table-striped table-hover no-margin">
+                            <table class="table table-striped table-hover">
                                 <thead style="border-bottom: 1px solid #ddd;">
                                 <tr>
                                     <th class="col-xs-1" style="color:#000; font-weight: 900; font-size: 12px;">#</th>
@@ -215,7 +215,7 @@
                         </div>
                     </div>
                 </div> {{--Server Players and Top Players Wrapper Ends--}}
-                <div class="col-xs-6 panel panel-default no-padding" style="border-radius: 5px;background: linear-gradient(#3b3b3b, #0c0c0c);box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+                <div class="col-xs-6 panel panel-default no-padding" style="border-radius: 12px;background: linear-gradient(#3b3b3b, #0c0c0c);box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
                     <h3 class="header header-separator">Server Viewer<small class="pull-right"><b><a href="{{ route('chat.index') }}" style="color:#888;font-size: small !important;">show all&nbsp;&nbsp;</a></b></small></h3>
                     <div class="panel-body ls-chats">
                         <div class="loading-pt-info">Loading Server Chat...</div>
@@ -255,7 +255,7 @@
         </div>
 
         <div class="row hidden-xs round-reports">
-            <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+            <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
                 <div class="panel-heading panel-heading-separator no-padding" id="accordion">
                     Round Reports
                     <div class="pull-right">
@@ -298,7 +298,7 @@
         </div>
 
         <div class="row player-records hidden-xs">
-            <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+            <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
                 <div class="panel-heading panel-heading-separator no-padding" id="accordion">
                     Player Records
                     <div class="pull-right">
@@ -888,7 +888,7 @@
         </div>
 
         <div class="row player-records">
-            <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+            <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
                 <div class="panel-heading panel-heading-separator no-padding" id="accordion">
                     Latest Bans
                     <div class="pull-right">
@@ -930,7 +930,7 @@
         </div>
 
         <div class="row player-records">
-            <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+            <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
                 <div class="panel-heading panel-heading-separator no-padding" id="accordion">
                     Global Notifications
                     <div class="pull-right">
@@ -966,7 +966,7 @@
             </div>
 
             <div style="margin-bottom: 15px;" class="row player-records">
-                <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+                <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
                     <div class="panel-heading panel-heading-separator no-padding" id="accordion">
                         Last Active Users
                         <div class="btn-group pull-right">

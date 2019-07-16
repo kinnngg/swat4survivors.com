@@ -71,32 +71,32 @@
         @include('partials._statistics-navbar')
         <div class="row">
             <div class="col-xs-3 pad10lf">
-                <div class="panel col-xs-12 pad10 light-grey-gradient8" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+                <div class="panel col-xs-12 pad10 light-grey-gradient8" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
                     <div class="col-xs-3"><i class="far fa-user fa-3x text-danger"></i></div>
                     <div class="col-xs-9 no-padding text-right"><b>Players Today:</b><br>{{ \App\PlayerTotal::todaycount() }}</div>
                 </div>
             </div>
             <div class="col-xs-3 pad10lr">
-                <div class="panel col-xs-12 pad10 light-grey-gradient8" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+                <div class="panel col-xs-12 pad10 light-grey-gradient8" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
                     <div class="col-xs-3"><i class="far fa-users-crown fa-3x text-success"></i></div>
                     <div class="col-xs-9 no-padding text-right"><b>Total Players:</b><br>{{ \App\PlayerTotal::count() }}</div>
                 </div>
             </div>
             <div class="col-xs-3 pad10lr">
-                <div class="panel col-xs-12 pad10 light-grey-gradient8" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+                <div class="panel col-xs-12 pad10 light-grey-gradient8" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
                     <div class="col-xs-3"><i class="far fa-chart-pie fa-3x text-warning"></i></div>
                     <div class="col-xs-9 no-padding text-right"><b>Rounds Played:</b><br>{{ \App\Game::count() }}</div>
                 </div>
             </div>
             <div class="col-xs-3 pad10ll">
-                <div class="panel col-xs-12 pad10 light-grey-gradient8" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+                <div class="panel col-xs-12 pad10 light-grey-gradient8" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
                     <div class="col-xs-3"><i class="far fa-clock fa-3x text-info"></i></div>
                     <div class="col-xs-9 no-padding text-right"><b>Last updated:</b><br>{{ \App\PlayerTotal::first()->updated_at->diffForHumans() }}</div>
                 </div>
             </div>
         </div>
 
-        <div class="rounds panel light-grey-gradient8" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+        <div class="rounds panel light-grey-gradient8" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
             <div class="panel-heading panel-heading-separator8 no-padding">
                 <small class="pull-right" style="color:#888;">Total Players: {{ App\PlayerTotal::count() }}</small>
                 Swat 4 Survivors Top Players
