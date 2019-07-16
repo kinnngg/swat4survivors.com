@@ -23,7 +23,7 @@
 </style>
 
 <div class="shoutbox-cont">
-    <div class="panel pad5 light-grey-gradient3" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+    <div class="panel pad5 light-grey-gradient3" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
         <div class="panel-heading panel-heading-separator3 no-padding">
             Shoutbox
         </div>

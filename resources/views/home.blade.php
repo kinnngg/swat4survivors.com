@@ -171,7 +171,7 @@
             </div> {{--Live Server Summary Ends --}}
             <div class="row">
                 <div class="ls-players-and-top-player col-xs-6">
-                    <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+                    <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);margin-left: -15px;">
                         <div class="panel-heading panel-heading-separator no-padding">
                             <span class="pull-right">
                                 @if(Auth::check() && Auth::user()->isAdmin())
@@ -189,7 +189,7 @@
                         </div>
 
                     </div>
-                    <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+                    <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);margin-left: -15px;">
                         <div class="panel-heading panel-heading-separator no-padding">Top Players</div>
                         <div class="panel-body no-padding">
 
@@ -216,7 +216,7 @@
                         </div>
                     </div>
                 </div> {{--Server Players and Top Players Wrapper Ends--}}
-                <div class="col-xs-6 panel panel-default no-padding" style="border-radius: 12px;background: linear-gradient(#3b3b3b, #0c0c0c);box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+                <div class="col-xs-6 panel no-padding" style="border-radius: 12px;background: linear-gradient(#3b3b3b, #0c0c0c);box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
                     <h3 class="header header-separator">Server Viewer<small class="pull-right"><b><a href="{{ route('chat.index') }}" style="color:#888;font-size: small !important;">show all</a></b></small></h3>
                     <div class="ls-chats">
                         <div class="loading-pt-info">Loading Server Chat...</div>

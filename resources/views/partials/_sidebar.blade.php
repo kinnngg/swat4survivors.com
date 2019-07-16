@@ -29,7 +29,7 @@
 </style>
 
 <aside class="col-xs-3 main-sidebar">
-    <div class="panel pad5 light-grey-gradient2" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+    <div class="panel pad5 light-grey-gradient2" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
         <!--<h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed #FF69B4">Join Server
         </h4>-->
         <div class="panel-heading panel-heading-separator2 no-padding">
@@ -62,7 +62,7 @@
     @if($poll = App\Pollq::where('disabled','!=','1')->latest()->limit(1)->first())
         <div class="poll-cont">
             @if(!$poll->isExpired() && !$poll->isVoted())
-                <div class="panel pad10 light-grey-gradient" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+                <div class="panel pad10 light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
                     <small class="pull-right"><i><b><a href="{{ route('poll.index') }}">» view all</a></b></i></small>
                     <!--<h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Poll</h4>-->
                     <div class="panel-heading panel-heading-separator2 no-padding">
@@ -82,7 +82,7 @@
                     </div>
                 </div>
             @else
-                <div class="panel pad10 light-grey-gradient2" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+                <div class="panel pad10 light-grey-gradient2" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
                     <!--<h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Poll</h4>-->
                     <div class="panel-heading panel-heading-separator2 no-padding">
                         Poll
@@ -113,7 +113,7 @@
     {{--Only display this section on homepage--}}
     @if(Request::getRequestUri() == "/" || Request::getRequestUri() == "/home")
 
-        <div class="panel pad5 light-grey-gradient" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+        <div class="panel pad5 light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
             
             <div class="panel-heading panel-heading-separator2 no-padding">
                 <small class="pull-right"><b><a href="{{ route('news.index') }}" style="color:#888;font-size: small !important;">show all</a></b></small>
@@ -133,7 +133,7 @@
             </div>
         </div>
 
-        <div class="panel pad5 light-grey-gradient" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+        <div class="panel pad5 light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
             <div class="panel-heading panel-heading-separator2 no-padding">
                 Donate
             </div>
