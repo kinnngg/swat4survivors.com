@@ -43,7 +43,7 @@
     <div class="content col-xs-8">
         @include('partials._errors')
 
-        <div class="col-xs-12 panel light-grey-gradient6" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+        <div class="col-xs-12 panel light-grey-gradient6" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
             @if(Request::has('search'))
                 <h4 class="well well-sm">Search for "<b>{{ Request::get('search') }}</b>" matched {{ $chats->total() }}
                     chats</h4>

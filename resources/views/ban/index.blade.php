@@ -45,7 +45,7 @@
 </style>
     <div class="col-xs-9">
 
-        <div class="rounds panel light-grey-gradient4" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+        <div class="rounds panel light-grey-gradient4" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
             <div class="panel-heading panel-heading-separator4 no-padding">
                 <small class="pull-right" style="color:#888;">Total Bans: {{ $bans->total() }}</small>
                 Swat 4 Survivors Master Banlist

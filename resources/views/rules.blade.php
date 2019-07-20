@@ -37,7 +37,7 @@
 </style>
     <div class="content col-xs-9">
 
-        <div class="panel light-grey-gradient3" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);padding: 20px;">
+        <div class="panel light-grey-gradient3" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);padding: 20px;">
             <div class="panel-heading panel-heading-separator3 no-padding">
                 <!--<h3 class="text"><b>Rules of </b>&nbsp;<i title="thumb" class="tooltipster fa fa-thumbs-up fa-2x"></i> </h3>-->
                 Rules of Swat4Survivors
@@ -68,7 +68,7 @@
         </div>
 
         @if(Auth::check() && Auth::user()->isAdmin())
-        <div class="panel light-grey-gradient3" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);padding: 20px;">
+        <div class="panel light-grey-gradient3" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);padding: 20px;">
             <div class="panel-heading panel-heading-separator3 no-padding">
                 <!--<h3 class="text"><b>Rules/Guide for </b>&nbsp;<i title="Administrator" class="tooltipster fa fa-user-secret fa-2x"></i> Administrators</h3>-->
                 Rules and Guide for Administrators

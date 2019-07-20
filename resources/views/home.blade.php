@@ -251,7 +251,7 @@
                 </div> {{--Live Server Viewer Ends--}}
             </div> {{--Live Server Players,Top Players and Server Viewer Row Ends--}}
         </div>
-        <div class="server-viewer-loader row light-grey-gradient" style="border-radius: 5px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+        <div class="server-viewer-loader row light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
             <div id="sv-loading">Loading Server Viewer…</div>
         </div>
 

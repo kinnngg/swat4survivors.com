@@ -63,21 +63,21 @@
                         More <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li class="{{ set_active(['rules']) }}"><a href="{{ route('rules') }}">Rules</a></li>
-                        <li class="{{ set_active(['tournament*']) }}"><a href="{{ route('tournament.index') }}">Tournaments</a></li>
+                        <!--<li class="{{ set_active(['tournament*']) }}"><a href="{{ route('tournament.index') }}">Tournaments</a></li>-->
                         <li class="{{ set_active(['banlist*']) }}"><a href="{{ route('bans.index') }}">Banlist</a></li>
                         <li class="{{ set_active(['news*']) }}"><a href="{{ route('news.index') }}">News</a></li>
                         <li class="{{ set_active(['serverchat-history*']) }}"><a href="{{ route('chat.index') }}">Chat History</a></li>
                         <li class="{{ set_active(['polls*']) }}"><a href="{{ route('poll.index') }}">Polls</a></li>
-                        <li class="{{ set_active(['us-members*']) }}"><a href="{{ route('us.members') }}">uS| Members</a></li>
-                        <li class="{{ set_active(['admins-list*']) }}"><a href="{{ route('admin.list') }}">KoS Adminlist</a></li>
+                        <!--<li class="{{ set_active(['us-members*']) }}"><a href="{{ route('us.members') }}">uS| Members</a></li>-->
+                        <li class="{{ set_active(['admins-list*']) }}"><a href="{{ route('admin.list') }}">S4S Adminlist</a></li>
                         <li class="{{ set_active(['downloads*']) }}"><a href="{{ route('download') }}">Downloads</a></li>
                         <li class=""><a href="https://swat4stats.com/servers/" target="_blank">Servers</a></li>
                         <li class="{{ set_active(['global-notifications*']) }}"><a href="{{ route('notifications.index') }}">G Notifications</a></li>
                         <li class="{{ set_active(['deleted-players*']) }}"><a href="{{ route('deleted-players') }}">Deleted Players</a></li>
                         <li class="{{ set_active(['extrapoints*']) }}"><a href="{{ route('extrapoints') }}">Awarded Points</a></li>
-                        @if(Auth::check() && Auth::user()->isSubAdmin())
+                        <!--@if(Auth::check() && Auth::user()->isSubAdmin())
                         <li class="{{ set_active(['rules-of-usteam*']) }}"><a href="{{ route('us.rules') }}">uS| Team Rules</a></li>
-                        @endif
+                        @endif-->
                     </ul>
                 </li>
 

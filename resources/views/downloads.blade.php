@@ -5,13 +5,43 @@
         {
             font-weight: bolder;
         }
+        .light-grey-gradient12
+        {
+            background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);
+        }
+        .panel-heading-separator12
+        {
+            margin-left: 10px;
+            margin-right: 10px !important;
+            padding-bottom: 6px;
+            margin-bottom: 8px;
+            border-bottom: 2px dashed #FF69B4;
+        }
+        .panel-heading
+        {
+            color: #444;
+            font-weight: bold;
+            font-size: 1.1em;
+            font-family: 'Trebuchet MS';
+            padding-top: 5px !important;
+            padding-bottom: 5px !important;
+        }
+        .panel h3.header
+        {
+            color: #f8f8f8 !important;
+        }
+        .panel h3
+        {
+            font-weight: bold;
+            font-size: 1.3em;
+            font-family: 'Trebuchet MS';
     </style>
     @endsection
 @section('title','Downloads')
 @section('main-container')
     <div class="content col-xs-9">
 
-        <div class="panel" style="padding: 20px;">
+        <div class="panel light-grey-gradient12" style="padding: 20px;border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);padding: 20px;">
             <div class="download-item row">
                 <div class="col-xs-4">
                     <img src="/images/admin-icon.png" style="width: 225px;height: 225px;" class="img" alt="">
