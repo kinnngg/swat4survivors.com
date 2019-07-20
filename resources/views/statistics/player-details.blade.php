@@ -66,7 +66,7 @@
                     </div>
                 @else
                     <div class="colm-1 no-padding tooltipster" title="&lt;div class='text-center text-bold' &gt; {{ $rank->name }} &lt;/div&gt; &lt;br&gt;Points: {{ $rank->description }}">
-                        <img class="img-thumbnail" src="/images/game/insignia/more/{{ $rank->id }}.png" width="40px" style="height: 40px;">
+                        <img class="img-thumbnail" src="/images/game/insignia/more/{{ $rank->id }}.png" width="50px" style="height: 50px;">
                     </div>
                 @endif
             @endforeach

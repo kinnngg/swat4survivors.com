@@ -1,3 +1,37 @@
+<style>
+    .light-grey-gradient13
+    {
+        background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);
+    }
+    .panel-heading-separator13
+    {
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+        padding-bottom: 6px !important;
+        margin-bottom: 8px !important;
+        border-bottom: 2px dashed #FF69B4 !important;
+    }
+    .panel-heading
+    {
+        color: #444;
+        font-weight: bold;
+        font-size: 1.1em;
+        font-family: 'Trebuchet MS';
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+    }
+    .panel h3.header
+    {
+        color: #f8f8f8 !important;
+    }
+    .panel h3
+    {
+        font-weight: bold;
+        font-size: 1.3em;
+        font-family: 'Trebuchet MS';
+    }
+</style>
+
 @extends('layouts.main')
 @section('meta-desc',"List of all rounds played.")
 @section('title',"Round Reports")
@@ -7,14 +41,20 @@
         @include('partials._statistics-navbar')
 
         @if(Request::route()->uri() == 'statistics/war-round-reports')
-            <div style="background: #090b0a" class="text-center alert text-bold"><span style="color: deeppink">War Server</span> <span style="color: red">(Antics)</span></div>
+            <div style="border-radius: 12px;" class="text-center alert text-bold light-grey-gradient13"><span style="color: deeppink">War Server</span> <span style="color: red">(Antics)</span></div>
         @endif
 
-        <div class="rounds panel panel-default">
+        <div class="rounds panel light-grey-gradient13" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
             @if(Request::route()->uri() == 'statistics/war-round-reports')
-                <div class="panel-heading"><strong>Total <em>{{ App\Game::whereNotNull('server_id')->count() }}</em> Rounds Reports</strong></div>
+                <div class="panel-heading panel-heading-separator13 no-padding">
+                    <small class="pull-right" style="color:#888;">Total Reports: {{ App\Game::whereNotNull('server_id')->count() }}</small>
+                    Round Reports
+                </div>
             @else
-                <div class="panel-heading"><strong>Total <em>{{ App\Game::whereNull('server_id')->count() }}</em> Rounds Reports</strong></div>
+                <div class="panel-heading panel-heading-separator13 no-padding">
+                    <small class="pull-right" style="color:#888;">Total Reports: {{ App\Game::whereNull('server_id')->count() }}</small>
+                    Round Reports
+                </div>
             @endif
             <div class="panel-body">
                 <table id="" class="table table-striped table-hover no-margin">

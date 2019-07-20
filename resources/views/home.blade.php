@@ -39,19 +39,21 @@
             color: #444;
             font-weight: bold;
             font-size: 1.1em;
-            font-family: 'Trebuchet MS';
+            font-family: 'Marcellus SC' !important;
             padding-top: 5px !important;
             padding-bottom: 5px !important;
         }
         .panel h3.header
         {
             color: #f8f8f8 !important;
+            font-family: 'Marcellus SC' !important;
         }
         .panel h3
         {
             font-weight: bold;
             font-size: 1.3em;
-            font-family: 'Trebuchet MS';
+            /*font-family: 'Trebuchet MS';*/
+            font-family: 'Marcellus SC';
         }
         .header-separator
         {
@@ -119,7 +121,7 @@
         .table
         {
             padding: 14px !important;
-            background-color: #FFF;
+            background-color: #fff;
             border: 1px solid #CCC;
         }
     </style>
@@ -147,31 +149,31 @@
         @endif
 
         <div id="server-viewer">
-            <div class="row panel text-center live-server-summary light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+            <div class="row panel text-center live-server-summary light-grey-gradient" style="border-radius: 12px;box-shadow: 2px 2px 2px rgba(0,0,0,.3);">
                 <div class="col-xs-2 ls-swat4-summary">
-                    <span class="info-title">SWAT</span>
-                    <span class="info-value" id="ls-swat-score">0</span>
-                    <span class="info-base" id="ls-swat-wins">0 Wins</span>
+                    <span class="info-title" style="font-family: Marcellus SC;">SWAT</span>
+                    <span class="info-value" id="ls-swat-score" style="font-family: Marcellus SC;">0</span>
+                    <span class="info-base" id="ls-swat-wins" style="font-family: Marcellus SC;">0 Wins</span>
                 </div>
                 <div class="col-xs-2 ls-suspects-summary">
-                    <span class="info-title">SUSPECTS</span>
-                    <span class="info-value" id="ls-suspects-score">0</span>
-                    <span class="info-base" id="ls-suspects-wins">0 Wins</span>
+                    <span class="info-title" style="font-family: Marcellus SC;">SUSPECTS</span>
+                    <span class="info-value" id="ls-suspects-score" style="font-family: Marcellus SC;">0</span>
+                    <span class="info-base" id="ls-suspects-wins" style="font-family: Marcellus SC;">0 Wins</span>
                 </div>
                 <div class="col-xs-3 ls-round-summary">
-                    <span class="info-title">ROUND</span>
-                    <span class="info-value" id="ls-round">0/0</span>
-                    <span class="info-base" id="ls-time">00:00</span>
+                    <span class="info-title" style="font-family: Marcellus SC;">ROUND</span>
+                    <span class="info-value" id="ls-round" style="font-family: Marcellus SC;">0/0</span>
+                    <span class="info-base" id="ls-time" style="font-family: Marcellus SC;">00:00</span>
                 </div>
-                <div class="col-xs-5 ls-map-summary">
-                    <span class="info-title">MAP</span>
-                    <span class="info-value" id="ls-map-name">None</span>
-                    <span class="info-base" id="ls-next-map">Next: None</span>
+                <div class="col-xs-5 ls-map-summary" style="font-family: Marcellus SC !important;">
+                    <span class="info-title" style="font-family: Marcellus SC;">MAP</span>
+                    <span class="info-value" id="ls-map-name" style="font-family: Marcellus SC;">None</span>
+                    <span class="info-base" id="ls-next-map" style="font-family: Marcellus SC;">Next: None</span>
                 </div>
             </div> {{--Live Server Summary Ends --}}
             <div class="row">
                 <div class="ls-players-and-top-player col-xs-6">
-                    <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);margin-left: -15px;">
+                    <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 12px;box-shadow: 2px 2px 2px rgba(0,0,0,.3);margin-left: -15px;">
                         <div class="panel-heading panel-heading-separator no-padding">
                             <span class="pull-right">
                                 @if(Auth::check() && Auth::user()->isAdmin())
@@ -189,12 +191,12 @@
                         </div>
 
                     </div>
-                    <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);margin-left: -15px;">
+                    <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 12px;box-shadow: 2px 2px 2px rgba(0,0,0,.3);margin-left: -15px;">
                         <div class="panel-heading panel-heading-separator no-padding">Top Players</div>
                         <div class="panel-body no-padding">
 
                             <table class="table table-striped table-hover">
-                                <thead style="border-bottom: 1px solid #ddd;">
+                                <thead style="border-bottom: 1px solid #ddd;font-family: Marcellus SC;">
                                 <tr>
                                     <th class="col-xs-1" style="color:#000; font-weight: 900; font-size: 12px;">#</th>
                                     <th class="col-xs-1" style="color:#000; font-weight: 900; font-size: 12px;">Rank</th>
@@ -204,10 +206,10 @@
                                 </thead>
                                 @forelse($topPlayers as $player)
                                     <tr>
-                                        <th>{{ $player->position }}</th>
-                                        <td>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
-                                        <td class="color-main text-bold">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
-                                        <td class="text-right"><small>{{ $player->lastGame->created_at->diffForHumans() }}</small></td>
+                                        <th style="vertical-align: middle;">{{ $player->position }}</th>
+                                        <td style="vertical-align: middle;">{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '38px']) !!}</td>
+                                        <td class="color-main text-bold" style="vertical-align: middle;">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
+                                        <td class="text-right" style="vertical-align: middle;"><small>{{ $player->lastGame->created_at->diffForHumans() }}</small></td>
                                     </tr>
                                 @empty
                                     Empty
@@ -216,7 +218,7 @@
                         </div>
                     </div>
                 </div> {{--Server Players and Top Players Wrapper Ends--}}
-                <div class="col-xs-6 panel no-padding" style="border-radius: 12px;background: linear-gradient(#3b3b3b, #0c0c0c);box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+                <div class="col-xs-6 panel no-padding" style="border-radius: 12px;background: linear-gradient(#3b3b3b, #0c0c0c);box-shadow: 2px 2px 2px rgba(0,0,0,.3);">
                     <h3 class="header header-separator">Server Viewer<small class="pull-right"><b><a href="{{ route('chat.index') }}" style="color:#888;font-size: small !important;">show all</a></b></small></h3>
                     <div class="ls-chats">
                         <div class="loading-pt-info">Loading Server Chat...</div>
@@ -251,12 +253,12 @@
                 </div> {{--Live Server Viewer Ends--}}
             </div> {{--Live Server Players,Top Players and Server Viewer Row Ends--}}
         </div>
-        <div class="server-viewer-loader row light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+        <div class="server-viewer-loader row light-grey-gradient" style="border-radius: 12px;box-shadow: 2px 2px 2px rgba(0,0,0,.3);">
             <div id="sv-loading">Loading Server Viewer…</div>
         </div>
 
         <div class="row hidden-xs round-reports">
-            <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+            <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 12px;box-shadow: 2px 2px 2px rgba(0,0,0,.3);">
                 <div class="panel-heading panel-heading-separator no-padding" id="accordion">
                     Round Reports
                     <div class="pull-right">
@@ -271,7 +273,7 @@
                     <div class="panel-body" style="padding-left: 0px !important;padding-right: 0px !important;padding-top: 0px !important;">
                         <table class="table table-striped table-hover no-margin">
                             <thead>
-                            <tr>
+                            <tr style="font-family: Marcellus SC;">
                                 <th class="col-xs-1" style="color:#000; font-weight: 900; font-size: 12px;">Round</th>
                                 <th class="col-xs-2" style="color:#000; font-weight: 900; font-size: 12px;">Time</th>
                                 <th class="col-xs-1" style="color:#000; font-weight: 900; font-size: 12px;">Swat</th>
@@ -299,7 +301,7 @@
         </div>
 
         <div class="row player-records hidden-xs">
-            <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+            <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 12px;box-shadow: 2px 2px 2px rgba(0,0,0,.3);">
                 <div class="panel-heading panel-heading-separator no-padding" id="accordion">
                     Player Records
                     <div class="pull-right">
@@ -314,7 +316,7 @@
                         <div class="col-articles articles">
                             <div>
                                 <!--Tab Starts-->
-                                <div role="tabpanel">
+                                <div role="tabpanel" style="font-family: Marcellus SC;">
                                     <!-- Nav tabs -->
                                     <ul class="nav nav-tabs" role="tablist">
                                         <li role="presentation" class="active"><a class="ainorange" href="#pastweek"
@@ -889,7 +891,7 @@
         </div>
 
         <div class="row player-records">
-            <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+            <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 12px;box-shadow: 2px 2px 2px rgba(0,0,0,.3);">
                 <div class="panel-heading panel-heading-separator no-padding" id="accordion">
                     Latest Bans
                     <div class="pull-right">
@@ -904,7 +906,7 @@
                     <div class="panel-body" style="padding-left: 0px !important;padding-right: 0px !important;padding-top: 0px !important;">
                         <table id="" class="table table-striped table-hover no-margin">
                             <thead>
-                            <tr>
+                            <tr style="font-family: Marcellus SC;">
                                 <th class="col-xs-1"></th>
                                 <th class="col-xs-3" style="color:#000; font-weight: 900; font-size: 14px;">Name</th>
                                 <th class="col-xs-2" style="color:#000; font-weight: 900; font-size: 14px;">IP Address</th>
@@ -931,7 +933,7 @@
         </div>
 
         <div class="row player-records">
-            <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+            <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 12px;box-shadow: 2px 2px 2px rgba(0,0,0,.3);">
                 <div class="panel-heading panel-heading-separator no-padding" id="accordion">
                     Global Notifications
                     <div class="pull-right">
@@ -967,7 +969,7 @@
             </div>
 
             <div style="margin-bottom: 15px;" class="row player-records">
-                <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+                <div class="col-xs-12 panel light-grey-gradient" style="border-radius: 12px;box-shadow: 2px 2px 2px rgba(0,0,0,.3);">
                     <div class="panel-heading panel-heading-separator no-padding" id="accordion">
                         Last Active Users
                         <div class="btn-group pull-right">

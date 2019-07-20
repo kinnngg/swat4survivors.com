@@ -1,3 +1,37 @@
+<style>
+    .light-grey-gradient14
+    {
+        background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);
+    }
+    .panel-heading-separator14
+    {
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+        padding-bottom: 6px !important;
+        margin-bottom: 8px !important;
+        border-bottom: 2px dashed #FF69B4 !important;
+    }
+    .panel-heading
+    {
+        color: #444;
+        font-weight: bold;
+        font-size: 1.1em;
+        font-family: 'Trebuchet MS';
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+    }
+    .panel h3.header
+    {
+        color: #f8f8f8 !important;
+    }
+    .panel h3
+    {
+        font-weight: bold;
+        font-size: 1.3em;
+        font-family: 'Trebuchet MS';
+    }
+</style>
+
 @extends('layouts.main')
 @section('meta-desc','Server statistics per country')
 @section('title','Countries')
@@ -8,8 +42,11 @@
 
         <div id="regions_div" style="" class="hidden-xs"></div>
         <br>
-        <div class="rounds panel panel-default">
-            <div class="panel-heading"><strong>All Countries ({{ $players->total() }})</strong></div>
+        <div class="rounds panel light-grey-gradient14" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+            <div class="panel-heading panel-heading-separator14 no-padding">
+                <small class="pull-right" style="color:#888;">Total Countries: {{ $players->total() }}</small>
+                All Countries
+            </div>
             <div class="panel-body">
                 <table id="" class="table table-striped table-hover no-margin">
                     <thead>

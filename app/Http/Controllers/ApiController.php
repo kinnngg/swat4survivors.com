@@ -544,18 +544,20 @@ class ApiController extends Controller
                         $al = $al . $alias->name." - ";
                     }
                 }
-                printf("[c=FFFF00][b][u]%s[\\u][\\b][\\c] is coming from [b][c=EBFFFF]%s[\\c][\\b]\n", $player->name, $playerCountryName);
+                /*printf("[c=FFFF00][b][u]%s[\\u][\\b][\\c] is coming from [b][c=EBFFFF]%s[\\c][\\b]\n", $player->name, $playerCountryName);
                 printf("[b][c=FFFF00][u]%s[\\u][\\c][\\b]'s Position: [c=FFFEEB][b][u]#%d[\\u][\\b][\\c] [c=00FF00]-[\\c] Score: [c=FFFEEB][b][u]%d[\\u][\\b][\\c] [c=00FF00]-[\\c] Rank: [c=FFFEEB][b][u]%s[\\u][\\b][\\c]\n", $player->name, $player->position, $player->total_score, $player->rank->name);
                 printf("Score Per Min: [c=FFFEEB][b][u]%.2f points[\\u][\\b][\\c] [c=00FF00]-[\\c] Highest Score: [c=FFFEEB][b][u]%d[\\u][\\b][\\c]\n", round($player->score_per_min,2), $player->highest_score);
-                printf("Time Played: [c=FFFEEB][b][u]%s[\\u][\\b][\\c] [c=00ff00]-[\\c] Last Seen: [c=00FF00][b][u]%s[\\u][\\b][\\c]\n", gmdate("H\\h i\\m", $player->total_time_played), $player->lastGame->created_at->diffForHumans());
-                if(!$aliases->isEmpty())
-                    printf("[b]Aka: [c=f39c12]%s[\\c]", substr($al, 0, -3));
+                printf("Time Played: [c=FFFEEB][b][u]%s[\\u][\\b][\\c] [c=00ff00]-[\\c] Last Seen: [c=00FF00][b][u]%s[\\u][\\b][\\c]\n", gmdate("H\\h i\\m", $player->total_time_played), $player->lastGame->created_at->diffForHumans());*/
+                printf("[c=FFFF00][u]%s[\u][\c] is coming from [b][u]%s[\u][\b]", $player->name, $playerCountryName);
+                printf("\\nPosition: [u]#%d[\u] [c=FF0000]-[\c] Score: [b][u]%d[\u][\b] [c=FF0000]-[\c] Rank: %s", $player->position, $player->total_score, $player->rank->name);
+                /*if(!$aliases->isEmpty())
+                    printf("[b]Aka: [c=f39c12]%s[\\c]", substr($al, 0, -3));*/
 
-                $user = $player->user();
+                /*$user = $player->user();
                 if($user)
                 {
                     printf("\nOwner's username: [c=0000FF][b]@%s[\\c]", $user->username);
-                }
+                }*/
                 exit();
                 /*$data = [
                     'player' => $player,

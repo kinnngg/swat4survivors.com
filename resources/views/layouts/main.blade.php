@@ -54,7 +54,7 @@
 @include('partials._quickerrors')
 
 <div class="main container">
-    <div class="container" style="background: #505050;padding-top: 20px;border-radius: 12px;margin-bottom: 20px;margin-top: 20px;">
+    <div class="container" style="background: linear-gradient(to bottom, #2a2c31, #2d2f34, #303238, #33363b, #36393f);padding-top: 20px;border-radius: 12px;margin-bottom: 20px;margin-top: 20px;">
         @include('partials._navbar')
         @if(!Request::is('tournament*'))
             @include('partials._sidebar')

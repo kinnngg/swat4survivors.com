@@ -23,9 +23,9 @@
     .panel-heading
     {
         color: #444;
-        font-weight: bold;
+        font-weight: bold !important;
         font-size: 1.1em;
-        font-family: 'Trebuchet MS';
+        font-family: 'Marcellus SC' !important;
         padding-top: 5px !important;
         padding-bottom: 5px !important;
     }
@@ -37,7 +37,7 @@
     {
         font-weight: bold;
         font-size: 1.3em;
-        font-family: 'Trebuchet MS';
+        font-family: 'Marcellus SC' !important;
     }
 </style>
     <div class="content col-xs-8">

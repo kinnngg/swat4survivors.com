@@ -55,7 +55,7 @@
         </div>
 
         <div id="navbar" class="collapse navbar-collapse" style="font-weight: bold;">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav" style="font-family: Marcellus SC;">
                 <li class="{{ set_active(['statistics*']) }}">{!! link_to_route('statistics-home','Statistics') !!}</li>
                 <li><a target="_blank" href="http://knightofsorrow.forumclan.com">Forum</a></li>
                 <li class="dropdown">
@@ -83,7 +83,7 @@
 
             </ul>
 
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right" style="font-family: Marcellus SC;">
                 @if(Auth::guest())
                     <li class="{{ set_active(['auth/login']) }}"><a class="login"
                                                                     href="{{ url('/auth/login') }}">Login</a></li>
