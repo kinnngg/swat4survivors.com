@@ -197,7 +197,7 @@
                                 <thead style="border-bottom: 1px solid #ddd;">
                                 <tr>
                                     <th class="col-xs-1" style="color:#000; font-weight: 900; font-size: 12px;">#</th>
-                                    <th class="col-xs-1 text-center" style="color:#000; font-weight: 900; font-size: 12px;">Rank</th>
+                                    <th class="col-xs-1" style="color:#000; font-weight: 900; font-size: 12px;">Rank</th>
                                     <th class="col-xs-1" style="color:#000; font-weight: 900; font-size: 12px;">Name</th>
                                     <th class="col-xs-2 text-right" style="color:#000; font-weight: 900; font-size: 12px;">Last Seen</th>
                                 </tr>
