@@ -38,7 +38,7 @@
         {
             color: #444;
             font-weight: bold;
-            font-size: 1.0em !important;
+            font-size: 1.1em !important;
             font-family: "Marcellus SC",serif !important;
             padding-top: 5px !important;
             padding-bottom: 5px !important;
@@ -51,7 +51,7 @@
         .panel h3
         {
             font-weight: bold;
-            font-size: 1.3em;
+            font-size: 1.2em;
             /*font-family: 'Trebuchet MS';*/
             font-family: "Marcellus SC",serif !important;
         }
