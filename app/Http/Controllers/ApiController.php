@@ -74,12 +74,12 @@ class ApiController extends Controller
 
         if($data->option['players_current'] <= 0)
         {
-            $playerTableData = "<div class='no-player-online'>There are no players online.</div>";
+            $playerTableData = "<div class='no-player-online text-muted'>There are no players online.</div>";
         }
         else
         {
-            $playerTableData = "<table class='table table-striped table-hover no-margin' id='ls-player-table'>";
-            $playerTableData .= "<thead><tr><th class='col-xs-1'>Flag</th><th class='col-xs-7'>Name</th><th class='col-xs-2'>Score</th><th class='text-right col-xs-2'>Ping</th></tr></thead><tbody id='ls-player-table-body'></tbody>";
+            $playerTableData = "<table class='table table-dark table-hover no-margin' id='ls-player-table'>";
+            $playerTableData .= "<thead style='border-bottom: 1px solid #ddd !important;color: #fff;font-family: Marcellus SC !important;'><tr><th class='col-xs-1'>Flag</th><th class='col-xs-7'>Name</th><th class='col-xs-2'>Score</th><th class='text-right col-xs-2'>Ping</th></tr></thead><tbody id='ls-player-table-body'></tbody>";
 
             foreach($data->option['players'] as $player)
             {
@@ -136,8 +136,8 @@ class ApiController extends Controller
                     $playerTableData .= "<td>{$showRadioIfAdmin}<span title='{$IPorNull}' class='tooltipster team-{$player['team']}'>".$player['name']."</span></td>";
                 }
 
-                $playerTableData .= "<td class='text-bold'>{$player['score']}</td>";
-                $playerTableData .= "<td class='text-right text-bold'>{$player['ping']}</td>";
+                $playerTableData .= "<td class='text-bold text-muted'>{$player['score']}</td>";
+                $playerTableData .= "<td class='text-right text-bold text-muted'>{$player['ping']}</td>";
             }
         }
 

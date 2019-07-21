@@ -36,12 +36,13 @@
         }
         .panel-heading
         {
-            color: #444;
+            color: #fff !important;
             font-weight: bold;
             font-size: 1.1em !important;
             font-family: "Marcellus SC",serif !important;
             padding-top: 5px !important;
             padding-bottom: 5px !important;
+            text-shadow: 2px 2px 5px #FF69B4;
         }
         .panel h3.header
         {
@@ -54,6 +55,7 @@
             font-size: 1.2em;
             /*font-family: 'Trebuchet MS';*/
             font-family: "Marcellus SC",serif !important;
+            text-shadow: 2px 2px 5px #FF69B4;
         }
         .header-separator
         {
@@ -116,12 +118,13 @@
         }
         .light-grey-gradient
         {
-            background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);
+            /*background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);*/
+            background: linear-gradient(#3b3b3b, #0c0c0c);
         }
         .table
         {
             padding: 14px !important;
-            background-color: #fff;
+            /*background-color: transparent;*/
             border: 1px solid #CCC;
         }
     </style>
@@ -162,12 +165,12 @@
                 </div>
                 <div class="col-xs-3 ls-round-summary">
                     <span class="info-title" style="font-family: Marcellus SC;">ROUND</span>
-                    <span class="info-value" id="ls-round" style="font-family: Marcellus SC;">0/0</span>
+                    <span class="text-muted info-value" id="ls-round" style="font-family: Marcellus SC;">0/0</span>
                     <span class="info-base" id="ls-time" style="font-family: Marcellus SC;">00:00</span>
                 </div>
                 <div class="col-xs-5 ls-map-summary" style="font-family: Marcellus SC !important;">
                     <span class="info-title" style="font-family: Marcellus SC;">MAP</span>
-                    <span class="info-value" id="ls-map-name" style="font-family: Marcellus SC;">None</span>
+                    <span class="text-muted info-value" id="ls-map-name" style="font-family: Marcellus SC;">None</span>
                     <span class="info-base" id="ls-next-map" style="font-family: Marcellus SC;">Next: None</span>
                 </div>
             </div> {{--Live Server Summary Ends --}}
@@ -177,13 +180,13 @@
                         <div class="panel-heading panel-heading-separator no-padding">
                             <span class="pull-right">
                                 @if(Auth::check() && Auth::user()->isAdmin())
-                            <a style='color:#444;' class='fancybox livepfancy fancybox.ajax tooltipster' href='./liveserveraction' title='Server Action'><i class='fa fa-cog'></i></a>
+                            <a style='color:#fff;' class='fancybox livepfancy fancybox.ajax tooltipster' href='./liveserveraction' title='Server Action'><i class='fa fa-cog'></i></a>
                                 @endif
                             </span>
                             Online Players <span id="ls-player-online"></span>
                         </div>
                         <div class="panel-body no-padding" id="ls-player-total-div" style="padding-bottom: 10px !important;">
-                            <table class="table table-striped table-hover" id="ls-player-table">
+                            <table class="table table-hover" id="ls-player-table">
                                 <th class="loading-pt-info text-center">Loading
                                     Players table...
                                 </th>
@@ -195,21 +198,21 @@
                         <div class="panel-heading panel-heading-separator no-padding">Top Players</div>
                         <div class="panel-body no-padding">
 
-                            <table class="table table-striped table-hover">
+                            <table class="table table-dark table-hover" style="border: 0px;">
                                 <thead style="border-bottom: 1px solid #ddd;font-family: Marcellus SC;">
                                 <tr>
-                                    <th class="col-xs-1" style="color:#000; font-weight: 900; font-size: 12px;">#</th>
-                                    <th class="col-xs-1" style="color:#000; font-weight: 900; font-size: 12px;">Rank</th>
-                                    <th class="col-xs-1" style="color:#000; font-weight: 900; font-size: 12px;">Name</th>
-                                    <th class="col-xs-2 text-right" style="color:#000; font-weight: 900; font-size: 12px;">Last Seen</th>
+                                    <th class="col-xs-1" style="color:#fff; font-weight: 900; font-size: 12px;">#</th>
+                                    <th class="col-xs-1" style="color:#fff; font-weight: 900; font-size: 12px;">Rank</th>
+                                    <th class="col-xs-1" style="color:#fff; font-weight: 900; font-size: 12px;">Name</th>
+                                    <th class="col-xs-2 text-right" style="color:#fff; font-weight: 900; font-size: 12px;">Last Seen</th>
                                 </tr>
                                 </thead>
                                 @forelse($topPlayers as $player)
-                                    <tr>
-                                        <th style="vertical-align: middle;">{{ $player->position }}</th>
+                                    <tr style="border-bottom: 1px solid #ccc;margin-left: -5px;margin-right: -5px;">
+                                        <th class="text-muted" style="vertical-align: middle;">{{ $player->position }}</th>
                                         <td style="vertical-align: middle;">{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '38px']) !!}</td>
                                         <td class="color-main text-bold" style="vertical-align: middle;">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
-                                        <td class="text-right" style="vertical-align: middle;"><small>{{ $player->lastGame->created_at->diffForHumans() }}</small></td>
+                                        <td class="text-right text-muted" style="vertical-align: middle;"><small>{{ $player->lastGame->created_at->diffForHumans() }}</small></td>
                                     </tr>
                                 @empty
                                     Empty
@@ -263,7 +266,7 @@
                     Round Reports
                     <div class="pull-right">
                         <small><b><a href="{{ route('round-reports') }}" style="color:#888;font-size: small !important;">show all&nbsp;&nbsp;</a></b></small>
-                        <a type="button" class="btn btn-default btn-xs pull-right" data-toggle="collapse" data-parent="#accordion"
+                        <a type="button" class="btn btn-xs pull-right" data-toggle="collapse" data-parent="#accordion"
                            href="#collapseTwo">
                             <span class="fa fa-chevron-down"></span>
                         </a>
@@ -271,20 +274,20 @@
                 </div>
                 <div class="" id="collapseTwo">
                     <div class="panel-body" style="padding-left: 0px !important;padding-right: 0px !important;padding-top: 0px !important;">
-                        <table class="table table-striped table-hover no-margin">
-                            <thead>
+                        <table class="table table-dark table-hover no-margin" style="border: 0px;">
+                            <thead style="border-bottom: 1px solid #ddd;font-family: Marcellus SC;">
                             <tr style="font-family: Marcellus SC;">
-                                <th class="col-xs-1" style="color:#000; font-weight: 900; font-size: 12px;">Round</th>
-                                <th class="col-xs-2" style="color:#000; font-weight: 900; font-size: 12px;">Time</th>
-                                <th class="col-xs-1" style="color:#000; font-weight: 900; font-size: 12px;">Swat</th>
-                                <th class="col-xs-2" style="color:#000; font-weight: 900; font-size: 12px;">Suspects</th>
-                                <th style="color:#000; font-weight: 900; font-size: 12px;">Map</th>
-                                <th class="col-xs-2 text-right" style="color:#000; font-weight: 900; font-size: 12px;">Date</th>
+                                <th class="col-xs-1" style="color:#fff; font-weight: 900; font-size: 12px;">Round</th>
+                                <th class="col-xs-2" style="color:#fff; font-weight: 900; font-size: 12px;">Time</th>
+                                <th class="col-xs-1" style="color:#fff; font-weight: 900; font-size: 12px;">Swat</th>
+                                <th class="col-xs-2" style="color:#fff; font-weight: 900; font-size: 12px;">Suspects</th>
+                                <th style="color:#fff; font-weight: 900; font-size: 12px;">Map</th>
+                                <th class="col-xs-2 text-right" style="color:#fff; font-weight: 900; font-size: 12px;">Date</th>
                             </tr>
                             </thead>
-                            <tbody id="data-items" class="roundstabledata">
+                            <tbody id="data-items" class="roundstabledata text-muted">
                             @foreach($latestGames as $round)
-                                <tr class="item pointer-cursor" data-id="{{ $round->id }}">
+                                <tr class="item pointer-cursor" data-id="{{ $round->id }}" style="border-bottom: 1px solid #ccc;margin-left: -5px;margin-right: -5px;">
                                     <td class="color-main text-bold">{!! link_to_route('round-detail',$round->index,[$round->id]) !!}</td>
                                     <td class="text-muted">{{ $round->time }}</td>
                                     <td class="text-center">{!! $round->swatScoreWithColor !!}</td>
@@ -305,7 +308,7 @@
                 <div class="panel-heading panel-heading-separator no-padding" id="accordion">
                     Player Records
                     <div class="pull-right">
-                        <a type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-parent="#accordion"
+                        <a type="button" class="btn btn-xs" data-toggle="collapse" data-parent="#accordion"
                            href="#collapseThree">
                             <span class="fa fa-chevron-down"></span>
                         </a>
@@ -318,7 +321,7 @@
                                 <!--Tab Starts-->
                                 <div role="tabpanel" style="font-family: Marcellus SC;">
                                     <!-- Nav tabs -->
-                                    <ul class="nav nav-tabs" role="tablist">
+                                    <ul class="nav nav-tabs" role="tablist" style="border: 0px !important;">
                                         <li role="presentation" class="active"><a class="ainorange" href="#pastweek"
                                                                             aria-controls="pastweek" role="tab"
                                                                             data-toggle="tab">Past Week</a></li>
@@ -333,8 +336,7 @@
                                                                                   data-toggle="tab">All Time</a></li>
                                     </ul>
                                     <!-- Tab panes -->
-                                    <div class="tab-content"
-                                         style="background-color: #ffffff;border-left: 1px solid #ddd;border-bottom: 1px solid #ddd;border-right: 1px solid #ddd;">
+                                    <div class="tab-content text-muted" style="background-color: transparent;">
                                         <div role="tabpanel" class="tab-pane active" id="pastweek">
                                             <table class="table borderless playerrecordtable">
                                                 <tbody>
@@ -896,7 +898,7 @@
                     Latest Bans
                     <div class="pull-right">
                         <small><b><a href="{{ route('bans.index') }}" style="color:#888;font-size: small !important;">show all&nbsp;&nbsp;</a></b></small>
-                        <a type="button" class="btn btn-default btn-xs pull-right" data-toggle="collapse" data-parent="#accordion"
+                        <a type="button" class="btn btn-xs pull-right" data-toggle="collapse" data-parent="#accordion"
                            href="#collapseFour">
                             <span class="fa fa-chevron-down"></span>
                         </a>
@@ -904,25 +906,25 @@
                 </div>
                 <div class="" id="collapseFour">
                     <div class="panel-body" style="padding-left: 0px !important;padding-right: 0px !important;padding-top: 0px !important;">
-                        <table id="" class="table table-striped table-hover no-margin">
-                            <thead>
+                        <table id="" class="table table-dark table-hover no-margin" style="border: 0px;">
+                            <thead style="border-bottom: 1px solid #ddd;font-family: Marcellus SC;">
                             <tr style="font-family: Marcellus SC;">
                                 <th class="col-xs-1"></th>
-                                <th class="col-xs-3" style="color:#000; font-weight: 900; font-size: 14px;">Name</th>
-                                <th class="col-xs-2" style="color:#000; font-weight: 900; font-size: 14px;">IP Address</th>
-                                <th class="col-xs-3" style="color:#000; font-weight: 900; font-size: 14px;">Banned By</th>
-                                <th class="col-xs-2 text-right" style="color:#000; font-weight: 900; font-size: 14px;">Date</th>
+                                <th class="col-xs-3" style="color:#fff; font-weight: 900; font-size: 14px;">Name</th>
+                                <th class="col-xs-2" style="color:#fff; font-weight: 900; font-size: 14px;">IP Address</th>
+                                <th class="col-xs-3" style="color:#fff; font-weight: 900; font-size: 14px;">Banned By</th>
+                                <th class="col-xs-2 text-right" style="color:#fff; font-weight: 900; font-size: 14px;">Date</th>
                             </tr>
                             </thead>
                             <tbody id="">
                             @foreach($bans as $ban)
-                                <tr class="item">
+                                <tr class="item" style="border-bottom: 1px solid #ccc;margin-left: -5px;margin-right: -5px;">
                                     <td class="text-muted"><img class="tooltipster" title="{{ $ban->countryName }}"
                                                                 src="{{ $ban->countryImage }}" alt="" height="22px"/></td>
                                     <td class="color-main text-bold">{!! link_to_route('bans.show',$ban->name,[$ban->id]) !!}</td>
-                                    <td>{!! $ban->ipAddrWithMask !!}</td>
+                                    <td class="text-muted">{!! $ban->ipAddrWithMask !!}</td>
                                     <td>{!! $ban->bannedByAdminURL !!}</td>
-                                    <td class="text-right tooltipster" title="{{ $ban->updated_at->toDayDateTimeString() }}">{!! $ban->updated_at->diffForHumans() !!}</td>
+                                    <td class="text-right tooltipster text-muted" title="{{ $ban->updated_at->toDayDateTimeString() }}">{!! $ban->updated_at->diffForHumans() !!}</td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -938,7 +940,7 @@
                     Global Notifications
                     <div class="pull-right">
                         <small><b><a href="{{ route('notifications.index') }}" style="color:#888;font-size: small !important;">show all&nbsp;&nbsp;</a></b></small>
-                        <a type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-parent="#accordion"
+                        <a type="button" class="btn btn-xs" data-toggle="collapse" data-parent="#accordion"
                            href="#collapseFive">
                             <span class="fa fa-chevron-down"></span>
                         </a>
@@ -950,7 +952,7 @@
                             @forelse($notifications as $notification)
                             <li class="notification pad5">
                                 <div class="media">
-                                    <div class="media-body">
+                                    <div class="media-body text-muted">
                                         {!! $notification->body !!}
 
                                         <div class="notification-meta pull-right">
@@ -973,7 +975,7 @@
                     <div class="panel-heading panel-heading-separator no-padding" id="accordion">
                         Last Active Users
                         <div class="btn-group pull-right">
-                            <a type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-parent="#accordion"
+                            <a type="button" class="btn btn-xs" data-toggle="collapse" data-parent="#accordion"
                                href="#collapseSix">
                                 <span class="fa fa-chevron-down"></span>
                             </a>

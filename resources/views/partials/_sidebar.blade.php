@@ -7,7 +7,8 @@
     }
     .light-grey-gradient2
     {
-        background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);
+        /*background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);*/
+        background: linear-gradient(#3b3b3b, #0c0c0c);
     }
     .panel-heading-separator2
     {
@@ -19,12 +20,13 @@
     }
     .panel-heading
     {
-        color: #444;
+        color: #fff;
         font-weight: bold;
         font-size: 1.1em;
         font-family: 'Marcellus SC' !important;
         padding-top: 5px !important;
         padding-bottom: 5px !important;
+        text-shadow: 2px 2px 5px #FF69B4;
     }
 </style>
 
@@ -89,8 +91,8 @@
                         <small class="pull-right"><b><a href="{{ route('poll.index') }}" style="font-size: small !important;color:#888;">show all</a></b></small>
                     </div>
                     <div class="panel-body">
-                        <h5 class=""><b>{{ $poll->question }}</b></h5>
-                        <div class="panel pad10 no-margin no-padding" style="font-size: small !important;background: transparent;">
+                        <h5 class="text-muted"><b>{{ $poll->question }}</b></h5>
+                        <div class="panel pad10 no-margin no-padding text-muted" style="font-size: small !important;background: transparent;border: 0px;">
                             @foreach($poll->pollos as $pollo)
                                 {{ $pollo->option }}<br>
                                 <div class="progress">
@@ -104,7 +106,7 @@
                         </div>
                     </div>
 
-                    <span class="small">Total Votes: <b>{{ $poll->users()->count() }}</b></span>
+                    <span class="small text-muted">Total Votes: <b>{{ $poll->users()->count() }}</b></span>
                 </div>
             @endif
         </div>
@@ -120,7 +122,7 @@
                 Latest News
             </div>
 
-            <div class="panel-body">                
+            <div class="panel-body text-muted">                
                 <ul class="no-padding">
                     @foreach(\App\News::forSidebar() as $news)
                         <li class="list-group-item pad5">
@@ -137,7 +139,7 @@
             <div class="panel-heading panel-heading-separator2 no-padding">
                 Donate
             </div>
-            <div class="panel-body">
+            <div class="panel-body text-muted">
                 <p>If you are capable then please contribute in development of server.</p>
                 <a target="_blank" class="btn btn-sm btn-primary" href="https://www.nfoservers.com/donate.pl?force_recipient=1&recipient=kinnngg786%40gmail.com">
                 <i class="fa fa-cc"></i>

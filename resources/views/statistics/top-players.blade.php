@@ -18,7 +18,8 @@
         }
         .light-grey-gradient8
         {
-            background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);
+            /*background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);*/
+            background: linear-gradient(#3b3b3b, #0c0c0c);
         }
         .panel-heading-separator8
         {
@@ -30,10 +31,10 @@
         }
         .panel-heading
         {
-            color: #444;
+            color: #fff !important;
             font-weight: bold;
             font-size: 1.1em;
-            font-family: 'Trebuchet MS';
+            font-family: "Marcellus SC",serif !important;
             padding-top: 5px !important;
             padding-bottom: 5px !important;
         }
@@ -45,12 +46,12 @@
         {
             font-weight: bold;
             font-size: 1.3em;
-            font-family: 'Trebuchet MS';
+            font-family: "Marcellus SC",serif !important;
         }
         .table
         {
             padding: 14px !important;
-            background-color: #FFF;
+            /*background-color: #FFF;*/
             border: 1px solid #CCC;
         }
         input[type="text"]
@@ -63,6 +64,10 @@
             border-radius: 3px !important;
             box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
         }
+        .a-primary
+        {
+            color: #fff !important;
+        }
     </style>
 @endsection
 
@@ -73,25 +78,25 @@
             <div class="col-xs-3 pad10lf">
                 <div class="panel col-xs-12 pad10 light-grey-gradient8" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
                     <div class="col-xs-3"><i class="far fa-user fa-3x text-danger"></i></div>
-                    <div class="col-xs-9 no-padding text-right"><b>Players Today:</b><br>{{ \App\PlayerTotal::todaycount() }}</div>
+                    <div class="col-xs-9 no-padding text-right text-muted"><b>Players Today:</b><br>{{ \App\PlayerTotal::todaycount() }}</div>
                 </div>
             </div>
             <div class="col-xs-3 pad10lr">
                 <div class="panel col-xs-12 pad10 light-grey-gradient8" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
                     <div class="col-xs-3"><i class="far fa-users-crown fa-3x text-success"></i></div>
-                    <div class="col-xs-9 no-padding text-right"><b>Total Players:</b><br>{{ \App\PlayerTotal::count() }}</div>
+                    <div class="col-xs-9 no-padding text-right text-muted"><b>Total Players:</b><br>{{ \App\PlayerTotal::count() }}</div>
                 </div>
             </div>
             <div class="col-xs-3 pad10lr">
                 <div class="panel col-xs-12 pad10 light-grey-gradient8" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
                     <div class="col-xs-3"><i class="far fa-chart-pie fa-3x text-warning"></i></div>
-                    <div class="col-xs-9 no-padding text-right"><b>Rounds Played:</b><br>{{ \App\Game::count() }}</div>
+                    <div class="col-xs-9 no-padding text-right text-muted"><b>Rounds Played:</b><br>{{ \App\Game::count() }}</div>
                 </div>
             </div>
             <div class="col-xs-3 pad10ll">
                 <div class="panel col-xs-12 pad10 light-grey-gradient8" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
                     <div class="col-xs-3"><i class="far fa-clock fa-3x text-info"></i></div>
-                    <div class="col-xs-9 no-padding text-right"><b>Last updated:</b><br>{{ \App\PlayerTotal::first()->updated_at->diffForHumans() }}</div>
+                    <div class="col-xs-9 no-padding text-right text-muted"><b>Last updated:</b><br>{{ \App\PlayerTotal::first()->updated_at->diffForHumans() }}</div>
                 </div>
             </div>
         </div>
@@ -102,32 +107,32 @@
                 Swat 4 Survivors Top Players
             </div>
             <div class="panel-body">
-                <table id="" class="table table-striped table-hover no-margin">
-                    <thead>
+                <table id="" class="table table-dark table-hover no-margin" style="border: 0px;">
+                    <thead style="border-bottom: 1px solid #ddd;font-family: Marcellus SC;">
                     <tr>
-                        <th class="col-xs-1">{!! sort_players_by('position','#') !!}</th>
-                        <th class="col-xs-1">{!! sort_players_by('country_id','Flag') !!}</th>
-                        <th class="col-xs-1">{!! sort_players_by('rank_id','Rank') !!}</th>
-                        <th class="col-xs-3">{!! sort_players_by('name','Name') !!}</th>
-                        <th class="col-xs-1">{!! sort_players_by('player_rating','Rating') !!}</th>
-                        <th class="col-xs-1">{!! sort_players_by('total_score','Score') !!}</th>
-                        <th class="col-xs-1">{!! sort_players_by('total_points','Points') !!}</th>
-                        <th class="col-xs-1">{!! sort_players_by('total_time_played','Time(h:m)') !!}</th>
-                        <th class="col-xs-2 text-right">{!! sort_players_by('last_game_id','Last Seen') !!}</th>
+                        <th class="col-xs-1" style="font-weight: 900; font-size: 12px;">{!! sort_players_by('position','#') !!}</th>
+                        <th class="col-xs-1" style="font-weight: 900; font-size: 12px;">{!! sort_players_by('country_id','Flag') !!}</th>
+                        <th class="col-xs-1" style="font-weight: 900; font-size: 12px;">{!! sort_players_by('rank_id','Rank') !!}</th>
+                        <th class="col-xs-3" style="font-weight: 900; font-size: 12px;">{!! sort_players_by('name','Name') !!}</th>
+                        <th class="col-xs-1" style="font-weight: 900; font-size: 12px;">{!! sort_players_by('player_rating','Rating') !!}</th>
+                        <th class="col-xs-1" style="font-weight: 900; font-size: 12px;">{!! sort_players_by('total_score','Score') !!}</th>
+                        <th class="col-xs-1" style="font-weight: 900; font-size: 12px;">{!! sort_players_by('total_points','Points') !!}</th>
+                        <th class="col-xs-1" style="font-weight: 900; font-size: 12px;">{!! sort_players_by('total_time_played','Time(h:m)') !!}</th>
+                        <th class="col-xs-2 text-right" style="color:#fff; font-weight: 900; font-size: 12px;">{!! sort_players_by('last_game_id','Last Seen') !!}</th>
                     </tr>
                     </thead>
                     <tbody id="data-items">
                     @foreach($players as $player)
-                        <tr class="item">
+                        <tr class="item" style="border-bottom: 1px solid #ccc;margin-left: -5px;margin-right: -5px;">
                             <td class="color-main text-bold" style="vertical-align: middle;">{{ $player->position }}</td>
                             <td class="text-muted" style="vertical-align: middle;"><img class="tooltipster" title="{{ $player->country->countryName }}" src="{{ $player->countryImage }}" alt="" height="22px"/></td>
                             <td style="vertical-align: middle;"><img class="tooltipster" title="{{ $player->rank->name }}" src="{{ $player->rankImage }}" alt="" height="38px"/></td>
                             <td class="color-main text-bold" style="vertical-align: middle;">{!! link_to_route('player-detail', $player->name, [$player->name]) !!}</td>
                             <td style="vertical-align: middle;">{!! $player->playerRating !!}</td>
-                            <td style="vertical-align: middle;">{{ $player->total_score }}</td>
-                            <td style="vertical-align: middle;">{{ $player->total_points }}</td>
-                            <td style="vertical-align: middle;">{{ $player->timePlayed }}</td>
-                            <td class="text-right" style="vertical-align: middle;">{!! link_to_route('round-detail',$player->lastGame->created_at->diffForHumans(),[$player->lastGame->id]) !!}</td>
+                            <td class="text-muted" style="vertical-align: middle;">{{ $player->total_score }}</td>
+                            <td class="text-muted" style="vertical-align: middle;">{{ $player->total_points }}</td>
+                            <td class="text-muted" style="vertical-align: middle;">{{ $player->timePlayed }}</td>
+                            <td class="text-right text-muted" style="vertical-align: middle;">{!! link_to_route('round-detail',$player->lastGame->created_at->diffForHumans(),[$player->lastGame->id]) !!}</td>
                         </tr>
                     @endforeach
                     </tbody>
