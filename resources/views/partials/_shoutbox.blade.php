@@ -54,9 +54,7 @@
                                     </div>
                                     @endif
 
-                                    <small class="text-muted">
-                                        <span class="fa fa-clock-o"></span> {{ $shout->created_at->diffForHumans() }}
-                                    </small>
+                                    <small class="text-muted">{{ $shout->created_at->diffForHumans() }}</small>
                                 </div>
                                 <p class="convert-emoji text-justify" style="color: #fff;">
                                     {!! nl2br(linkify(htmlentities($shout->shout))) !!}
@@ -74,8 +72,7 @@
                                         <strong class="">{{ $shout->user->displayName() }}</strong>
                                     </a>
                                     <br>
-                                    <small class="text-muted"><span class="fa fa-clock-o"></span> {{ $shout->created_at->diffForHumans() }}
-                                    </small>
+                                    <small class="text-muted">{{ $shout->created_at->diffForHumans() }}</small>
 
                                     @if(Auth::check() && Auth::user()->isAdmin())
                                     <div class="pull-right">

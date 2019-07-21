@@ -127,6 +127,11 @@
             /*background-color: transparent;*/
             border: 1px solid #CCC;
         }
+        .color-gold
+        {
+            color: #ffd700 !important;
+            text-shadow: 2px 2px 5px #DAA520;
+        }
     </style>
 @endsection
 @section('main-container')
@@ -155,12 +160,12 @@
             <div class="row panel text-center live-server-summary light-grey-gradient" style="border-radius: 12px;box-shadow: 2px 2px 2px rgba(0,0,0,.3);">
                 <div class="col-xs-2 ls-swat4-summary">
                     <span class="info-title" style="font-family: Marcellus SC;">SWAT</span>
-                    <span class="info-value" id="ls-swat-score" style="font-family: Marcellus SC;">0</span>
+                    <span class="text-muted info-value" id="ls-swat-score" style="font-family: Marcellus SC;color: #b4bcc2 !important;">0</span>
                     <span class="info-base" id="ls-swat-wins" style="font-family: Marcellus SC;">0 Wins</span>
                 </div>
                 <div class="col-xs-2 ls-suspects-summary">
                     <span class="info-title" style="font-family: Marcellus SC;">SUSPECTS</span>
-                    <span class="info-value" id="ls-suspects-score" style="font-family: Marcellus SC;">0</span>
+                    <span class="text-muted info-value" id="ls-suspects-score" style="font-family: Marcellus SC;color: #b4bcc2 !important;">0</span>
                     <span class="info-base" id="ls-suspects-wins" style="font-family: Marcellus SC;">0 Wins</span>
                 </div>
                 <div class="col-xs-3 ls-round-summary">
@@ -211,7 +216,7 @@
                                     <tr style="border-bottom: 1px solid #ccc;margin-left: -5px;margin-right: -5px;">
                                         <th class="text-muted" style="vertical-align: middle;">{{ $player->position }}</th>
                                         <td style="vertical-align: middle;">{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
-                                        <td class="color-main text-bold" style="vertical-align: middle;">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
+                                        <td class="text-bold color-main" style="vertical-align: middle;">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
                                         <td class="text-right text-muted" style="vertical-align: middle;"><small>{{ $player->lastGame->created_at->diffForHumans() }}</small></td>
                                     </tr>
                                 @empty
@@ -257,7 +262,7 @@
             </div> {{--Live Server Players,Top Players and Server Viewer Row Ends--}}
         </div>
         <div class="server-viewer-loader row light-grey-gradient" style="border-radius: 12px;box-shadow: 2px 2px 2px rgba(0,0,0,.3);">
-            <div id="sv-loading">Loading Server Viewer…</div>
+            <div id="sv-loading" class="text-muted">Loading Server Viewer…</div>
         </div>
 
         <div class="row hidden-xs round-reports">
