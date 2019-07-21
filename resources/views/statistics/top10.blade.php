@@ -26,11 +26,11 @@
                     </tr></thead>
                     @forelse($top10Score as $player)
                         <tr>
-                            <th>{{ $position1++ }}</th>
-                            <td>{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
-                            <td>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
-                            <td class="color-main text-bold">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
-                            <td class="text-right">{{ $player->total_score }}</td>
+                            <th style="vertical-align: middle;">{{ $position1++ }}</th>
+                            <td style="vertical-align: middle;">{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
+                            <td style="vertical-align: middle;">{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '38px']) !!}</td>
+                            <td class="color-main text-bold" style="vertical-align: middle;">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
+                            <td class="text-right" style="vertical-align: middle;">{{ $player->total_score }}</td>
                         </tr>
                     @empty
                         Empty
@@ -51,11 +51,11 @@
                     </tr></thead>
                     @forelse($top10KD as $player)
                         <tr>
-                            <th>{{ $position2++ }}</th>
-                            <td>{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
-                            <td>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
-                            <td class="color-main text-bold">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
-                            <td class="text-right">{{ $player->killdeath_ratio }}</td>
+                            <th style="vertical-align: middle;">{{ $position2++ }}</th>
+                            <td style="vertical-align: middle;">{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
+                            <td style="vertical-align: middle;">{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '38px']) !!}</td>
+                            <td class="color-main text-bold" style="vertical-align: middle;">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
+                            <td class="text-right" style="vertical-align: middle;">{{ $player->killdeath_ratio }}</td>
                         </tr>
                     @empty
                         Empty
@@ -79,9 +79,9 @@
                         </tr></thead>
                         @forelse($top10AAR as $player)
                             <tr>
-                                <th>{{ $position3++ }}</th>
-                                <td>{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
-                                <td>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
+                                <th style="vertical-align: middle;">{{ $position3++ }}</th>
+                                <td style="vertical-align: middle;">{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
+                                <td style="vertical-align: middle;">{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '38px']) !!}</td>
                                 <td class="color-main text-bold">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
                                 <td class="text-right">{{ $player->arr_ratio }}</td>
                             </tr>
@@ -104,11 +104,11 @@
                         </tr></thead>
                         @forelse($top10Round as $player)
                             <tr>
-                                <th>{{ $position4++ }}</th>
-                                <td>{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
-                                <td>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
-                                <td class="color-main text-bold">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
-                                <td class="text-right">{{ $player->total_round_played }}</td>
+                                <th style="vertical-align: middle;">{{ $position4++ }}</th>
+                                <td style="vertical-align: middle;">{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
+                                <td style="vertical-align: middle;">{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '38px']) !!}</td>
+                                <td class="color-main text-bold" style="vertical-align: middle;">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
+                                <td class="text-right" style="vertical-align: middle;">{{ $player->total_round_played }}</td>
                             </tr>
                         @empty
                             Empty
@@ -132,11 +132,11 @@
                     </tr></thead>
                     @forelse($top10Winners as $player)
                         <tr>
-                            <th>{{ $position5++ }}</th>
-                            <td>{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
-                            <td>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
-                            <td class="color-main text-bold">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
-                            <td class="text-right">{{ $player->game_won }}</td>
+                            <th style="vertical-align: middle;">{{ $position5++ }}</th>
+                            <td style="vertical-align: middle;">{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
+                            <td style="vertical-align: middle;">{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '38px']) !!}</td>
+                            <td class="color-main text-bold" style="vertical-align: middle;">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
+                            <td class="text-right" style="vertical-align: middle;">{{ $player->game_won }}</td>
                         </tr>
                     @empty
                         Empty
@@ -157,11 +157,11 @@
                     </tr></thead>
                     @forelse($top10HighestScore as $player)
                         <tr>
-                            <th>{{ $position6++ }}</th>
-                            <td>{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
-                            <td>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
-                            <td class="color-main text-bold">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
-                            <td class="text-right">{{ $player->highest_score }}</td>
+                            <th style="vertical-align: middle;">{{ $position6++ }}</th>
+                            <td style="vertical-align: middle;">{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
+                            <td style="vertical-align: middle;">{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '38px']) !!}</td>
+                            <td class="color-main text-bold" style="vertical-align: middle;">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
+                            <td class="text-right" style="vertical-align: middle;">{{ $player->highest_score }}</td>
                         </tr>
                     @empty
                         Empty
@@ -185,11 +185,11 @@
                     </tr></thead>
                     @forelse($top10KillStreak as $player)
                         <tr>
-                            <th>{{ $position7++ }}</th>
-                            <td>{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
-                            <td>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
-                            <td class="color-main text-bold">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
-                            <td class="text-right">{{ $player->best_killstreak }}</td>
+                            <th style="vertical-align: middle;">{{ $position7++ }}</th>
+                            <td style="vertical-align: middle;">{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
+                            <td style="vertical-align: middle;">{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '38px']) !!}</td>
+                            <td class="color-main text-bold" style="vertical-align: middle;">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
+                            <td class="text-right" style="vertical-align: middle;">{{ $player->best_killstreak }}</td>
                         </tr>
                     @empty
                         Empty
@@ -210,11 +210,11 @@
                     </tr></thead>
                     @forelse($top10ArrestStreak as $player)
                         <tr>
-                            <th>{{ $position8++ }}</th>
-                            <td>{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
-                            <td>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
-                            <td class="color-main text-bold">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
-                            <td class="text-right">{{ $player->best_arreststreak }}</td>
+                            <th style="vertical-align: middle;">{{ $position8++ }}</th>
+                            <td style="vertical-align: middle;">{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
+                            <td style="vertical-align: middle;">{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '38px']) !!}</td>
+                            <td class="color-main text-bold" style="vertical-align: middle;">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
+                            <td class="text-right" style="vertical-align: middle;">{{ $player->best_arreststreak }}</td>
                         </tr>
                     @empty
                         Empty

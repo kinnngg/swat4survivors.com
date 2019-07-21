@@ -10,6 +10,7 @@
         border-bottom-right-radius: 12px !important;
         border-bottom-left-radius: 12px !important;
         box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+        font-family: "Marcellus SC",serif;
     }
     .navbar a
     {

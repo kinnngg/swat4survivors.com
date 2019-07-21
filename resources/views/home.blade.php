@@ -38,22 +38,22 @@
         {
             color: #444;
             font-weight: bold;
-            font-size: 1.1em;
-            font-family: 'Marcellus SC' !important;
+            font-size: 1.0em !important;
+            font-family: "Marcellus SC",serif !important;
             padding-top: 5px !important;
             padding-bottom: 5px !important;
         }
         .panel h3.header
         {
             color: #f8f8f8 !important;
-            font-family: 'Marcellus SC' !important;
+            font-family: "Marcellus SC",serif !important;
         }
         .panel h3
         {
             font-weight: bold;
             font-size: 1.3em;
             /*font-family: 'Trebuchet MS';*/
-            font-family: 'Marcellus SC';
+            font-family: "Marcellus SC",serif !important;
         }
         .header-separator
         {
