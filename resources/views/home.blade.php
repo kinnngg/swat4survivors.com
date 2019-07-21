@@ -249,7 +249,7 @@
                             </div>
                         {!! Form::close() !!}
                     @else
-                        <div class='panel nomargin padding10 text-muted'><b>{!!  link_to('/auth/login','Login') !!}
+                        <div class='panel nomargin padding10 text-muted' style="background: transparent !important;border-bottom: 0px;border-right: 0px;border-left: 0px;"><b>{!!  link_to('/auth/login','Login') !!}
                                 or {!! link_to('/auth/register', 'Register') !!} to chat with in-game players.</b>
                         </div>
                     @endif
