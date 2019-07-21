@@ -210,7 +210,7 @@
                                 @forelse($topPlayers as $player)
                                     <tr style="border-bottom: 1px solid #ccc;margin-left: -5px;margin-right: -5px;">
                                         <th class="text-muted" style="vertical-align: middle;">{{ $player->position }}</th>
-                                        <td style="vertical-align: middle;">{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '38px']) !!}</td>
+                                        <td style="vertical-align: middle;">{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
                                         <td class="color-main text-bold" style="vertical-align: middle;">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
                                         <td class="text-right text-muted" style="vertical-align: middle;"><small>{{ $player->lastGame->created_at->diffForHumans() }}</small></td>
                                     </tr>
