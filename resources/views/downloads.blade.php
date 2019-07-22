@@ -7,7 +7,8 @@
         }
         .light-grey-gradient12
         {
-            background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);
+            /*background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);*/
+            background: linear-gradient(#3b3b3b, #0c0c0c);
         }
         .panel-heading-separator12
         {
@@ -19,7 +20,7 @@
         }
         .panel-heading
         {
-            color: #444;
+            color: #fff !important;
             font-weight: bold;
             font-size: 1.1em;
             font-family: 'Trebuchet MS';
@@ -48,22 +49,22 @@
                 </div>
                 <div class="col-xs-8">
                     <h4 class="ainorange">Admin Mod</h4>
-                    <p>
+                    <p class="text-muted">
                         SWAT4 Admin Mod by Kinnngg is improved version of Gezmod adding new features like anti camp.<br>
                         <a href="{{ route('news.show',App\News::find(3)->summary) }}" class="">Click here</a> to see installation instructions.
                     </p>
-                    <table class="table table-striped table-responsive">
+                    <table class="table table-dark table-responsive">
                         <tr>
-                            <td>Version</td>
-                            <td>1.0</td>
+                            <td class="text-muted">Version</td>
+                            <td class="text-info">1.0</td>
                         </tr>
                         <tr>
-                            <td>File Size</td>
-                            <td>708.21 KB</td>
+                            <td class="text-muted">File Size</td>
+                            <td class="text-info">708.21 KB</td>
                         </tr>
                         <tr>
-                            <td>Added</td>
-                            <td>14-7-2016</td>
+                            <td class="text-muted">Added</td>
+                            <td class="text-info">14-7-2016</td>
                         </tr>
                     </table>
 
@@ -77,22 +78,22 @@
                 </div>
                 <div class="col-xs-8">
                     <h4 class="ainorange">antics (anti-cheat)</h4>
-                    <p>
+                    <p class="text-muted">
                         Client-side anti-cheat by rapher. <br>
                         You need to place it in your 'System' folder of SWAT4 to join KoS Server.
                     </p>
-                    <table class="table table-striped table-responsive">
+                    <table class="table table-dark table-responsive">
                         <tr>
-                            <td>Version</td>
-                            <td>1.0</td>
+                            <td class="text-muted">Version</td>
+                            <td class="text-info">1.0</td>
                         </tr>
                         <tr>
-                            <td>File Size</td>
-                            <td>13.28 KB</td>
+                            <td class="text-muted">File Size</td>
+                            <td class="text-info">13.28 KB</td>
                         </tr>
                         <tr>
-                            <td>Added</td>
-                            <td>14-7-2016</td>
+                            <td class="text-muted">Added</td>
+                            <td class="text-info">14-7-2016</td>
                         </tr>
                     </table>
 
@@ -106,24 +107,24 @@
                 </div>
                 <div class="col-xs-8">
                     <h4 class="ainorange">KMod (vote & whois)</h4>
-                    <p>
+                    <p class="text-muted">
                         KMod by Kinnngg adds voting and whois functionality to your SWAT4 1.0 Server.
                         This Mod depends on Serge's Julia package.
                         You need to configure it first if you want KMod to work.
                         Visit <a target="_blank" href="https://github.com/sergeii/swat-julia">Sergii Github</a> for information about installing Julia.
                     </p>
-                    <table class="table table-striped table-responsive">
+                    <table class="table table-dark table-responsive">
                         <tr>
-                            <td>Version</td>
-                            <td>1.1</td>
+                            <td class="text-muted">Version</td>
+                            <td class="text-info">1.1</td>
                         </tr>
                         <tr>
-                            <td>File Size</td>
-                            <td>113.46 KB</td>
+                            <td class="text-muted">File Size</td>
+                            <td class="text-info">113.46 KB</td>
                         </tr>
                         <tr>
-                            <td>Added</td>
-                            <td>14-7-2016</td>
+                            <td class="text-muted">Added</td>
+                            <td class="text-info">14-7-2016</td>
                         </tr>
                     </table>
 

@@ -5,7 +5,8 @@
 <style>
     .light-grey-gradient3
     {
-        background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);
+        /*background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);*/
+        background: linear-gradient(#3b3b3b, #0c0c0c);
     }
     .panel-heading-separator3
     {
@@ -17,7 +18,7 @@
     }
     .panel-heading
     {
-        color: #444;
+        color: #fff;
         font-weight: bold;
         font-size: 1.1em;
         font-family: 'Marcellus SC' !important;
@@ -34,19 +35,23 @@
         font-size: 1.3em;
         font-family: 'Marcellus SC' !important;
     }
+    .color-gold
+    {
+        color: #ffd700 !important;
+        text-shadow: 2px 2px 5px #DAA520;
+    }
 </style>
     <div class="content col-xs-9">
 
         <div class="panel light-grey-gradient3" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);padding: 20px;">
             <div class="panel-heading panel-heading-separator3 no-padding">
-                <!--<h3 class="text"><b>Rules of </b>&nbsp;<i title="thumb" class="tooltipster fa fa-thumbs-up fa-2x"></i> </h3>-->
                 Rules of Swat4Survivors
             </div>
             <div class="panel-body">
-                <ul class="ruleslist" style="list-style-type: square; font-family: 'Ubuntu', Helvetica, Arial, sans-serif;">
+                <ul class="ruleslist text-muted" style="list-style-type: square; font-family: 'Ubuntu', Helvetica, Arial, sans-serif;">
                     <li>Use of any type of hacks is not allowed.</li>
                     <li>Be <b>polite</b>. Insulting others will not be tolerated.</li>
-                    <li><b>Racism</b>, <b>Hatred</b>, etc are <b>strictly</b> prohibited. This may lead to permanent ban.</li>
+                    <li><b class="text-danger">Racism</b>, <b class="text-danger">Hatred</b>, etc are <b class="text-danger">strictly</b> prohibited. This may lead to permanent ban.</li>
                     <li>Using bugs/glitches of any kind is not allowed.</li>
                     <li>Do not start kick/map/ask/taser votes without reason.</li>
                     <li>Do not team -kill, -nade, -tase, etc. on purpose.</li>
@@ -58,12 +63,12 @@
                     <li>If you find any admin/superadmin <b>misusing his powers</b>, plz <b>shout</b> at shoutbox.</li>
                     <li><b>Respect Swat4Survivors & |nGGz|TEAM</b></li>
                 </ul>
-                <p>
+                <p class="text-muted">
                   (<b class="text-danger">3 seconds rule:</b> Spawn nade/gas/etc. or killing is <b>NOT</b> allowed until <b>3 seconds</b> has elapsed after respawn.<br><u>But if the respawned player move out of</u> <b class="text-danger">RESPAWN AREA</b> during 3s after respawn, <b>he can be killed or naded</b>).
                 </p>
                 <br>
-                <p style="padding-bottom:20px">Respect these rules so everyone can have a fun gameplay experience or <span class="text-bold">risk getting kicked/banned</span>.</p>
-                <p><small><i>Note: |nGGz|TEAM reserves the right to change the rules with or without any notice.</i></small></p>
+                <p style="padding-bottom:20px" class="text-muted">Respect these rules so everyone can have a fun gameplay experience or <span class="text-bold">risk getting kicked/banned</span>.</p>
+                <p class="text-muted"><small><i>Note: Swat 4 Survivors & |nGGz|TEAM reserves the right to change the rules with or without any notice.</i></small></p>
             </div>
         </div>
 
@@ -74,17 +79,17 @@
                 Rules and Guide for Administrators
             </div>
             <div class="panel-body">
-                <p>
+                <p class="text-muted">
                   In general, if there's <span class="text-danger">bad player behavior</span>, always try to defuse the situation. Try to talk sense, switch team, etc.  The
                   mod on our server has a lot of built in functions.  Please try to allow the mod to work before taking action unless needed.
                 </p>
-                <p style="margin-bottom:0;font-weight:bold">
+                <p style="margin-bottom:0;font-weight:bold" class="text-muted">
                   If the situation cannot be solved in a <u>mature way</u>:
                 </p>
-                <ul class="ruleslist" style="list-style-type: square;font-family: 'Ubuntu', Helvetica, Arial, sans-serif;">
+                <ul class="ruleslist text-muted" style="list-style-type: square;font-family: 'Ubuntu', Helvetica, Arial, sans-serif;">
                     <li>Issue at least a clear warning first. (make sure the player reads/understands what he's doing wrong)</li>
                     <li>Issue a clear second warning. <i>(optional)</i></li>
-                    <ul class="ruleslist" style="list-style-type: circle;font-family: 'Ubuntu', Helvetica, Arial, sans-serif;">
+                    <ul class="ruleslist text-muted" style="list-style-type: circle;font-family: 'Ubuntu', Helvetica, Arial, sans-serif;">
                         <li>Force Mute</li>
                         <li>Kick</li>
                         <li>No Weapons</li>
@@ -96,8 +101,8 @@
                         <li>No Pepper Spray</li>
                         <li>No Pepper Ball Gun</li>
                     </ul>
-                    <li>No improvements:<!-- <b>FORCE MUTE / KICK / NOWEAPONS</b> again.--></li>
-                    <ul class="ruleslist" style="list-style-type: circle;font-family: 'Ubuntu', Helvetica, Arial, sans-serif;">
+                    <li class="text-muted">No improvements:<!-- <b>FORCE MUTE / KICK / NOWEAPONS</b> again.--></li>
+                    <ul class="ruleslist text-muted" style="list-style-type: circle;font-family: 'Ubuntu', Helvetica, Arial, sans-serif;">
                         <li>Force Mute</li>
                         <li>Kick</li>
                         <li>No Weapons</li>
@@ -112,10 +117,10 @@
                     <li>Still no improvement <b>BAN</b>!</li>
                 </ul>
 
-                <p style="margin-bottom:0;font-weight:bold">
+                <p style="margin-bottom:0;font-weight:bold" class="text-muted">
                   Bans should <span class="text-danger">ONLY</span> be used as a last resort for:
                 </p>
-                <ul class="ruleslist" style="list-style-type: square;font-family: 'Ubuntu', Helvetica, Arial, sans-serif;">
+                <ul class="ruleslist text-muted" style="list-style-type: square;font-family: 'Ubuntu', Helvetica, Arial, sans-serif;">
                     <li>Obvious use of <u>cheats/bugs</u> if the mod does not detect it.</li>
                     <li>Harming the server of any type. (Ddos/hacks etc)</li>
                     <li>Repeatedly messing up the gameplay purposely, such as:</li>
@@ -129,13 +134,13 @@
                         <li>Repeated <b>arrest killing</b> (<span class="text-danger">5 days ban</span>).</li>
                     </ul>
                 </ul>
-                <p>
+                <p class="text-muted">
                   Our server runs a spawn protection system and will not allow <b>spawn kill/nade/gas/etc</b> before 3 seconds is <b>NOT allowed</b>. Unless player just happened to be there in time of spawn, then kill is <b class="text-green">allowed</b>.If someone violates this rule, you give him <u>warning</u>, if he repeat same, you give can give second warning, next repeat <b class="text-danger">KICK</b>.
                 </p>
-                <p>
+                <p class="text-muted">
                   (<b class="text-danger">3 seconds rule:</b> Spawn nade/gas/etc. or killing is <b>NOT</b> allowed until <b>3 seconds</b> has elapsed after respawn.<br><u>But if the respawned player move out of</u> <b class="text-danger">RESPAWN AREA</b> during 3s after respawn, <b>he can be killed or naded</b>).
                 </p>
-                <ul class="ruleslist" style="list-style-type: square;font-family: 'Ubuntu', Helvetica, Arial, sans-serif;">
+                <ul class="ruleslist text-muted" style="list-style-type: square;font-family: 'Ubuntu', Helvetica, Arial, sans-serif;">
                   <li>
                     <b>Insults - RACISM - Nationalist talks - Religion Insult = <span class="text-danger">MUTE</span></b>, if player continue with his dirty talk by reconnecting or changing his nick to another insult = <b class="text-danger">KICK</b>, if that's not enough and he continue = <b class="text-danger">BAN</b> him on server and <b class="text-danger">MUTE</b> him on website.<br>
                     As a last resort even <b class="text-danger">BAN</b> on website too. Same for dirty talk on <u>Website Shoutbox</u>. <small class="text-danger">(BAN time for this decided by admin)</small>
@@ -144,22 +149,22 @@
                   <li>You cannot <b>unban</b> the <b class="text-danger">BANNED PLAYERS</b> who are not banned by your hands. Rather you should speak to admin who banned that player and if he agree you can unban.</li>
                   <li><b>SERVER DEFAULT SETTING</b> should not be changed without <b>SUPER ADMINISTRATOR</b>'s support.</li>
                 </ul>
-                <p>
+                <p class="text-muted">
                   THIS RULES MUST BE RESPECTED, <b>PENALTIES FOR PLAYER</b> WHICH HAVE VOILATED SERVER FULES MUST NOT BE INCREASED, <b>MAY ONLY BE REDUCED,</b> DEPENDS ON ADMIN.
                 </p>
                 <p style="margin-bottom:0;font-weight:bold">
                   <b class="text-info">SERVER DEFAULT SETTING</b>
                 </p>
-                <ul class="ruleslist" style="list-style-type: circle;font-family: 'Ubuntu', Helvetica, Arial, sans-serif;">
-                  <li><b>Round Time: </b>20:00</li>
-                  <li><b>Time b/w rounds: </b>0:05</li>
-                  <li><b>Mission ready time:</b>  0:15</li>
-                  <li><b>No. of Rounds: </b>3</li>
-                  <li><b>Friendly fire: </b>100%</li>
-                  <li><b>Maps: </b>Food,Bomb,FF,WP</li>
-                  <li><b>Slots: </b>12</li>
+                <ul class="ruleslist text-muted" style="list-style-type: circle;font-family: 'Ubuntu', Helvetica, Arial, sans-serif;">
+                  <li><b>Round Time:</b> <span class="color-gold">20:00</span></li>
+                  <li><b>Time b/w rounds:</b> <span class="color-gold">0:05</span></li>
+                  <li><b>Mission ready time:</b>  <span class="color-gold">0:15</span></li>
+                  <li><b>No. of Rounds:</b> <span class="color-gold">3</span></li>
+                  <li><b>Friendly fire:</b> <span class="color-gold">100%</span></li>
+                  <li><b>Maps:</b> <span class="color-gold">Food, Bomb, FF, WP</span></li>
+                  <li><b>Slots:</b> <span class="color-gold">12</span></li>
                 </ul>
-                <p>
+                <p class="text-muted">
                   FAIR PLAY IS THE BEST PLAY!<br>
                   <b>Swat 4 Survivors</b>
                 </p>

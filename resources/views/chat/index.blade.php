@@ -10,7 +10,8 @@
     }
     .light-grey-gradient6
     {
-        background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);
+        /*background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);*/
+        background: linear-gradient(#3b3b3b, #0c0c0c);
     }
     .panel-heading-separator6
     {
@@ -22,7 +23,7 @@
     }
     .panel-heading
     {
-        color: #444;
+        color: #fff;
         font-weight: bold !important;
         font-size: 1.1em;
         font-family: 'Marcellus SC' !important;

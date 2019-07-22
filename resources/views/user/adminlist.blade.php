@@ -8,7 +8,8 @@
         }
         .light-grey-gradient11
         {
-            background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);
+            /*background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);*/
+            background: linear-gradient(#3b3b3b, #0c0c0c);
         }
         .panel-heading-separator11
         {
@@ -20,7 +21,7 @@
         }
         .panel-heading
         {
-            color: #444;
+            color: #fff !important;
             font-weight: bold !important;
             font-size: 1.1em;
             font-family: 'Marcellus SC' !important;
@@ -36,6 +37,11 @@
             font-weight: bold;
             font-size: 1.3em;
             font-family: 'Marcellus SC' !important;
+        }
+        .a-primary
+        {
+            color: #fff !important;
+        }
     </style>
     @endsection
 @section('main-container')
@@ -45,13 +51,13 @@
                 <div class="panel light-grey-gradient11" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);padding: 20px;">
                     <div class="panel-heading panel-heading-separator3 no-padding">Server Administrators</div>
                     <div class="panel-body">
-                        <table class="table table-hover table-striped">
+                        <table class="table table-hover table-dark">
                             <thead>
                             <tr>
                                 <td class="col-xs-1"></td>
-                                <td class="col-xs-4 col-xs-4">Name</td>
-                                <td class="col-xs-4 col-xs-4">Rank</td>
-                                <td class="col-xs-3 col-xs-3">Last Seen</td>
+                                <td class="col-xs-4 col-xs-4" style="color:#fff; font-weight: 900; font-size: 12px;">Name</td>
+                                <td class="col-xs-4 col-xs-4" style="color:#fff; font-weight: 900; font-size: 12px;">Rank</td>
+                                <td class="col-xs-3 col-xs-3" style="color:#fff; font-weight: 900; font-size: 12px;">Last Seen</td>
                             </tr>
                             </thead>
                             @foreach($roles as $role)
@@ -70,10 +76,10 @@
                                                 <strong class="">{{ $user->displayName() }}</strong>
                                             </a>
                                         </td>
-                                        <td>
+                                        <td class="text-muted">
                                             {{ $user->roles()->first()->display_name }}
                                         </td>
-                                        <td>
+                                        <td class="text-muted">
                                             {{ $user->updated_at->diffForHumans() }}
                                         </td>
                                     </tr>

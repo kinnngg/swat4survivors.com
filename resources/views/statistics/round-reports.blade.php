@@ -75,7 +75,7 @@
                 <table id="" class="table table-dark table-hover no-margin" style="border: 0px;">
                     <thead style="border-bottom: 1px solid #ddd;font-family: Marcellus SC;">
                     <tr>
-                        <th class="col-xs-1" style="color: #fff !important;font-weight: 900; font-size: 12px;">{!! sort_rounds_by('id','Round') !!}</th>
+                        <th class="col-xs-1" style="font-weight: 900; font-size: 12px;">{!! sort_rounds_by('id','Round') !!}</th>
                         <th class="col-xs-2" style="font-weight: 900; font-size: 12px;">{!! sort_rounds_by('round_time','Time') !!}</th>
                         <th class="col-xs-1" style="font-weight: 900; font-size: 12px;">{!! sort_rounds_by('swat_score','Swat') !!}</th>
                         <th class="col-xs-2" style="font-weight: 900; font-size: 12px;">{!! sort_rounds_by('suspects_score','Suspects') !!}</th>

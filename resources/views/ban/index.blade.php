@@ -7,7 +7,8 @@
 <style>
     .light-grey-gradient4
     {
-        background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);
+        /*background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);*/
+        background: linear-gradient(#3b3b3b, #0c0c0c);
     }
     .panel-heading-separator4
     {
@@ -19,7 +20,7 @@
     }
     .panel-heading
     {
-        color: #444;
+        color: #fff;
         font-weight: bold;
         font-size: 1.1em;
         font-family: 'Marcellus SC' !important;
@@ -39,8 +40,12 @@
     .table
     {
         padding: 14px !important;
-        background-color: #FFF;
+        /*background-color: #FFF;*/
         border: 1px solid #CCC;
+    }
+    .a-primary
+    {
+        color: #fff !important;
     }
 </style>
     <div class="col-xs-9">
@@ -51,7 +56,7 @@
                 Swat 4 Survivors Master Banlist
             </div>
             <div class="panel-body">
-                <table id="" class="table table-striped table-hover">
+                <table id="" class="table table-dark table-hover" style="border: 0px;">
                     <thead style="border-bottom: 1px solid #ddd;">
                     <tr>
                         {{--<th class="col-xs-1">{!! sort_bans_by('position','#') !!}</th>--}}
@@ -65,13 +70,13 @@
                     </thead>
                     <tbody id="data-items">
                     @foreach($bans as $ban)
-                        <tr class="item">
+                        <tr class="item" style="border-bottom: 1px solid #ccc;margin-left: -5px;margin-right: -5px;">
                             <td class="text-muted"><img class="tooltipster" title="{{ $ban->countryName }}" src="{{ $ban->countryImage }}" alt="" height="22px"/></td>
                             <td class="color-main text-bold">{!! link_to_route('bans.show',$ban->name,[$ban->id]) !!}</td>
-                            <td>{!! $ban->ipAddrWithMask !!}</td>
+                            <td class="text-muted">{!! $ban->ipAddrWithMask !!}</td>
                             <td>{!! $ban->bannedByAdminURL !!}</td>
                             <td><b>{!! $ban->statusWithColor !!}</b></td>
-                            <td class="text-right">{!! $ban->updated_at->diffForHumans() !!}</td>
+                            <td class="text-right text-muted">{!! $ban->updated_at->diffForHumans() !!}</td>
                         </tr>
                     @endforeach
                     </tbody>

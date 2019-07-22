@@ -5,7 +5,8 @@
 <style>
     .light-grey-gradient5
     {
-        background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);
+        /*background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);*/
+        background: linear-gradient(#3b3b3b, #0c0c0c);
     }
     .panel-heading-separator5
     {
@@ -17,7 +18,7 @@
     }
     .panel-heading
     {
-        color: #444;
+        color: #fff;
         font-weight: bold;
         font-size: 1.1em;
         font-family: 'Marcellus SC' !important;
@@ -41,7 +42,7 @@
                 News Archive
             </div>
             <div class="panel-body">
-                <ul style="list-style-type:square">
+                <ul class="text-muted" style="list-style-type:square">
                 @forelse($newses as $news)
                     <li class="news-title" style="border-bottom: 1px dashed #FF69B4">
                         <a href="{{ route('news.show',$news->summary) }}"><b>{{ $news->title }}</b></a>

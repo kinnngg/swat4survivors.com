@@ -102,6 +102,53 @@
         {
             color: greenyellow;
         }
+        .light-grey-gradientE
+        {
+            /*background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);*/
+            background: linear-gradient(#3b3b3b, #0c0c0c);
+        }
+        .panel-heading-separatorE
+        {
+            margin-left: 10px !important;
+            margin-right: 10px !important;
+            padding-bottom: 6px !important;
+            margin-bottom: 8px !important;
+            border-bottom: 2px dashed #FF69B4 !important;
+        }
+        .panel-heading
+        {
+            color: #fff !important;
+            font-weight: bold;
+            font-size: 1.1em;
+            font-family: 'Trebuchet MS';
+            padding-top: 5px !important;
+            padding-bottom: 5px !important;
+        }
+        .panel h3.header
+        {
+            color: #f8f8f8 !important;
+        }
+        .panel h3
+        {
+            font-weight: bold;
+            font-size: 1.3em;
+            font-family: 'Trebuchet MS';
+        }
+        input[type="text"]
+        {
+            padding: 4px 8px;
+            font-size: 13px;
+            height: 35px;
+            color: #808080;
+            border: 1px solid #ccc;
+            border-radius: 3px !important;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .color-gold
+        {
+            color: #ffd700 !important;
+            text-shadow: 2px 2px 5px #DAA520;
+        }
     </style>
 @endsection
 @section('title', $user->displayName()."'s profile")
@@ -111,7 +158,7 @@
 
         <div class="row">
             <div class="">
-                <div class="panel panel-primary profile-panel">
+                <div class="panel profile-panel light-grey-gradientE" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-5">
@@ -305,7 +352,7 @@
                             </table>
                         </div>
 
-                        <div class="col-xs-6 panel stats-tracker pad5" style="height: 261px !important;">
+                        <div class="col-xs-6 panel stats-tracker pad5" style="height: 265px !important;">
                             <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Trophies</h5>
                             <ul class="list-group" style="overflow: auto;height: 186px;">
                             @forelse($user->trohpies as $trophy)
