@@ -132,6 +132,11 @@
             color: #ffd700 !important;
             text-shadow: 2px 2px 5px #DAA520;
         }
+        .color-blue
+        {
+            color: #0000ff !important;
+            text-shadow: 2px 2px 5px #1E90FF;
+        }
     </style>
 @endsection
 @section('main-container')
@@ -159,23 +164,23 @@
         <div id="server-viewer">
             <div class="row panel text-center live-server-summary light-grey-gradient" style="border-radius: 12px;box-shadow: 2px 2px 2px rgba(0,0,0,.3);">
                 <div class="col-xs-2 ls-swat4-summary">
-                    <span class="info-title" style="font-family: Marcellus SC;">SWAT</span>
-                    <span class="text-muted info-value" id="ls-swat-score" style="font-family: Marcellus SC;color: #b4bcc2 !important;">0</span>
+                    <span class="info-title panel-heading" style="font-family: Marcellus SC;">SWAT</span>
+                    <span class="color-gold info-value" id="ls-swat-score" style="font-family: Marcellus SC;color: #b4bcc2 !important;">0</span>
                     <span class="info-base" id="ls-swat-wins" style="font-family: Marcellus SC;">0 Wins</span>
                 </div>
                 <div class="col-xs-2 ls-suspects-summary">
-                    <span class="info-title" style="font-family: Marcellus SC;">SUSPECTS</span>
-                    <span class="text-muted info-value" id="ls-suspects-score" style="font-family: Marcellus SC;color: #b4bcc2 !important;">0</span>
+                    <span class="info-title panel-heading" style="font-family: Marcellus SC;">SUSPECTS</span>
+                    <span class="color-gold info-value" id="ls-suspects-score" style="font-family: Marcellus SC;color: #b4bcc2 !important;">0</span>
                     <span class="info-base" id="ls-suspects-wins" style="font-family: Marcellus SC;">0 Wins</span>
                 </div>
                 <div class="col-xs-3 ls-round-summary">
-                    <span class="info-title" style="font-family: Marcellus SC;">ROUND</span>
-                    <span class="text-muted info-value" id="ls-round" style="font-family: Marcellus SC;">0/0</span>
+                    <span class="info-title panel-heading" style="font-family: Marcellus SC;">ROUND</span>
+                    <span class="color-gold info-value" id="ls-round" style="font-family: Marcellus SC;">0/0</span>
                     <span class="info-base" id="ls-time" style="font-family: Marcellus SC;">00:00</span>
                 </div>
                 <div class="col-xs-5 ls-map-summary" style="font-family: Marcellus SC !important;">
-                    <span class="info-title" style="font-family: Marcellus SC;">MAP</span>
-                    <span class="text-muted info-value" id="ls-map-name" style="font-family: Marcellus SC;">None</span>
+                    <span class="info-title panel-heading" style="font-family: Marcellus SC;">MAP</span>
+                    <span class="color-gold info-value" id="ls-map-name" style="font-family: Marcellus SC;">None</span>
                     <span class="info-base" id="ls-next-map" style="font-family: Marcellus SC;">Next: None</span>
                 </div>
             </div> {{--Live Server Summary Ends --}}
@@ -928,7 +933,7 @@
                                                                 src="{{ $ban->countryImage }}" alt="" height="22px"/></td>
                                     <td class="color-main text-bold">{!! link_to_route('bans.show',$ban->name,[$ban->id]) !!}</td>
                                     <td class="text-muted">{!! $ban->ipAddrWithMask !!}</td>
-                                    <td>{!! $ban->bannedByAdminURL !!}</td>
+                                    <td class="text-muted text-bold">{!! $ban->bannedByAdminURL !!}</td>
                                     <td class="text-right tooltipster text-muted" title="{{ $ban->updated_at->toDayDateTimeString() }}">{!! $ban->updated_at->diffForHumans() !!}</td>
                                 </tr>
                             @endforeach

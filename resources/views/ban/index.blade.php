@@ -74,7 +74,7 @@
                             <td class="text-muted"><img class="tooltipster" title="{{ $ban->countryName }}" src="{{ $ban->countryImage }}" alt="" height="22px"/></td>
                             <td class="color-main text-bold">{!! link_to_route('bans.show',$ban->name,[$ban->id]) !!}</td>
                             <td class="text-muted">{!! $ban->ipAddrWithMask !!}</td>
-                            <td>{!! $ban->bannedByAdminURL !!}</td>
+                            <td class="text-muted text-bold">{!! $ban->bannedByAdminURL !!}</td>
                             <td><b>{!! $ban->statusWithColor !!}</b></td>
                             <td class="text-right text-muted">{!! $ban->updated_at->diffForHumans() !!}</td>
                         </tr>
