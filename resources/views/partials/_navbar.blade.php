@@ -51,7 +51,7 @@
                 <span class="icon-bar"></span>
             </button>
             <div id="swatofficer"></div>
-           <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ url('images/logo_back2.png') }}" alt="" style="height: 52px;"></a>
+           <a class="navbar-brand" href="{{ route('home') }}"><!--<img src="{{ url('images/LIGHTSHOW13.gif') }}" alt="" style="height: 52px;padding-left: 10px;">--><img src="{{ url('images/logo_back2.png') }}" alt="" style="height: 52px;"></a>
         </div>
 
         <div id="navbar" class="collapse navbar-collapse" style="font-weight: bold;">
