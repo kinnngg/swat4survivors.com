@@ -256,15 +256,16 @@ class ServerController extends Controller
                 $userLvl = $request->user()->roles()->first()->display_name;
                 if($userLvl == "Super Administrator")
                 {
-                    $userLvl = "[c=00ff00]<SuperAdmin>[\\c]";
+                    /*$userLvl = "[c=00ff00]<SuperAdmin>[\\c]";*/
+                    $userLvl = "[c=ffd700]<SuperAdmin>[\\c]";
                 }
                 elseif ($userLvl == "Administrator")
                 {
-                    $userLvl = "[c=00ff00]<Admin>[\\c]";
+                    $userLvl = "[c=C0C0C0]<Admin>[\\c]";
                 }
                 else
                 {
-                    $userLvl = "[c=ffa500]<{$userLvl}>[\\c]";
+                    $userLvl = "[c=cd7f32]<{$userLvl}>[\\c]";
                 }
                 $MsgFormated = "[c=ffff00][u][b]" . $Username . "[\\b][\\u][\\c] $userLvl: [c=FFFFFF]" . $Msg;
             }
@@ -292,15 +293,15 @@ class ServerController extends Controller
             $userLvl = $request->user()->roles()->first()->display_name;
             if($userLvl == "Super Administrator")
             {
-                $userLvl = "[c=00ff00]<SuperAdmin>[\\c]";
+                $userLvl = "[c=ffd700]<SuperAdmin>[\\c]";
             }
             elseif ($userLvl == "Administrator")
             {
-                $userLvl = "[c=00ff00]<Admin>[\\c]";
+                $userLvl = "[c=C0C0C0]<Admin>[\\c]";
             }
             else
             {
-                $userLvl = "[c=ffa500]<{$userLvl}>[\\c]";
+                $userLvl = "[c=cd7f32]<{$userLvl}>[\\c]";
             }
             $MsgFormated = "[c=ffff00][u][b]" . $Username . "[\\b][\\u][\\c] $userLvl: [c=FFFFFF]" . $Msg;
         }

@@ -1,87 +1,114 @@
+<style>
+    .light-grey-gradientX
+    {
+        /*background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);*/
+        background: linear-gradient(#3b3b3b, #0c0c0c);
+    }
+    .panel-heading-separatorX
+    {
+        margin-left: 10px;
+        margin-right: 10px !important;
+        padding-bottom: 6px;
+        margin-bottom: 8px;
+        border-bottom: 2px dashed #FF69B4 !important;
+    }
+    .panel-heading
+    {
+        color: #fff !important;
+        font-weight: bold;
+        font-size: 1.1em;
+        font-family: 'Marcellus SC' !important;
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+    }
+    .panel h3.header
+    {
+        color: #f8f8f8 !important;
+    }
+    .panel h3
+    {
+        font-weight: bold;
+        font-size: 1.3em;
+        font-family: 'Marcellus SC' !important;
+    }
+    .table
+    {
+        padding: 14px !important;
+        /*background-color: #FFF;*/
+        border: 1px solid #CCC;
+    }
+    .a-primary
+    {
+        color: #fff !important;
+    }
+    .color-gold
+    {
+        color: #ffd700 !important;
+        text-shadow: 2px 2px 5px #DAA520;
+    }
+</style>
+
 @extends('layouts.main')
 @section('meta-desc',"List of all bans.")
 @section('title',"Ban #".$ban->id." of ".$ban->name)
 
 @section('main-container')
     <div class="col-xs-9">
-        <div class="panel" style="padding: 50px">
-            @if(Auth::check() && Auth::user()->isAdmin())
-            <a class="btn btn-sm btn-info pull-right" href="{{ route('bans.edit',$ban->id) }}">Edit Ban</a>
-            @endif
-            <h2 style="margin-bottom: 20px"><img class="tooltipster" title="{{ $ban->countryName }}" src="{{ $ban->countryImage }}" alt="" height="22px"/> {{ $ban->name }}</h2>
-            <hr>
-            <table style="font-size: large" class="table table-striped table-hover table-bordered">
-                <tbody><tr>
-                    <td class="col-xs-4">Ban ID</td>
-                    <td class="col-xs-8">
-                        <b>{{ $ban->id }}</b>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Name</td>
-                    <td>
-                        {!! $ban->bannedUserURL !!}
-                    </td>
-                </tr>
-                <tr>
-                    <td>IP Address</td>
-                    <td>
-                        {{ $ban->ipAddrWithMask }}
-                    </td>
-                </tr>
-                <tr>
-                    <td>Banned Till</td>
-                    <td>
-                        <span class="tooltipster" title="{{ $ban->bannedTillDateTime }}">{{ $ban->bannedTill }}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Country
-                    </td>
-                    <td>
-                        {{ $ban->countryName }}
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Status
-                    </td>
-                    <td>
-                        <b>{!! $ban->statusWithColor !!}</b>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Reason
-                    </td>
-                    <td>
-                        {{ $ban->reason }}
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Created
-                    </td>
-                    <td>
-                        {{ $ban->created_at->diffForHumans() }} ( by {!! $ban->bannedByAdminURL !!} )
-                    </td>
-                </tr>
-                @if($ban->updated_by != null)
-                <tr>
-                    <td>
-                        Last Modified
-                    </td>
-                    <td>
-                        {{ $ban->updated_at->diffForHumans() }} ( by {!! $ban->updatedByAdminURL !!} )
-                    </td>
-                </tr>
+        <div class="panel light-grey-gradientX" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);padding: 10px;">
+            <div class="panel-heading panel-heading-separatorX no-padding">
+                @if(Auth::check() && Auth::user()->isAdmin())
+                <a class="btn btn-xs btn-info pull-right" href="{{ route('bans.edit',$ban->id) }}">Edit Ban</a>
                 @endif
-                </tbody></table>
+                Swat 4 Survivors Ban Record #{{ $ban->id }}
+            </div>
+            <div class="panel-body" style="border: 0px !important">
+                <table style="font-size: large;border: 0px !important;" class="table table-dark">
+                    <tbody>
+                        <tr>
+                            <td class="col-xs-4 color-gold">Ban ID</td>
+                            <td class="col-xs-8 text-muted"><b>{{ $ban->id }}</b></td>
+                        </tr>
+                        <tr>
+                            <td class="color-gold">Name</td>
+                            <td class="text-muted">{!! $ban->bannedUserURL !!}</td>
+                        </tr>
+                        <tr>
+                            <td class="color-gold">IP Address</td>
+                            <td class="text-muted">{{ $ban->ipAddrWithMask }}</td>
+                        </tr>
+                        <tr>
+                            <td class="color-gold">Banned Till</td>
+                            <td><span class="tooltipster text-muted" title="{{ $ban->bannedTillDateTime }}">{{ $ban->bannedTill }}</span></td>
+                        </tr>
+                        <tr>
+                            <td class="color-gold">Country</td>
+                            <td class="text-muted"><img class="tooltipster" title="{{ $ban->countryName }}" src="{{ $ban->countryImage }}" alt="" height="16px"/> {{ $ban->countryName }}</td>
+                        </tr>
+                        <tr>
+                            <td class="color-gold">Status</td>
+                            <td><b>{!! $ban->statusWithColor !!}</b></td>
+                        </tr>
+                        <tr>
+                            <td class="color-gold">Reason</td>
+                            <td class="text-muted">{{ $ban->reason }}</td>
+                        </tr>
+                        <tr>
+                            <td class="color-gold">Created</td>
+                            <td class="text-muted">{{ $ban->created_at->diffForHumans() }} ( by {!! $ban->bannedByAdminURL !!} )</td>
+                        </tr>
+                        @if($ban->updated_by != null)
+                        <tr>
+                            <td class="color-gold">Last Modified</td>
+                            <td class="text-muted">{{ $ban->updated_at->diffForHumans() }} ( by {!! $ban->updatedByAdminURL !!} )</td>
+                        </tr>
+                    @endif
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         @if(Auth::check())
-            <div class="media comment-media panel padding10">
+            <div class="media comment-media panel padding10 light-grey-gradientX" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
                 <div class="pull-left">
                     {!! Html::image(Auth::user()->getGravatarLink(40),'',array('class'=>'img media-oject inprofile-thumbs','width'=>'40','height'=>'40')) !!}
                 </div>
@@ -100,7 +127,7 @@
 
         <div class="comments-container">
             @foreach($ban->comments->reverse() as $comment)
-                <div class="media comment-media panel padding10">
+                <div class="media comment-media panel light-grey-gradientX padding10" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
                     <div class="pull-left">
                         {!! Html::image($comment->user->getGravatarLink(50),'',array('class'=>'img media-oject inprofile-thumbs','width'=>'50','height'=>'50')) !!}
                     </div>
@@ -113,11 +140,11 @@
                                 {!! Form::close() !!}
                                 </span>
                         @endif
-                        <p class="no-margin convert-emoji">
+                        <p class="no-margin convert-emoji text-muted">
                             <b>{!! link_to_route('user.show',$comment->user->displayName(),[$comment->user->username]) !!}</b>
                         </p>
-                        <p class="no-margin text-muted small">{{ $comment->created_at->diffForHumans() }}</p>
-                        <p>{!! $comment->showBody() !!}</p>
+                        <p class="no-margin small text-muted">{{ $comment->created_at->diffForHumans() }}</p>
+                        <p class="text-muted">{!! $comment->showBody() !!}</p>
                     </div>
                 </div>
             @endforeach
