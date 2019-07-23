@@ -57,7 +57,7 @@
         <div class="panel light-grey-gradientX" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);padding: 10px;">
             <div class="panel-heading panel-heading-separatorX no-padding">
                 @if(Auth::check() && Auth::user()->isAdmin())
-                <a class="btn btn-xs btn-info pull-right" href="{{ route('bans.edit',$ban->id) }}">Edit Ban</a>
+                <small class="pull-right"><a href="{{ route('bans.edit',$ban->id) }}" style="color:#888 !important;">Edit Ban</a></small>
                 @endif
                 Swat 4 Survivors Ban Record #{{ $ban->id }}
             </div>
