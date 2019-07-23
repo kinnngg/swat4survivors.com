@@ -82,7 +82,7 @@
                         </tr>
                         <tr>
                             <td class="color-gold">Country</td>
-                            <td class="text-muted"><img class="tooltipster" title="{{ $ban->countryName }}" src="{{ $ban->countryImage }}" alt="" height="16px"/> {{ $ban->countryName }}</td>
+                            <td class="text-muted" style="vertical-align: middle;"><img class="tooltipster" title="{{ $ban->countryName }}" src="{{ $ban->countryImage }}" alt="" height="16px"/> {{ $ban->countryName }}</td>
                         </tr>
                         <tr>
                             <td class="color-gold">Status</td>
