@@ -21,7 +21,8 @@
         }
         .light-grey-gradient7
         {
-            background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);
+            /*background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);*/
+            background: linear-gradient(#3b3b3b, #0c0c0c);
         }
         .panel-heading-separator7
         {
@@ -33,7 +34,7 @@
         }
         .panel-heading
         {
-            color: #444;
+            color: #fff !important;
             font-weight: bold;
             font-size: 1.1em;
             font-family: 'Trebuchet MS';
@@ -50,6 +51,11 @@
             font-size: 1.3em;
             font-family: 'Trebuchet MS';
         }
+        .color-gold
+        {
+            color: #ffd700 !important;
+            text-shadow: 2px 2px 5px #DAA520;
+        }
     </style>
 @endsection
 @section('main-container')
@@ -60,18 +66,20 @@
         @forelse($polls as $poll)
             <div class="page-item">
             @if(!$poll->isExpired() && !$poll->isVoted())
-                <div class="panel pad10 light-grey-gradient7">
+                <div class="panel pad10 light-grey-gradient7" style="border-radius: 12px;box-shadow: 2px 2px 2px rgba(0,0,0,.3);">
                     {!! Form::open(['route' => ['poll.vote',$poll->id]]) !!}
-                    <h4 class=""><b>{{ $poll->question }}</b></h4>
-                    <div class="panel pad10 light-grey-gradient7">
-                    @foreach($poll->pollos as $pollo)
-                        <input type="radio" name="option" value="{{ $pollo->id }}"> {{ $pollo->option }}<br>
-                    @endforeach
-                    <input type="submit" value="Vote" class="btn btn-primary btn-xs">
-                    {!! Form::close() !!}
+                    <div class="panel-heading panel-heading-separator7 no-padding">
+                        {{ $poll->question }}
                     </div>
-                    <span class="small">Total Votes: <b>{{ $poll->users()->count() }}</b></span>
-                    <p class="pull-right small">Started {{ $poll->created_at->diffForHumans() }} by
+                    <div class="panel-body">
+                        @foreach($poll->pollos as $pollo)
+                            <input type="radio" name="option" value="{{ $pollo->id }}"> <span class="text-muted">{{ $pollo->option }}</span><br>
+                        @endforeach
+                        <input type="submit" value="Vote" class="btn btn-primary btn-xs">
+                        {!! Form::close() !!}
+                    </div>
+                    <span class="small text-muted">Total Votes: <b>{{ $poll->users()->count() }}</b></span>
+                    <p class="pull-right small text-muted">Started {{ $poll->created_at->diffForHumans() }} by
                         <a class="" href="{{ route('user.show',$poll->user->username) }}">
                             <strong class="">{{ $poll->user->displayName() }}</strong>
                         </a>
@@ -79,11 +87,13 @@
                 </div>
 
             @else
-                <div class="panel pad10">
-                    <h4 class=""><b>{{ $poll->question }}</b></h4>
-                    <div class="panel pad10">
+                <div class="panel pad10 light-grey-gradient7" style="border-radius: 12px;box-shadow: 2px 2px 2px rgba(0,0,0,.3);">
+                    <div class="panel-heading panel-heading-separator7 no-padding">
+                        {{ $poll->question }}
+                    </div>
+                    <div class="panel-body">
                         @foreach($poll->pollos as $pollo)
-                            {{ $pollo->option }}<br>
+                            <span class="color-gold">{{ $pollo->option }}</span><br>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-striped active {{ $polluserscount = $poll->users()->count() }}" role="progressbar"
                                      aria-valuenow="{{ $percent = round($polluserscount == 0 ? 0 : ( $pollo->users->count() / $polluserscount)*100) }}"
@@ -93,11 +103,21 @@
                             </div>
 
                         @if(Auth::check() && Auth::user()->isAdmin())
-                            <table style="margin-bottom: 20px;border-bottom: 2px dashed #c3c3c3;" class="table table-hover table-striped table-bordered">
-                                <tbody><tr> <th class="col-xs-1"></th> <th>Name</th> <th>Voted On</th> </tr>
+                            <table style="margin-bottom: 10px;border: 0px;" class="table table-hover table-dark">
+                                <thead style="border-bottom: 1px solid #ddd;font-family: Marcellus SC;">
+                                    <tr>
+                                        <th class="col-xs-1" style="color:#fff; font-weight: 900; font-size: 12px;"></th>
+                                        <th style="color:#fff; font-weight: 900; font-size: 12px;">Name</th>
+                                        <th style="color:#fff; font-weight: 900; font-size: 12px;">Voted On</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
                                 @foreach($pollo->users as $user)
-                                <tr> <td class="text-muted"><img class="tooltipster" title="{{ $user->country->countryName }}" src="/images/flags/20_shiny/{{ $user->country->countryCode }}.png" alt="" height="22px"></td> <td class="color-main"><a class="" href="{{ route('user.show',$user->username) }}">
-                                            <strong class="">{{ $user->displayName() }}</strong></a></td> <td><span class="tooltipster" title="{{ $user->pivot->created_at->toDayDateTimeString() }}">{{ $user->pivot->created_at->diffForHumans() }}</span></td> </tr>
+                                <tr style="border-bottom: 1px solid #ccc;margin-left: -5px;margin-right: -5px;">
+                                    <td class="text-muted"><img class="tooltipster" title="{{ $user->country->countryName }}" src="/images/flags/20_shiny/{{ $user->country->countryCode }}.png" alt="" height="22px"></td>
+                                    <td class="color-main"><a class="" href="{{ route('user.show',$user->username) }}">{{ $user->displayName() }}</a></td>
+                                    <td class="text-muted"><span class="tooltipster" title="{{ $user->pivot->created_at->toDayDateTimeString() }}">{{ $user->pivot->created_at->diffForHumans() }}</span></td>
+                                </tr>
                                 @endforeach
                                 </tbody>
                             </table>
@@ -106,8 +126,8 @@
                         @endforeach
                     </div>
 
-                    <span class="small">Total Votes: <b>{{ $poll->users()->count() }}</b></span>
-                    <p class="pull-right small">Started {{ $poll->created_at->diffForHumans() }} by
+                    <span class="small text-muted">Total Votes: <b>{{ $poll->users()->count() }}</b></span>
+                    <p class="pull-right small text-muted">Started {{ $poll->created_at->diffForHumans() }} by
                         <a class="" href="{{ route('user.show',$poll->user->username) }}">
                             <strong class="">{{ $poll->user->displayName() }}</strong>
                         </a>
@@ -120,7 +140,7 @@
         @endforelse
         </div>
 
-        <div class="col-xs-12 no-padding" style="margin-bottom: 20px;">
+        <div class="col-xs-12 no-padding" style="margin-bottom: 10px;">
             {!! $polls->appends(Request::except('page'))->render() !!}
         </div>
     </div>

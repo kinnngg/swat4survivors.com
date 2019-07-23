@@ -8,7 +8,7 @@
     .light-grey-gradient2
     {
         /*background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);*/
-        background: linear-gradient(#3b3b3b, #0c0c0c);
+        background: linear-gradient(#3b3b3b, #0c0c0c) !important;
     }
     .panel-heading-separator2
     {
@@ -64,28 +64,29 @@
     @if($poll = App\Pollq::where('disabled','!=','1')->latest()->limit(1)->first())
         <div class="poll-cont">
             @if(!$poll->isExpired() && !$poll->isVoted())
-                <div class="panel pad10 light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
-                    <small class="pull-right"><i><b><a href="{{ route('poll.index') }}">» view all</a></b></i></small>
+                <div class="panel pad10 light-grey-gradient2" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+                    
                     <!--<h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Poll</h4>-->
                     <div class="panel-heading panel-heading-separator2 no-padding">
+                        <small class="pull-right"><b><a href="{{ route('poll.index') }}" style="color:#888;font-size: small !important;">show all</a></b></small>
                         Poll
                     </div>
                     <div class="panel-body">
                         {!! Form::open(['route' => ['poll.vote',$poll->id]]) !!}
-                        <h5 class=""><b>{{ $poll->question }}</b></h5>
-                        <div class="panel pad10 no-margin" style="font-size: small !important;background: transparent;">
+                        <h5 class="text-muted"><b>{{ $poll->question }}</b></h5>
+                        <div class="panel pad10 no-margin" style="font-size: small !important;background: transparent;border: 0px;">
                             @foreach($poll->pollos as $pollo)
-                                <input type="radio" name="option" value="{{ $pollo->id }}"> {{ $pollo->option }}<br>
+                                <input type="radio" name="option" value="{{ $pollo->id }}"> <span class="text-muted">{{ $pollo->option }}</span><br>
                             @endforeach
+                            <br>
                             <input type="submit" value="Vote" class="btn btn-primary btn-xs">
                             {!! Form::close() !!}
                         </div>
-                        <span class="small">Total Votes: <b>{{ $poll->users()->count() }}</b></span>
+                        <span class="small text-muted">Total Votes: <b>{{ $poll->users()->count() }}</b></span>
                     </div>
                 </div>
             @else
                 <div class="panel pad10 light-grey-gradient2" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
-                    <!--<h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Poll</h4>-->
                     <div class="panel-heading panel-heading-separator2 no-padding">
                         Poll
                         <small class="pull-right"><b><a href="{{ route('poll.index') }}" style="font-size: small !important;color:#888;">show all</a></b></small>
@@ -115,7 +116,7 @@
     {{--Only display this section on homepage--}}
     @if(Request::getRequestUri() == "/" || Request::getRequestUri() == "/home")
 
-        <div class="panel pad5 light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+        <div class="panel pad5 light-grey-gradient2" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
             
             <div class="panel-heading panel-heading-separator2 no-padding">
                 <small class="pull-right"><b><a href="{{ route('news.index') }}" style="color:#888;font-size: small !important;">show all</a></b></small>
@@ -135,7 +136,7 @@
             </div>
         </div>
 
-        <div class="panel pad5 light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+        <div class="panel pad5 light-grey-gradient2" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
             <div class="panel-heading panel-heading-separator2 no-padding">
                 Donate
             </div>
