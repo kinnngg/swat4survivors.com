@@ -221,7 +221,7 @@
                                     <tr style="border-bottom: 1px solid #ccc;margin-left: -5px;margin-right: -5px;">
                                         <th class="text-muted" style="vertical-align: middle;">{{ $player->position }}</th>
                                         <td style="vertical-align: middle;">{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
-                                        <td class="text-bold color-main" style="vertical-align: middle;">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
+                                        <td class="text-bold color-main" style="vertical-align: middle;">{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster', 'height' => '16px']) !!}&nbsp;&nbsp;{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
                                         <td class="text-right text-muted" style="vertical-align: middle;"><small>{{ $player->lastGame->created_at->diffForHumans() }}</small></td>
                                     </tr>
                                 @empty
@@ -267,7 +267,7 @@
             </div> {{--Live Server Players,Top Players and Server Viewer Row Ends--}}
         </div>
         <div class="server-viewer-loader row light-grey-gradient" style="border-radius: 12px;box-shadow: 2px 2px 2px rgba(0,0,0,.3);">
-            <div id="sv-loading" class="text-muted">Loading Server Viewer…</div>
+            <div id="sv-loading" class="color-gold">Loading Server Viewer…</div>
         </div>
 
         <div class="row hidden-xs round-reports">
