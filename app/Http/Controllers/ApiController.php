@@ -74,7 +74,7 @@ class ApiController extends Controller
 
         if($data->option['players_current'] <= 0)
         {
-            $playerTableData = "<div class='no-player-online text-muted'>There are no players online.</div>";
+            $playerTableData = "<div class='no-player-online color-gold'>There are no players online.</div>";
         }
         else
         {
