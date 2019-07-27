@@ -190,7 +190,7 @@
                         <div class="panel-heading panel-heading-separator no-padding">
                             <span class="pull-right">
                                 @if(Auth::check() && Auth::user()->isAdmin())
-                            <a style='color:#fff;' class='fancybox livepfancy fancybox.ajax tooltipster' href='./liveserveraction' title='Server Action'><i class='fa fa-cog'></i></a>
+                            <a class='fancybox livepfancy fancybox.ajax tooltipster' href='./liveserveraction' title='Server Action'><i class='far fa-server color-gold'></i></a>
                                 @endif
                             </span>
                             Online Players <span id="ls-player-online"></span>

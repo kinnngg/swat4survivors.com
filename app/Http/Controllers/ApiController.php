@@ -78,8 +78,8 @@ class ApiController extends Controller
         }
         else
         {
-            $playerTableData = "<table class='table table-dark table-hover no-margin' id='ls-player-table'>";
-            $playerTableData .= "<thead style='border-bottom: 1px solid #ddd !important;color: #fff;font-family: Marcellus SC !important;'><tr><th class='col-xs-1'>Flag</th><th class='col-xs-7'>Name</th><th class='col-xs-2'>Score</th><th class='text-right col-xs-2'>Ping</th></tr></thead><tbody id='ls-player-table-body'></tbody>";
+            $playerTableData = "<table class='table table-dark no-margin' id='ls-player-table'>";
+            $playerTableData .= "<thead style='border-bottom: 1px solid #ddd !important;color: #fff;font-family: Marcellus SC !important;'><tr><th class='col-xs-1'></th><th class='col-xs-7'>Name</th><th class='col-xs-2'>Score</th><th class='text-right col-xs-2'>Ping</th></tr></thead><tbody id='ls-player-table-body'></tbody>";
 
             foreach($data->option['players'] as $player)
             {
@@ -112,7 +112,7 @@ class ApiController extends Controller
                     }
                 }
 
-                $playerTableData .= "<tr class=''><td><img src='/images/flags/20_shiny/{$playerCountryCode}.png' title='{$playerCountryName}' class='tooltipster' alt='$playerCountryCode'></td>";
+                /*$playerTableData .= "<tr class=''><td><img src='/images/flags/20_shiny/{$playerCountryCode}.png' title='{$playerCountryName}' class='tooltipster' alt='$playerCountryCode'></td>";*/
 
                 $playerNameStripped = str_replace('(VIEW)','',$player['name']);
                 $playerNameStripped = str_replace('(SPEC)','',$playerNameStripped);
@@ -123,17 +123,17 @@ class ApiController extends Controller
                 if(\Auth::check() && \Auth::user()->isAdmin())
                 {
                     //$showRadioIfAdmin = "<input class='pull-left' type='radio' name='selected_player' value='$playerNameStripped'> &nbsp;";
-                    $showRadioIfAdmin = $showRadioIfAdmin . "<a style='color:purple' class='fancybox livepfancy fancybox.ajax' href='./liveplayeraction?player={$playerNameStripped}' title='{$player['name']}'><i class='fa fa-cog'></i></a> &nbsp;";
+                    $showRadioIfAdmin = $showRadioIfAdmin . "<a class='fancybox livepfancy fancybox.ajax tooltipster' title='Player Action' href='./liveplayeraction?player={$playerNameStripped}' title='{$player['name']}'><i class='far fa-user-cog color-gold'></i></a> &nbsp;";
                     $IPorNull = $IP;
                 }
 
                 if($playerTotal = PlayerTotal::findOrFailByNameWithNull($playerNameStripped))
                 {
-                    $playerTableData .= "<td>{$showRadioIfAdmin}<b><a title='{$IPorNull}' class='tooltipster team-{$player['team']}' href='".route('player-detail',$playerNameStripped)."'>".$player['name']."</b></a></td>";
+                    $playerTableData .= "<tr class=''><td style='vertical-align: middle;'>{$showRadioIfAdmin}</td><td><img src='/images/flags/20_shiny/{$playerCountryCode}.png' title='{$playerCountryName}' class='tooltipster' alt='$playerCountryCode' height='16' style='vertical-align: middle;'>&nbsp;&nbsp;<b><a title='{$IPorNull}' class='tooltipster team-{$player['team']}' href='".route('player-detail',$playerNameStripped)."' style='vertical-align: middle;'>".$player['name']."</b></a></td>";
                 }
                 else
                 {
-                    $playerTableData .= "<td>{$showRadioIfAdmin}<span title='{$IPorNull}' class='tooltipster team-{$player['team']}'>".$player['name']."</span></td>";
+                    $playerTableData .= "<td>{$showRadioIfAdmin}</td><td><img src='/images/flags/20_shiny/{$playerCountryCode}.png' title='{$playerCountryName}' class='tooltipster' alt='$playerCountryCode' height='16' style='vertical-align: middle;'>&nbsp;&nbsp;<span title='{$IPorNull}' class='tooltipster team-{$player['team']}'>".$player['name']."</span></td>";
                 }
 
                 $playerTableData .= "<td class='text-bold text-muted'>{$player['score']}</td>";
