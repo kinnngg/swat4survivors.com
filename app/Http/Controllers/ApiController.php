@@ -79,8 +79,15 @@ class ApiController extends Controller
         else
         {
             $playerTableData = "<table class='table table-dark no-margin' id='ls-player-table'>";
-            $playerTableData .= "<thead style='border-bottom: 1px solid #ddd !important;color: #fff;font-family: Marcellus SC !important;'><tr><th class='col-xs-1'></th><th class='col-xs-7'>Name</th><th class='col-xs-2'>Score</th><th class='text-right col-xs-2'>Ping</th></tr></thead><tbody id='ls-player-table-body'></tbody>";
-
+            $playerTableData .= "<thead style='border-bottom: 1px solid #ddd !important;color: #fff;font-family: Marcellus SC !important;'><tr>";
+            if(\Auth::check() && \Auth::user()->isAdmin())
+            {
+                $playerTableData .= "<th class='col-xs-1'></th><th class='col-xs-7'>Name</th><th class='col-xs-2'>Score</th><th class='text-right col-xs-2'>Ping</th></tr></thead><tbody id='ls-player-table-body'></tbody>";
+            }
+            else
+            {
+                $playerTableData .= "<th class='col-xs-7'>Name</th><th class='col-xs-2'>Score</th><th class='text-right col-xs-2'>Ping</th></tr></thead><tbody id='ls-player-table-body'></tbody>";
+            }
             foreach($data->option['players'] as $player)
             {
                 $IP = explode(":",$player['ip'])[0];
@@ -129,11 +136,26 @@ class ApiController extends Controller
 
                 if($playerTotal = PlayerTotal::findOrFailByNameWithNull($playerNameStripped))
                 {
-                    $playerTableData .= "<tr class=''><td style='vertical-align: middle;'>{$showRadioIfAdmin}</td><td><img src='/images/flags/20_shiny/{$playerCountryCode}.png' title='{$playerCountryName}' class='tooltipster' alt='$playerCountryCode' height='16' style='vertical-align: middle;'>&nbsp;&nbsp;<b><a title='{$IPorNull}' class='tooltipster team-{$player['team']}' href='".route('player-detail',$playerNameStripped)."' style='vertical-align: middle;'>".$player['name']."</b></a></td>";
+                    $playerTableData .= "<tr class=''>";
+                    if(\Auth::check() && \Auth::user()->isAdmin())
+                    {
+                        $playerTableData .= "<td style='vertical-align: middle;'>{$showRadioIfAdmin}</td><td><img src='/images/flags/20_shiny/{$playerCountryCode}.png' title='{$playerCountryName}' class='tooltipster' alt='$playerCountryCode' height='16' style='vertical-align: middle;'>&nbsp;&nbsp;<b><a title='{$IPorNull}' class='tooltipster team-{$player['team']}' href='".route('player-detail',$playerNameStripped)."' style='vertical-align: middle;'>".$player['name']."</b></a></td>";
+                    }
+                    else
+                    {
+                        $playerTableData .= "<td><img src='/images/flags/20_shiny/{$playerCountryCode}.png' title='{$playerCountryName}' class='tooltipster' alt='$playerCountryCode' height='16' style='vertical-align: middle;'>&nbsp;&nbsp;<b><a title='{$IPorNull}' class='tooltipster team-{$player['team']}' href='".route('player-detail',$playerNameStripped)."' style='vertical-align: middle;'>".$player['name']."</b></a></td>";
+                    }
                 }
                 else
                 {
-                    $playerTableData .= "<td>{$showRadioIfAdmin}</td><td><img src='/images/flags/20_shiny/{$playerCountryCode}.png' title='{$playerCountryName}' class='tooltipster' alt='$playerCountryCode' height='16' style='vertical-align: middle;'>&nbsp;&nbsp;<span title='{$IPorNull}' class='tooltipster team-{$player['team']}'>".$player['name']."</span></td>";
+                    if(\Auth::check() && \Auth::user()->isAdmin())
+                    {
+                        $playerTableData .= "<td>{$showRadioIfAdmin}</td><td><img src='/images/flags/20_shiny/{$playerCountryCode}.png' title='{$playerCountryName}' class='tooltipster' alt='$playerCountryCode' height='16' style='vertical-align: middle;'>&nbsp;&nbsp;<span title='{$IPorNull}' class='tooltipster team-{$player['team']}'>".$player['name']."</span></td>";
+                    }
+                    else
+                    {
+                        $playerTableData .= "<td><img src='/images/flags/20_shiny/{$playerCountryCode}.png' title='{$playerCountryName}' class='tooltipster' alt='$playerCountryCode' height='16' style='vertical-align: middle;'>&nbsp;&nbsp;<span title='{$IPorNull}' class='tooltipster team-{$player['team']}'>".$player['name']."</span></td>";
+                    }
                 }
 
                 $playerTableData .= "<td class='text-bold text-muted'>{$player['score']}</td>";
