@@ -56,12 +56,17 @@
         border-radius: 3px !important;
         box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
     }
+    #adminsrvcommandform
+    {
+        background: linear-gradient(#3b3b3b, #0c0c0c) !important;
+        width: 400px !important;
+        box-sizing: none;
+    }
 </style>
 
 {!! Form::open(['route' => 'kossrvadmin.commands','id' => 'adminsrvcommandform','class' => 'form-horizontal form']) !!}
 <div id="inline1">
     <div class="container" style="width:400px;">
-
         <div class="row row-no-gutters">
             <div class="col-xs-4 text-center">
                 <p class="text-center"><small>Taser Only</small></p>
