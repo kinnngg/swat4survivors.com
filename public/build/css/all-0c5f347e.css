@@ -8282,9 +8282,11 @@ li.picker-switch.accordion-toggle:hover {
 .color-superadmin {
   /*color: #17af17 !important;*/
   color: #ffd700 !important;
+  text-shadow: 2px 2px 5px #DAA520;
 }
 .color-admin {
   color: #C0C0C0 !important;
+  text-shadow: 2px 2px 5px #ccc;
 }
 .color-admin:hover {
   color: #C0C0C0 !important;

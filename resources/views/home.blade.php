@@ -995,7 +995,7 @@
                         <div class="panel-body font-13" style="padding-left: 0px !important;padding-right: 0px !important;padding-top: 0px !important;">
                             @forelse($activeUsers as $user)
                                 <a class="{{ "color-".$user->roles()->first()->name }}" style="margin-right:1em"
-                                   href="{{ route('user.show',$user->username) }}"><strong class="">{{ $user->displayName() }}{!! $user->isOnline ? "<sup class='text-green'>&#x25cf;</sup>" : "" !!}</strong></a>
+                                   href="{{ route('user.show',$user->username) }}"><strong class="">{{ $user->displayName() }}{!! $user->isOnline ? "<sup class='color-gold'>&#x25cf;</sup>" : "" !!}</strong></a>
                             @empty
                             @endforelse
                         </div>
