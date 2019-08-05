@@ -119,13 +119,13 @@
             <div class="col-xs-12">
                 @foreach(App\Rank::where('id','>',1)->get() as $rank)
                     @if($rank->id == $player->rank->id)
-                        <div class="colm-2 no-padding tooltipster" title="&lt;div class='text-center text-bold' &gt; {{ $rank->name }} &lt;/div&gt; &lt;br&gt;Points: {{ $rank->description }}">
-                            <img src="/images/game/insignia/more/{{ $rank->id }}.png" style="height: 65px;width: 65px;/*border:1px solid #d62c1a;*/background: transparent;">
+                        <div class="col-xs-2 tooltipster" title="&lt;div class='text-center text-bold' &gt; {{ $rank->name }} &lt;/div&gt; &lt;br&gt;Points: {{ $rank->description }}">
+                            <img src="/images/game/insignia/more/{{ $rank->id }}.png" style="height: 100%;width: 100%;/*border:1px solid #d62c1a;*/background: transparent;">
                             <p class="text-center" style="color: #d62c1a;margin-top: 5px;"><strong>{{ $rank->name }}</strong></p>
                         </div>
                     @else
-                        <div class="colm-1 no-padding tooltipster" title="&lt;div class='text-center text-bold' &gt; {{ $rank->name }} &lt;/div&gt; &lt;br&gt;Points: {{ $rank->description }}">
-                            <img src="/images/game/insignia/more/{{ $rank->id }}.png" width="50px" style="height: 50px;background: transparent;">
+                        <div class="col-xs-1 no-padding tooltipster" title="&lt;div class='text-center text-bold' &gt; {{ $rank->name }} &lt;/div&gt; &lt;br&gt;Points: {{ $rank->description }}">
+                            <img src="/images/game/insignia/more/{{ $rank->id }}.png" style="height: 100%;width: 100%;background: transparent;">
                         </div>
                     @endif
                 @endforeach
