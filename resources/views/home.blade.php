@@ -196,7 +196,7 @@
                             Online Players <span id="ls-player-online"></span>
                         </div>
                         <div class="panel-body no-padding" id="ls-player-total-div" style="padding-bottom: 10px !important;">
-                            <table class="table table-hover" id="ls-player-table">
+                            <table class="table" id="ls-player-table">
                                 <th class="loading-pt-info text-center">Loading
                                     Players table...
                                 </th>
@@ -208,7 +208,7 @@
                         <div class="panel-heading panel-heading-separator no-padding">Top Players</div>
                         <div class="panel-body no-padding">
 
-                            <table class="table table-dark table-hover" style="border: 0px;">
+                            <table class="table table-dark" style="border: 0px;">
                                 <thead style="border-bottom: 1px solid #ddd;font-family: Marcellus SC;">
                                 <tr>
                                     <th class="col-xs-1" style="color:#fff; font-weight: 900; font-size: 12px;">#</th>
@@ -284,7 +284,7 @@
                 </div>
                 <div class="" id="collapseTwo">
                     <div class="panel-body" style="padding-left: 0px !important;padding-right: 0px !important;padding-top: 0px !important;">
-                        <table class="table table-dark table-hover no-margin" style="border: 0px;">
+                        <table class="table table-dark no-margin" style="border: 0px;">
                             <thead style="border-bottom: 1px solid #ddd;font-family: Marcellus SC;">
                             <tr style="font-family: Marcellus SC;">
                                 <th class="col-xs-1" style="color:#fff; font-weight: 900; font-size: 12px;">Round</th>
@@ -916,7 +916,7 @@
                 </div>
                 <div class="" id="collapseFour">
                     <div class="panel-body" style="padding-left: 0px !important;padding-right: 0px !important;padding-top: 0px !important;">
-                        <table id="" class="table table-dark table-hover no-margin" style="border: 0px;">
+                        <table id="" class="table table-dark no-margin" style="border: 0px;">
                             <thead style="border-bottom: 1px solid #ddd;font-family: Marcellus SC;">
                             <tr style="font-family: Marcellus SC;">
                                 <th class="col-xs-1"></th>
