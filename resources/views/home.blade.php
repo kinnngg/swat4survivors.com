@@ -209,7 +209,7 @@
                         <div class="panel-body no-padding">
 
                             <table class="table table-dark" style="border: 0px;">
-                                <thead style="border-bottom: 1px solid #ddd;font-family: Marcellus SC;">
+                                <thead style="font-family: Marcellus SC;">
                                 <tr>
                                     <th class="col-xs-1" style="color:#fff; font-weight: 900; font-size: 12px;">#</th>
                                     <th class="col-xs-1" style="color:#fff; font-weight: 900; font-size: 12px;">Rank</th>
@@ -218,7 +218,7 @@
                                 </tr>
                                 </thead>
                                 @forelse($topPlayers as $player)
-                                    <tr style="border-bottom: 1px solid #ccc;margin-left: -5px;margin-right: -5px;">
+                                    <tr style="border-top: 1px solid #ccc;margin-left: -5px;margin-right: -5px;">
                                         <th class="text-muted" style="vertical-align: middle;">{{ $player->position }}</th>
                                         <td style="vertical-align: middle;">{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
                                         <td class="text-bold color-main" style="vertical-align: middle;">{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster', 'height' => '16px']) !!}&nbsp;&nbsp;{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
@@ -285,7 +285,7 @@
                 <div class="" id="collapseTwo">
                     <div class="panel-body" style="padding-left: 0px !important;padding-right: 0px !important;padding-top: 0px !important;">
                         <table class="table table-dark no-margin" style="border: 0px;">
-                            <thead style="border-bottom: 1px solid #ddd;font-family: Marcellus SC;">
+                            <thead style="font-family: Marcellus SC;">
                             <tr style="font-family: Marcellus SC;">
                                 <th class="col-xs-1" style="color:#fff; font-weight: 900; font-size: 12px;">Round</th>
                                 <th class="col-xs-2" style="color:#fff; font-weight: 900; font-size: 12px;">Time</th>
@@ -297,7 +297,7 @@
                             </thead>
                             <tbody id="data-items" class="roundstabledata text-muted">
                             @foreach($latestGames as $round)
-                                <tr class="item pointer-cursor" data-id="{{ $round->id }}" style="border-bottom: 1px solid #ccc;margin-left: -5px;margin-right: -5px;">
+                                <tr class="item pointer-cursor" data-id="{{ $round->id }}" style="border-top: 1px solid #ccc;margin-left: -5px;margin-right: -5px;">
                                     <td class="color-main text-bold">{!! link_to_route('round-detail',$round->index,[$round->id]) !!}</td>
                                     <td class="text-muted">{{ $round->time }}</td>
                                     <td class="text-center">{!! $round->swatScoreWithColor !!}</td>
@@ -917,7 +917,7 @@
                 <div class="" id="collapseFour">
                     <div class="panel-body" style="padding-left: 0px !important;padding-right: 0px !important;padding-top: 0px !important;">
                         <table id="" class="table table-dark no-margin" style="border: 0px;">
-                            <thead style="border-bottom: 1px solid #ddd;font-family: Marcellus SC;">
+                            <thead style="font-family: Marcellus SC;">
                             <tr style="font-family: Marcellus SC;">
                                 <th class="col-xs-1"></th>
                                 <th class="col-xs-3" style="color:#fff; font-weight: 900; font-size: 14px;">Name</th>
@@ -928,7 +928,7 @@
                             </thead>
                             <tbody id="">
                             @foreach($bans as $ban)
-                                <tr class="item" style="border-bottom: 1px solid #ccc;margin-left: -5px;margin-right: -5px;">
+                                <tr class="item" style="border-top: 1px solid #ccc;margin-left: -5px;margin-right: -5px;">
                                     <td class="text-muted"><img class="tooltipster" title="{{ $ban->countryName }}"
                                                                 src="{{ $ban->countryImage }}" alt="" height="22px"/></td>
                                     <td class="color-main text-bold">{!! link_to_route('bans.show',$ban->name,[$ban->id]) !!}</td>

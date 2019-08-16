@@ -70,6 +70,7 @@
 
 <script src="//js.pusher.com/2.2/pusher.min.js"></script>
 <script src="{{ elixir('js/all.js') }}"></script>
+<script src="/js/copperlicht.js"></script>
 <!--<script src="/js/snowfall.jquery.min.js"></script>-->
 @yield('scripts')
 <script>

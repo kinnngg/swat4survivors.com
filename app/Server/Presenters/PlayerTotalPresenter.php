@@ -54,7 +54,7 @@ class PlayerTotalPresenter extends BasePresenter
 
     public function rankImage()
     {
-        return "/images/game/insignia/more/".$this->wrappedObject->rank->id.".png";
+        return "/images/game/insignia/".$this->wrappedObject->rank->id.".svg";
     }
 
     public function rankName()

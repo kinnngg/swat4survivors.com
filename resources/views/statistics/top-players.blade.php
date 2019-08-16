@@ -68,6 +68,11 @@
         {
             color: #fff !important;
         }
+        .color-gold
+        {
+            color: #ffd700 !important;
+            text-shadow: 2px 2px 5px #DAA520;
+        }
     </style>
 @endsection
 
@@ -77,26 +82,26 @@
         <div class="row">
             <div class="col-xs-3 pad10lf">
                 <div class="panel col-xs-12 pad10 light-grey-gradient8" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
-                    <div class="col-xs-3"><i class="far fa-user fa-3x text-danger"></i></div>
-                    <div class="col-xs-9 no-padding text-right text-muted"><b>Players Today:</b><br>{{ \App\PlayerTotal::todaycount() }}</div>
+                    <div class="col-xs-3"><i class="fad fa-user fa-3x text-muted" style="margin-left: -15px;"></i></div>
+                    <div class="col-xs-9 no-padding text-left panel-heading" style="padding-left: 5px !important;"><b>Players Today:</b><br><span class="color-gold">{{ \App\PlayerTotal::todaycount() }}<span></div>
                 </div>
             </div>
             <div class="col-xs-3 pad10lr">
                 <div class="panel col-xs-12 pad10 light-grey-gradient8" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
-                    <div class="col-xs-3"><i class="far fa-users-crown fa-3x text-success"></i></div>
-                    <div class="col-xs-9 no-padding text-right text-muted"><b>Total Players:</b><br>{{ \App\PlayerTotal::count() }}</div>
+                    <div class="col-xs-3"><i class="fad fa-users fa-3x text-muted" style="margin-left: -15px;"></i></div>
+                    <div class="col-xs-9 no-padding text-left panel-heading" style="padding-left: 20px !important;"><b>Total Players:</b><br><span class="color-gold">{{ \App\PlayerTotal::count() }}</span></div>
                 </div>
             </div>
             <div class="col-xs-3 pad10lr">
                 <div class="panel col-xs-12 pad10 light-grey-gradient8" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
-                    <div class="col-xs-3"><i class="far fa-chart-pie fa-3x text-warning"></i></div>
-                    <div class="col-xs-9 no-padding text-right text-muted"><b>Rounds Played:</b><br>{{ \App\Game::count() }}</div>
+                    <div class="col-xs-3"><i class="fad fa-analytics fa-3x text-muted" style="margin-left: -15px;"></i></div>
+                    <div class="col-xs-9 no-padding text-left panel-heading" style="padding-left: 15px !important;"><b>Rounds Played:</b><br><span class="color-gold">{{ \App\Game::count() }}</span></div>
                 </div>
             </div>
             <div class="col-xs-3 pad10ll">
                 <div class="panel col-xs-12 pad10 light-grey-gradient8" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
-                    <div class="col-xs-3"><i class="far fa-clock fa-3x text-info"></i></div>
-                    <div class="col-xs-9 no-padding text-right text-muted"><b>Last updated:</b><br>{{ \App\PlayerTotal::first()->updated_at->diffForHumans() }}</div>
+                    <div class="col-xs-3"><i class="fad fa-clock fa-3x text-muted" style="margin-left: -15px;"></i></div>
+                    <div class="col-xs-9 no-padding text-left panel-heading" style="padding-left: 10px !important;"><b>Last updated:</b><br><span class="color-gold">{{ \App\PlayerTotal::first()->updated_at->diffForHumans() }}</span></div>
                 </div>
             </div>
         </div>
@@ -107,8 +112,8 @@
                 Swat 4 Survivors Top Players
             </div>
             <div class="panel-body">
-                <table id="" class="table table-dark table-hover no-margin" style="border: 0px;">
-                    <thead style="border-bottom: 1px solid #ddd;font-family: Marcellus SC;">
+                <table id="" class="table no-margin" style="border: 0px;">
+                    <thead style="font-family: Marcellus SC;">
                     <tr>
                         <th class="col-xs-1" style="font-weight: 900; font-size: 12px;">{!! sort_players_by('position','#') !!}</th>
                         <th class="col-xs-1" style="font-weight: 900; font-size: 12px;">{!! sort_players_by('country_id','Flag') !!}</th>
@@ -123,7 +128,7 @@
                     </thead>
                     <tbody id="data-items">
                     @foreach($players as $player)
-                        <tr class="item" style="border-bottom: 1px solid #ccc;margin-left: -5px;margin-right: -5px;">
+                        <tr class="item" style="border-top: 1px solid #ccc;margin-left: -5px;margin-right: -5px;">
                             <td class="color-main text-bold" style="vertical-align: middle;">{{ $player->position }}</td>
                             <td class="text-muted" style="vertical-align: middle;"><img class="tooltipster" title="{{ $player->country->countryName }}" src="{{ $player->countryImage }}" alt="" height="22px"/></td>
                             <td style="vertical-align: middle;"><img class="tooltipster" title="{{ $player->rank->name }}" src="{{ $player->rankImage }}" alt="" height="38px"/></td>
