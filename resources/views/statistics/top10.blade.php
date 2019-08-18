@@ -230,7 +230,7 @@
                     @forelse($top10HighestScore as $player)
                         <tr style="border-top: 1px solid #ccc;">
                             <th class="text-muted" style="vertical-align: middle;">{{ $position6++ }}</th>
-                            <td style="vertical-align: middle;">{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '38px']) !!}</td>
+                            <td style="vertical-align: middle;"><center>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '38px']) !!}</center></td>
                             <td class="color-main text-bold" style="vertical-align: middle;">{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster', 'height' => '16px']) !!}&nbsp;&nbsp;{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
                             <td class="text-muted text-right" style="vertical-align: middle;">{{ $player->highest_score }}</td>
                         </tr>
