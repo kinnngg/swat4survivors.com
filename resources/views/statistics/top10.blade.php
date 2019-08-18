@@ -87,14 +87,14 @@
                 <table class="table no-margin" style="border: 0px;">
                     <thead style="font-family: Marcellus SC;"><tr>
                         <th class="col-xs-1 color-gold">#</th>
-                        <th class="col-xs-1 color-gold">Rank</th>
+                        <th class="col-xs-1 color-gold text-center">Rank</th>
                         <th class="col-xs-1 color-gold">Name</th>
                         <th class="col-xs-1 color-gold text-right">Score</th>
                     </tr></thead>
                     @forelse($top10Score as $player)
                         <tr style="border-top: 1px solid #ccc;">
                             <th class="text-muted" style="vertical-align: middle;">{{ $position1++ }}</th>
-                            <td style="vertical-align: middle;">{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '38px']) !!}</td>
+                            <td style="vertical-align: middle;"><center>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '38px']) !!}</center></td>
                             <td class="color-main text-bold" style="vertical-align: middle;">{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster', 'height' => '16px']) !!}&nbsp;&nbsp;{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
                             <td class="text-muted text-right" style="vertical-align: middle;">{{ $player->total_score }}</td>
                         </tr>
@@ -113,14 +113,14 @@
                 <table class="table no-margin" style="border: 0px;">
                     <thead style="font-family: Marcellus SC;"><tr>
                         <th class="col-xs-1 color-gold">#</th>
-                        <th class="col-xs-1 color-gold">Rank</th>
+                        <th class="col-xs-1 color-gold text-center">Rank</th>
                         <th class="col-xs-1 color-gold">Name</th>
                         <th class="col-xs-1 color-gold text-right">K/D</th>
                     </tr></thead>
                     @forelse($top10KD as $player)
                         <tr style="border-top: 1px solid #ccc;">
                             <th class="text-muted" style="vertical-align: middle;">{{ $position2++ }}</th>
-                            <td style="vertical-align: middle;">{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '38px']) !!}</td>
+                            <td style="vertical-align: middle;"><center>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '38px']) !!}</center></td>
                             <td class="color-main text-bold" style="vertical-align: middle;">{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster', 'height' => '16px']) !!}&nbsp;&nbsp;{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
                             <td class="text-muted text-right" style="vertical-align: middle;">{{ $player->killdeath_ratio }}</td>
                         </tr>
@@ -142,14 +142,14 @@
                     <table class="table no-margin" style="border: 0px;">
                         <thead style="font-family: Marcellus SC;"><tr>
                             <th class="col-xs-1 color-gold">#</th>
-                            <th class="col-xs-1 color-gold">Rank</th>
+                            <th class="col-xs-1 color-gold text-center">Rank</th>
                             <th class="col-xs-1 color-gold">Name</th>
                             <th class="col-xs-1 color-gold text-right">A/A</th>
                         </tr></thead>
                         @forelse($top10AAR as $player)
                             <tr style="border-top: 1px solid #ccc;">
                                 <th class="text-muted" style="vertical-align: middle;">{{ $position3++ }}</th>
-                                <td style="vertical-align: middle;">{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '38px']) !!}</td>
+                                <td style="vertical-align: middle;"><center>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '38px']) !!}</center></td>
                                 <td class="color-main text-bold">{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster', 'height' => '16px']) !!}&nbsp;&nbsp;{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
                                 <td class="text-muted text-right">{{ $player->arr_ratio }}</td>
                             </tr>
@@ -168,14 +168,14 @@
                     <table class="table no-margin" style="border: 0px;">
                         <thead style="font-family: Marcellus SC;"><tr>
                             <th class="col-xs-1 color-gold">#</th>
-                            <th class="col-xs-1 color-gold">Rank</th>
+                            <th class="col-xs-1 color-gold text-center">Rank</th>
                             <th class="col-xs-1 color-gold">Name</th>
                             <th class="col-xs-1 color-gold text-right">Rounds</th>
                         </tr></thead>
                         @forelse($top10Round as $player)
                             <tr style="border-top: 1px solid #ccc;">
                                 <th class="text-muted" style="vertical-align: middle;">{{ $position4++ }}</th>
-                                <td style="vertical-align: middle;">{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '38px']) !!}</td>
+                                <td style="vertical-align: middle;"><center>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '38px']) !!}</center></td>
                                 <td class="color-main text-bold" style="vertical-align: middle;">{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster', 'height' => '16px']) !!}&nbsp;&nbsp;{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
                                 <td class="text-muted text-right" style="vertical-align: middle;">{{ $player->total_round_played }}</td>
                             </tr>
@@ -197,14 +197,14 @@
                 <table class="table no-margin" style="border: 0px;">
                     <thead style="font-family: Marcellus SC;"><tr>
                         <th class="col-xs-1 color-gold">#</th>
-                        <th class="col-xs-1 color-gold">Rank</th>
+                        <th class="col-xs-1 color-gold text-center">Rank</th>
                         <th class="col-xs-1 color-gold">Name</th>
                         <th class="col-xs-1 color-gold text-right">Wins</th>
                     </tr></thead>
                     @forelse($top10Winners as $player)
                         <tr style="border-top: 1px solid #ccc;">
                             <th class="text-muted" style="vertical-align: middle;">{{ $position5++ }}</th>
-                            <td style="vertical-align: middle;">{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '38px']) !!}</td>
+                            <td style="vertical-align: middle;"><center>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '38px']) !!}</center></td>
                             <td class="color-main text-bold" style="vertical-align: middle;">{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster', 'height' => '16px']) !!}&nbsp;&nbsp;{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
                             <td class="text-muted text-right" style="vertical-align: middle;">{{ $player->game_won }}</td>
                         </tr>
