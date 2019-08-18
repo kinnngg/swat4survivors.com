@@ -113,7 +113,7 @@
                     </li><!-- /dropdown -->
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            <img class="img" src="{{ Auth::user()->getGravatarLink(20) }}" width="15" height="15"/>
+                            <img class="img" src="{{ Auth::user()->getGravatarLink(25) }}" width="25" height="25"/>
                             {{ Auth::user()->displayName() }} <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li class="{{ set_active(['feeds*']) }}"><a href="{{ route('feeds-home') }}">My Feedline</a></li>

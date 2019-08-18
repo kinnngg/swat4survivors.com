@@ -118,8 +118,17 @@
             position: absolute;
             top: 40px;
             left: 30px;
-            width: 35px;
+            width: 45px;
             margin-top: 20px;
+        }
+        .inactive
+        {
+            padding: 5px;
+            color: #777;
+            line-height: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #FFFEE7;
         }
     </style>
     @endsection
@@ -130,9 +139,8 @@
         <div class="row panel player-rank-container light-grey-gradientBB" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
             <div class="col-xs-1">
                 <img class="left" src="/images/game/chars/50/{{ $player->last_team."_".$player->loadout->body."_".$player->loadout->head }}.jpg">
-                <img class="tooltipster" title="{{ $player->country->countryName }}" src="{{ $player->countryImage }}" style="margin-top: 5px;margin-left: 12px;">
             </div>
-            <div class="col-xs-11">
+            <div class="col-xs-8">
                 <div class="text-muted text-bold text-left" style="font-size: 33px;">
                     {{ $player->name }}
                     <p class="small" style="font-size: 13px;">
@@ -144,12 +152,10 @@
 
                         @endforelse
                     </p>
-                    @unless((\Carbon\Carbon::now()->timestamp - $player->lastGame->updated_at->timestamp) <= 60*60*24*7)
-                        <p class="text-danger" style="font-size: 10px;">
-                            {{ $player->name }} is not seen playing this week!
-                        </p>
-                    @endunless
                 </div>
+            </div>
+            <div class="col-xs-3 text-right">
+                {!! Html::image('/images/flags_new/flags-iso/shiny/64/'.$player->country->countryCode.".png",$player->country->countryCode,['title' => $player->country->countryName, 'class'=> 'tooltipster']) !!}
             </div>
             <div class="col-xs-12"></div>
             <div class="col-xs-12">
@@ -172,7 +178,7 @@
                                     <img src="/images/game/insignia/{{ $rank->id }}.svg" style="height: 5%;width: 5%;opacity: 0.3;">
                                 </div>-->
                                 <li class="tooltipster" title="&lt;div class='text-center text-bold' &gt; {{ $rank->name }} &lt;/div&gt; &lt;br&gt;Points: {{ $rank->description }}">
-                                    <span><img src="/images/game/insignia/{{ $rank->id }}.svg" style="height: 5%;width: 5%;opacity: 0.3;"></span>
+                                    <img src="/images/game/insignia/{{ $rank->id }}.svg" style="height: 5%;width: 5%;opacity: 0.3;">
                                 </li>
                             @endif
                         @endforeach
@@ -224,6 +230,14 @@
                 <div class="panel-heading panel-heading-separatorBB no-margin no-padding text-left">
                     General Information
                 </div>
+                @unless((\Carbon\Carbon::now()->timestamp - $player->lastGame->updated_at->timestamp) <= 60*60*24*7)
+                    <br>
+                    <div class="inactive text-left">
+                        <!--{{ $player->name }} is not seen playing this week!-->
+                        This profile is inactive.<br>
+                        {{ $player->name }} hasn't shown up on the server for more than a week.
+                    </div>
+                @endunless
                 <table class="table" style="border: 0px;font-size: 18px;margin-top: 5px">
                     <tbody>
                         <tr>

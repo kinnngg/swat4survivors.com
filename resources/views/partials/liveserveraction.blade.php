@@ -69,7 +69,7 @@
     <div class="container" style="width:400px;">
         <div class="row row-no-gutters">
             <div class="col-xs-4 text-center">
-                <p class="text-center"><small>Taser Only</small></p>
+                <p class="text-center color-gold"><small>Taser Only</small></p>
                 <button id="playerTONbtn" data-type="taseronly true" title="Taseronly On"
                         class="adminsrvcommandbtn  btn btn-success btn-xs"><i class="far fa-check"></i>
                 </button>
@@ -78,7 +78,7 @@
                 </button>
             </div>
             <div class="col-xs-4 text-center">
-                <p class="text-center"><small>Pythons Only</small></p>
+                <p class="text-center color-gold"><small>Pythons Only</small></p>
                 <button id="playerPYONbtn" data-type="pythononly true" title="Pythons On"
                         class="adminsrvcommandbtn  btn btn-success btn-xs"><i class="far fa-check"></i>
                 </button>
@@ -87,7 +87,7 @@
                 </button>
             </div>
             <div class="col-xs-4 text-center">
-                <p class="text-center"><small>Pistols Only</small></p>
+                <p class="text-center color-gold"><small>Pistols Only</small></p>
                 <button id="playerPTONbtn" data-type="pistolsonly true" title="Pistols On"
                         class="adminsrvcommandbtn  btn btn-success btn-xs"><i class="far fa-check"></i>
                 </button>
@@ -99,7 +99,7 @@
 
         <div class="row row-no-gutters">
             <div class="col-xs-4 text-center">
-                <p class="text-center"><small>Shotguns Only</small></p>
+                <p class="text-center color-gold"><small>Shotguns Only</small></p>
                 <button id="playerSHONbtn" data-type="shotgunsonly true" title="Shotguns On"
                         class="adminsrvcommandbtn  btn btn-success btn-xs"><i class="far fa-check"></i>
                 </button>
@@ -108,7 +108,7 @@
                 </button>
             </div>
             <div class="col-xs-4 text-center">
-                <p class="text-center"><small>Anti Camp</small></p>
+                <p class="text-center color-gold"><small>Anti Camp</small></p>
                 <button id="playerCONbtn" data-type="anticamp true" title="Anti-Camp On"
                     class="adminsrvcommandbtn  btn btn-success btn-xs"><i class="far fa-check"></i>
                 </button>
@@ -117,7 +117,7 @@
                 </button>
             </div>
             <div class="col-xs-4 text-center">
-                <p class="text-center"><small>Server Options</small></p>
+                <p class="text-center color-gold"><small>Server Options</small></p>
                 <button id="playerStartbtn" data-type="startgame" title="Start"
                     class="adminsrvcommandbtn  btn btn-success btn-xs"><i class="far fa-play"></i>
                 </button>
@@ -168,7 +168,7 @@
 
         <div class="row row-no-gutters">
             <div class="col-xs-12" style="border: 2px dashed grey">
-                <h5 class="text-center text-bold">SERVER COMMAND</h5>
+                <h5 class="text-center text-bold color-gold">SERVER COMMAND</h5>
                 <div class="col-xs-10">
                     {!! Form::text('sccmd',null,['class' => 'form-control col-xs-5 input-sm', 'placeholder' => 'ex: set AMMod.RQMod KillCampers false']) !!}
                 </div>

@@ -108,7 +108,7 @@
                         <tbody>
                         @foreach($round->SwatPlayers as $swat)
                             <tr class="getindistats" data-id="{{ $swat->id }}">
-                                <td>{!! Html::image('/images/game/insignia/more/'.$swat->playerTotal()->rank->id.".png",$swat->playerTotal()->rank->shortname,['class' => 'tooltipster', 'title' => $swat->playerTotal()->rank->name,'height' => '22px']) !!}</td>
+                                <td>{!! Html::image('/images/game/insignia/'.$swat->playerTotal()->rank->id.".svg",$swat->playerTotal()->rank->shortname,['class' => 'tooltipster', 'title' => $swat->playerTotal()->rank->name,'height' => '22px']) !!}</td>
                                 <td>{!! Html::image('/images/flags/20_shiny/'.$swat->country->countryCode.".png",$swat->country->countryCode,['class' => 'tooltipster', 'title' => $swat->country->countryName]) !!}</td>
                                 <td class="tooltipster" title="{{ Auth::check() && Auth::user()->isAdmin() ? $swat->ip_address : "" }}"><strong>{{ $swat->name }}</strong></td>
                                 <td class="text-right"><strong>{{ $swat->score }}</strong></td>
@@ -137,7 +137,7 @@
                         <tbody>
                         @foreach($round->SuspectPlayers as $suspect)
                             <tr class="getindistats" data-id="{{ $suspect->id }}">
-                                <td>{!! Html::image('/images/game/insignia/'.$suspect->playerTotal()->rank->id.".png",$suspect->playerTotal()->rank->shortname,['class' => 'tooltipster', 'title' => $suspect->playerTotal()->rank->name,'height' => '22px']) !!}</td>
+                                <td>{!! Html::image('/images/game/insignia/'.$suspect->playerTotal()->rank->id.".svg",$suspect->playerTotal()->rank->shortname,['class' => 'tooltipster', 'title' => $suspect->playerTotal()->rank->name,'height' => '22px']) !!}</td>
                                 <td>{!! Html::image('/images/flags/20_shiny/'.$suspect->country->countryCode.".png",$suspect->country->countryCode,['class' => 'tooltipster', 'title' => $suspect->country->countryName]) !!}</td>
                                 <td class="tooltipster" title="{{ Auth::check() && Auth::user()->isAdmin() ? $suspect->ip_address : "" }}"><strong>{{ $suspect->name }}</strong></td>
                                 <td class="text-right"><strong>{{ $suspect->score }}</strong></td>
