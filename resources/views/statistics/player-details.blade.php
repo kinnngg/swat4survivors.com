@@ -232,13 +232,9 @@
                 </div>
                 @unless((\Carbon\Carbon::now()->timestamp - $player->lastGame->updated_at->timestamp) <= 60*60*24*7)
                     <br>
-                    <!--<div class="inactive text-left">
-                        This profile is inactive.<br>
-                        {{ $player->name }} hasn't shown up on the server for more than a week.
-                    </div>-->
-                    <div class="alert alert-dismissible text-left" role="alert" style="color: #777;border: 1px solid #ccc;background: #FFFEE7;line-height: 20px;border-radius: 5px;">
+                    <div class="alert alert-dismissible text-left" role="alert" style="color: #777;border: 1px solid #ccc;background: #FFFEE7;line-height: 15px;border-radius: 5px;padding-left: 5px;padding-top: 5px;padding-bottom: 5px;">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <strong>This profile is inactive.</strong><br><strong>{{ $player->name }}</strong> hasn't shown up on the server for more than a week.
+                        <small><strong>This profile is inactive.</strong><br><strong>{{ $player->name }}</strong> hasn't shown up on the server for more than a week.</small>
                     </div>
                 @endunless
                 <table class="table" style="border: 0px;font-size: 18px;margin-top: 5px">
