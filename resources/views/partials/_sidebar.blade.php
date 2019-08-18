@@ -141,10 +141,11 @@
                 Donate
             </div>
             <div class="panel-body text-muted">
-                <p>If you are capable then please contribute in development of server.</p>
-                <a target="_blank" class="btn btn-sm btn-primary" href="https://www.nfoservers.com/donate.pl?force_recipient=1&recipient=kinnngg786%40gmail.com">
+                <img src="/images/donate.svg" style="height: 100%;width: 100%;">
+                <p class="text-center">If you are capable then please contribute in development of server.</p>
+                <center><a target="_blank" class="btn btn-sm btn-primary" href="https://www.nfoservers.com/donate.pl?force_recipient=1&recipient=kinnngg786%40gmail.com">
                 <i class="fa fa-cc"></i>
-                Donate</a>
+                Donate</a></center>
             </div>
             
         </div>

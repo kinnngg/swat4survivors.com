@@ -404,7 +404,7 @@
                         <li role="presentation"><a class="panel-heading" href="#misc" aria-controls="misc" role="tab" data-toggle="tab" style="background: transparent !important;">Miscellaneous</a></li>
                     </ul>
                     <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="killsarrests">
+                        <div role="tabpanel" class="tab-pane fade in active" id="killsarrests">
                             <table class="table no-margin" style="border-top: 0px;">
                                 <tr>
                                     <td class="color-gold text-left">
@@ -465,7 +465,7 @@
                                 </tr>
                             </table>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="scoring">
+                        <div role="tabpanel" class="tab-pane fade" id="scoring">
                             <table class="table no-margin" style="border-top: 0px;">
                                 <tr>
                                     <td class="color-gold text-left">
@@ -511,7 +511,7 @@
                                 </tr>
                             </table>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="violations">
+                        <div role="tabpanel" class="tab-pane fade" id="violations">
                             <table class="table no-margin" style="border-top: 0px;">
                                 <tr>
                                     <td class="color-gold text-left">
@@ -557,7 +557,7 @@
                                 </tr>
                             </table>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="misc">
+                        <div role="tabpanel" class="tab-pane fade" id="misc">
                             <table class="table no-margin" style="border-top: 0px;">
                                 <tr>
                                     <td class="color-gold text-left">
@@ -621,7 +621,7 @@
                     <div class="tab-content">
                         @forelse($weaponFamilies as $weaponFamily)
                             @if($weaponFamily->first() != null && $weaponFamily->first()->family == 'Primary')
-                                <div role="tabpanel" class="tab-pane active" id="primary">
+                                <div role="tabpanel" class="tab-pane fade in active" id="primary">
                                     <table class="table no-margin">
                                         <thead>
                                             <tr style="font-size: 15px;font-weight: bold;">
@@ -650,7 +650,7 @@
                                     </table>
                                 </div>
                             @elseif($weaponFamily->first() != null && $weaponFamily->first()->family == 'Secondary')
-                                <div role="tabpanel" class="tab-pane" id="secondary">
+                                <div role="tabpanel" class="tab-pane fade" id="secondary">
                                     <table class="table no-margin" style="border-top: 0px;">
                                         <thead>
                                             <tr style="font-size: 15px;font-weight: bold;">
@@ -679,7 +679,7 @@
                                     </table>
                                 </div>
                             @elseif($weaponFamily->first() != null && $weaponFamily->first()->family == 'Tactical')
-                                <div role="tabpanel" class="tab-pane" id="tactical">
+                                <div role="tabpanel" class="tab-pane fade" id="tactical">
                                     <table class="table no-margin" style="border-top: 0px;">
                                         <thead>
                                             <tr style="font-size: 15px;font-weight: bold;">
@@ -708,7 +708,7 @@
                                     </table>
                                 </div>
                             @elseif($weaponFamily->first() != null && $weaponFamily->first()->family == 'Others')
-                                <div role="tabpanel" class="tab-pane" id="breaching">
+                                <div role="tabpanel" class="tab-pane fade" id="breaching">
                                     <table class="table no-margin" style="border-top: 0px;">
                                         <thead>
                                         <tr style="font-size: 15px;font-weight: bold;">

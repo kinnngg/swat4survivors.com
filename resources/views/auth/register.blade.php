@@ -43,9 +43,9 @@
 @section('main-container')
 	<div class="content col-xs-9">
 		<div class="row">
-			<div class="col-xs-10 col-xs-offset-1">
+			<div class="col-xs-11 col-xs-offset-1">
 				<div class="panel light-grey-gradientC" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
-					<div class="panel-heading info-title panel-heading-separatorC no-padding">Create Account</div>
+					<div class="panel-heading info-title panel-heading-separatorC no-padding">Create Profile</div>
 					<div class="panel-body">
 						@if (count($errors) > 0)
 							<div class="alert alert-danger">
@@ -57,53 +57,58 @@
 								</ul>
 							</div>
 						@endif
+						<div class="col-xs-6">
+							<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
+								<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-						<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
-							<input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-							<div class="form-group {{ $errors->has('username') ? 'has-error' : '' }}">
-								<label class="col-xs-4 control-label color-gold">Username</label>
-								<div class="col-xs-6">
-									<input type="text" class="form-control" name="username" value="{{ old('username') }}">
+								<div class="form-group {{ $errors->has('username') ? 'has-error' : '' }}">
+									<label class="col-xs-4 control-label color-gold">Username</label>
+									<div class="col-xs-8">
+										<input type="text" class="form-control" name="username" value="{{ old('username') }}">
+									</div>
 								</div>
-							</div>
 
-							<div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-								<label class="col-xs-4 control-label color-gold">E-Mail Address</label>
-								<div class="col-xs-6">
-									<input type="email" class="form-control" name="email" value="{{ old('email') }}">
+								<div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
+									<label class="col-xs-4 control-label color-gold">E-Mail</label>
+									<div class="col-xs-8">
+										<input type="email" class="form-control" name="email" value="{{ old('email') }}">
+									</div>
 								</div>
-							</div>
 
-							<div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-								<label class="col-xs-4 control-label color-gold">Full Name</label>
-								<div class="col-xs-6">
-									<input type="text" class="form-control" name="name" value="{{ old('name') }}">
-								</div>
-							</div>
+								<!--<div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
+									<label class="col-xs-4 control-label color-gold">Full Name</label>
+									<div class="col-xs-6">
+										<input type="text" class="form-control" name="name" value="{{ old('name') }}">
+									</div>
+								</div>-->
 
-							<div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
-								<label class="col-xs-4 control-label color-gold">Password</label>
-								<div class="col-xs-6">
-									<input type="password" class="form-control" name="password">
+								<div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
+									<label class="col-xs-4 control-label color-gold">Password</label>
+									<div class="col-xs-8">
+										<input type="password" class="form-control" name="password">
+									</div>
 								</div>
-							</div>
 
-							<div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
-								<label class="col-xs-4 control-label color-gold">Confirm Password</label>
-								<div class="col-xs-6">
-									<input type="password" class="form-control" name="password_confirmation">
+								<div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
+									<label class="col-xs-4 control-label color-gold">Confirm Password</label>
+									<div class="col-xs-8">
+										<input type="password" class="form-control" name="password_confirmation">
+									</div>
 								</div>
-							</div>
 
-							<div class="form-group">
-								<div class="col-xs-6 col-xs-offset-4">
-									<button type="submit" class="btn btn-primary register-btn">
-										Register
-									</button>
+								<div class="form-group">
+									<div class="col-xs-12">
+										<p class="text-muted text-center"><small>By clicking Register you agree to the <b class="text-info">Personal Data Consent, Terms of Use</b> and <b class="text-info">Privacy Policy</b></small></p>
+										<center><button type="submit" class="btn btn-primary register-btn">
+											Register
+										</button></center>
+									</div>
 								</div>
-							</div>
-						</form>
+							</form>
+						</div>
+						<div class="col-xs-6" style="margin-left: -15px;">
+							<img src="https://cdn.discordapp.com/attachments/569215752054243343/612730865856020502/64f1eb65e8c24434e10d8f152dd842ff.png" width="110%">
+						</div>
 					</div>
 				</div>
 			</div>

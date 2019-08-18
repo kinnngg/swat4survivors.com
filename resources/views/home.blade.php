@@ -331,23 +331,23 @@
                                 <!--Tab Starts-->
                                 <div role="tabpanel" style="font-family: Marcellus SC;">
                                     <!-- Nav tabs -->
-                                    <ul class="nav nav-tabs" role="tablist" style="border: 0px !important;">
-                                        <li role="presentation" class="active"><a class="ainorange" href="#pastweek"
+                                    <ul class="nav nav-tabs" role="tablist" style="border: 0px !important;background: transparent !important;">
+                                        <li role="presentation" class="active"><a class="panel-heading" href="#pastweek"
                                                                             aria-controls="pastweek" role="tab"
-                                                                            data-toggle="tab">Past Week</a></li>
-                                        <li role="presentation"><a class="ainorange" href="#pastmonth"
-                                                                   aria-controls="pastmonth" role="tab" data-toggle="tab">Past
+                                                                            data-toggle="tab" style="background: transparent !important;">Past Week</a></li>
+                                        <li role="presentation"><a class="panel-heading" href="#pastmonth"
+                                                                   aria-controls="pastmonth" role="tab" data-toggle="tab" style="background: transparent !important;">Past
                                                 Month</a></li>
-                                        <li role="presentation"><a class="ainorange" href="#pastyear"
-                                                                   aria-controls="pastyear" role="tab" data-toggle="tab">Past
+                                        <li role="presentation"><a class="panel-heading" href="#pastyear"
+                                                                   aria-controls="pastyear" role="tab" data-toggle="tab" style="background: transparent !important;">Past
                                                 Year</a></li>
-                                        <li role="presentation"><a class="ainorange" href="#alltime"
+                                        <li role="presentation"><a class="panel-heading" href="#alltime"
                                                                                   aria-controls="alltime" role="tab"
-                                                                                  data-toggle="tab">All Time</a></li>
+                                                                                  data-toggle="tab" style="background: transparent !important;">All Time</a></li>
                                     </ul>
                                     <!-- Tab panes -->
                                     <div class="tab-content text-muted" style="background-color: transparent;">
-                                        <div role="tabpanel" class="tab-pane active" id="pastweek">
+                                        <div role="tabpanel" class="tab-pane fade in active" id="pastweek">
                                             <table class="table borderless playerrecordtable">
                                                 <tbody>
                                                 <tr>
@@ -484,7 +484,7 @@
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <div role="tabpanel" class="tab-pane" id="pastmonth">
+                                        <div role="tabpanel" class="tab-pane fade" id="pastmonth">
                                             <table class="table borderless playerrecordtable">
                                                 <tbody>
                                                 <tr>
@@ -620,7 +620,7 @@
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <div role="tabpanel" class="tab-pane" id="pastyear">
+                                        <div role="tabpanel" class="tab-pane fade" id="pastyear">
                                             <table class="table borderless playerrecordtable">
                                                 <tbody>
                                                 <tr>
@@ -756,7 +756,7 @@
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <div role="tabpanel" class="tab-pane" id="alltime">
+                                        <div role="tabpanel" class="tab-pane fade" id="alltime">
                                             <table class="table borderless playerrecordtable">
                                                 <tbody>
                                                 <tr>
