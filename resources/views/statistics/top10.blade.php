@@ -223,7 +223,7 @@
                 <table class="table no-margin" style="border: 0px;">
                     <thead style="font-family: Marcellus SC;"><tr>
                         <th class="col-xs-1 color-gold">#</th>
-                        <th class="col-xs-1 color-gold">Rank</th>
+                        <th class="col-xs-1 color-gold text-center">Rank</th>
                         <th class="col-xs-1 color-gold">Name</th>
                         <th class="col-xs-1 color-gold text-right">Score</th>
                     </tr></thead>
