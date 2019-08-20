@@ -246,24 +246,22 @@
     </div>
 
     <div class="row padding10">
-        <div class="col-xs-5 panel panel-info no-padding">
-            <div class="panel-heading"><span class="">Top 10 Best Kill Streak</span></div>
+        <div class="col-xs-5 panel light-grey-gradient" style="border-radius: 12px;box-shadow: 2px 2px 2px rgba(0,0,0,.3);">
+            <div class="panel-heading panel-heading-separator no-padding"><span class="">Top 10 Best Kill Streak</span></div>
             <div class="panel-body no-padding">
-                <table class="table table-striped table-hover no-margin">
-                    <thead><tr>
-                        <th class="col-xs-1">#</th>
-                        <th class="col-xs-1">Flag</th>
-                        <th class="col-xs-1">Rank</th>
-                        <th>Name</th>
-                        <th class="text-right">KS</th>
+                <table class="table no-margin" style="border: 0px;">
+                    <thead style="font-family: Marcellus SC;"><tr>
+                        <th class="col-xs-1 color-gold">#</th>
+                        <th class="col-xs-1 color-gold text-center">Rank</th>
+                        <th class="col-xs-1 color-gold">Name</th>
+                        <th class="col-xs-1 color-gold text-right">KS</th>
                     </tr></thead>
                     @forelse($top10KillStreak as $player)
-                        <tr>
-                            <th style="vertical-align: middle;">{{ $position7++ }}</th>
-                            <td style="vertical-align: middle;">{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
-                            <td style="vertical-align: middle;">{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '38px']) !!}</td>
+                        <tr style="border-top: 1px solid #ccc;">
+                            <th class="text-muted" style="vertical-align: middle;">{{ $position7++ }}</th>
+                            <td style="vertical-align: middle;"><center>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '38px']) !!}</center></td>
                             <td class="color-main text-bold" style="vertical-align: middle;">{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster', 'height' => '16px']) !!}&nbsp;&nbsp;{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
-                            <td class="text-right" style="vertical-align: middle;">{{ $player->best_killstreak }}</td>
+                            <td class="text-muted text-right" style="vertical-align: middle;">{{ $player->best_killstreak }}</td>
                         </tr>
                     @empty
                         <div class="alert alert-dismissible text-left" role="alert" style="color: #777;border: 1px solid #ccc;background: #FFFEE7;line-height: 15px;border-radius: 5px;padding-left: 5px;padding-top: 5px;padding-bottom: 5px;">
@@ -274,24 +272,22 @@
                 </table>
             </div>
         </div>
-        <div class="col-xs-5 col-xs-offset-1 panel panel-success no-padding">
-            <div class="panel-heading"><span class="">Top 10 Best Arrest Streak</span></div>
+        <div class="col-xs-5 col-xs-offset-1 panel light-grey-gradient" style="border-radius: 12px;box-shadow: 2px 2px 2px rgba(0,0,0,.3);">
+            <div class="panel-heading panel-heading-separator no-padding"><span class="">Top 10 Best Arrest Streak</span></div>
             <div class="panel-body no-padding">
-                <table class="table table-striped table-hover no-margin">
-                    <thead><tr>
-                        <th class="col-xs-1">#</th>
-                        <th class="col-xs-1">Flag</th>
-                        <th class="col-xs-1">Rank</th>
-                        <th>Name</th>
-                        <th class="text-right">AS</th>
+                <table class="table no-margin" style="border: 0px;">
+                    <thead style="font-family: Marcellus SC;"><tr>
+                        <th class="col-xs-1 color-gold">#</th>
+                        <th class="col-xs-1 color-gold text-center">Rank</th>
+                        <th class="col-xs-1 color-gold">Name</th>
+                        <th class="text-right col-xs-1 color-gold">AS</th>
                     </tr></thead>
                     @forelse($top10ArrestStreak as $player)
-                        <tr>
-                            <th style="vertical-align: middle;">{{ $position8++ }}</th>
-                            <td style="vertical-align: middle;">{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
-                            <td style="vertical-align: middle;">{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '38px']) !!}</td>
+                        <tr style="border-top: 1px solid #ccc;">
+                            <th class="text-muted" style="vertical-align: middle;">{{ $position8++ }}</th>
+                            <td style="vertical-align: middle;"><center>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '38px']) !!}</center></td>
                             <td class="color-main text-bold" style="vertical-align: middle;">{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster', 'height' => '16px']) !!}&nbsp;&nbsp;{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
-                            <td class="text-right" style="vertical-align: middle;">{{ $player->best_arreststreak }}</td>
+                            <td class="text-muted text-right" style="vertical-align: middle;">{{ $player->best_arreststreak }}</td>
                         </tr>
                     @empty
                         <div class="alert alert-dismissible text-left" role="alert" style="color: #777;border: 1px solid #ccc;background: #FFFEE7;line-height: 15px;border-radius: 5px;padding-left: 5px;padding-top: 5px;padding-bottom: 5px;">
