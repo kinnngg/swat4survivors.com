@@ -46,7 +46,7 @@
                         <span class="text-danger text-bold"><a href="http://swat4survivors.com/news/different-ways-to-join-server--author-audio">144.76.224.57:10480</a></span>
                     </span>
                 </li>
-                <li class="list-group-item"> <span class="small tooltipster" title="S4S Discord Group"> <img class="img img20" src="/images/logo_ds.png" alt=""> <font color="#FF69B4">-</font> <span class="text-danger text-bold"><a
+                <li class="list-group-item"> <span class="small tooltipster" title="S4S Discord Group"> <img class="img" src="/images/icons/discord.svg" alt="" height="20px"> <font color="#FF69B4">-</font> <span class="text-danger text-bold"><a
                                     href="https://discord.gg/Y8DzuUU" target="_blank">S4S Discord Server</a></span> </span> </li>
 
                 <!--<li class="list-group-item" style="padding: 5px 15px;"> <span class="small tooltipster" title="KoS TeamSpeak3 Server"> <img class="img img20" src="/images/Logo_ts3.png" alt=""> - <span class="text-danger text-bold"><a
@@ -142,7 +142,7 @@
             </div>
             <div class="panel-body text-muted">
                 <img src="/images/donate.svg" style="height: 100%;width: 100%;">
-                <p class="text-center">If you are capable then please contribute in development of server.</p>
+                <p class="text-center">If you are capable then please contribute in development of our server and mod.</p>
                 <center><a target="_blank" class="btn btn-sm btn-primary" href="https://www.nfoservers.com/donate.pl?force_recipient=1&recipient=kinnngg786%40gmail.com">
                 <i class="fa fa-cc"></i>
                 Donate</a></center>

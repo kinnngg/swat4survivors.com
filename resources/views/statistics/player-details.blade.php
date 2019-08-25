@@ -27,6 +27,11 @@
             /*background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);*/
             background: linear-gradient(#3b3b3b, #0c0c0c);
         }
+        .blue-gradient
+        {
+            background-color: rgba(0, 134, 255, 0.1) !important; 
+            color: rgba(0, 134, 255, 0.1);
+        }
         .panel-heading-separatorBB
         {
             margin-left: 10px;
@@ -58,6 +63,7 @@
         {
             display: table;
             margin: 0 auto;
+            border-radius: 5px;
         }
         input[type="text"]
         {
@@ -129,6 +135,10 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             background: #FFFEE7;
+        }
+        .background-image
+        {
+            background-image: url("https://cdn.suwalls.com/wallpapers/fantasy/swat-team-29720-1920x1080.jpg");
         }
     </style>
     @endsection
@@ -237,8 +247,8 @@
                         <small><strong>This profile is inactive.</strong><br><strong>{{ $player->name }}</strong> hasn't shown up on the server for more than a week.</small>
                     </div>
                 @endunless
-                <table class="table table-condensed" style="border: 0px;font-size: 18px;margin-top: 5px">
-                    <tbody>
+                <table class="table table-condensed" style="font-size: 18px;margin-top: 5px;">
+                    <tbody style="border: 1px solid #ccc;border-radius: 5px;">
                         <tr>
                             <td class="col-1 text-left color-gold">
                                 <strong>Position</strong>
@@ -348,45 +358,57 @@
             <div class="col-xs-12">
                 <br><br>
                 <table class="table" style="border: 0px !important">
-                    <thead style="border: 0px;">
-                        <th class="panel-heading text-center" style="font-size: 22px;">
-                            SCORE / MIN
+                    <thead style="border: 0px">
+                        <th class="text-center">
+                            <img class="img" src="/images/icons/SCORE_PER_MINUTE.svg" style="height: 100px;width: 100px;"><br>
+                            <span class="text-muted">Score / Minute</span>
                         </th>
-                        <th class="panel-heading text-center" style="font-size: 22px;">
-                            W/L RATIO
+                        <th class="text-center">
+                            <img class="img" src="/images/icons/WIN-LOSE RATIO.svg" style="height: 100px;width: 100px;"><br>
+                            <span class="text-muted">W / L Ratio</span>
                         </th>
-                        <th class="panel-heading text-center" style="font-size: 22px;">
-                            ACCURACY
+                        <th class="text-center">
+                            <img class="img" src="/images/icons/ACCURACY.svg" style="height: 100px;width: 100px;"><br>
+                            <span class="text-muted">Accuracy</span>
                         </th>
-                        <th class="panel-heading text-center" style="font-size: 22px;">
-                            K/D RATIO
+                        <th class="text-center">
+                            <img class="img" src="/images/icons/KILL-DEATH RATIO.svg" style="height: 100px;width: 100px;"><br>
+                            <span class="text-muted">K / D Ratio</span>
                         </th>
-                        <th class="panel-heading text-center" style="font-size: 22px;">
-                            A/A RATIO
+                        <th class="text-center">
+                            <img class="img" src="/images/icons/ARREST-ARRESTED_RATIO.svg" style="height: 100px;width: 100px;"><br>
+                            <span class="text-muted">A / A Ratio</span>
+                        </th>
+                        <th class="text-center">
+                            <img class="img" src="/images/icons/KILL STREAK.svg" style="height: 100px;width: 100px;"><br>
+                            <span class="text-muted">Kill Streak</span>
                         </th>
                     </thead>
                     <tbody>
                         <tr>
                             <td>
                                 <span class="color-gold" style="font-size: 35px;">{{ $player->score_per_min }}</span><br>
-                                <span class="text-muted" style="font-size: 15px;">{{ $player->timePlayed }}</span>
+                                <span class="text-muted" style="font-size: 12px;">{{ $player->timePlayed }}</span>
                             </td>
                             <td>
                                 <span class="color-gold" style="font-size: 35px;">{{ $player->winLostRatio }}</span><br>
-                                <span class="text-muted" style="font-size: 15px;">{{ $player->game_won }} wins</span>
+                                <span class="text-muted" style="font-size: 12px;">{{ $player->game_won }} wins</span>
                             </td>
                             <td>
                                 <span class="color-gold" style="font-size: 35px;">{{ $player->weaponAccuracy }}%</span><br>
-                                <span class="text-muted" style="font-size: 15px;">{{ $player->totalAmmoHit }} shots hit</span>
+                                <span class="text-muted" style="font-size: 12px;">{{ $player->totalAmmoHit }} shots hit</span>
                             </td>
                             <td>
                                 <span class="color-gold" style="font-size: 35px;">{{ $player->killdeath_ratio }}</span><br>
-                                <span class="text-muted" style="font-size: 15px;">{{ $player->total_kills }} kills</span>
+                                <span class="text-muted" style="font-size: 12px;">{{ $player->total_kills }} kills</span>
                             </td>
                             <td>
                                 <span class="color-gold" style="font-size: 35px;">{{ $player->arr_ratio }}</span><br>
-                                <span class="text-muted" style="font-size: 15px;">{{ $player->total_arrests }} arrests</span>
+                                <span class="text-muted" style="font-size: 12px;">{{ $player->total_arrests }} arrests</span>
                             </td>
+                            <td>
+                                <span class="color-gold" style="font-size: 35px;">{{ $player->best_killstreak }}</span><br>
+                                <span class="text-muted" style="font-size: 12px;">{{ $player->best_deathstreak }} death streak</span>
                         </tr>
                     </tbody>
                 </table>

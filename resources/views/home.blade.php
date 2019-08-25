@@ -197,7 +197,7 @@
                         </div>
                         <div class="panel-body no-padding" id="ls-player-total-div" style="padding-bottom: 10px !important;">
                             <table class="table" id="ls-player-table">
-                                <th class="loading-pt-info text-center" style="background: #9B0550;">Loading
+                                <th class="loading-pt-info text-center" style="background: #9B0550;"><i class="fad fa-asterisk fa-spin"></i>&nbsp;&nbsp;Loading
                                     Players table...
                                 </th>
                             </table>

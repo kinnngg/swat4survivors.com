@@ -50,6 +50,9 @@
         margin-top: -18px;
         margin-left: 20px !important;
     }
+    .text-red {
+    color: #ff0000 !important;
+}
 </style>
 
 <nav class="navbar">
@@ -149,7 +152,7 @@
                                     <li><a href="{{ route('addpoints.create') }}">Award Points</a></li>
                                     <li><a href="{{ route('trophy.create') }}">Create Trophy</a></li>
                                     <li><a href="{{ route('trophy.grant') }}">Distribute Trophy</a></li>
-                                    <li class=""><a style="font-weight: bold;" class="confirm text-green" href="{{ route('restartserver') }}">Reboot Server</a></li>
+                                    <li class=""><a style="font-weight: bold;" class="confirm text-red" href="{{ route('restartserver') }}">Reboot Server</a></li>
                                 @endif
                             @endif
 
