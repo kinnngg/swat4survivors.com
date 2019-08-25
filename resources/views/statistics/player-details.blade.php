@@ -163,23 +163,23 @@
                     <ul id="horizontal-list">
                         @foreach(App\Rank::where('id','>',0)->get() as $rank)
                             @if($rank->id == $player->rank->id)
-                                <div class="tooltipster" title="&lt;div class='text-center text-bold' &gt; {{ $rank->name }} &lt;/div&gt; &lt;br&gt;Points: {{ $rank->description }}">
+                                <!--<div class="tooltipster" title="&lt;div class='text-center text-bold' &gt; {{ $rank->name }} &lt;/div&gt; &lt;br&gt;Points: {{ $rank->description }}">
                                     <p class="text-center color-gold" style="margin-bottom: 5px;"><strong>{{ $rank->level }}</strong></p>
                                     <img src="/images/game/insignia/{{ $rank->name }}.svg" style="height: 10%;width: 10%;">
                                     <p class="text-center color-gold" style="margin-top: 5px;"><strong>{{ $rank->name }}</strong></p>
-                                </div>
-                                <!--<li class="tooltipster" title="&lt;div class='text-center text-bold' &gt; {{ $rank->name }} &lt;/div&gt; &lt;br&gt;Points: {{ $rank->description }}">
-                                    <span class="color-gold" style="margin-bottom: 5px;"><strong>{{ $rank->level }}</strong></span>
+                                </div>-->
+                                <li class="tooltipster" title="&lt;div class='text-center text-bold' &gt; {{ $rank->name }} &lt;/div&gt; &lt;br&gt;Points: {{ $rank->description }}">
+                                    <!--<span class="color-gold" style="margin-bottom: 5px;"><strong>{{ $rank->level }}</strong></span>-->
                                     <img src="/images/game/insignia/{{ $rank->name }}.svg" style="height: 10%;width: 10%;">
-                                    <span class="text-center color-gold" style="margin-top: 5px;"><strong>{{ $rank->name }}</strong></span>
-                                </li>-->
+                                    <!--<span class="text-center color-gold" style="margin-top: 5px;"><strong>{{ $rank->name }}</strong></span>-->
+                                </li>
                             @else
-                                <div class="no-padding tooltipster" title="&lt;div class='text-center text-bold' &gt; {{ $rank->name }} &lt;/div&gt; &lt;br&gt;Points: {{ $rank->description }}">
+                                <!--<div class="no-padding tooltipster" title="&lt;div class='text-center text-bold' &gt; {{ $rank->name }} &lt;/div&gt; &lt;br&gt;Points: {{ $rank->description }}">
                                     <img src="/images/game/insignia/{{ $rank->id }}.svg" style="height: 5%;width: 5%;opacity: 0.3;">
-                                </div>
-                                <!--<li class="tooltipster" title="&lt;div class='text-center text-bold' &gt; {{ $rank->name }} &lt;/div&gt; &lt;br&gt;Points: {{ $rank->description }}">
+                                </div>-->
+                                <li class="tooltipster" title="&lt;div class='text-center text-bold' &gt; {{ $rank->name }} &lt;/div&gt; &lt;br&gt;Points: {{ $rank->description }}">
                                     <img src="/images/game/insignia/{{ $rank->id }}.svg" style="height: 5%;width: 5%;opacity: 0.3;">
-                                </li>-->
+                                </li>
                             @endif
                         @endforeach
                     </ul>
