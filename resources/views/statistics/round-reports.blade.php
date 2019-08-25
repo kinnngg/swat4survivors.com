@@ -45,6 +45,11 @@
     {
         color: #fff !important;
     }
+    .color-gold
+    {
+        color: #ffd700 !important;
+        text-shadow: 2px 2px 5px #DAA520 !important;
+    }
 </style>
 
 @extends('layouts.main')
@@ -72,8 +77,8 @@
                 </div>
             @endif
             <div class="panel-body">
-                <table id="" class="table table-dark table-hover no-margin" style="border: 0px;">
-                    <thead style="border-bottom: 1px solid #ddd;font-family: Marcellus SC;">
+                <table id="" class="table no-margin" style="border: 0px;">
+                    <thead style="font-family: Marcellus SC;">
                     <tr>
                         <th class="col-xs-1" style="font-weight: 900; font-size: 12px;">{!! sort_rounds_by('id','Round') !!}</th>
                         <th class="col-xs-2" style="font-weight: 900; font-size: 12px;">{!! sort_rounds_by('round_time','Time') !!}</th>

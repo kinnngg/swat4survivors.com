@@ -155,6 +155,13 @@ class PlayerTotalPresenter extends BasePresenter
         return $accuracy;
     }
 
+    public function totalAmmoHit()
+    {
+        $weapons = ($this->wrappedObject->alias->weapons);
+        $sh = $weapons->sum('shots_hit');
+        return $sh;
+    }
+
     public function totalAmmoFired()
     {
         $weapons = ($this->wrappedObject->alias->weapons);

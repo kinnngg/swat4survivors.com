@@ -163,23 +163,23 @@
                     <ul id="horizontal-list">
                         @foreach(App\Rank::where('id','>',0)->get() as $rank)
                             @if($rank->id == $player->rank->id)
-                                <!--<div class="tooltipster" title="&lt;div class='text-center text-bold' &gt; {{ $rank->name }} &lt;/div&gt; &lt;br&gt;Points: {{ $rank->description }}">
+                                <div class="tooltipster" title="&lt;div class='text-center text-bold' &gt; {{ $rank->name }} &lt;/div&gt; &lt;br&gt;Points: {{ $rank->description }}">
                                     <p class="text-center color-gold" style="margin-bottom: 5px;"><strong>{{ $rank->level }}</strong></p>
                                     <img src="/images/game/insignia/{{ $rank->name }}.svg" style="height: 10%;width: 10%;">
                                     <p class="text-center color-gold" style="margin-top: 5px;"><strong>{{ $rank->name }}</strong></p>
-                                </div>-->
-                                <li class="tooltipster" title="&lt;div class='text-center text-bold' &gt; {{ $rank->name }} &lt;/div&gt; &lt;br&gt;Points: {{ $rank->description }}">
-                                    <!--<p class="color-gold" style="margin-bottom: 5px;"><strong>{{ $rank->level }}</strong></p>-->
+                                </div>
+                                <!--<li class="tooltipster" title="&lt;div class='text-center text-bold' &gt; {{ $rank->name }} &lt;/div&gt; &lt;br&gt;Points: {{ $rank->description }}">
+                                    <span class="color-gold" style="margin-bottom: 5px;"><strong>{{ $rank->level }}</strong></span>
                                     <img src="/images/game/insignia/{{ $rank->name }}.svg" style="height: 10%;width: 10%;">
-                                    <!--<p class="text-center color-gold" style="margin-top: 5px;"><strong>{{ $rank->name }}</strong></p>-->
-                                </li>
+                                    <span class="text-center color-gold" style="margin-top: 5px;"><strong>{{ $rank->name }}</strong></span>
+                                </li>-->
                             @else
-                                <!--<div class="no-padding tooltipster" title="&lt;div class='text-center text-bold' &gt; {{ $rank->name }} &lt;/div&gt; &lt;br&gt;Points: {{ $rank->description }}">
+                                <div class="no-padding tooltipster" title="&lt;div class='text-center text-bold' &gt; {{ $rank->name }} &lt;/div&gt; &lt;br&gt;Points: {{ $rank->description }}">
                                     <img src="/images/game/insignia/{{ $rank->id }}.svg" style="height: 5%;width: 5%;opacity: 0.3;">
-                                </div>-->
-                                <li class="tooltipster" title="&lt;div class='text-center text-bold' &gt; {{ $rank->name }} &lt;/div&gt; &lt;br&gt;Points: {{ $rank->description }}">
+                                </div>
+                                <!--<li class="tooltipster" title="&lt;div class='text-center text-bold' &gt; {{ $rank->name }} &lt;/div&gt; &lt;br&gt;Points: {{ $rank->description }}">
                                     <img src="/images/game/insignia/{{ $rank->id }}.svg" style="height: 5%;width: 5%;opacity: 0.3;">
-                                </li>
+                                </li>-->
                             @endif
                         @endforeach
                     </ul>
@@ -312,7 +312,7 @@
                                 <strong>Next Promotion</strong>
                             </td>
                             <td class="col-4 text-left text-muted">
-                                <strong>{{ $player->rankName }}</strong>
+                                <strong>{{ $player->nextRank()->name }}</strong>
                             </td>
                         </tr>
                         <tr>
@@ -377,7 +377,7 @@
                             </td>
                             <td>
                                 <span class="color-gold" style="font-size: 35px;">{{ $player->weaponAccuracy }}%</span><br>
-                                <span class="text-muted" style="font-size: 15px;">{{ $player->shots_hit }} shots hit</span>
+                                <span class="text-muted" style="font-size: 15px;">{{ $player->totalAmmoHit }} shots hit</span>
                             </td>
                             <td>
                                 <span class="color-gold" style="font-size: 35px;">{{ $player->killdeath_ratio }}</span><br>
@@ -613,7 +613,7 @@
                 </h5>
                 <div role="tabpanel" style="width: 95%;margin-left: 20px;margin-top: 15px;">
                     <ul class="nav nav-tabs" role="tablist" style="background: transparent !important;">
-                        <li role="presentation" class="active" style="border-bottom: 0px;"><a class="panel-heading" href="#primary" aria-controls="primary" role="tab" data-toggle="tab" style="background: transparent !important;">Primary Weapon</a></li>
+                        <li role="presentation" class="active"><a class="panel-heading" href="#primary" aria-controls="primary" role="tab" data-toggle="tab" style="background: transparent !important;">Primary Weapon</a></li>
                         <li role="presentation"><a class="panel-heading" href="#secondary" aria-controls="secondary" role="tab" data-toggle="tab" style="background: transparent !important;">Secondary Weapon</a></li>
                         <li role="presentation"><a class="panel-heading" href="#tactical" aria-controls="tactical" role="tab" data-toggle="tab" style="background: transparent !important;">Tactical</a></li>
                         <li role="presentation"><a class="panel-heading" href="#breaching" aria-controls="breaching" role="tab" data-toggle="tab" style="background: transparent !important;">Breaching</a></li>

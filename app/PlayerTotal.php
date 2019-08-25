@@ -285,4 +285,14 @@ class PlayerTotal extends Model implements HasPresenter
         }
 
     }
+
+    public function nextRank()
+    {
+        $nextRank = \App\Rank::whereId($this->rank->id + 1)->first();
+
+        if(!$nextRank)
+         return $this->rank;
+         
+        return $nextRank;
+    }
 }

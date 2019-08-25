@@ -21,6 +21,20 @@
     {
         color: #fff;
     }
+    .navbar a:hover
+    {
+        background: #0c0c0c !important;
+        color: #FF69B4;
+    }
+    .navbar .dropdown-menu 
+    {
+        background: linear-gradient(#3b3b3b, #0c0c0c);
+    }
+    .dropdown-menu>.active>a,
+    .dropdown-menu>.active>a:hover,
+    .dropdown-menu>.active>a:focus{
+        background-color: #0c0c0c !important;
+    }
     #swatofficer
     {
         position: absolute;
@@ -28,7 +42,7 @@
         width: 86px;
         height: 62px;
         left: 5px;
-        top: -2px;
+        top: 2px;
         z-index: 9999999999;
     }
     .navbar-brand
@@ -50,11 +64,11 @@
                 <span class="icon-bar"></span>
             </button>
             <div id="swatofficer"></div>
-            <a class="navbar-brand" href="{{ route('home') }}"><!--<img src="{{ url('images/LIGHTSHOW18.gif') }}" alt="">--><img src="{{ url('images/proba4.gif') }}" alt="" style="height: 52px;"></a>
+            <a class="navbar-brand" href="{{ route('home') }}" style="background: transparent !important;"><img src="{{ url('images/proba4.gif') }}" alt="" style="height: 52px;"></a>
         </div>
 
         <div id="navbar" class="collapse navbar-collapse" style="font-weight: bold;">
-            <ul class="nav navbar-nav" style="font-family: Marcellus SC;">
+            <ul class="nav navbar-nav" style="font-family: Marcellus SC;margin-top: 2px;vertical-align: middle;">
                 <li class="{{ set_active(['statistics*']) }}">{!! link_to_route('statistics-home','Statistics') !!}</li>
                 <li><a target="_blank" href="http://knightofsorrow.forumclan.com">Forum</a></li>
                 <li class="dropdown">
