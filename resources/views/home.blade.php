@@ -197,7 +197,7 @@
                         </div>
                         <div class="panel-body no-padding" id="ls-player-total-div" style="padding-bottom: 10px !important;">
                             <table class="table" id="ls-player-table">
-                                <th class="loading-pt-info text-center" style="background: #9B0550;"><i class="fad fa-asterisk fa-spin"></i>&nbsp;&nbsp;Loading
+                                <th class="loading-pt-info text-center" style="background: #9B0550;"><i class="fad fa-circle-notch fa-spin"></i>&nbsp;&nbsp;Loading
                                     Players table...
                                 </th>
                             </table>
@@ -234,7 +234,7 @@
                 <div class="col-xs-6 panel no-padding" style="border-radius: 12px;background: linear-gradient(#3b3b3b, #0c0c0c);box-shadow: 2px 2px 2px rgba(0,0,0,.3);">
                     <h3 class="header header-separator">Server Viewer<small class="pull-right"><b><a href="{{ route('chat.index') }}" style="color:#888;font-size: small !important;">show all</a></b></small></h3>
                     <div class="ls-chats">
-                        <div class="loading-pt-info" style="background: #9B0550;">Loading Server Chat...</div>
+                        <div class="loading-pt-info" style="background: #9B0550;"><i class="fad fa-circle-notch fa-spin"></i>&nbsp;&nbsp;Loading Server Chat...</div>
                     </div>
                     @if (Auth::check())
                         {!!  Form::open(['route' => 'server.chat', 'id' => 'serverchat-form']) !!}
