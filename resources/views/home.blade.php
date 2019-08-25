@@ -197,7 +197,7 @@
                         </div>
                         <div class="panel-body no-padding" id="ls-player-total-div" style="padding-bottom: 10px !important;">
                             <table class="table" id="ls-player-table">
-                                <th class="loading-pt-info text-center" style="background: #FF69B4;">Loading
+                                <th class="loading-pt-info text-center" style="background: #9B0550;">Loading
                                     Players table...
                                 </th>
                             </table>
@@ -234,7 +234,7 @@
                 <div class="col-xs-6 panel no-padding" style="border-radius: 12px;background: linear-gradient(#3b3b3b, #0c0c0c);box-shadow: 2px 2px 2px rgba(0,0,0,.3);">
                     <h3 class="header header-separator">Server Viewer<small class="pull-right"><b><a href="{{ route('chat.index') }}" style="color:#888;font-size: small !important;">show all</a></b></small></h3>
                     <div class="ls-chats">
-                        <div class="loading-pt-info" style="background: #FF69B4;">Loading Server Chat...</div>
+                        <div class="loading-pt-info" style="background: #9B0550;">Loading Server Chat...</div>
                     </div>
                     @if (Auth::check())
                         {!!  Form::open(['route' => 'server.chat', 'id' => 'serverchat-form']) !!}
@@ -278,7 +278,7 @@
                         <small><b><a href="{{ route('round-reports') }}" style="color:#888;font-size: small !important;">show all&nbsp;&nbsp;</a></b></small>
                         <a type="button" class="btn btn-xs pull-right" data-toggle="collapse" data-parent="#accordion"
                            href="#collapseTwo">
-                            <span class="fad fa-eye-slash"></span>
+                            <span class="fad fa-eye-slash text-muted"></span>
                         </a>
                     </div>
                 </div>
@@ -320,7 +320,7 @@
                     <div class="pull-right">
                         <a type="button" class="btn btn-xs" data-toggle="collapse" data-parent="#accordion"
                            href="#collapseThree">
-                            <span class="fad fa-eye-slash"></span>
+                            <span class="fad fa-eye-slash text-muted"></span>
                         </a>
                     </div>
                 </div>
@@ -910,7 +910,7 @@
                         <small><b><a href="{{ route('bans.index') }}" style="color:#888;font-size: small !important;">show all&nbsp;&nbsp;</a></b></small>
                         <a type="button" class="btn btn-xs pull-right" data-toggle="collapse" data-parent="#accordion"
                            href="#collapseFour">
-                            <span class="fad fa-eye-slash"></span>
+                            <span class="fad fa-eye-slash text-muted"></span>
                         </a>
                     </div>
                 </div>
@@ -933,7 +933,7 @@
                                                                 src="{{ $ban->countryImage }}" alt="" height="22px"/></td>
                                     <td class="color-main text-bold">{!! link_to_route('bans.show',$ban->name,[$ban->id]) !!}</td>
                                     <td class="text-muted">{!! $ban->ipAddrWithMask !!}</td>
-                                    <td class="text-muted text-bold">{!! $ban->bannedByAdminURL !!}</td>
+                                    <td class="text-muted text-bold text-warning">{!! $ban->bannedByAdminURL !!}</td>
                                     <td class="text-right tooltipster text-muted" title="{{ $ban->updated_at->toDayDateTimeString() }}">{!! $ban->updated_at->diffForHumans() !!}</td>
                                 </tr>
                             @endforeach
@@ -952,7 +952,7 @@
                         <small><b><a href="{{ route('notifications.index') }}" style="color:#888;font-size: small !important;">show all&nbsp;&nbsp;</a></b></small>
                         <a type="button" class="btn btn-xs" data-toggle="collapse" data-parent="#accordion"
                            href="#collapseFive">
-                            <span class="fad fa-eye-slash"></span>
+                            <span class="fad fa-eye-slash text-muted"></span>
                         </a>
                     </div>
                 </div>
