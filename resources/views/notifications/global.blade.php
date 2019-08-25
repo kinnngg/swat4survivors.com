@@ -45,6 +45,7 @@
     {
         color: #ffd700 !important;
         text-shadow: 2px 2px 5px #DAA520;
+        font-family: 'Marcellus SC' !important;
     }
     input[type="text"]
     {
@@ -80,7 +81,7 @@
                 @forelse($notifications as $notification)
                     <li class="notification item {{ $header == "Your Notifications" ? $notification->getUnreadColorClass() : "" }}">
                         <div class="media">
-                            <div class="media-body">
+                            <div class="media-body text-muted">
                                 {!! $notification->body !!}
 
                                 <div class="notification-meta pull-right">

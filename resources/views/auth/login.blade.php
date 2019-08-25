@@ -57,20 +57,20 @@
 							</ul>
 						</div>
 					@endif
-
+<div class="col-xs-6">
 					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<div class="form-group">
 							<label class="col-xs-4 control-label color-gold">Username</label>
-							<div class="col-xs-6">
+							<div class="col-xs-8">
 								<input type="text" class="form-control" name="username" value="{{ old('username') }}">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-xs-4 control-label color-gold">Password</label>
-							<div class="col-xs-6">
+							<div class="col-xs-8">
 								<input type="password" class="form-control" name="password">
 							</div>
 						</div>
@@ -93,6 +93,10 @@
 							</div>
 						</div>
 					</form>
+				</div>
+				<div class="col-xs-6">
+					<img src="https://cdn.discordapp.com/attachments/402840242484281345/615292077089095748/moja.png" style="width: 70%;margin-top: -30px;margin-left: 50px;">
+				</div>
 				</div>
 			</div>
 		</div>

@@ -79,7 +79,7 @@
                         More <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li class="{{ set_active(['rules']) }}"><a href="{{ route('rules') }}">Rules</a></li>
-                        <!--<li class="{{ set_active(['tournament*']) }}"><a href="{{ route('tournament.index') }}">Tournaments</a></li>-->
+                        <li class="{{ set_active(['tournament*']) }}"><a href="{{ route('tournament.index') }}">Tournaments</a></li>
                         <li class="{{ set_active(['banlist*']) }}"><a href="{{ route('bans.index') }}">Banlist</a></li>
                         <li class="{{ set_active(['news*']) }}"><a href="{{ route('news.index') }}">News</a></li>
                         <li class="{{ set_active(['serverchat-history*']) }}"><a href="{{ route('chat.index') }}">Chat History</a></li>
