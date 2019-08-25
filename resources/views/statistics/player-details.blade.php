@@ -190,7 +190,7 @@
                 <div class="panel-heading panel-heading-separatorBB no-padding text-left">
                     Last Loadout
                 </div>
-                <img class="tooltipster" title="Side: {{ $player->last_team }}&lt;br&gt;Primary Weapon: {{ $player->loadoutPw }}&lt;br&gt;Ammo: {{ $player->loadoutPa }}&lt;br&gt;Body Armor: {{ $player->loadoutBody }}&lt;br&gt;Head Armor: {{ $player->loadoutHead }}" id="officer-model-image" style="border: none;" src="/images/game/player_models/renders/{{ $player->last_team."_".$player->loadoutPw."_".$player->loadoutBody."_".$player->loadoutHead }}.png">
+                <img class="tooltipster" title="Side: {{ $player->last_team ? 'Swat' : 'Suspect' }}&lt;br&gt;Primary Weapon: {{ $player->loadoutPw }}&lt;br&gt;Ammo: {{ $player->loadoutPa }}&lt;br&gt;Body Armor: {{ $player->loadoutBody }}&lt;br&gt;Head Armor: {{ $player->loadoutHead }}" id="officer-model-image" style="border: none;" src="/images/game/player_models/renders/{{ $player->last_team."_".$player->loadoutPw."_".$player->loadoutBody."_".$player->loadoutHead }}.png">
                 <div class="pockets">
                     <img class="tooltipster" title="{{ $player->loadoutSw }}&lt;br&gt;Ammo: {{ $player->loadoutSa }}" src="/images/game/weapons/128/item{{ $player->loadout->secondary_weapon }}.jpg" style="height: 35px;width: 45px;margin-bottom: 10px;">
                     <img class="tooltipster" title="{{ $player->loadoutEq1 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_one }}.jpg" style="height: 35px;width: 45px;margin-bottom: 10px;">
@@ -237,7 +237,7 @@
                         <small><strong>This profile is inactive.</strong><br><strong>{{ $player->name }}</strong> hasn't shown up on the server for more than a week.</small>
                     </div>
                 @endunless
-                <table class="table" style="border: 0px;font-size: 18px;margin-top: 5px">
+                <table class="table table-condensed" style="border: 0px;font-size: 18px;margin-top: 5px">
                     <tbody>
                         <tr>
                             <td class="col-1 text-left color-gold">
@@ -515,7 +515,7 @@
                             <table class="table no-margin" style="border-top: 0px;">
                                 <tr>
                                     <td class="color-gold text-left">
-                                        <strong>Teamkills</strong>
+                                        <strong>Team Kills</strong>
                                     </td>
                                     <td class="text-muted text-right">
                                         <strong>{{ $player->total_team_kills }}</strong>
@@ -529,13 +529,13 @@
                                 </tr>
                                 <tr>
                                     <td class="color-gold text-left">
-                                        <strong>Teamtases</strong>
+                                        <strong>Team Tases</strong>
                                     </td>
                                     <td class="text-muted text-right">
                                         <strong>Coming Soon</strong>
                                     </td>
                                     <td class="color-gold text-left">
-                                        <strong>Teambeanbags</strong>
+                                        <strong>Team Beanbags</strong>
                                     </td>
                                     <td class="text-muted text-right">
                                         <strong>Coming Soon</strong>

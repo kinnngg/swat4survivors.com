@@ -116,8 +116,7 @@
                     <thead style="font-family: Marcellus SC;">
                     <tr>
                         <th class="col-xs-1" style="font-weight: 900; font-size: 12px;">{!! sort_players_by('position','#') !!}</th>
-                        <th class="col-xs-1" style="font-weight: 900; font-size: 12px;">{!! sort_players_by('country_id','Flag') !!}</th>
-                        <th class="col-xs-1" style="font-weight: 900; font-size: 12px;">{!! sort_players_by('rank_id','Rank') !!}</th>
+                        <th class="col-xs-1 text-center" style="font-weight: 900; font-size: 12px;">{!! sort_players_by('rank_id','Rank') !!}</th>
                         <th class="col-xs-3" style="font-weight: 900; font-size: 12px;">{!! sort_players_by('name','Name') !!}</th>
                         <th class="col-xs-1" style="font-weight: 900; font-size: 12px;">{!! sort_players_by('player_rating','Rating') !!}</th>
                         <th class="col-xs-1" style="font-weight: 900; font-size: 12px;">{!! sort_players_by('total_score','Score') !!}</th>
@@ -130,9 +129,8 @@
                     @foreach($players as $player)
                         <tr class="item" style="border-top: 1px solid #ccc;margin-left: -5px;margin-right: -5px;">
                             <td class="color-main text-bold" style="vertical-align: middle;">{{ $player->position }}</td>
-                            <td class="text-muted" style="vertical-align: middle;"><img class="tooltipster" title="{{ $player->country->countryName }}" src="{{ $player->countryImage }}" alt="" height="22px"/></td>
-                            <td style="vertical-align: middle;"><img class="tooltipster" title="{{ $player->rank->name }}" src="{{ $player->rankImage }}" alt="" height="38px"/></td>
-                            <td class="color-main text-bold" style="vertical-align: middle;">{!! link_to_route('player-detail', $player->name, [$player->name]) !!}</td>
+                            <td style="vertical-align: middle;"><center><img class="tooltipster" title="{{ $player->rank->name }}" src="{{ $player->rankImage }}" alt="" height="38px"/></center></td>
+                            <td class="color-main text-bold" style="vertical-align: middle;"><img class="tooltipster" title="{{ $player->country->countryName }}" src="{{ $player->countryImage }}" alt="" height="16px"/>&nbsp;&nbsp;{!! link_to_route('player-detail', $player->name, [$player->name]) !!}</td>
                             <td style="vertical-align: middle;">{!! $player->playerRating !!}</td>
                             <td class="text-muted" style="vertical-align: middle;">{{ $player->total_score }}</td>
                             <td class="text-muted" style="vertical-align: middle;">{{ $player->total_points }}</td>

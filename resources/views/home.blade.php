@@ -190,14 +190,14 @@
                         <div class="panel-heading panel-heading-separator no-padding">
                             <span class="pull-right">
                                 @if(Auth::check() && Auth::user()->isAdmin())
-                            <a class='fancybox livepfancy fancybox.ajax tooltipster' href='./liveserveraction' title='Server Action'><i class='far fa-server color-gold'></i></a>
+                            <a class='fancybox livepfancy fancybox.ajax tooltipster' href='./liveserveraction' title='Server Action'><i class='fad fa-server color-gold'></i></a>
                                 @endif
                             </span>
                             Online Players <span id="ls-player-online"></span>
                         </div>
                         <div class="panel-body no-padding" id="ls-player-total-div" style="padding-bottom: 10px !important;">
                             <table class="table" id="ls-player-table">
-                                <th class="loading-pt-info text-center">Loading
+                                <th class="loading-pt-info text-center" style="background: #FF69B4;">Loading
                                     Players table...
                                 </th>
                             </table>
@@ -212,17 +212,17 @@
                                 <thead style="font-family: Marcellus SC;">
                                 <tr>
                                     <th class="col-xs-1" style="color:#fff; font-weight: 900; font-size: 12px;">#</th>
-                                    <th class="col-xs-1" style="color:#fff; font-weight: 900; font-size: 12px;">Rank</th>
+                                    <th class="col-xs-1 text-center" style="color:#fff; font-weight: 900; font-size: 12px;">Rank</th>
                                     <th class="col-xs-1" style="color:#fff; font-weight: 900; font-size: 12px;">Name</th>
-                                    <th class="col-xs-2 text-right" style="color:#fff; font-weight: 900; font-size: 12px;">Last Seen</th>
+                                    <th class="col-xs-2 text-right" style="color:#fff; font-weight: 900; font-size: 12px;">Rating</th>
                                 </tr>
                                 </thead>
                                 @forelse($topPlayers as $player)
                                     <tr style="border-top: 1px solid #ccc;margin-left: -5px;margin-right: -5px;">
                                         <th class="text-muted" style="vertical-align: middle;">{{ $player->position }}</th>
-                                        <td style="vertical-align: middle;">{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
+                                        <td style="vertical-align: middle;"><center>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</center></td>
                                         <td class="text-bold color-main" style="vertical-align: middle;">{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster', 'height' => '16px']) !!}&nbsp;&nbsp;{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
-                                        <td class="text-right text-muted" style="vertical-align: middle;"><small>{{ $player->lastGame->created_at->diffForHumans() }}</small></td>
+                                        <td class="text-right text-muted" style="vertical-align: middle;">{!! $player->player_rating or "<span><i class='fad fa-skull-crossbones fa-2x'></i></span>" !!}</td>
                                     </tr>
                                 @empty
                                     Empty
@@ -234,7 +234,7 @@
                 <div class="col-xs-6 panel no-padding" style="border-radius: 12px;background: linear-gradient(#3b3b3b, #0c0c0c);box-shadow: 2px 2px 2px rgba(0,0,0,.3);">
                     <h3 class="header header-separator">Server Viewer<small class="pull-right"><b><a href="{{ route('chat.index') }}" style="color:#888;font-size: small !important;">show all</a></b></small></h3>
                     <div class="ls-chats">
-                        <div class="loading-pt-info">Loading Server Chat...</div>
+                        <div class="loading-pt-info" style="background: #FF69B4;">Loading Server Chat...</div>
                     </div>
                     @if (Auth::check())
                         {!!  Form::open(['route' => 'server.chat', 'id' => 'serverchat-form']) !!}
@@ -278,7 +278,7 @@
                         <small><b><a href="{{ route('round-reports') }}" style="color:#888;font-size: small !important;">show all&nbsp;&nbsp;</a></b></small>
                         <a type="button" class="btn btn-xs pull-right" data-toggle="collapse" data-parent="#accordion"
                            href="#collapseTwo">
-                            <span class="fa fa-chevron-down"></span>
+                            <span class="fad fa-eye-slash"></span>
                         </a>
                     </div>
                 </div>
@@ -320,7 +320,7 @@
                     <div class="pull-right">
                         <a type="button" class="btn btn-xs" data-toggle="collapse" data-parent="#accordion"
                            href="#collapseThree">
-                            <span class="fa fa-chevron-down"></span>
+                            <span class="fad fa-eye-slash"></span>
                         </a>
                     </div>
                 </div>
@@ -910,7 +910,7 @@
                         <small><b><a href="{{ route('bans.index') }}" style="color:#888;font-size: small !important;">show all&nbsp;&nbsp;</a></b></small>
                         <a type="button" class="btn btn-xs pull-right" data-toggle="collapse" data-parent="#accordion"
                            href="#collapseFour">
-                            <span class="fa fa-chevron-down"></span>
+                            <span class="fad fa-eye-slash"></span>
                         </a>
                     </div>
                 </div>
@@ -952,7 +952,7 @@
                         <small><b><a href="{{ route('notifications.index') }}" style="color:#888;font-size: small !important;">show all&nbsp;&nbsp;</a></b></small>
                         <a type="button" class="btn btn-xs" data-toggle="collapse" data-parent="#accordion"
                            href="#collapseFive">
-                            <span class="fa fa-chevron-down"></span>
+                            <span class="fad fa-eye-slash"></span>
                         </a>
                     </div>
                 </div>
@@ -987,7 +987,7 @@
                         <div class="btn-group pull-right">
                             <a type="button" class="btn btn-xs" data-toggle="collapse" data-parent="#accordion"
                                href="#collapseSix">
-                                <span class="fa fa-chevron-down"></span>
+                                <span class="fad fa-eye-slash text-muted"></span>
                             </a>
                         </div>
                     </div>
