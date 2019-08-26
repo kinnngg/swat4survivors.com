@@ -192,7 +192,7 @@
                         </tr>
                     </table>
 
-                    <a href="/downloads/3" class="pull-left"><i class="fad fa-download fa-5x tooltipster" title="Download" style="color: grey;"></i></a>
+                    <a href="/downloads/4" class="pull-left"><i class="fad fa-download fa-5x tooltipster" title="Download" style="color: grey;"></i></a>
                 </div>
             </div>
         </div>
