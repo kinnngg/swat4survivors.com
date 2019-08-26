@@ -16,7 +16,7 @@
             margin-right: 10px !important;
             padding-bottom: 6px;
             margin-bottom: 8px;
-            border-bottom: 2px dashed #FF69B4;
+            border-bottom: 2px dashed #FF69B4 !important;
         }
         .panel-heading
         {
@@ -49,18 +49,18 @@
                     <i class="fad fa-server fa-10x" style="color: grey;"></i>
                 </div>
                 <div class="col-xs-8">
-                    <h4 class="panel-heading no-padding">Admin Mod</h4>
+                    <h4 class="panel-heading no-padding"><a href="/downloads/1" class="panel-heading">Admin Mod</a></h4>
                     <p class="text-muted">
                         SWAT4 Admin Mod by Kinnngg is an improved version of Gezmod adding new features like anti camp.<br>
                         <a href="{{ route('news.show',App\News::find(3)->summary) }}" class="">Click here</a> to see installation instructions.
                     </p>
-                    <table class="table table-bordered table-responsive">
+                    <table class="table table-responsive" style="border-top: 2px dashed #999999;border-bottom: 2px dashed #999999;">
                         <tr>
-                            <td class="text-muted">Version</td>
+                            <td class="text-muted"><strong>Version</strong></td>
                             <td class="text-info">1.0</td>
                         </tr>
                         <tr>
-                            <td class="text-muted">File Size</td>
+                            <td class="text-muted"><strong>File Size</strong></td>
                             <!--<td class="text-info">708.21 KB</td>-->
                             <td class="text-info">
                                 <?php
@@ -72,12 +72,12 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="text-muted">Added</td>
+                            <td class="text-muted"><strong>Added</strong></td>
                             <td class="text-info">14-7-2016</td>
                         </tr>
                     </table>
 
-                    <a href="/downloads/1" class="pull-left"><i class="fad fa-download fa-5x tooltipster" title="Download" style="color: grey;"></i></a>
+                    <a href="/downloads/1" class="pull-left"><i class="fad fa-download fa-3x tooltipster" title="Download" style="color: grey;"></i></a>
                 </div>
             </div>
             <hr>
@@ -87,12 +87,12 @@
                     <i class="fad fa-user-shield fa-10x" style="color: grey;"></i>
                 </div>
                 <div class="col-xs-8">
-                    <h4 class="panel-heading no-padding">Antics</h4>
+                    <h4 class="panel-heading no-padding"><a href="/downloads/2" class="panel-heading">Antics</a></h4>
                     <p class="text-muted">
                         Client-side anti-cheat by rapher. <br>
                         You need to place it in your 'System' folder of SWAT4 to join KoS Server.
                     </p>
-                    <table class="table table-bordered table-responsive">
+                    <table class="table table-responsive" style="border-top: 2px dashed #999999;border-bottom: 2px dashed #999999;">
                         <tr>
                             <td class="text-muted">Version</td>
                             <td class="text-info">1.0</td>
@@ -114,7 +114,7 @@
                         </tr>
                     </table>
 
-                    <a href="/downloads/2" class="pull-left"><i class="fad fa-download fa-5x tooltipster" title="Download" style="color: grey;"></i></a>
+                    <a href="/downloads/2" class="pull-left"><i class="fad fa-download fa-3x tooltipster" title="Download" style="color: grey;"></i></a>
                 </div>
             </div>
             <hr>
@@ -124,14 +124,14 @@
                     <i class="fad fa-poll-people fa-10x" style="color: grey;"></i>
                 </div>
                 <div class="col-xs-8">
-                    <h4 class="panel-heading no-padding">KMod (vote & whois)</h4>
+                    <h4 class="panel-heading no-padding"><a href="/downloads/3" class="panel-heading">KMod (vote & whois)</a></h4>
                     <p class="text-muted">
                         KMod by Kinnngg adds voting and whois functionality to your SWAT4 1.0 Server.
                         This Mod depends on Serge's Julia package.
                         You need to configure it first if you want KMod to work.
                         Visit <a target="_blank" href="https://github.com/sergeii/swat-julia">Sergii Github</a> for information about installing Julia.
                     </p>
-                    <table class="table table-bordered table-responsive">
+                    <table class="table table-responsive" style="border-top: 2px dashed #999999;border-bottom: 2px dashed #999999;">
                         <tr>
                             <td class="text-muted">Version</td>
                             <td class="text-info">1.1</td>
@@ -153,7 +153,7 @@
                         </tr>
                     </table>
 
-                    <a href="/downloads/3" class="pull-left"><i class="fad fa-download fa-5x tooltipster" title="Download" style="color: grey;"></i></a>
+                    <a href="/downloads/3" class="pull-left"><i class="fad fa-download fa-3x tooltipster" title="Download" style="color: grey;"></i></a>
                 </div>
             </div>
             <hr>
@@ -163,14 +163,14 @@
                     <i class="fad fa-th-list fa-10x" style="color: grey;"></i>
                 </div>
                 <div class="col-xs-8">
-                    <h4 class="panel-heading no-padding">Streak Mod</h4>
+                    <h4 class="panel-heading no-padding"><a href="/downloads/4" class="panel-heading">Streak Mod</a></h4>
                     <p class="text-muted">
                         Streak Mod by Kinnngg adds some stat, chat tracking functionality to your SWAT4 1.0 Server.
                         This Mod depends on Serge's Julia package.
                         You need to configure it first if you want Streak Mod to work.
                         Visit <a target="_blank" href="https://github.com/sergeii/swat-julia">Sergii Github</a> for information about installing Julia.
                     </p>
-                    <table class="table table-bordered table-responsive">
+                    <table class="table table-responsive" style="border-top: 2px dashed #999999;border-bottom: 2px dashed #999999;">
                         <tr>
                             <td class="text-muted">Version</td>
                             <td class="text-info">1.0</td>
@@ -192,7 +192,7 @@
                         </tr>
                     </table>
 
-                    <a href="/downloads/4" class="pull-left"><i class="fad fa-download fa-5x tooltipster" title="Download" style="color: grey;"></i></a>
+                    <a href="/downloads/4" class="pull-left"><i class="fad fa-download fa-3x tooltipster" title="Download" style="color: grey;"></i></a>
                 </div>
             </div>
         </div>
