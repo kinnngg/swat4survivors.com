@@ -775,7 +775,7 @@ class UserController extends Controller
     public function resendConfirmEmail(Request $request)
     {
         $user = $request->user();
-        $this->mailer->sendTo($user,"Confirm your Email KnightofSorrow.in Swat4 Community & Servers",'emails.welcome',['user' => $user]);
+        $this->mailer->sendTo($user,"Confirm your Email Swat 4 Survivors Swat4 Community & Servers",'emails.welcome',['user' => $user]);
         return back()->with('success','Email sent successfully');
     }
 }

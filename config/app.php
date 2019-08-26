@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'url' => 'http://knightofsorrow.in',
+    'url' => 'http://swat4survivors.com',
 
     /*
     |--------------------------------------------------------------------------
