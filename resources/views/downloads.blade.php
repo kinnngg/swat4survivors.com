@@ -42,25 +42,34 @@
 @section('main-container')
     <div class="content col-xs-9">
 
-        <div class="panel light-grey-gradient12" style="padding: 20px;border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);padding: 20px;">
+        <div class="panel light-grey-gradient12" style="padding: 20px;border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
             <div class="download-item row">
                 <div class="col-xs-4">
-                    <img src="/images/admin-icon.png" style="width: 225px;height: 225px;" class="img" alt="">
+                    <!--<img src="/images/admin-icon.png" style="width: 225px;height: 225px;" class="img" alt="">-->
+                    <i class="fad fa-server fa-10x" style="color: grey;"></i>
                 </div>
                 <div class="col-xs-8">
-                    <h4 class="ainorange">Admin Mod</h4>
+                    <h4 class="panel-heading no-padding">Admin Mod</h4>
                     <p class="text-muted">
-                        SWAT4 Admin Mod by Kinnngg is improved version of Gezmod adding new features like anti camp.<br>
+                        SWAT4 Admin Mod by Kinnngg is an improved version of Gezmod adding new features like anti camp.<br>
                         <a href="{{ route('news.show',App\News::find(3)->summary) }}" class="">Click here</a> to see installation instructions.
                     </p>
-                    <table class="table table-dark table-responsive">
+                    <table class="table table-bordered table-responsive">
                         <tr>
                             <td class="text-muted">Version</td>
                             <td class="text-info">1.0</td>
                         </tr>
                         <tr>
                             <td class="text-muted">File Size</td>
-                            <td class="text-info">708.21 KB</td>
+                            <!--<td class="text-info">708.21 KB</td>-->
+                            <td class="text-info">
+                                <?php
+                                    $file = '../storage/AMMod.u';
+                                    $filesize = filesize($file);
+                                    $filesize = round($filesize / 1024, 2);
+                                    echo "$filesize KB";
+                                ?>
+                            </td>
                         </tr>
                         <tr>
                             <td class="text-muted">Added</td>
@@ -68,28 +77,36 @@
                         </tr>
                     </table>
 
-                    <a href="/downloads/1" class="btn btn-success">Download</a>
+                    <a href="/downloads/1" class="pull-left"><i class="fad fa-download fa-5x tooltipster" title="Download" style="color: grey;"></i></a>
                 </div>
             </div>
             <hr>
             <div class="download-item row">
                 <div class="col-xs-4">
-                    <img src="/images/cheaters.jpeg" style="width: 225px;height: 225px;" class="img" alt="">
+                    <!--<img src="/images/cheaters.jpeg" style="width: 225px;height: 225px;" class="img" alt="">-->
+                    <i class="fad fa-user-shield fa-10x" style="color: grey;"></i>
                 </div>
                 <div class="col-xs-8">
-                    <h4 class="ainorange">antics (anti-cheat)</h4>
+                    <h4 class="panel-heading no-padding">Antics</h4>
                     <p class="text-muted">
                         Client-side anti-cheat by rapher. <br>
                         You need to place it in your 'System' folder of SWAT4 to join KoS Server.
                     </p>
-                    <table class="table table-dark table-responsive">
+                    <table class="table table-bordered table-responsive">
                         <tr>
                             <td class="text-muted">Version</td>
                             <td class="text-info">1.0</td>
                         </tr>
                         <tr>
                             <td class="text-muted">File Size</td>
-                            <td class="text-info">13.28 KB</td>
+                            <td class="text-info">
+                                <?php
+                                    $file = '../storage/antics_v1.u';
+                                    $filesize = filesize($file);
+                                    $filesize = round($filesize / 1024, 2);
+                                    echo "$filesize KB";
+                                ?>
+                            </td>
                         </tr>
                         <tr>
                             <td class="text-muted">Added</td>
@@ -97,30 +114,38 @@
                         </tr>
                     </table>
 
-                    <a href="/downloads/2" class="btn btn-success">Download</a>
+                    <a href="/downloads/2" class="pull-left"><i class="fad fa-download fa-5x tooltipster" title="Download" style="color: grey;"></i></a>
                 </div>
             </div>
             <hr>
             <div class="download-item row">
                 <div class="col-xs-4">
-                    <img src="/images/vote-icon.jpg" style="width: 225px;height: 225px;" class="img" alt="">
+                    <!--<img src="/images/vote-icon.jpg" style="width: 225px;height: 225px;" class="img" alt="">-->
+                    <i class="fad fa-poll-people fa-10x" style="color: grey;"></i>
                 </div>
                 <div class="col-xs-8">
-                    <h4 class="ainorange">KMod (vote & whois)</h4>
+                    <h4 class="panel-heading no-padding">KMod (vote & whois)</h4>
                     <p class="text-muted">
                         KMod by Kinnngg adds voting and whois functionality to your SWAT4 1.0 Server.
                         This Mod depends on Serge's Julia package.
                         You need to configure it first if you want KMod to work.
                         Visit <a target="_blank" href="https://github.com/sergeii/swat-julia">Sergii Github</a> for information about installing Julia.
                     </p>
-                    <table class="table table-dark table-responsive">
+                    <table class="table table-bordered table-responsive">
                         <tr>
                             <td class="text-muted">Version</td>
                             <td class="text-info">1.1</td>
                         </tr>
                         <tr>
                             <td class="text-muted">File Size</td>
-                            <td class="text-info">113.46 KB</td>
+                            <td class="text-info">
+                                <?php
+                                    $file = '../storage/KMod.u';
+                                    $filesize = filesize($file);
+                                    $filesize = round($filesize / 1024, 2);
+                                    echo "$filesize KB";
+                                ?>
+                            </td>
                         </tr>
                         <tr>
                             <td class="text-muted">Added</td>
@@ -128,7 +153,46 @@
                         </tr>
                     </table>
 
-                    <a href="/downloads/3" class="btn btn-success">Download</a>
+                    <a href="/downloads/3" class="pull-left"><i class="fad fa-download fa-5x tooltipster" title="Download" style="color: grey;"></i></a>
+                </div>
+            </div>
+            <hr>
+            <div class="download-item row">
+                <div class="col-xs-4">
+                    <!--<img src="/images/vote-icon.jpg" style="width: 225px;height: 225px;" class="img" alt="">-->
+                    <i class="fad fa-th-list fa-10x" style="color: grey;"></i>
+                </div>
+                <div class="col-xs-8">
+                    <h4 class="panel-heading no-padding">Streak Mod</h4>
+                    <p class="text-muted">
+                        Streak Mod by Kinnngg adds some stat, chat tracking functionality to your SWAT4 1.0 Server.
+                        This Mod depends on Serge's Julia package.
+                        You need to configure it first if you want Streak Mod to work.
+                        Visit <a target="_blank" href="https://github.com/sergeii/swat-julia">Sergii Github</a> for information about installing Julia.
+                    </p>
+                    <table class="table table-bordered table-responsive">
+                        <tr>
+                            <td class="text-muted">Version</td>
+                            <td class="text-info">1.0</td>
+                        </tr>
+                        <tr>
+                            <td class="text-muted">File Size</td>
+                            <td class="text-info">
+                                <?php
+                                    $file = '../storage/StreakMod.u';
+                                    $filesize = filesize($file);
+                                    $filesize = round($filesize / 1024, 2);
+                                    echo "$filesize KB";
+                                ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-muted">Added</td>
+                            <td class="text-info">14-7-2016</td>
+                        </tr>
+                    </table>
+
+                    <a href="/downloads/3" class="pull-left"><i class="fad fa-download fa-5x tooltipster" title="Download" style="color: grey;"></i></a>
                 </div>
             </div>
         </div>

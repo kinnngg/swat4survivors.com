@@ -49,7 +49,7 @@
                                     @if(Auth::check() && Auth::user()->isAdmin())
                                     <div class="pull-right">
                                         {!! Form::open(['method' => 'delete', 'route' => ['shouts.delete',$shout->id], 'class' => 'deleteShout'])  !!}
-                                        <button data-toggle="tooltip" title="Delete" class="tooltipster confirm btn btn-link btn-xs"><i class="fa fa-trash"></i></button>
+                                        <button data-toggle="tooltip" title="Delete" class="tooltipster confirm btn btn-link btn-xs"><i class="fad fa-trash-alt text-muted"></i></button>
                                         {!! Form::close()  !!}
                                     </div>
                                     @endif
@@ -63,7 +63,7 @@
                         </li>
                     @else
 
-                        <li class="right clearfix col-xs-12 no-padding"><!--<span class="chat-img pull-right">
+                        <li class="right clearfix col-xs-12 no-padding"><!--<span class="chat-img pull-left">
                         <img src="{{ $shout->user->getGravatarLink(40) }}" width="40" height="40" alt="User Avatar" class="img img-shoutt"/>
                     </span>-->
                             <div class="chat-body clearfix">
@@ -77,7 +77,7 @@
                                     @if(Auth::check() && Auth::user()->isAdmin())
                                     <div class="pull-right">
                                         {!! Form::open(['method' => 'delete', 'route' => ['shouts.delete',$shout->id],'class' => 'deleteShout'])  !!}
-                                        <button data-toggle="tooltip" title="Delete" class="tooltipster confirm btn btn-link btn-xs"><i class="fa fa-trash"></i></button>
+                                        <button data-toggle="tooltip" title="Delete" class="tooltipster confirm btn btn-link btn-xs"><i class="fad fa-trash-alt text-muted"></i></button>
                                         {!! Form::close()  !!}
                                     </div>
                                     @endif
