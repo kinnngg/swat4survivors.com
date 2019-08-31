@@ -359,56 +359,50 @@
                 <br><br>
                 <table class="table" style="border: 0px !important">
                     <thead style="border: 0px">
-                        <th class="text-center">
+                        <th class="text-center tooltipster" title="Total Time Played:&nbsp;&nbsp;{{ $player->timePlayed }}">
                             <img class="img" src="/images/icons/SCORE_PER_MINUTE.svg" style="height: 100px;width: 100px;"><br>
                             <span class="text-muted">Score / Minute</span>
                         </th>
-                        <th class="text-center">
+                        <th class="text-center tooltipster" title="Total Wins:&nbsp;&nbsp;{{ $player->game_won }}">
                             <img class="img" src="/images/icons/WIN-LOSE RATIO.svg" style="height: 100px;width: 100px;"><br>
                             <span class="text-muted">W / L Ratio</span>
                         </th>
-                        <th class="text-center">
+                        <th class="text-center tooltipster" title="Total Shots Hit:&nbsp;&nbsp;{{ $player->totalAmmoHit }}">
                             <img class="img" src="/images/icons/ACCURACY.svg" style="height: 100px;width: 100px;"><br>
                             <span class="text-muted">Accuracy</span>
                         </th>
-                        <th class="text-center">
+                        <th class="text-center tooltipster" title="Total Kills:&nbsp;&nbsp;{{ $player->total_kills }}">
                             <img class="img" src="/images/icons/KILL-DEATH RATIO.svg" style="height: 100px;width: 100px;"><br>
                             <span class="text-muted">K / D Ratio</span>
                         </th>
-                        <th class="text-center">
+                        <th class="text-center tooltipster" title="Total Arrests:&nbsp;&nbsp;{{ $player->total_arrests }}">
                             <img class="img" src="/images/icons/ARREST-ARRESTED_RATIO.svg" style="height: 100px;width: 100px;"><br>
                             <span class="text-muted">A / A Ratio</span>
                         </th>
-                        <th class="text-center">
+                        <th class="text-center tooltipster" title="Highest Death Streak:&nbsp;&nbsp;{{ $player->best_deathstreak }}">
                             <img class="img" src="/images/icons/KILL STREAK.svg" style="height: 100px;width: 100px;"><br>
-                            <span class="text-muted">Kill Streak</span>
+                            <span class="text-muted">Highest Kill Streak</span>
                         </th>
                     </thead>
                     <tbody>
                         <tr>
                             <td>
-                                <span class="color-gold" style="font-size: 35px;">{{ $player->score_per_min }}</span><br>
-                                <span class="text-muted" style="font-size: 12px;">{{ $player->timePlayed }}</span>
+                                <span class="color-gold" style="font-size: 35px;">{{ $player->score_per_min }}</span>
                             </td>
                             <td>
-                                <span class="color-gold" style="font-size: 35px;">{{ $player->winLostRatio }}</span><br>
-                                <span class="text-muted" style="font-size: 12px;">{{ $player->game_won }} wins</span>
+                                <span class="color-gold" style="font-size: 35px;">{{ $player->winLostRatio }}</span>
                             </td>
                             <td>
-                                <span class="color-gold" style="font-size: 35px;">{{ $player->weaponAccuracy }}%</span><br>
-                                <span class="text-muted" style="font-size: 12px;">{{ $player->totalAmmoHit }} shots hit</span>
+                                <span class="color-gold" style="font-size: 35px;">{{ $player->weaponAccuracy }}%</span>
                             </td>
                             <td>
-                                <span class="color-gold" style="font-size: 35px;">{{ $player->killdeath_ratio }}</span><br>
-                                <span class="text-muted" style="font-size: 12px;">{{ $player->total_kills }} kills</span>
+                                <span class="color-gold" style="font-size: 35px;">{{ $player->killdeath_ratio }}</span>
                             </td>
                             <td>
-                                <span class="color-gold" style="font-size: 35px;">{{ $player->arr_ratio }}</span><br>
-                                <span class="text-muted" style="font-size: 12px;">{{ $player->total_arrests }} arrests</span>
+                                <span class="color-gold" style="font-size: 35px;">{{ $player->arr_ratio }}</span>
                             </td>
                             <td>
-                                <span class="color-gold" style="font-size: 35px;">{{ $player->best_killstreak }}</span><br>
-                                <span class="text-muted" style="font-size: 12px;">{{ $player->best_deathstreak }} death streak</span>
+                                <span class="color-gold" style="font-size: 35px;">{{ $player->best_killstreak }}</span>
                         </tr>
                     </tbody>
                 </table>

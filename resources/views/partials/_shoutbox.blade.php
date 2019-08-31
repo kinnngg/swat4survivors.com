@@ -1,28 +1,3 @@
-<style>
-    .light-grey-gradient3
-    {
-        /*background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);*/
-        background: linear-gradient(#3b3b3b, #0c0c0c);
-    }
-    .panel-heading-separator3
-    {
-        margin-left: 10px;
-        margin-right: 10px !important;
-        padding-bottom: 6px;
-        margin-bottom: 8px;
-        border-bottom: 2px dashed #FF69B4;
-    }
-    .panel-heading
-    {
-        color: #444;
-        font-weight: bold;
-        font-size: 1.1em;
-        font-family: 'Trebuchet MS';
-        padding-top: 5px !important;
-        padding-bottom: 5px !important;
-    }
-</style>
-
 <div class="shoutbox-cont">
     <div class="panel pad5 light-grey-gradient3" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3)">
         <div class="panel-heading panel-heading-separator3 no-padding">
@@ -199,7 +174,28 @@
     {
         border: 1px solid #b2b29d;
     }
-
+    .light-grey-gradient3
+    {
+        /*background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);*/
+        background: linear-gradient(#3b3b3b, #0c0c0c);
+    }
+    .panel-heading-separator3
+    {
+        margin-left: 10px;
+        margin-right: 10px !important;
+        padding-bottom: 6px;
+        margin-bottom: 8px;
+        border-bottom: 2px dashed #FF69B4;
+    }
+    .panel-heading
+    {
+        color: #444;
+        font-weight: bold;
+        font-size: 1.1em;
+        font-family: 'Trebuchet MS';
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+    }
 </style>
 
 

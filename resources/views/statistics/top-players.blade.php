@@ -21,6 +21,10 @@
             /*background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);*/
             background: linear-gradient(#3b3b3b, #0c0c0c);
         }
+        tr:hover
+        {
+            background-color: #6c6c6c !important;
+        }
         .panel-heading-separator8
         {
             margin-left: 10px;
@@ -81,25 +85,25 @@
         @include('partials._statistics-navbar')
         <div class="row">
             <div class="col-xs-3 pad10lf">
-                <div class="panel col-xs-12 pad10 light-grey-gradient8" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+                <div class="panel col-xs-12 pad10 light-grey-gradient8" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);border-color: #00ff00;">
                     <div class="col-xs-3"><i class="fad fa-user fa-3x text-muted" style="margin-left: -15px;"></i></div>
                     <div class="col-xs-9 no-padding text-left panel-heading" style="padding-left: 5px !important;"><b>Players Today:</b><br><span class="color-gold">{{ \App\PlayerTotal::todaycount() }}<span></div>
                 </div>
             </div>
             <div class="col-xs-3 pad10lr">
-                <div class="panel col-xs-12 pad10 light-grey-gradient8" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+                <div class="panel col-xs-12 pad10 light-grey-gradient8" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);border-color: #0000ff;">
                     <div class="col-xs-3"><i class="fad fa-users fa-3x text-muted" style="margin-left: -15px;"></i></div>
                     <div class="col-xs-9 no-padding text-left panel-heading" style="padding-left: 20px !important;"><b>Total Players:</b><br><span class="color-gold">{{ \App\PlayerTotal::count() }}</span></div>
                 </div>
             </div>
             <div class="col-xs-3 pad10lr">
-                <div class="panel col-xs-12 pad10 light-grey-gradient8" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+                <div class="panel col-xs-12 pad10 light-grey-gradient8" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);border-color: #ffa500;">
                     <div class="col-xs-3"><i class="fad fa-analytics fa-3x text-muted" style="margin-left: -15px;"></i></div>
                     <div class="col-xs-9 no-padding text-left panel-heading" style="padding-left: 15px !important;"><b>Rounds Played:</b><br><span class="color-gold">{{ \App\Game::count() }}</span></div>
                 </div>
             </div>
             <div class="col-xs-3 pad10ll">
-                <div class="panel col-xs-12 pad10 light-grey-gradient8" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
+                <div class="panel col-xs-12 pad10 light-grey-gradient8" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);border-color: #ff0000;">
                     <div class="col-xs-3"><i class="fad fa-clock fa-3x text-muted" style="margin-left: -15px;"></i></div>
                     <div class="col-xs-9 no-padding text-left panel-heading" style="padding-left: 10px !important;"><b>Last updated:</b><br><span class="color-gold">{{ \App\PlayerTotal::first()->updated_at->diffForHumans() }}</span></div>
                 </div>

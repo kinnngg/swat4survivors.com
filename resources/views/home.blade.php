@@ -137,15 +137,19 @@
             color: #0000ff !important;
             text-shadow: 2px 2px 5px #1E90FF;
         }
+        tr:hover
+        {
+            background-color: #6c6c6c !important;
+        }
     </style>
 @endsection
 @section('main-container')
     <div class="content col-xs-9">
         @if(Auth::check() && !Auth::user()->confirmed)
-            <div class="alert alert-warning text-center row">
-                <strong>You account is Muted! Verify your Email Address to unmute it!</strong><br> Dear Gamer, Please check your email ({{ Auth::user()->email }}) where we have sent a mail to verify your account. Just visit the link provided and follow the instructions to get your account verified. Once verified your account will get unmuted.
-                <br>
-                <b>{!! link_to_route('user.email.confirmation.resend','Resend Confirmation Email') !!}</b>
+
+            <div class="alert alert-dismissible text-left" role="alert" style="color: #777;border: 1px solid #ccc;background: #FFFEE7;line-height: 15px;border-radius: 5px;padding-left: 5px;padding-top: 5px;padding-bottom: 5px;">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong><p>This account has not been Activated.</strong></p><p>Dear Gamer, please check your email (<strong>{{ Auth::user()->email }}</strong>) where we have sent an email to verify your account.  Please visit the link provided and follow the instructions to get your account verified.  Once your account is verified it will be activated.</p><br><p class="text-center"><small>If you have not recieved an email from us please double check in your spam folder or contact someone from our administration team.</small></p><p class="text-center"><strong>You can also {!! link_to_route('user.email.confirmation.resend','Resend Confirmation Email') !!}</strong></p>
             </div>
         @endif
 
@@ -196,7 +200,7 @@
                             Online Players <span id="ls-player-online"></span>
                         </div>
                         <div class="panel-body no-padding" id="ls-player-total-div" style="padding-bottom: 10px !important;">
-                            <table class="table" id="ls-player-table">
+                            <table class="table table-hover" id="ls-player-table">
                                 <th class="loading-pt-info text-center" style="background: #9B0550;"><i class="fad fa-circle-notch fa-spin"></i>&nbsp;&nbsp;Loading
                                     Players table...
                                 </th>
@@ -208,7 +212,7 @@
                         <div class="panel-heading panel-heading-separator no-padding">Top Players</div>
                         <div class="panel-body no-padding">
 
-                            <table class="table table-dark" style="border: 0px;">
+                            <table class="table table-hover" style="border: 0px;">
                                 <thead style="font-family: Marcellus SC;">
                                 <tr>
                                     <th class="col-xs-1" style="color:#fff; font-weight: 900; font-size: 12px;">#</th>
@@ -284,7 +288,7 @@
                 </div>
                 <div class="" id="collapseTwo">
                     <div class="panel-body" style="padding-left: 0px !important;padding-right: 0px !important;padding-top: 0px !important;">
-                        <table class="table table-dark no-margin" style="border: 0px;">
+                        <table class="table table-hover no-margin" style="border: 0px;">
                             <thead style="font-family: Marcellus SC;">
                             <tr style="font-family: Marcellus SC;">
                                 <th class="col-xs-1" style="color:#fff; font-weight: 900; font-size: 12px;">Round</th>
@@ -916,7 +920,7 @@
                 </div>
                 <div class="" id="collapseFour">
                     <div class="panel-body" style="padding-left: 0px !important;padding-right: 0px !important;padding-top: 0px !important;">
-                        <table id="" class="table table-dark no-margin" style="border: 0px;">
+                        <table id="" class="table table-hover no-margin" style="border: 0px;">
                             <thead style="font-family: Marcellus SC;">
                             <tr style="font-family: Marcellus SC;">
                                 <th class="col-xs-1"></th>
@@ -995,7 +999,7 @@
                         <div class="panel-body font-13" style="padding-left: 0px !important;padding-right: 0px !important;padding-top: 0px !important;">
                             @forelse($activeUsers as $user)
                                 <a class="{{ "color-".$user->roles()->first()->name }}" style="margin-right:1em"
-                                   href="{{ route('user.show',$user->username) }}"><strong class="">{{ $user->displayName() }}{!! $user->isOnline ? "<sup class='color-gold'>&#x25cf;</sup>" : "" !!}</strong></a>
+                                   href="{{ route('user.show',$user->username) }}"><strong>{{ $user->displayName() }}{!! $user->isOnline ? "<sup class='text-green'>&#x25cf;</sup>" : "" !!}</strong></a>
                             @empty
                             @endforelse
                         </div>

@@ -5,7 +5,8 @@
     <style>
         .light-grey-gradient
         {
-            background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%);
+            /*background: linear-gradient(to bottom, #f8f8f8 0%, #e0e0e0 74%, #ededed 100%) !important;*/
+            background: linear-gradient(#3b3b3b, #0c0c0c);
         }
         .panel-heading-separator
         {
@@ -34,6 +35,11 @@
             font-size: 1.3em;
             font-family: 'Trebuchet MS';
         }
+        .color-gold
+        {
+            color: #ffd700 !important;
+            text-shadow: 2px 2px 5px #DAA520;
+        }
     </style>
 @endsection
 
@@ -41,7 +47,7 @@
     <div class="col-xs-9">
         @include('partials._statistics-navbar')
 
-        <div id="regions_div" class="hidden-xs"></div>
+        <div id="regions_div" class="hidden-xs light-grey-gradient"></div>
         <br>
         <div class="rounds panel light-grey-gradient" style="border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
             <div class="panel-heading panel-heading-separator no-padding">
@@ -49,26 +55,26 @@
                 All Countries
             </div>
             <div class="panel-body">
-                <table id="" class="table table-striped table-hover no-margin">
+                <table id="" class="table no-margin">
                     <thead>
                         <tr>
-                            <th class="col-xs-1">#</th>
-                            <th class="col-xs-3">{!! sort_countries_by('country_id','Name') !!}</th>
-                            <th class="col-xs-2">{!! sort_countries_by('total_players','Total Players') !!}</th>
-                            <th class="col-xs-2">{!! sort_countries_by('total_score','Total Score') !!}</th>
-                            <th class="col-xs-2">{!! sort_countries_by('total_points','Total Points') !!}</th>
-                            <th class="col-xs-2 text-right">{!! sort_countries_by('total_time_played','TimePlayed') !!}</th>
+                            <th class="col-xs-1 color-gold">#</th>
+                            <th class="col-xs-3 color-gold">{!! sort_countries_by('country_id','Name') !!}</th>
+                            <th class="col-xs-2 color-gold">{!! sort_countries_by('total_players','Total Players') !!}</th>
+                            <th class="col-xs-2 color-gold">{!! sort_countries_by('total_score','Total Score') !!}</th>
+                            <th class="col-xs-2 color-gold">{!! sort_countries_by('total_points','Total Points') !!}</th>
+                            <th class="col-xs-2 color-gold text-right">{!! sort_countries_by('total_time_played','TimePlayed') !!}</th>
                         </tr>
                     </thead>
                     <tbody id="data-items">
                     @foreach($players as $player)
                         <tr class="item">
-                            <td class="text-bold">{{ $position++ }}</td>
-                            <td class="color-main text-bold"><img class="tooltipster" title="{{ $player->country->countryName }}" src="{{ $player->countryImage }}" alt="" height="16px"/>&nbsp;&nbsp;{!! link_to_route('country-detail', $player->country->countryName, [$player->country_id,$player->country->countryName]) !!}</td>
-                            <td>{{ $player->total_players }}</td>
-                            <td>{{ $player->total_score }}</td>
-                            <td>{{ $player->total_points }}</td>
-                            <td class="text-right">{{ \App\Server\Utils::getHMbyS($player->total_time_played,"%dh %dm") }}</td>
+                            <td class="text-bold text-muted">{{ $position++ }}</td>
+                            <td class="color-main text-bold"><img src="{{ $player->countryImage }}" alt="" height="16px"/>&nbsp;&nbsp;{!! link_to_route('country-detail', $player->country->countryName, [$player->country_id,$player->country->countryName]) !!}</td>
+                            <td class="text-muted">{{ $player->total_players }}</td>
+                            <td class="text-muted">{{ $player->total_score }}</td>
+                            <td class="text-muted">{{ $player->total_points }}</td>
+                            <td class="text-muted text-right">{{ \App\Server\Utils::getHMbyS($player->total_time_played,"%dh %dm") }}</td>
                         </tr>
                     @endforeach
                     </tbody>

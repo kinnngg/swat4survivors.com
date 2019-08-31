@@ -75,12 +75,12 @@
 									</div>
 								</div>
 
-								<!--<div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
+								<div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
 									<label class="col-xs-4 control-label color-gold">Full Name</label>
-									<div class="col-xs-6">
+									<div class="col-xs-8">
 										<input type="text" class="form-control" name="name" value="{{ old('name') }}">
 									</div>
-								</div>-->
+								</div>
 
 								<div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
 									<label class="col-xs-4 control-label color-gold">Password</label>
