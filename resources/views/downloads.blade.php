@@ -43,160 +43,277 @@
     <div class="content col-xs-9">
 
         <div class="panel light-grey-gradient12" style="padding: 20px;border-radius: 12px;box-shadow: 1px 1px 1px rgba(0,0,0,.3);">
-            <div class="download-item row">
-                <div class="col-xs-4">
-                    <!--<img src="/images/admin-icon.png" style="width: 225px;height: 225px;" class="img" alt="">-->
-                    <i class="fad fa-server fa-10x" style="color: grey;"></i>
-                </div>
-                <div class="col-xs-8">
-                    <h4 class="panel-heading no-padding"><a href="/downloads/1" class="panel-heading">Admin Mod</a></h4>
-                    <p class="text-muted">
-                        SWAT4 Admin Mod by Kinnngg is an improved version of Gezmod adding new features like anti camp.<br>
-                        <a href="{{ route('news.show',App\News::find(3)->summary) }}" class="">Click here</a> to see installation instructions.
-                    </p>
-                    <table class="table table-responsive" style="border-top: 2px dashed #999999;border-bottom: 2px dashed #999999;">
-                        <tr>
-                            <td class="text-muted"><strong>Version</strong></td>
-                            <td class="text-info">1.0</td>
-                        </tr>
-                        <tr>
-                            <td class="text-muted"><strong>File Size</strong></td>
-                            <!--<td class="text-info">708.21 KB</td>-->
-                            <td class="text-info">
-                                <?php
-                                    $file = '../storage/AMMod.u';
-                                    $filesize = filesize($file);
-                                    $filesize = round($filesize / 1024, 2);
-                                    echo "$filesize KB";
-                                ?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-muted"><strong>Added</strong></td>
-                            <td class="text-info">14-7-2016</td>
-                        </tr>
-                    </table>
-
-                    <a href="/downloads/1" class="pull-left"><i class="fad fa-download fa-3x tooltipster" title="Download" style="color: grey;"></i></a>
-                </div>
+            <div class="panel-heading panel-heading-separator12 no-padding">
+                Swat 4 Survivors Downloads
             </div>
-            <hr>
-            <div class="download-item row">
-                <div class="col-xs-4">
-                    <!--<img src="/images/cheaters.jpeg" style="width: 225px;height: 225px;" class="img" alt="">-->
-                    <i class="fad fa-user-shield fa-10x" style="color: grey;"></i>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail light-grey-gradient12">
+                            <center>
+                                <!--<i class="fad fa-server fa-10x" style="color: grey;"></i>-->
+                                <img src="/images/icons/13.svg" style="width: 87%;">
+                            </center>
+                            <div class="caption">
+                                <h3 class="panel-heading panel-heading-separator12 no-padding no-margin">Admin Mod
+                                    <sup>1.0</sup>
+                                </h3>
+                                <p class="text-muted">
+                                    <small>SWAT4 Admin Mod by Kinnngg is an improved version of Gezmod adding new features like anti camp.<br>
+                                    <a href="{{ route('news.show',App\News::find(3)->summary) }}" class="">Click here</a> to see installation instructions.</small>
+                                </p><br>
+                                <p><a href="/downloads/1" class="btn btn-sm btn-primary tooltipster" title="Download" role="button"><i class="fad fa-download fa-fw"></i>&nbsp;&nbsp;Download</a>
+                                    <?php
+                                        $file = '../storage/AMMod.u';
+                                        $filesize = filesize($file);
+                                        $filesize = round($filesize / 1024, 2);
+                                        echo "<small class='text-info'>&nbsp;&nbsp;$filesize KB</small>";
+                                    ?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail light-grey-gradient12">
+                            <center>
+                                <!--<i class="fad fa-user-shield fa-10x" style="color: grey;"></i>-->
+                                <img src="/images/icons/23.svg" style="width: 80%;">
+                            </center>
+                            <div class="caption">
+                                <h3 class="panel-heading panel-heading-separator12 no-padding no-margin">Antics
+                                    <sup>1.0</sup>
+                                </h3>
+                                <p class="text-muted">
+                                    <small>Client-side anti-cheat by rapher. <br>
+                                    You need to place it in your 'System' folder of SWAT4 to join Swat 4 Survivors Server.</small>
+                                </p><br><br><br>
+                                <p><a href="/downloads/2" class="btn btn-sm btn-primary tooltipster" title="Download" role="button"><i class="fad fa-download fa-fw" style="color: grey;"></i>&nbsp;&nbsp;Download</a>
+                                    <?php
+                                        $file = '../storage/antics_v1.u';
+                                        $filesize = filesize($file);
+                                        $filesize = round($filesize / 1024, 2);
+                                        echo "<small class='text-info'>&nbsp;&nbsp;$filesize KB</small>";
+                                    ?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail light-grey-gradient12">
+                            <center>
+                                <!--<i class="fad fa-poll-people fa-10x" style="color: grey;"></i>-->
+                                <img src="/images/icons/4.svg" style="width: 80%;">
+                            </center>
+                            <div class="caption">
+                                <h3 class="panel-heading panel-heading-separator12 no-padding no-margin">KMod <small>(vote & whois)</small>
+                                    <sup>1.0</sup>
+                                </h3>
+                                <p class="text-muted">
+                                    <small>KMod by Kinnngg adds voting and whois functionality to your SWAT4 1.0 Server.
+                                    This Mod depends on Serge's Julia package.
+                                    You need to configure it first if you want KMod to work.
+                                    Visit <a target="_blank" href="https://github.com/sergeii/swat-julia">Sergii Github</a> for information about installing Julia.</small>
+                                </p>
+                                <p><a href="/downloads/3" class="btn btn-sm btn-primary tooltipster" title="Download" role="button"><i class="fad fa-download fa-fw" style="color: grey;"></i>&nbsp;&nbsp;Download</a>
+                                    <?php
+                                        $file = '../storage/KMod.u';
+                                        $filesize = filesize($file);
+                                        $filesize = round($filesize / 1024, 2);
+                                        echo "<small class='text-info'>&nbsp;&nbsp;$filesize KB</small>";
+                                    ?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-xs-8">
-                    <h4 class="panel-heading no-padding"><a href="/downloads/2" class="panel-heading">Antics</a></h4>
-                    <p class="text-muted">
-                        Client-side anti-cheat by rapher. <br>
-                        You need to place it in your 'System' folder of SWAT4 to join KoS Server.
-                    </p>
-                    <table class="table table-responsive" style="border-top: 2px dashed #999999;border-bottom: 2px dashed #999999;">
-                        <tr>
-                            <td class="text-muted">Version</td>
-                            <td class="text-info">1.0</td>
-                        </tr>
-                        <tr>
-                            <td class="text-muted">File Size</td>
-                            <td class="text-info">
-                                <?php
-                                    $file = '../storage/antics_v1.u';
-                                    $filesize = filesize($file);
-                                    $filesize = round($filesize / 1024, 2);
-                                    echo "$filesize KB";
-                                ?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-muted">Added</td>
-                            <td class="text-info">14-7-2016</td>
-                        </tr>
-                    </table>
-
-                    <a href="/downloads/2" class="pull-left"><i class="fad fa-download fa-3x tooltipster" title="Download" style="color: grey;"></i></a>
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail light-grey-gradient12">
+                            <center><i class="fad fa-th-list fa-10x" style="color: grey;"></i></center>
+                            <div class="caption">
+                                <h3 class="panel-heading panel-heading-separator12 no-padding no-margin">Streak Mod
+                                    <sup>1.0</sup>
+                                </h3>
+                                <p class="text-muted">
+                                    <small>Streak Mod by Kinnngg adds some stat, chat tracking functionality to your SWAT4 1.0 Server.
+                                    This Mod depends on Serge's Julia package.
+                                    You need to configure it first if you want Streak Mod to work.
+                                    Visit <a target="_blank" href="https://github.com/sergeii/swat-julia">Sergii Github</a> for information about installing Julia.</small>
+                                </p>
+                                <p><a href="/downloads/4" class="btn btn-sm btn-primary tooltipster" title="Download" role="button"><i class="fad fa-download fa-fw" style="color: grey;"></i>&nbsp;&nbsp;Download</a>
+                                    <?php
+                                        $file = '../storage/StreakMod.u';
+                                        $filesize = filesize($file);
+                                        $filesize = round($filesize / 1024, 2);
+                                        echo "<small class='text-info'>&nbsp;&nbsp;$filesize KB</small>";
+                                    ?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail light-grey-gradient12">
+                            <center>
+                                <!--<i class="fad fa-file-archive fa-10x" style="color: grey;"></i>-->
+                                <img src="/images/icons/33.svg" style="width: 80%;">
+                            </center>
+                            <div class="caption">
+                                <h3 class="panel-heading panel-heading-separator12 no-padding no-margin">Map Converter</h3>
+                                <p class="text-muted">
+                                    <small>Streak Mod by Kinnngg adds some stat, chat tracking functionality to your SWAT4 1.0 Server.
+                                    This Mod depends on Serge's Julia package.
+                                    You need to configure it first if you want Streak Mod to work.
+                                    Visit <a target="_blank" href="https://github.com/sergeii/swat-julia">Sergii Github</a> for information about installing Julia.</small>
+                                </p>
+                                <p><a href="/downloads/5" class="btn btn-sm btn-primary tooltipster" title="Download" role="button"><i class="fad fa-download fa-fw" style="color: grey;"></i>&nbsp;&nbsp;Download</a>
+                                    <?php
+                                        $file = '../storage/Map_Converter.rar';
+                                        $filesize = filesize($file);
+                                        $filesize = round($filesize / 1024, 2);
+                                        echo "<small class='text-info'>&nbsp;&nbsp;$filesize KB</small>";
+                                    ?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail light-grey-gradient12">
+                            <center><i class="fad fa-file-pdf fa-10x" style="color: grey;"></i></center>
+                            <div class="caption">
+                                <h3 class="panel-heading panel-heading-separator12 no-padding no-margin">Prima Official Game Guide</h3>
+                                <p class="text-muted">
+                                    <small>Streak Mod by Kinnngg adds some stat, chat tracking functionality to your SWAT4 1.0 Server.
+                                    This Mod depends on Serge's Julia package.
+                                    You need to configure it first if you want Streak Mod to work.
+                                    Visit <a target="_blank" href="https://github.com/sergeii/swat-julia">Sergii Github</a> for information about installing Julia.</small>
+                                </p>
+                                <p><a href="/downloads/6" class="btn btn-sm btn-primary tooltipster" title="Download" role="button"><i class="fad fa-download fa-fw" style="color: grey;"></i>&nbsp;&nbsp;Download</a>
+                                    <?php
+                                        $file = '../storage/Prima_Official_Game_Guide.pdf';
+                                        $filesize = filesize($file);
+                                        $filesize = round($filesize / 1024, 2);
+                                        echo "<small class='text-info'>&nbsp;&nbsp;$filesize KB</small>";
+                                    ?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <hr>
-            <div class="download-item row">
-                <div class="col-xs-4">
-                    <!--<img src="/images/vote-icon.jpg" style="width: 225px;height: 225px;" class="img" alt="">-->
-                    <i class="fad fa-poll-people fa-10x" style="color: grey;"></i>
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail light-grey-gradient12">
+                            <center><i class="fad fa-file-archive fa-10x" style="color: grey;"></i></center>
+                            <div class="caption">
+                                <h3 class="panel-heading panel-heading-separator12 no-padding no-margin">Swat 4 Launcher</h3>
+                                <p class="text-muted">
+                                    <small>Streak Mod by Kinnngg adds some stat, chat tracking functionality to your SWAT4 1.0 Server.
+                                    This Mod depends on Serge's Julia package.
+                                    You need to configure it first if you want Streak Mod to work.
+                                    Visit <a target="_blank" href="https://github.com/sergeii/swat-julia">Sergii Github</a> for information about installing Julia.</small>
+                                </p>
+                                <p><a href="/downloads/7" class="btn btn-sm btn-primary tooltipster" title="Download" role="button"><i class="fad fa-download fa-fw" style="color: grey;"></i>&nbsp;&nbsp;Download</a>
+                                    <?php
+                                        $file = '../storage/SWAT4_Launcher.rar';
+                                        $filesize = filesize($file);
+                                        $filesize = round($filesize / 1024, 2);
+                                        echo "<small class='text-info'>&nbsp;&nbsp;$filesize KB</small>";
+                                    ?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail light-grey-gradient12">
+                            <center><i class="fad fa-file-pdf fa-10x" style="color: grey;"></i></center>
+                            <div class="caption">
+                                <h3 class="panel-heading panel-heading-separator12 no-padding no-margin">Swat 4 Modding Overview</h3>
+                                <p class="text-muted">
+                                    <small>Streak Mod by Kinnngg adds some stat, chat tracking functionality to your SWAT4 1.0 Server.
+                                    This Mod depends on Serge's Julia package.
+                                    You need to configure it first if you want Streak Mod to work.
+                                    Visit <a target="_blank" href="https://github.com/sergeii/swat-julia">Sergii Github</a> for information about installing Julia.</small>
+                                </p>
+                                <p><a href="/downloads/8" class="btn btn-sm btn-primary tooltipster" title="Download" role="button"><i class="fad fa-download fa-fw" style="color: grey;"></i>&nbsp;&nbsp;Download</a>
+                                    <?php
+                                        $file = '../storage/SWAT4_Modding_Overview.pdf';
+                                        $filesize = filesize($file);
+                                        $filesize = round($filesize / 1024, 2);
+                                        echo "<small class='text-info'>&nbsp;&nbsp;$filesize KB</small>";
+                                    ?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail light-grey-gradient12">
+                            <center><i class="fad fa-file-archive fa-10x" style="color: grey;"></i></center>
+                            <div class="caption">
+                                <h3 class="panel-heading panel-heading-separator12 no-padding no-margin">Swat 4 Toolkit</h3>
+                                <p class="text-muted">
+                                    <small>Streak Mod by Kinnngg adds some stat, chat tracking functionality to your SWAT4 1.0 Server.
+                                    This Mod depends on Serge's Julia package.
+                                    You need to configure it first if you want Streak Mod to work.
+                                    Visit <a target="_blank" href="https://github.com/sergeii/swat-julia">Sergii Github</a> for information about installing Julia.</small>
+                                </p>
+                                <p><a href="/downloads/9" class="btn btn-sm btn-primary tooltipster" title="Download" role="button"><i class="fad fa-download fa-fw" style="color: grey;"></i>&nbsp;&nbsp;Download</a>
+                                    <?php
+                                        $file = '../storage/SWAT4_Toolkit.rar';
+                                        $filesize = filesize($file);
+                                        $filesize = round($filesize / 1024, 2);
+                                        echo "<small class='text-info'>&nbsp;&nbsp;$filesize KB</small>";
+                                    ?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-xs-8">
-                    <h4 class="panel-heading no-padding"><a href="/downloads/3" class="panel-heading">KMod (vote & whois)</a></h4>
-                    <p class="text-muted">
-                        KMod by Kinnngg adds voting and whois functionality to your SWAT4 1.0 Server.
-                        This Mod depends on Serge's Julia package.
-                        You need to configure it first if you want KMod to work.
-                        Visit <a target="_blank" href="https://github.com/sergeii/swat-julia">Sergii Github</a> for information about installing Julia.
-                    </p>
-                    <table class="table table-responsive" style="border-top: 2px dashed #999999;border-bottom: 2px dashed #999999;">
-                        <tr>
-                            <td class="text-muted">Version</td>
-                            <td class="text-info">1.1</td>
-                        </tr>
-                        <tr>
-                            <td class="text-muted">File Size</td>
-                            <td class="text-info">
-                                <?php
-                                    $file = '../storage/KMod.u';
-                                    $filesize = filesize($file);
-                                    $filesize = round($filesize / 1024, 2);
-                                    echo "$filesize KB";
-                                ?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-muted">Added</td>
-                            <td class="text-info">14-7-2016</td>
-                        </tr>
-                    </table>
-
-                    <a href="/downloads/3" class="pull-left"><i class="fad fa-download fa-3x tooltipster" title="Download" style="color: grey;"></i></a>
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail light-grey-gradient12">
+                            <center><i class="fad fa-file-archive fa-10x" style="color: grey;"></i></center>
+                            <div class="caption">
+                                <h3 class="panel-heading panel-heading-separator12 no-padding no-margin">Swat 4 Server Browser</h3>
+                                <p class="text-muted">
+                                    <small>Streak Mod by Kinnngg adds some stat, chat tracking functionality to your SWAT4 1.0 Server.
+                                    This Mod depends on Serge's Julia package.
+                                    You need to configure it first if you want Streak Mod to work.
+                                    Visit <a target="_blank" href="https://github.com/sergeii/swat-julia">Sergii Github</a> for information about installing Julia.</small>
+                                </p>
+                                <p><a href="/downloads/10" class="btn btn-sm btn-primary tooltipster" title="Download" role="button"><i class="fad fa-download fa-fw" style="color: grey;"></i>&nbsp;&nbsp;Download</a>
+                                    <?php
+                                        $file = '../storage/SWAT4SBA_install.exe';
+                                        $filesize = filesize($file);
+                                        $filesize = round($filesize / 1024, 2);
+                                        echo "<small class='text-info'>&nbsp;&nbsp;$filesize KB</small>";
+                                    ?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail light-grey-gradient12">
+                            <center><i class="fad fa-file-pdf fa-10x" style="color: grey;"></i></center>
+                            <div class="caption">
+                                <h3 class="panel-heading panel-heading-separator12 no-padding no-margin">Swat 4 Manual</h3>
+                                <p class="text-muted">
+                                    <small>Streak Mod by Kinnngg adds some stat, chat tracking functionality to your SWAT4 1.0 Server.
+                                    This Mod depends on Serge's Julia package.
+                                    You need to configure it first if you want Streak Mod to work.
+                                    Visit <a target="_blank" href="https://github.com/sergeii/swat-julia">Sergii Github</a> for information about installing Julia.</small>
+                                </p>
+                                <p><a href="/downloads/11" class="btn btn-sm btn-primary tooltipster" title="Download" role="button"><i class="fad fa-download fa-fw" style="color: grey;"></i>&nbsp;&nbsp;Download</a>
+                                    <?php
+                                        $file = '../storage/SWT4_Mn_TX_7162010.pdf';
+                                        $filesize = filesize($file);
+                                        $filesize = round($filesize / 1024, 2);
+                                        echo "<small class='text-info'>&nbsp;&nbsp;$filesize KB</small>";
+                                    ?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <hr>
-            <div class="download-item row">
-                <div class="col-xs-4">
-                    <!--<img src="/images/vote-icon.jpg" style="width: 225px;height: 225px;" class="img" alt="">-->
-                    <i class="fad fa-th-list fa-10x" style="color: grey;"></i>
-                </div>
-                <div class="col-xs-8">
-                    <h4 class="panel-heading no-padding"><a href="/downloads/4" class="panel-heading">Streak Mod</a></h4>
-                    <p class="text-muted">
-                        Streak Mod by Kinnngg adds some stat, chat tracking functionality to your SWAT4 1.0 Server.
-                        This Mod depends on Serge's Julia package.
-                        You need to configure it first if you want Streak Mod to work.
-                        Visit <a target="_blank" href="https://github.com/sergeii/swat-julia">Sergii Github</a> for information about installing Julia.
-                    </p>
-                    <table class="table table-responsive" style="border-top: 2px dashed #999999;border-bottom: 2px dashed #999999;">
-                        <tr>
-                            <td class="text-muted">Version</td>
-                            <td class="text-info">1.0</td>
-                        </tr>
-                        <tr>
-                            <td class="text-muted">File Size</td>
-                            <td class="text-info">
-                                <?php
-                                    $file = '../storage/StreakMod.u';
-                                    $filesize = filesize($file);
-                                    $filesize = round($filesize / 1024, 2);
-                                    echo "$filesize KB";
-                                ?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-muted">Added</td>
-                            <td class="text-info">14-7-2016</td>
-                        </tr>
-                    </table>
-
-                    <a href="/downloads/4" class="pull-left"><i class="fad fa-download fa-3x tooltipster" title="Download" style="color: grey;"></i></a>
-                </div>
-            </div>
+            </div>            
         </div>
-
-
     </div>
 @endsection
